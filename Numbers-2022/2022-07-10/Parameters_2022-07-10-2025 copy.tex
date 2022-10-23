@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\parindent=0pt
+\setlength{\textwidth=7in}
+\setlength{\oddsidemargin=-.25 in}
+\setlength{\topmargin=0 in}
+\setlength{\textheight=9.5 in}
+\begin{document}
+\centerline{\bf{DUNE Resource Needs for 2022}}\vskip 1 in \par Configuration: Parameters\_2022-07-10-2040.json\\
+  Date: 2022-07-18 02:37TZ\\
+   \\
+  \input Intro_2022-05-21.tex
+ Fiscal year starts: April 1\\ 
+Tape is accounted for at: end of fiscal year\\ 
+Disk is accounted for on: October 1\\ 
+CPU is accounted for at: end of fiscal year\\ 
+Reco passes per Year: 1\\
+Sim passes per Year: 1\\
+Analysis relative to Sim+Reco: 1\\
+\pagebreak
+\\
+{\bf For data type Raw}\\
+   Raw Tape lifetime 100.0 in years\\
+   Raw Tape Copies   2.0\\
+   Raw FNAL Tape fraction for PD  0.50\\
+   Raw FNAL Tape fraction for DUNE  0.50\\
+   Raw CERN Tape fraction for PD  0.50\\
+   Raw CERN Tape fraction for DUNE  0.00\\
+   Raw Collaboration Tape fraction for PD  0.00\\
+   Raw Collaboration Tape fraction for DUNE  0.50\\
+   Raw Disk lifetime   1.0 in years\\
+   Raw Disk Copies   1.0\\
+   Raw FNAL Disk fraction for PD  0.50\\
+   Raw FNAL Disk fraction for DUNE  1.00\\
+   Raw CERN Disk fraction for PD  0.50\\
+   Raw CERNDisk fraction for DUNE  0.00\\
+   Raw Collaboration Disk fraction for PD  0.00\\
+   Raw Collaboration Disk fraction for DUNE  0.00\\
+\pagebreak\\
+\\
+{\bf For data type Test}\\
+  Test Tape lifetime   0.5 in years\\
+  Test Tape Copies   1.0\\
+  Test FNAL Tape fraction for PD  0.50\\
+  Test FNAL Tape fraction for DUNE  0.50\\
+  Test CERN Tape fraction for PD  0.50\\
+  Test CERN Tape fraction for DUNE  0.00\\
+  Test Collaboration Tape fraction for PD  0.00\\
+  Test Collaboration Tape fraction for DUNE  0.50\\
+  Test Disk lifetime   0.5 in years\\
+  Test Disk Copies   0.5\\
+  Test FNAL Disk fraction for PD  0.50\\
+  Test FNAL Disk fraction for DUNE  0.50\\
+  Test CERN Disk fraction for PD  0.50\\
+  Test CERNDisk fraction for DUNE  0.00\\
+  Test Collaboration Disk fraction for PD  0.00\\
+  Test Collaboration Disk fraction for DUNE  0.50\\
+\pagebreak\\
+\\
+{\bf For data type Reco}\\
+  Reco Tape lifetime  15.0 in years\\
+  Reco Tape Copies   1.0\\
+  Reco FNAL Tape fraction for PD  0.75\\
+  Reco FNAL Tape fraction for DUNE  0.50\\
+  Reco CERN Tape fraction for PD  0.00\\
+  Reco CERN Tape fraction for DUNE  0.00\\
+  Reco Collaboration Tape fraction for PD  0.25\\
+  Reco Collaboration Tape fraction for DUNE  0.50\\
+  Reco Disk lifetime   2.0 in years\\
+  Reco Disk Copies   2.0\\
+  Reco FNAL Disk fraction for PD  0.25\\
+  Reco FNAL Disk fraction for DUNE  0.25\\
+  Reco CERN Disk fraction for PD  0.00\\
+  Reco CERNDisk fraction for DUNE  0.00\\
+  Reco Collaboration Disk fraction for PD  0.75\\
+  Reco Collaboration Disk fraction for DUNE  0.75\\
+\pagebreak\\
+\\
+{\bf For data type Sim}\\
+   Sim Tape lifetime  15.0 in years\\
+   Sim Tape Copies   1.0\\
+   Sim FNAL Tape fraction for PD  0.75\\
+   Sim FNAL Tape fraction for DUNE  0.50\\
+   Sim CERN Tape fraction for PD  0.00\\
+   Sim CERN Tape fraction for DUNE  0.00\\
+   Sim Collaboration Tape fraction for PD  0.25\\
+   Sim Collaboration Tape fraction for DUNE  0.50\\
+   Sim Disk lifetime   2.0 in years\\
+   Sim Disk Copies   2.0\\
+   Sim FNAL Disk fraction for PD  0.25\\
+   Sim FNAL Disk fraction for DUNE  0.25\\
+   Sim CERN Disk fraction for PD  0.00\\
+   Sim CERNDisk fraction for DUNE  0.00\\
+   Sim Collaboration Disk fraction for PD  0.75\\
+   Sim Collaboration Disk fraction for DUNE  0.75\\
+\pagebreak\\
+\begin{table}
+\footnotesize
+ \centering \begin{tabular}[h]{crrrrrcccc}
+ & CPU &Wall&Wall F+MARS/Collab&\qquad  & Tape\qquad& Tape\qquad  & Disk\qquad  & Disk\qquad \\
+Years&(Mhrs)&(Wall-Mhrs)&(Wall-Mhrs)&cores& Total(PB)&F/C/Collab & Total(PB) &F/C/Collab\\
+\hline
+2021&	  40&	  58&	(  14+   0)/  43&	  6594&	     21.1&	  14.1/  3.6/  3.5&	     20.4&	   5.3/  0.4/ 14.7 s\\
+2022&	  45&	  65&	(  16+   0)/  49&	  7399&	     35.1&	  22.6/  7.4/  5.0&	     28.0&	   8.0/  2.0/ 17.9 s\\
+2023&	  72&	 103&	(  26+   0)/  77&	 11747&	     58.9&	  36.9/ 14.6/  7.4&	     39.3&	  11.8/  3.9/ 23.6 s\\
+2024&	  78&	 111&	(  28+   0)/  84&	 12710&	     76.2&	  48.0/ 18.2/  9.9&	     43.3&	  11.9/  2.1/ 29.3 s\\
+2025&	  76&	 109&	(  27+   0)/  82&	 12438&	     86.1&	  55.5/ 18.2/ 12.4&	     40.5&	  10.2/  0.2/ 30.1 s\\
+\end{tabular}
+\caption{Assume present core is   11 HS06. CPU number is real CPU. Cores and HS06 are Walltime with CPU/Walltime =  0.70.  F means FNAL, C means CERN. Assume CERN storage is only  for ProtoDUNE. CPU should be divided 25\% FNAL, 75\% Collab, MARS is not included in the 25\% FNAL contribution.}\normalsize
+ \end{table}
+\begin{table}
+\footnotesize
+ \centering \begin{tabular}[h]{crrrrrrrr}
+          model disk&2021&Sim: 6.9&Raw: 3.3&Reco: 3.5&Test: 0.0&Total:13.7\\
+          model tape&2021&Sim:10.0&Raw: 6.6&Test: 0.8&Reco: 4.3&Total:21.8\\
+          actual cpu&2021&Total:28.8&Analysis:10.3&MARS:12.0&Production: 6.5\\
+        actual cores&2021&Total:4703.2&Analysis:1678.1&MARS:1963.5&Production:1061.6\\
+         actual disk&2021&FNAL: 4.6&CERN: 1.0&UK: 2.2&CZ: 0.3&Total: 8.1\\
+         actual tape&2021&FNAL:19.8&CERN: 5.0&Total:24.8\\
+\end{tabular}
+\caption{Values for the points shown in the figures. Model disk and tape are the amounts we would project based on actual data cataloged if we had the number of copies expected in the model. This serves as a crosscheck on the inputs to the model but does not change its assumptions.  The actual numbers are derived from wall time measured for 2021, the disk reported by rucio + FNAL disk cache and the total tape used at FNAL at CERN. Disk usage is lower as not all data have been copied. CPU usage is lower due to the delay in ProtoDUNE II running.}\normalsize
+ \end{table}
+\pagebreak\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-07-10-2025-Total-CPU.png}\label{TotalCPU}
+\caption{CPU time in Wall Hours/year. Squares are measured values for 2021.}
+\end{figure}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-07-10-2025-Cores.png}\label{Cores}
+\caption{Cores needed, including efficiency loss. Squares are measured values for 2021.}
+\end{figure}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-07-10-2025-Cumulative-Tape.png}\label{CumulativeTape}
+\caption{Projected  tape needs, PB, all types are cumulative over tape lifetime. Open circles are model calculation based on actual data volumes in 2021. Closed squares are actual numbers by site. Offsets of square points are for clarity.}
+\end{figure}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-07-10-2025-Cumulative-Disk}\label{CumulativeDisk}
+\caption{Disk needs, PB.  Raw, Reco and Sim are cumulative over disk lifetime.  Test has sub-year lifetime.  Open circles are model calculation based on actual disk volumes in 2021. Closed squares are actual numbers from rucio as of 1/22/2022. Offsets of square points are for clarity.}
+\end{figure}
+\vskip 3 in\pagebreak 
+ {\bf Change log:}\\
+2022-05-19 revert pre 2023 to CCB sim numbers but keep updated daq estimates\\2022-05-18 add in MARS\\2022-02-21 add in new numbers for PD2, FD sim, reflect daq document\\2022-01-22 add actual numbers's\\2022-01-14 updates for VD channels and new drift times.\\2021-07-25 see effects of PD 2 delay\\2021-04-27 change HSPEC06 to 11 from 15 per CMS numbers from Kirby\\2021-04-21 clarify CERN vs Collab for first 10 years\\2021-03-26 clearer plots, go to v3 of the code to preserve the RRB code in v2\\2021-03-24 try with CERN/FNAL combined for raw and test.\\2021-03-22 add Collab vs FNAL shares, restore sim disk lifetime to 2.\\\end{document}

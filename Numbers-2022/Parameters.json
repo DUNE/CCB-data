@@ -1,0 +1,70 @@
+{"Years":
+    [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030],
+  "Units":
+    {"Events":"Million", "Raw":"PB", "Test":"PB", "Reco":"PB", "CPU":"MHr", "Sim Events":"M", "Sim":"PB", "Sim-CPU":"MHr", "All":"PB", "Years":"", "Total-CPU":"MHr", "Cumulative Tape":"PB", "Cumulative Disk":"PB", "Cores":"2020 Vintage Cores"},
+  "Detectors":["SP","DP","FD","ND"],
+  "CombinedDetectors":["ProtoDUNE","FD","ND"],
+  "SP":
+  {"Raw":70, # from first beam test
+    "CPU":0.1667, #Hr/Event
+    "Sim-CPU":0.75, #Hr/Event
+    "Reco":35, #MB/Event
+    "Sim":220, #MB/Event
+    "Events":[10.9, 19.4, 6.5, 6.5, 43.5, 20, 0, 0, 0, 0, 0, 0, 0], #millions
+    "Test":[157, 600, 500, 769.23, 3346.15, 500, 500, 500, 0, 0, 0, 0, 0], # commissioning stuff in TB
+    "Sim Events":[1.25, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0] #millions
+  },
+  "DP":
+    {"Raw":110,
+    "CPU":0.1667,
+    "Sim-CPU":0.75,
+    "Reco":20,
+    "Sim":220,
+    "Events":[0, 0.5, 0.9, 2, 10, 10, 0, 0, 0, 0, 0, 0, 0],
+    "Test":[0, 42, 500, 231, 231, 231, 500, 500, 0, 0, 0, 0, 0],
+    "Sim Events":[1.25, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0]
+  },
+  "FD":
+    {"Raw":1750,
+    "CPU":1.25,
+    "Sim-CPU":0.75,
+    "Reco":175,
+    "Sim":200,
+    "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.2, 2.2, 4.4],
+    "Test":[0, 0, 0, 0, 0, 0, 0, 0, 1500, 10500, 10500, 12000, 12000],
+    "Sim Events":[0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10]
+  },
+  "ND":
+    {"Raw":10,
+    "CPU":0.05,
+    "Sim-CPU":0.12,
+    "Reco":20,
+    "Sim":50,
+    "Events":[0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 25, 25],
+    "Test":[0, 0, 0, 0, 300, 300, 0, 0, 0, 0, 0, 500, 500],
+    "Sim Events":[0, 0, 10, 25, 10, 10, 10, 10, 50, 50, 100, 100, 100]
+  },
+  "Analysis":
+    {"Scale":1,
+      "Add":["ProtoDUNE", "FD", "ND"]
+  },
+    
+  "TapeLifetimes":{"Raw":100, "Test":0.5, "Reco":15, "Sim":15},
+  "DiskLifetimes":{"Raw":1, "Test":0.5, "Reco":2, "Sim":2},
+  "TapeCopies":{"Raw":2, "Test":1, "Reco":1, "Sim":1},
+  "DiskCopies":{"Raw":1, "Test":0.5, "Reco":2, "Sim":2},
+  "PerYear":
+      {"Raw":1, "Test":1, "Reco":2, "Sim":1, "Events":1, "Sim Events":1, "CPU":2, "Sim-CPU":1, "Analysis":1, "Analysis-CPU":1},
+  "Cores":{
+    "Efficiency":0.7,  # reasonable
+    "2020Units":1  # raise this # if machines get faster
+  },
+  
+  "TypeColors": {"Raw":"blue", "Test":"orange", "Reco":"red", "Sim":"grey", "Total":"black"},
+  "TypeLines": {"Raw":"solid", "Test":"dashed", "Reco":"solid", "Sim":"dashed", "Total":"solid"},
+  "DetColors": {"SP":"green", "DP":"green", "ProtoDUNE":"blue", "FD":"red", "ND":"grey", "Analysis":"orange", "Total":"black"},
+  "DetLines": {"SP":"solid", "DP":"dotted", "ProtoDUNE":"solid", "FD":"solid", "ND":"solid", "Analysis":"dashed", "Total":"solid"}
+  
+  
+}
+
