@@ -132,7 +132,7 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
         print (type, "not in ",detcolors)
       else:
         ypoints = makeArray(toplot[type])
-        print ("y points",Value,type,ypoints)
+        #print ("y points",Value,type,ypoints)
         ax.plot(Years,ypoints,color=detcolors[type],linestyle=detlines[type],label="model "+type)
     if points != None:
         for y in points:
