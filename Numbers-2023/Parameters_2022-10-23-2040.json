@@ -20,10 +20,11 @@
     2038,  2039,   2040
   ],
   "Detectors":["SP","SP2","DP","PDVD","HD","VD","ND"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
+  "Cap":1000, # cap in PB
   "MaxYear":2040, #2025 = 8, 2040 = 23
   "MinYear":2020,
   "Units":
-  {"Events":"Million", "Raw":"PB", "Test":"PB", "Reco":"PB", "CPU":"MHr", "Sim Events":"M", "Sim":"PB", "Sim-CPU":"MHr", "All":"PB", "Years":"", "Total-CPU":"MHr", "Cumulative Tape":"PB", "Cumulative Disk":"PB",
+  {"Events":"Million", "Raw":"PB", "Test":"PB","Raw+Test":"PB", "Reco":"PB", "CPU":"MHr", "Sim Events":"M", "Sim":"PB", "Sim-CPU":"MHr", "All":"PB", "Years":"", "Total-CPU":"MHr", "Cumulative Tape":"PB", "Cumulative Disk":"PB",
     "Tape":"PB", "Disk":"PB","Cores":"2020 Vintage Core-yr","HS06":"kHS06-yr","WALL":"MWallHr"
   },
   "CombinedDetectors":["ProtoDUNEs","FDs","ND"],
@@ -169,8 +170,8 @@
   "CPU Accounting":"end of fiscal year",
   "Tape Accounting":"end of fiscal year",
   "Disk Accounting":"October 1",
-  "TypeColors": {"Raw":"blue", "Test":"orange", "Reco":"red", "Sim":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange"},
-  "TypeLines": {"Raw":"solid", "Test":"dashed", "Reco":"solid", "Sim":"dashed", "Total":"solid"},
+  "TypeColors": {"Raw":"blue","Raw+Test":"green", "Test":"orange", "Reco":"red", "Sim":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange"},
+  "TypeLines": {"Raw":"solid","Raw+Test":"solid", "Test":"dashed", "Reco":"solid", "Sim":"dashed", "Total":"solid"},
   "DetColors": {"SP":"green","SP2":"green", "DP":"magenta","PDVD":"magenta", "ProtoDUNEs":"blue", "HD":"red",
       "VD":"red","FDs":"red","ND":"grey", "Analysis":"orange", "Total":"black","MARS":"purple",
       "Production":"blue"
