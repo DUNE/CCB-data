@@ -170,8 +170,10 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     
     
     for type in Types:
-      ypoints = makeArray(Data[type][Value])
-      ax.plot(Years,ypoints,color=typecolors[type],linestyle=typelines[type],label="model "+type)
+      #print ("test",type, Value, Data[type])
+      if Data[type][Value] != None:
+          ypoints = makeArray(Data[type][Value])
+          ax.plot(Years,ypoints,color=typecolors[type],linestyle=typelines[type],label="model "+type)
     if points != None:
         for y in points:
             for t in points[y]:
