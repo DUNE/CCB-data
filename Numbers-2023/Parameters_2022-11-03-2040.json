@@ -1,5 +1,6 @@
 { "Version":5,
-  "Changes":[
+  "Changes":[  "# reprocessing is only X percent of original as you keep the hits?",
+             "# why does CPU ->0 even though Sim still running in 2027",
     "2022-10-23 update the code",
     "2022-05-19 revert pre 2023 to CCB sim numbers but keep updated daq estimates",
     "2022-05-18 add in MARS",
@@ -46,7 +47,7 @@
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0] #millions
   },
-  "SP2":
+  "SP2":  # UPDATE FOR 2023 delay
   {"Comment":"move main test beam to 2023, extend cosmics by one year",
     "Raw":140, # no compression, 4 APA 14 bit
     "CPU":0.15, #Hr/Event
@@ -61,7 +62,7 @@
             0,  0,  0], # commissioning stuff in TB
     "Sim Events":[  0,  0,  0,  0,  5,  15,     15,     15,     5,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
-            0,  0,  0] #millions
+            0,  0,  0] #millions  
   },
   "DP":
     {"Comment":"extend testing to 2024",
@@ -76,7 +77,7 @@
     "Sim Events":[1.25, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0]
   },
     "PDVD":
-      {"Comment":"extend testing to 2024",
+      {"Comment":"extend testing to 2024",  # 2025? 
         "Raw":110,
       "CPU":0.1667,
       "Sim-CPU":0.75,
@@ -100,11 +101,11 @@
               2.2, 2.2, 2.2, 2.2, 2.2, 4.4, 4.4, 4.4, 4.4, 4.4,
               4.4, 4.4, 4.4],
     "Test":[0, 0, 0, 0, 0, 0, 0, 0, 0, 5000,
-      5000, 6000, 6000, 6000,6000, 6000, 6000,6000, 6000, 1000,
+      5000, 6000, 6000, 6000, 6000, 6000, 6000,6000, 6000, 1000,
       1000, 1000, 1000 ],
     "Sim Events":[0, 0, 0, 0, 0, 1, 1, 5, 5, 5,
         5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
-        5, 5, 5]
+        5, 5, 5] #millions
 
   },
   "VD":

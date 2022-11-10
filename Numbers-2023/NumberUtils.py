@@ -74,7 +74,7 @@ def ToCSV1(name,second,years,values,Units): # loop over first index to make csv 
     s += "\n"
     f.write(s)
     #print ("CSV1", list(values.keys()))
-    
+    stotal = ""
     for l in list(values.keys()):
         if not second in values[l].keys(): # sorry, this type doesn't have this key
             print ("CSV1: no such key", l, second)
@@ -84,7 +84,11 @@ def ToCSV1(name,second,years,values,Units): # loop over first index to make csv 
         for y in years:
             s += "%d \t,"%values[l][second][y]
         s +="\n"
-        f.write(s)
+        if "Total" not in l: # put total at the end
+            f.write(s)
+        else:
+            stotal = s
+    f.write(stotal)
     f.close
 
 
