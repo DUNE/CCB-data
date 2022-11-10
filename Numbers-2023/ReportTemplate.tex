@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+\usepackage{csvsimple}
+\begin{document}
+
+\makeatletter
+\csvset{
+  autotabularright/.style={
+    file=#1,
+    after head=\csv@pretable\begin{tabular}{|*{\csv@columncount}{r|}}\csv@tablehead,
+    table head=\hline\csvlinetotablerow\\\hline,
+    late after line=\\,
+    table foot=\\\hline,
+    late after last line=\csv@tablefoot\end{tabular}\csv@posttable,
+    command=\csvlinetotablerow},
+}
+\makeatother
+\newcommand{\csvautotabularright}[2][]{\csvloop{autotabularright={#2},#1}}
+
+
+ \csvautotabularright{CoresbyDet.csv}
+%\begin{tabular}{r r r r r r r r r r r r r r r r r r r r r r r }
+%\csvreader[head to column names]{CoresbyDet.csv}{}
+%\end{tabular}
+\end{document}
