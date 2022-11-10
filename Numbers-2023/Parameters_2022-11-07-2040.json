@@ -26,7 +26,7 @@
   "Detectors":["SP","SP2","DP","PDVD","HD","VD","ND"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
   "Cap":30, # cap in PB
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
-  "MaxYear":2040, #2025 = 8, 2040 = 23
+  "MaxYear":2030, #2025 = 8, 2040 = 23
   "MinYear":2020,
   "Units":
   {"Events":"Million", "Raw":"PB", "Test":"PB","Raw+Test":"PB", "Reco":"PB", "Reco-CPU":"MHr", "Sim Events":"M", "Sim":"PB", "Sim-CPU":"MHr", "All":"PB", "Years":"", "Total-CPU":"MHr", "Cumulative Tape":"PB", "Cumulative Disk":"PB",

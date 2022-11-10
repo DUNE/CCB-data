@@ -8,15 +8,15 @@ from matplotlib.ticker import (MultipleLocator, FormatStrFormatter,
                                AutoMinorLocator)
 import numpy as np
 
-def makeArray(map):
-   
-    years = list(map.keys())
+def makeArray(years,map):
+
+    #years = list(map.keys())
     array = np.zeros(len(years))
     i = 0
     for year in years:
         array[i] = map[year]
         i +=1
-   
+
     return array
 
 
@@ -26,13 +26,13 @@ def makeArray(map):
 # make a dump of a record
 
 def dump(det,datatype,a,Units):
-  s = ""
-  s  += "%5s, %10s (%s)"%(det,datatype,Units[datatype])
-  for j in range(0,len(a)):
-    s += ", "
-    s += "%8.1f"%a[j]
-  s += "\n"
-  return s
+    s = ""
+    s  += "%5s, %10s (%s)"%(det,datatype,Units[datatype])
+    for j in range(0,len(a)):
+        s += ", "
+        s += "%8.1f"%a[j]
+    s += "\n"
+    return s
 
 def ToCSV1(name,first,second,values,Units): # loop over first index to make csv n
     f = open(name+".csv",'w')
@@ -58,8 +58,8 @@ def ToCSV1(name,first,second,values,Units): # loop over first index to make csv 
         s +="\n"
         f.write(s)
     f.close
-        
- 
+
+
 def ToCSV2(name,first,values,Units): # loop over second index to make csv
     f = open(name+".csv",'w')
     second = list(values[first].keys())[0]
@@ -79,34 +79,34 @@ def ToCSV2(name,first,values,Units): # loop over second index to make csv
         s +="\n"
         f.write(s)
     f.close
-   
+
 
 # sum backwards over lifetime of record
 def cumulateMap(years,a,lifetime=100):
-  lifetimebase = math.floor(lifetime)
-  lifetimeextra = lifetime - lifetimebase
+    lifetimebase = math.floor(lifetime)
+    lifetimeextra = lifetime - lifetimebase
   #print(lifetimeextra)
-  b = {}
-  for i in years:
-      b[i] = 0.0
+    b = {}
+    for i in years:
+        b[i] = 0.0
 
-  if lifetimeextra == 0:
-      for i in years:
-        begin = max(years[0],i-lifetimebase+1)
-        for j in range(begin,i+1):
-          b[i] += a[j]
+    if lifetimeextra == 0:
+        for i in years:
+            begin = max(years[0],i-lifetimebase+1)
+            for j in range(begin,i+1):
+                b[i] += a[j]
  # here for partial years.
-  else:
-      for i in years:
-        begin = max(years[0],i-lifetimebase+1)
-        for j in range(begin,i+1):
-          b[i] += a[j]
-        if begin > years[0]:
+    else:
+        for i in years:
+            begin = max(years[0],i-lifetimebase+1)
+            for j in range(begin,i+1):
+                b[i] += a[j]
+            if begin > years[0]:
             #print ("fix for partial",i,a[i],b[i],a[begin-1],b[i]+a[begin-1]*lifetimeextra)
-            b[i]+= a[begin-1]*lifetimeextra
+                b[i]+= a[begin-1]*lifetimeextra
   #print ("cumulateMap",a,b)
   #print (b)
-  return b
+    return b
 
 # Utility function: DrawDet(Value,Years,Data,Types,Units,detcolors,detlines)
 
@@ -121,27 +121,29 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
     ax = fig.add_axes([0.2,0.2,0.7,0.7])
     ax.set_xlim(Years[0],maxyears)
     if len(Years)<10:
-      ax.xaxis.set_major_locator(MultipleLocator(1))
+        ax.xaxis.set_major_locator(MultipleLocator(1))
     else:
-      ax.xaxis.set_major_locator(MultipleLocator(5))
+        ax.xaxis.set_major_locator(MultipleLocator(5))
     ax.spines['bottom'].set_position('zero')
     #print (Data)
     toplot = Data[Value]
     for type in Types:
-      if type not in detcolors:
-        print (type, "not in ",detcolors)
-      else:
-        ypoints = makeArray(toplot[type])
+        if type not in detcolors:
+            print (type, "not in ",detcolors)
+        else:
+            ypoints = makeArray(InYears,toplot[type])
         #print ("y points",Value,type,ypoints)
-        ax.plot(Years,ypoints,color=detcolors[type],linestyle=detlines[type],label="model "+type)
+            ax.plot(Years,ypoints,color=detcolors[type],\
+            linestyle=detlines[type],label="model "+type)
     if points != None:
         for y in points:
             for t in points[y]:
                 print ("t is ",t)
                 if t in detcolors:
-                  ax.plot(y,points[y][t],color=detcolors[t],marker="s",label="actual "+ t,markerfacecolor='none')
+                    ax.plot(y,points[y][t],color=detcolors[t],\
+                    marker="s",label="actual "+ t,markerfacecolor='none')
                 else:
-                  print (t ,"not in ", detcolors)
+                    print (t ,"not in ", detcolors)
     ax.legend(frameon=False)
     ax.set_title(Value)
     ax.set_xlabel("Year")
@@ -163,30 +165,33 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     maxyears = Years[-1]
     ax.set_xlim(Years[0],maxyears)
     if len(Years)<10:
-      ax.xaxis.set_major_locator(MultipleLocator(1))
+        ax.xaxis.set_major_locator(MultipleLocator(1))
     else:
-      ax.xaxis.set_major_locator(MultipleLocator(5))
+        ax.xaxis.set_major_locator(MultipleLocator(5))
     ax.spines['bottom'].set_position('zero')
-    
-    
+
+
     for type in Types:
       #print ("test",type, Value, Data[type])
-      if Data[type][Value] != None:
-          ypoints = makeArray(Data[type][Value])
-          ax.plot(Years,ypoints,color=typecolors[type],linestyle=typelines[type],label="model "+type)
+        if Data[type][Value] != None:
+            ypoints = makeArray(Years,Data[type][Value])
+            ax.plot(Years,ypoints,color=typecolors[type],\
+            linestyle=typelines[type],label="model "+type)
     if points != None:
         for y in points:
             for t in points[y]:
                 ypoints = makeArray(Data[t][Value])
-                ax.plot(y,ypoints,color=typecolors[t],marker="o",label="actual "+t,markerfacecolor='none')
+                ax.plot(y,ypoints,color=typecolors[t],\
+                marker="o",label="actual "+t,markerfacecolor='none')
 
     if contributions != None:
         for y in contributions:
             for t in contributions[y]:
                 if t in typecolors:
-                  ax.plot(y,contributions[y][t],color=typecolors[t],marker="s",label="actual  "+t)
+                    ax.plot(y,contributions[y][t],color=typecolors[t],\
+                    marker="s",label="actual  "+t)
                 else:
-                  print (" no such color",t, typecolors)
+                    print (" no such color",t, typecolors)
     ax.legend(frameon=False)
     ax.set_xlabel("Year")
     ax.set_ylabel(Value + ", " + Units[Value])
