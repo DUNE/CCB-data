@@ -19,6 +19,33 @@ def makeArray(years,map):
 
     return array
 
+def SumOver1(second,thing): # loop over first index to make a sum
+    new = {}
+    firstindex = list(thing.keys())[0]
+    print (firstindex,second,thing[firstindex].keys())
+    years = thing[firstindex][second].keys()
+
+    for y in years:
+        new[y]=0.0
+    for y in years:
+        for index in thing.keys():
+            if "Total" in index: continue
+            new[y] += thing[index][second][y]
+    return new
+
+def SumOver2(first,thing): # loop over second index to make a sum
+    new = {}
+    firstindex = list(thing[first].keys())[0]
+
+    years = thing[first][firstindex].keys()
+
+    for y in years:
+        new[y]=0.0
+    for y in years:
+        for index in thing.keys():
+            if "Total" in index: continue
+            new[y] += thing[index][second][y]
+    return new
 
 
 # Utility function: string = dump(datatype,det,object)
@@ -34,11 +61,11 @@ def dump(det,datatype,a,Units):
     s += "\n"
     return s
 
-def ToCSV1(name,first,second,values,Units): # loop over first index to make csv n
+def ToCSV1(name,second,years,values,Units): # loop over first index to make csv n
     f = open(name+".csv",'w')
     # needs first as a hint to get the right secondary index set
-    print (first, values[first].keys())
-    years = values[first][second].keys()
+    #print (first, values[first].keys())
+    #years = values[first][second].keys()
 
     comma = "\t,"
     s = second + comma
@@ -46,10 +73,11 @@ def ToCSV1(name,first,second,values,Units): # loop over first index to make csv 
         s += "%d \t,"%year
     s += "\n"
     f.write(s)
-    print ("CSV1", list(values.keys()))
+    #print ("CSV1", list(values.keys()))
+    
     for l in list(values.keys()):
         if not second in values[l].keys(): # sorry, this type doesn't have this key
-            print ("no such key", first, second)
+            print ("CSV1: no such key", l, second)
             continue
         s = l + "(%s)"%Units[second] + comma
         v = values[l][second]
@@ -60,7 +88,7 @@ def ToCSV1(name,first,second,values,Units): # loop over first index to make csv 
     f.close
 
 
-def ToCSV2(name,first,values,Units): # loop over second index to make csv
+def ToCSV2(name,first,years,values,Units): # loop over second index to make csv
     f = open(name+".csv",'w')
     second = list(values[first].keys())[0]
     years = values[first][second].keys()
@@ -138,7 +166,7 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
     if points != None:
         for y in points:
             for t in points[y]:
-                print ("t is ",t)
+                #print ("t is ",t)
                 if t in detcolors:
                     ax.plot(y,points[y][t],color=detcolors[t],\
                     marker="s",label="actual "+ t,markerfacecolor='none')
