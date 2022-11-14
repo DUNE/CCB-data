@@ -1,13 +1,17 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
 \usepackage{csvsimple}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \parindent=0pt
-\setlength{\textwidth=7in}
+\setlength{\textwidth=9.5in}
 \setlength{\oddsidemargin=-.25 in}
 \setlength{\topmargin=0 in}
-\setlength{\textheight=9.5 in}
+\setlength{\textheight=6 in}
+\title{DUNE Offline Computing Model Calculations}
+\author{H. Schellman for the Computing Consortium}
+\date{\today}
 \begin{document}
+
 
 \makeatletter
 \csvset{
@@ -23,3 +27,19 @@
 \makeatother
 \newcommand{\csvautotabularright}[2][]{\csvloop{autotabularright={#2},#1}}
 
+\maketitle
+\section{Introduction}
+
+This is an annual projection for DUNE CPU and storage needs intended for use at the Computing Contribitions Board meeting in November 2022. It projects needs for 2023 onwards. 
+
+The projection is done using codes at: \href{https://github.com/DUNE/CCB-data/tree/master/Numbers-2023}{https://github.com/DUNE/CCB-data/tree/master/Numbers-2023} from parameters stored in a json file. We use CPU and storage sizes derived from protoDUNE and simulation experience and apply them to projected numbers of events from the various DUNE detectors. 
+
+Changes since the last report include:
+
+\begin{itemize}
+\item a later start for ProtoDUNE 2 running at CERN
+\item use of slot time instead of CPU time as our codes often require more memory than is available for a single batch slot. 
+\item revisions to near term use based on the 2022 experience
+\end{itemize}
+
+\section{Model Assumptions}

@@ -71,6 +71,7 @@ def ToCSV1(name,second,years,values,Units,Formats): # loop over first index to m
     s = second + comma
     for year in years:
         s += "%d \t,"%year
+    s = s[0:-3]
     s += "\n"
     f.write(s)
     #print ("CSV1", list(values.keys()))
@@ -84,12 +85,13 @@ def ToCSV1(name,second,years,values,Units,Formats): # loop over first index to m
         for y in years:
             #print (Formats[second])
             s += (Formats[second]+" \t,")%(values[l][second][y])
+        s = s[0:-3]
         s +="\n"
         if "Total" not in l: # put total at the end
             f.write(s)
         else:
             stotal = s
-    f.write(stotal)
+    f.write(stotal[0:-2])
     f.close
 
 
@@ -244,7 +246,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     plt.show()
 
 def DrawTex(shortname,figure,caption,label):
-    s = "\\begin{figure}[h]\n\\centering"
+    s = "\\begin{figure}[ht]\n\\centering"
     s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
     s += "\\label{%s}\n"%label
     s += "\\caption{%s}\n"%caption
