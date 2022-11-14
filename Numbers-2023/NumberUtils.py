@@ -61,7 +61,7 @@ def dump(det,datatype,a,Units):
     s += "\n"
     return s
 
-def ToCSV1(name,second,years,values,Units): # loop over first index to make csv n
+def ToCSV1(name,second,years,values,Units,Formats): # loop over first index to make csv n
     f = open(name+".csv",'w')
     # needs first as a hint to get the right secondary index set
     #print (first, values[first].keys())
@@ -82,7 +82,8 @@ def ToCSV1(name,second,years,values,Units): # loop over first index to make csv 
         s = l + "(%s)"%Units[second] + comma
         v = values[l][second]
         for y in years:
-            s += "%d \t,"%values[l][second][y]
+            #print (Formats[second])
+            s += (Formats[second]+" \t,")%(values[l][second][y])
         s +="\n"
         if "Total" not in l: # put total at the end
             f.write(s)
@@ -92,10 +93,10 @@ def ToCSV1(name,second,years,values,Units): # loop over first index to make csv 
     f.close
 
 
-def ToCSV2(name,first,years,values,Units): # loop over second index to make csv
+def ToCSV2(name,first,years,values,Units,Formats): # loop over second index to make csv
     f = open(name+".csv",'w')
     second = list(values[first].keys())[0]
-    years = values[first][second].keys()
+    #years = values[first][second].keys()
     loop = list(values[first].keys())
     comma = "\t,"
     s = first + comma
@@ -103,13 +104,19 @@ def ToCSV2(name,first,years,values,Units): # loop over second index to make csv
         s += "%d \t,"%year
     s += "\n"
     f.write(s)
+    stotal = ""
     for l in loop:
         s = l + " (%s)"%Units[first] + comma
         v = values[first][l]
         for y in years:
-            s += "%d \t,"%values[first][l][y]
+            #print (Formats[first])
+            s += (Formats[first]+" \t,")%(values[first][l][y])
         s +="\n"
-        f.write(s)
+        if "Total" not in l: # put total at the end
+            f.write(s)
+        else:
+            stotal = s
+    f.write(stotal)
     f.close
 
 
@@ -160,6 +167,8 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
     #print (Data)
     toplot = Data[Value]
     for type in Types:
+        if type not in toplot.keys():
+            continue
         if type not in detcolors:
             print (type, "not in ",detcolors)
         else:
@@ -240,4 +249,12 @@ def DrawTex(shortname,figure,caption,label):
     s += "\\label{%s}\n"%label
     s += "\\caption{%s}\n"%caption
     s += "\\end{figure}\n"
+    return s
+
+def TableTex(shortname,caption,label):
+    s = "\\begin{table}[h]\n\\centering"
+    s += "\\csvautotabularright{%s}"%(shortname+".csv")
+    s += "\\label{%s}\n"%label
+    s += "\\caption{%s}\n"%caption
+    s += "\\end{table}\n"
     return s
