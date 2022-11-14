@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+\usepackage{csvsimple}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\parindent=0pt
+\setlength{\textwidth=7in}
+\setlength{\oddsidemargin=-.25 in}
+\setlength{\topmargin=0 in}
+\setlength{\textheight=9.5 in}
+\begin{document}
+
+\makeatletter
+\csvset{
+  autotabularright/.style={
+    file=#1,
+    after head=\csv@pretable\begin{tabular}{|*{\csv@columncount}{r|}}\csv@tablehead,
+    table head=\hline\csvlinetotablerow\\\hline,
+    late after line=\\,
+    table foot=\\\hline,
+    late after last line=\csv@tablefoot\end{tabular}\csv@posttable,
+    command=\csvlinetotablerow},
+}
+\makeatother
+\newcommand{\csvautotabularright}[2][]{\csvloop{autotabularright={#2},#1}}
+
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Events.png}\label{Events}
+\caption{Million of detector events per year projected}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Events.csv}\label{Events
+}
+\caption{Million of detector events per year projected}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Test.png}\label{Test}
+\caption{PB of Test data projected}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Test.csv}\label{Test
+}
+\caption{PB of Test data projected}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Sim-Events.png}\label{Sim-Events}
+\caption{Millions of simulated events per year projected}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Sim-Events.csv}\label{Sim-Events
+}
+\caption{Millions of simulated events per year projected}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Raw.png}\label{Raw}
+\caption{Raw data written per year in PB}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Raw.csv}\label{Raw
+}
+\caption{Raw data written per year in PB}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Reco-CPU.png}\label{Reco-CPU}
+\caption{CPU needs in core-years for data reconstruction.              Slot weighted wall time takes into account memory use.  Assumes rereconstruction of older data.}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Reco-CPU.csv}\label{Reco-CPU
+}
+\caption{CPU needs in core-years for data reconstruction.              Slot weighted wall time takes into account memory use.  Assumes rereconstruction of older data.}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Sim-CPU.png}\label{Sim-CPU}
+\caption{CPU needs in core-years for simulation and reconstruction.              Slot weighted wall time takes into account memory use.}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Sim-CPU.csv}\label{Sim-CPU
+}
+\caption{CPU needs in core-years for simulation and reconstruction.              Slot weighted wall time takes into account memory use.}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Reco.png}\label{Reco}
+\caption{PB of reconstructed files/year}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Reco.csv}\label{Reco
+}
+\caption{PB of reconstructed files/year}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Sim.png}\label{Sim}
+\caption{PB of simulated files/year}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Sim.csv}\label{Sim
+}
+\caption{PB of simulated files/year}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Analysis-CPU.png}\label{Analysis-CPU}
+\caption{Analysis CPU needs in core-years.}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Analysis-CPU.csv}\label{Analysis-CPU
+}
+\caption{Analysis CPU needs in core-years.}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Total-CPU.png}\label{Total-CPU}
+\caption{Total CPU needs in core-years. Slot weighted wall time takes into account memory use.}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Total-CPU.csv}\label{Total-CPU
+}
+\caption{Total CPU needs in core-years. Slot weighted wall time takes into account memory use.}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-Cores.png}\label{Cores}
+\caption{}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-Cores.csv}\label{Cores
+}
+\caption{}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-HS06.png}\label{HS06}
+\caption{}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-HS06.csv}\label{HS06
+}
+\caption{}
+\end{table}
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-07-2030-WALL.png}\label{WALL}
+\caption{}
+\end{figure}
+\begin{table}[h]
+\centering\csvautotabularright{Table-WALL.csv}\label{WALL
+}
+\caption{}
+\end{table}
+\end{document}
