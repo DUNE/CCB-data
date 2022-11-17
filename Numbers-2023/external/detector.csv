@@ -1,0 +1,10 @@
+﻿                expt,size,TB,size/event,MB
+             iceberg,3.339,TB,3.461,MB
+          hd-coldbox,79.891,TB,40.247,MB
+        protodune-dp,413.914,TB,135.997,MB
+        protodune-sp,8798.856,TB,29.891,MB
+      vd-coldbox-top,319.305,TB,34.291,MB
+   vd-coldbox-bottom,26.843,TB,23.858,MB
+  dc4-vd-coldbox-top,102.972,TB,-1,MB
+dc4-vd-coldbox-bottom,211.359,TB,69.149,MB
+Total,9956.601,TB,31.721,MB

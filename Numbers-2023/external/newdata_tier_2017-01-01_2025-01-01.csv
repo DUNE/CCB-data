@@ -1,0 +1,18 @@
+﻿    det/mc,                expt,size,TB,size/event,MB
+        mc,                 ALL,10378.48,TB,13.903,MB
+        mc,        protodune-sp,6693.574,TB,90.061,MB
+        mc,           fardet-vd,1837.767,TB,31.109,MB
+        mc,             physics,1540.003,TB,35.161,MB
+        mc,           fardet-sp,171.612,TB,2.4,MB
+        mc,             neardet,76.176,TB,0.178,MB
+        mc,           fardet-hd,45.097,TB,1.511,MB
+        mc,              fardet,14.252,TB,0.358,MB
+  detector,                 ALL,9956.601,TB,31.721,MB
+  detector,        protodune-sp,8798.856,TB,29.891,MB
+  detector,        protodune-dp,413.914,TB,135.997,MB
+  detector,      vd-coldbox-top,319.305,TB,34.291,MB
+  detector,dc4-vd-coldbox-bottom,211.359,TB,69.149,MB
+  detector,  dc4-vd-coldbox-top,102.972,TB,-1,MB
+  detector,          hd-coldbox,79.891,TB,40.247,MB
+  detector,   vd-coldbox-bottom,26.843,TB,23.858,MB
+  detector,             iceberg,3.339,TB,3.461,MB
