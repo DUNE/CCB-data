@@ -2,7 +2,7 @@
 {\tt Detectors:} Detectors included in the calculation = {\tt ['SP', 'SP2', 'DP', 'PDVD', 'HD', 'VD', 'ND']} \\
 {\tt Cap:} Cap on Raw data/year in PB = {\tt 30} \\
 {\tt Base-Memory:} MB of memory per slot assumed as the average = {\tt 3000} \\
-{\tt MaxYear:} Plot until year = {\tt 2028} \\
+{\tt MaxYear:} Plot until year = {\tt 2026} \\
 {\tt MinYear:} Plot starting with year = {\tt 2020} \\
 {\tt Reprocess:} Number of years of data reprocessed when doing a new pass = {\tt {'SP': 3, 'DP': 3, 'SP2': 4, 'PDVD': 4, 'ProtoDUNEs': 4, 'VD': 100, 'HD': 100, 'FDs': 100, 'ND': 100, 'MARS': 1}} \\
 {\tt PatternFraction:} Fraction of time taken in pattern recognition = {\tt {'SP': 0.7, 'SP2': 0.7, 'DP': 0.7, 'PDVD': 0.7, 'ProtoDUNEs': 0.7, 'HD': 0.1, 'VD': 0.1, 'FDs': 0.1, 'ND': 0.9, 'MARS': 0}} \\
@@ -19,79 +19,79 @@
 {\tt filename:} Input configuration file = {\tt Parameters\_2022-11-17-2040.json} \\
 \section{Disk and Tape needs by source and site}
 \begin{table}[h]
-\centering\csvautotabularright{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Disk_by_location.csv}\label{tab:Cumulative-Disk
+\centering\csvautotabularright{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Disk_by_location.csv}\label{tab:Cumulative-Disk
 }
 \caption{Disk requests by location. The top 4 lines show the source, the bottom 4 show the locations requested and the total request.}
 \end{table}
 \begin{table}[h]
-\centering\csvautotabularright{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Tape_by_location.csv}\label{tab:Cumulative-Tape
+\centering\csvautotabularright{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Tape_by_location.csv}\label{tab:Cumulative-Tape
 }
 \caption{Tape requests by location. The top 4 lines show the source, the bottom 4 show the locations requested and the total request.}
 \end{table}
 \clearpage
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Events.png}\label{fig:Events}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Events.png}\label{fig:Events}
 \caption{Million of detector events per year projected}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Test.png}\label{fig:Test}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Test.png}\label{fig:Test}
 \caption{PB of Test data projected}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Sim-Events.png}\label{fig:Sim-Events}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Sim-Events.png}\label{fig:Sim-Events}
 \caption{Millions of simulated events per year projected}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Raw.png}\label{fig:Raw}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Raw.png}\label{fig:Raw}
 \caption{Raw data written per year in PB}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Reco-CPU.png}\label{fig:Reco-CPU}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Reco-CPU.png}\label{fig:Reco-CPU}
 \caption{CPU needs in core-years for data reconstruction.              Slot weighted wall time takes into account memory use.  Assumes rereconstruction of older data.}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Sim-CPU.png}\label{fig:Sim-CPU}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Sim-CPU.png}\label{fig:Sim-CPU}
 \caption{CPU needs in core-years for simulation and reconstruction.              Slot weighted wall time takes into account memory use.}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Reco.png}\label{fig:Reco}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Reco.png}\label{fig:Reco}
 \caption{PB of reconstructed files/year}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Sim.png}\label{fig:Sim}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Sim.png}\label{fig:Sim}
 \caption{PB of simulated files/year}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Analysis-CPU.png}\label{fig:Analysis-CPU}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Analysis-CPU.png}\label{fig:Analysis-CPU}
 \caption{Analysis CPU needs in core-years.}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Total-CPU.png}\label{fig:Total-CPU}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Total-CPU.png}\label{fig:Total-CPU}
 \caption{Total CPU needs in core-years. Slot weighted wall time takes into account memory use.}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Cores.png}\label{fig:Cores}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Cores.png}\label{fig:Cores}
 \caption{}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-HS06.png}\label{fig:HS06}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-HS06.png}\label{fig:HS06}
 \caption{}
 \end{figure}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Cumulative-Tape.png}\label{fig:Cumulative-Tape}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Cumulative-Tape.png}\label{fig:Cumulative-Tape}
 \caption{Cumulative Tape needs in PB. Includes data lifetimes}
 \end{figure}
 \begin{table}[h]
-\centering\csvautotabularright{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Cumulative-Tape.csv}\label{tab:Cumulative-Tape
+\centering\csvautotabularright{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Cumulative-Tape.csv}\label{tab:Cumulative-Tape
 }
 \caption{Cumulative Tape needs in PB. Includes data lifetimes}
 \end{table}
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Cumulative-Disk.png}\label{fig:Cumulative-Disk}
+\centering\includegraphics[height=0.4\textwidth]{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Cumulative-Disk.png}\label{fig:Cumulative-Disk}
 \caption{Cumulative Tape needs in PB. Includes data lifetimes}
 \end{figure}
 \begin{table}[h]
-\centering\csvautotabularright{Parameters_2022-11-17-2028/Parameters_2022-11-17-2028-Cumulative-Disk.csv}\label{tab:Cumulative-Disk
+\centering\csvautotabularright{Parameters_2022-11-17-2026/Parameters_2022-11-17-2026-Cumulative-Disk.csv}\label{tab:Cumulative-Disk
 }
 \caption{Cumulative Tape needs in PB. Includes data lifetimes}
 \end{table}

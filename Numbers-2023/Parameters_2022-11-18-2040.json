@@ -205,8 +205,8 @@
     "SplitsEarly":{ # these define the splits of storage - only for CCB use
         "Tape":{
             "Raw-Store":{"FNAL":0.5,"CERN":0.5,"Collab":0.0},
-            "Sim-Store":{"FNAL":0.90,"CERN":0.0,"Collab":0.10},
-            "Reco-Data-Store":{"FNAL":0.90,"CERN":0.0,"Collab":0.10},
+            "Sim-Store":{"FNAL":1.0,"CERN":0.0,"Collab":0.0},
+            "Reco-Data-Store":{"FNAL":1.0,"CERN":0.0,"Collab":0.0},
             "Test":{"FNAL":0.5,"CERN":0.5,"Collab":0.0}
         },
         "Disk":{

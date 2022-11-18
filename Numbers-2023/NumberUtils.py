@@ -4,8 +4,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import math
-from matplotlib.ticker import (MultipleLocator, FormatStrFormatter,
-                               AutoMinorLocator)
+from matplotlib.ticker import (MultipleLocator, FormatStrFormatter, AutoMinorLocator)
 import numpy as np
 
 def makeArray(years,map):
@@ -224,7 +223,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
         for y in points:
             for t in points[y]:
                 ypoints = makeArray(Data[t][Value])
-                ax.plot(y,ypoints,color=typecolors[t],\
+                ax.plot(int(y),ypoints,color=typecolors[t],\
                 marker="o",label="actual "+t,markerfacecolor='none')
 
     if contributions != None:
@@ -248,7 +247,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
 def DrawTex(shortname,figure,caption,label):
     s = "\\begin{figure}[h]\n\\centering"
     s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
-    s += "\\label{%s}\n"%label
+    s += "\\label{fig:%s}\n"%label
     s += "\\caption{%s}\n"%caption
     s += "\\end{figure}\n"
     return s
@@ -256,7 +255,7 @@ def DrawTex(shortname,figure,caption,label):
 def TableTex(shortname,caption,label):
     s = "\\begin{table}[h]\n\\centering"
     s += "\\csvautotabularright{%s}"%(shortname+".csv")
-    s += "\\label{%s}\n"%label
+    s += "\\label{tab:%s}\n"%label
     s += "\\caption{%s}\n"%caption
     s += "\\end{table}\n"
     return s

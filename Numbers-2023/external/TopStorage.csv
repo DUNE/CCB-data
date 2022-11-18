@@ -1,0 +1,26 @@
+﻿year,    det/mc,                expt,              stream,                tier,files,events,size,TB,size/event,MB
+ALL,  detector,        protodune-sp,                 ALL,                 raw,"836,657","114,286,311","4,121",TB,36.055,MB
+ALL,  detector,        protodune-sp,                 ALL,  full-reconstructed,"767,907","69,708,603","3,624",TB,51.989,MB
+ALL,        mc,        protodune-sp,                 ALL,  detector-simulated,"1,469,406","14,694,042","3,509",TB,238.798,MB
+ALL,        mc,        protodune-sp,                 ALL,  full-reconstructed,"1,490,771","17,450,292","3,093",TB,177.222,MB
+ALL,        mc,           fardet-vd,                 ALL,  full-reconstructed,"976,364","29,269,681","1,826",TB,62.395,MB
+ALL,        mc,             physics,                 ALL,  full-reconstructed,"633,196","24,927,803",735,TB,29.483,MB
+ALL,        mc,             physics,                 ALL,  detector-simulated,"307,609","13,482,308",537,TB,39.848,MB
+ALL,  detector,        protodune-sp,                 ALL,   reco-recalibrated,"144,636","14,245,862",467,TB,32.773,MB
+ALL,  detector,        protodune-dp,                 ALL,                 raw,"117,750","2,533,945",403,TB,159.102,MB
+ALL,  detector,      vd-coldbox-top,                 ALL,                 raw,"86,374","6,652,337",286,TB,42.939,MB
+ALL,        mc,             physics,                 ALL,           simulated,"209,971","5,058,620",268,TB,52.942,MB
+ALL,  detector,        protodune-sp,                 ALL,         decoded-raw,"90,052","13,792,301",252,TB,18.271,MB
+ALL,  detector,        protodune-sp,                 ALL,   hit-reconstructed,"89,902","13,780,851",214,TB,15.502,MB
+ALL,  detector,dc4-vd-coldbox-bottom,                 ALL,                 raw,"49,327","3,056,585",211,TB,69.149,MB
+ALL,        mc,           fardet-sp,                 ALL,  full-reconstructed,"279,219","45,815,385",169,TB,3.694,MB
+ALL,  detector,        protodune-sp,                 ALL,        pandora_info,"202,181","17,546,936",115,TB,6.531,MB
+ALL,  detector,  dc4-vd-coldbox-top,                 ALL,                 raw,"32,516",0,103,TB,-1,MB
+ALL,  detector,          hd-coldbox,                 ALL,                 raw,"21,153","1,984,997",80,TB,40.247,MB
+ALL,        mc,             neardet,                 ALL,           simulated,"66,591","407,418,635",76,TB,0.187,MB
+ALL,        mc,        protodune-sp,                 ALL,        pandora_info,"741,263","9,516,920",57,TB,6.028,MB
+ALL,        mc,           fardet-hd,                 ALL,  full-reconstructed,"35,609","7,064,425",36,TB,5.118,MB
+ALL,  detector,      vd-coldbox-top,                 ALL,  full-reconstructed,"24,223","2,659,169",34,TB,12.658,MB
+ALL,  detector,   vd-coldbox-bottom,                 ALL,                 raw,"6,691","1,125,122",27,TB,23.858,MB
+ALL,        mc,        protodune-sp,                 ALL,   reco-recalibrated,"5,595","55,950",20,TB,351.699,MB
+ALL,        mc,        protodune-sp,                 ALL,          root-tuple,"640,729","23,711,023",14,TB,0.609,MB
