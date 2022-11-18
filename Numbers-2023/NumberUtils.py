@@ -246,7 +246,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     plt.show()
 
 def DrawTex(shortname,figure,caption,label):
-    s = "\\begin{figure}[ht]\n\\centering"
+    s = "\\begin{figure}[h]\n\\centering"
     s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
     s += "\\label{%s}\n"%label
     s += "\\caption{%s}\n"%caption
