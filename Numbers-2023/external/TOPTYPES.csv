@@ -1,0 +1,37 @@
+﻿year,    det/mc,                expt,              stream,                tier,size (TB),size/event (MB)
+ALL,        mc,        protodune-sp,                out1,  detector-simulated,3509,238.8
+ALL,        mc,        protodune-sp,                out1,  full-reconstructed,3093,177.2
+ALL,  detector,        protodune-sp,             cosmics,                 raw,2310,51.4
+ALL,  detector,        protodune-sp,             physics,  full-reconstructed,2003,66.4
+ALL,        mc,           fardet-vd,                out1,  full-reconstructed,1826,62.4
+ALL,  detector,        protodune-sp,             cosmics,  full-reconstructed,1449,45.9
+ALL,  detector,        protodune-sp,             physics,                 raw,864,83.6
+ALL,  detector,        protodune-sp,                test,                 raw,780,35.6
+ALL,        mc,             physics,                out1,  full-reconstructed,735,29.5
+ALL,        mc,             physics,                out1,  detector-simulated,537,39.8
+ALL,  detector,        protodune-sp,             physics,   reco-recalibrated,360,37.9
+ALL,        mc,             physics,                out1,           simulated,268,52.9
+ALL,  detector,        protodune-dp,                test,                 raw,259,124.2
+ALL,  detector,      vd-coldbox-top,               study,                 raw,225,49.4
+ALL,  detector,dc4-vd-coldbox-bottom,                test,                 raw,211,69.1
+ALL,        mc,           fardet-sp,                out1,  full-reconstructed,169,3.7
+ALL,  detector,        protodune-sp,                test,  full-reconstructed,151,37.4
+ALL,  detector,        protodune-dp,             cosmics,                 raw,140,326.4
+ALL,  detector,        protodune-sp,         calibration,                 raw,137,4.0
+ALL,  detector,        protodune-sp,             physics,   hit-reconstructed,127,50.0
+ALL,  detector,        protodune-sp,             physics,         decoded-raw,125,49.2
+ALL,  detector,        protodune-sp,             cosmics,   reco-recalibrated,107,22.5
+ALL,  detector,  dc4-vd-coldbox-top,                test,                 raw,103,-1.0
+ALL,  detector,          hd-coldbox,                test,                 raw,80,40.2
+ALL,        mc,             neardet,             physics,           simulated,76,0.2
+ALL,  detector,        protodune-sp,             physics,        pandora\_info,75,6.9
+ALL,  detector,      vd-coldbox-top,                test,                 raw,60,28.8
+ALL,        mc,        protodune-sp,                out1,        pandora\_info,57,6.0
+ALL,  detector,        protodune-sp,             cosmics,   hit-reconstructed,42,25.9
+ALL,  detector,        protodune-sp,               noise,         decoded-raw,40,27.0
+ALL,  detector,        protodune-sp,             cosmics,         decoded-raw,40,24.6
+ALL,  detector,        protodune-sp,             cosmics,        pandora\_info,39,6.0
+ALL,        mc,           fardet-hd,                out1,  full-reconstructed,36,5.1
+ALL,  detector,        protodune-sp,               noise,                 raw,30,30.6
+ALL,  detector,   vd-coldbox-bottom,                test,                 raw,27,23.9
+ALL,  detector,      vd-coldbox-top,                test,  full-reconstructed,26,12.8
