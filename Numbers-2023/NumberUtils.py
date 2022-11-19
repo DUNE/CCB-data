@@ -252,6 +252,16 @@ def DrawTex(shortname,figure,caption,label):
     s += "\\end{figure}\n"
     return s
 
+def BothTex(shortname,figure,caption,label):
+    print ("Call bothtex",shortname,figure)
+    s = "\\begin{figure}[h]\n\\centering"
+    s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
+    s += "\\label{fig:%s}\n"%label
+    s += "\\csvautotabularright{%s}"%(shortname+"-"+figure.replace(".png",".csv"))
+    s += "\\caption{%s}\n"%caption
+    s += "\\end{figure}\n"
+    return s
+
 def TableTex(shortname,caption,label):
     s = "\\begin{table}[h]\n\\centering"
     s += "\\csvautotabularright{%s}"%(shortname+".csv")

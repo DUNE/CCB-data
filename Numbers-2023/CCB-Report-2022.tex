@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage{csvsimple}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\parindent=0pt
+\setlength{\textwidth=7in}
+\setlength{\oddsidemargin=-.25 in}
+\setlength{\topmargin=0 in}
+\setlength{\textheight=9.5 in}
+\title{DUNE Offline Computing Model Calculations}
+\author{H. Schellman for the Computing Consortium}
+\date{\today}
+\begin{document}
+
+
+\makeatletter
+\csvset{
+  autotabularright/.style={
+    file=#1,
+    after head=\csv@pretable\begin{tabular}{|*{\csv@columncount}{r|}}\csv@tablehead,
+    table head=\hline\csvlinetotablerow\\\hline,
+    late after line=\\,
+    table foot=\\\hline,
+    late after last line=\csv@tablefoot\end{tabular}\csv@posttable,
+    command=\csvlinetotablerow},
+}
+\makeatother
+\newcommand{\csvautotabularright}[2][]{\csvloop{autotabularright={#2},#1}}
+
+\maketitle
+\section{Introduction}
+
+This is an annual projection for DUNE CPU and storage needs intended for use at the Computing Contributions Board meeting in December 2022. It projects needs for 2023 onwards. 
+
+The projection is done using codes at: \href{https://github.com/DUNE/CCB-data/tree/master/Numbers-2023}{https://github.com/DUNE/CCB-data/tree/master/Numbers-2023} from parameters stored in a json file. We use CPU and storage sizes derived from protoDUNE and simulation experience and apply them to projected numbers of events from the various DUNE detectors. 
+
+Changes since the last report include:
+
+\begin{itemize}
+\item a later start for ProtoDUNE 2 running at CERN
+\item use of slot time instead of CPU time as our codes often require more memory than is available for a single batch slot. 
+\item revisions to near term use based on the 2022 experience including a move to much smaller tape requests from the collaboration during protoDUNE activities. 
+\end{itemize}
+
+
+\section{Storage Characteristics}
+
+Generally, raw data are stored on tape at both CERN and FNAL, simulation and reconstructed data  have one tape copy at Fermilab and recent reconstructed and simulated samples have one (or two) disk copies with one at Fermilab and one in Europe.  Section \ref{storage} gives details on the size and types of data from the SAM data catalog.
+
+
+
+\begin{table}[ht]
+\centering\csvautotabularright{external/DUNERSEUSAGE-2022-11-14.csv}
+ \label{tab:RSEUsage}
+\caption{Summary  of DUNE disk areas known to rucio \cite{scotgrid}.  The CASTOR and FNAL Dcache areas are partially tape-backed and expandable. }
+\end{table}
+
+
+\input{Parameters_2022-11-18-2026.tex}
+
+\section{CPU Needs}
+
+CPU  slot time estimates are created by estimating the number of events taken and then scaling by the measured CPU time on a gpvm $\times$ the estimated efficiency (default 70\%) and by a memory utilization factor that takes into account the differing memory needs for different applications and the number of slots needed to satisfy those needs.  Here we assume that reconstruction takes 4000MB, simulation takes 6000MB and actual measured  slot utilization for 2021 and 2022 is best fit by assuming that an average slot has 3000 MB of memory.    We assume that analysis takes the same interactive CPU time but only 3000 MB of memory.  
+
+\begin{table}[ht]
+\centering\csvautotabularright{external/CPUresources-2021-2022-2023.csv}
+ \label{tab:CPUUsage}
+\caption{Summary  of DUNE CPU pledges and contributions for 2021 and 2022.  Individual nations are listed and then merged (with US OSG) into a Collab section.  }
+\end{table}
+
+
+%\section{Model Assumptions}
+
+\input{bibmaker.tex}
+\clearpage
+\section{Appendix: Information about storage from SAM}\label{storage}
+
+This section provides information on the sizes of data samples known to the SAM data catalog as of Nov. 1, 2022.  If a file has multiple copies, that is not shown here.  Tables \ref{tab:MCinSAM} and \ref{tab:DataInSam} show the total across all streams and data tiers while table \ref{Le largestSizes} shows the distribution of the largest samples.  
+
+
+\begin{table}[ht]
+ \centering\csvautotabularright{external/mc.csv}
+ \label{tab:MCinSAM}
+\caption{Summary  of total simulation in SAM by detector type as of Nov 1, 2022.}
+\end{table}
+
+\begin{table}[ht]
+ \centering\csvautotabularright{external/detector.csv}
+ \label{tab:DataInSam}
+\caption{Summary  of total detector data in SAM by detector type as of Nov 1, 2022.}
+\end{table}
+\clearpage
+
+\begin{table}[ht]
+ \centering\csvautotabularright{external/TOPTYPES.csv}
+ \label{tab:LargestSizes}
+\caption{Classification of the largest data samples in SAM.  They are classified as detector(data) or mc, by the detector producing the data, by the stream (readout time) and by the data tier.  Some types, test and noise for example are archival only.  }
+\end{table}
+
+\section{Appendix - Model }
+\input{Parameters_2022-11-18-2026/tables.tex}
+\end{document}
+
