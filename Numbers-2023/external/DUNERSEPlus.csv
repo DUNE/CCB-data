@@ -1,0 +1,19 @@
+RSE,Rucip Allocation (PB),Rucio Used (PB),percent full,Non Rucio Alloc (PB),source
+CA,,,,0.100,???
+CERN\_CASTOR, ,5.000, ,,Steve
+CERN\_EOS,4.000,1.200,30.0%,,Steve
+CZ\_PRAGUE,1.130,0.514,45.5%,,Rucio
+ES\_DUNE\_ES\_PIC,0.719,0.005,0.7%,,Rucio
+FR\_IN2P3,0.010,0.010,100.0%,,Steve
+IN_TIFR,,, ,0.100,Steve
+NL_\SURFSARA,0.500,,0.0%,,Steve
+NL\_NIKHEF,1.010,0.417,41.3%,,Rucio
+RU_JINR,,, ,0.500,Steve
+UK  Total,3.828,3.121,81.5%,,Rucio
+UK\_LANCASTER,0.549,0.503,91.6%,,Rucio
+UK\_MANCHESTER,1.080,1.000,92.6%,,Rucio
+UK\_QMUL,1.100,0.679,61.7%,,Rucio
+UK\_RAL-PP,0.099,0.099,100.0%,,Rucio
+UK\_RAL\_ECHO,1.000,0.840,84.0%,,Rucio
+US\_BNL,0.500,0.501,100.2%,,Steve
+US\_FNAL , ,6.000, ,1.800,Steve

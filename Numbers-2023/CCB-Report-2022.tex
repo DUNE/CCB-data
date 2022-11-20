@@ -8,7 +8,7 @@
 \setlength{\textwidth=7in}
 \setlength{\oddsidemargin=-.25 in}
 \setlength{\topmargin=0 in}
-\setlength{\textheight=9 in}
+\setlength{\textheight=8.5 in}
 \usepackage{draftwatermark}
 \SetWatermarkText{Draft}
 \SetWatermarkScale{5}
@@ -96,7 +96,7 @@ Figure and Table  \ref{fig:Cumulative-Tape}  summarize the cumulative disk proje
 
 CPU  slot time estimates are created by estimating the number of simulated and raw events taken and then scaling by the measured CPU time on a gpvm corrected for the estimated efficiency (default 70\%) and for a memory utilization factor that takes into account the differing memory needs for different applications and the number of slots needed to satisfy those needs.  Here we assume that reconstruction takes 4000MB, simulation takes 6000MB and actual measured  slot utilization for 2021 and 2022 is best fit by assuming that an average slot has 3000 MB of memory.    We assume that analysis takes the same interactive CPU time but uses only 3000 MB of memory.  
 
-Figure \ref{fig:CoresMain} shows the projected memory weighted wall-time projections through 2026.  This is different than in previous years where memory weighting was not applied. 
+Figure/Table \ref{fig:CoresMain} shows the projected memory weighted wall-time projections through 2026.  This is different than in previous years where memory weighting was not applied. 
 
 Table \ref{tab:CPUUsage} summarizes the pledges\cite{CCB2022} and measured usage using FNAL's statistics\cite{fifemonDUNE}.  The  usage numbers for 2022 are Nov 2021 to Oct 2022. 
 
@@ -126,9 +126,11 @@ Table \ref{tab:EIGSummary} summarizes the statistics for Nov 2021 to Oct 2022 de
 
 \input{bibmaker.tex}
 \clearpage
-\appendix{Information about storage from SAM}\label{storage}
+\appendix
 
-This section provides information on the sizes of data samples known to the SAM data catalog as of Nov. 1, 2022.  If a file has multiple copies, that is not shown here.  Tables \ref{tab:MCinSAM} and \ref{tab:DataInSam} show the total across all streams and data tiers while table \ref{LargestSizes} shows the distribution of the largest samples.  
+\section{Information about storage from SAM}\label{storage}
+
+This section provides information on the sizes of data samples known to the SAM data catalog as of Nov. 1, 2022.  If a file has multiple copies, that is not shown here.  Tables \ref{tab:MCinSAM} and \ref{tab:DataInSam} show the total across all streams and data tiers while table \ref{tab:LargestSizes} shows the distribution of the largest samples.  
 
 
 \begin{table}[ht]
@@ -142,15 +144,16 @@ This section provides information on the sizes of data samples known to the SAM 
  \caption{Summary  of total detector data in SAM by detector type as of Nov 1, 2022.}
  \label{tab:DataInSam}
 \end{table}
-\clearpage
+
+
 
 \begin{table}[ht]
  \centering\csvautotabularright{external/TOPTYPES.csv}
 \caption{Classification of the largest data samples in SAM.  They are classified as detector(data) or mc, by the detector producing the data, by the stream (readout time) and by the data tier.  Some types, test and noise for example are archival only.  }
  \label{tab:LargestSizes}
 \end{table}
-
-\appendix{Model Details}
+\clearpage
+\section{Model Details}
 
 This appendix shows the parameters used in the model and plots of all the input and derived quantities as a function of time. 
 
