@@ -247,8 +247,8 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
 def DrawTex(shortname,figure,caption,label):
     s = "\\begin{figure}[h]\n\\centering"
     s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
-    s += "\\label{fig:%s}\n"%label
     s += "\\caption{%s}\n"%caption
+    s += "\\label{fig:%s}\n"%label
     s += "\\end{figure}\n"
     return s
 
@@ -256,9 +256,9 @@ def BothTex(shortname,figure,caption,label):
     print ("Call bothtex",shortname,figure)
     s = "\\begin{figure}[h]\n\\centering"
     s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
-    s += "\\label{fig:%s}\n"%label
     s += "\\csvautotabularright{%s}"%(shortname+"-"+figure.replace(".png",".csv"))
     s += "\\caption{%s}\n"%caption
+    s += "\\label{fig:%s}\n"%label
     s += "\\end{figure}\n"
     return s
 
