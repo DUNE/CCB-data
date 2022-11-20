@@ -6,7 +6,7 @@
 \setlength{\textwidth=7in}
 \setlength{\oddsidemargin=-.25 in}
 \setlength{\topmargin=0 in}
-\setlength{\textheight=9.5 in}
+\setlength{\textheight=9 in}
 \title{DUNE Offline Computing Model Calculations}
 \author{H. Schellman for the Computing Consortium}
 \date{\today}
@@ -47,12 +47,21 @@ Changes since the last report include:
 
 Generally, raw data are stored on tape at both CERN and FNAL, simulation and reconstructed data  have one tape copy at Fermilab and recent reconstructed and simulated samples have one (or two) disk copies with one at Fermilab and one in Europe.  Section \ref{storage} gives details on the size and types of data from the SAM data catalog.
 
+Table \ref{tab:RSEUsage} summarizes the disk utilization known to rucio.  Some sites, notably IN2P3 and TIFR, are not yet fully integrated so do not show up in the rucio reports, while others (PIC) are still being filled.
 
+Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared to the actual amounts allocated and used from Table \ref{tab:RSEUsage} .   The 2023 request has been re-evaluated in light of underuse in 2021 and 2022 and should better match the likely capacity of the collaborating sites.  It is however, still higher than 2022 due to ProtoDUNE running and increased simulation for the far and near detectors. 
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/DUNERSEUSAGE-2022-11-14.csv}
  \label{tab:RSEUsage}
-\caption{Summary  of DUNE disk areas known to rucio \cite{scotgrid}.  The CASTOR and FNAL Dcache areas are partially tape-backed and expandable. }
+\caption{Summary  of DUNE disk areas known to rucio \cite{scotgrid}.  The CASTOR and FNAL Dcache areas are partially tape-backed and expandable. FNAL and CERN allocations are not provided by the reports but usage is.  }
+\end{table}
+
+
+\begin{table}[ht]
+\centering\csvautotabularright{external/DiskResources-2021-2022-2023.csv}
+ \label{tab:DiskPledges}
+\caption{Summary of disk pledges, allocations and usage for 2021-2022 with model request for 2023.  This is based on the 2022 CCB tables which are available in indico  \ref{CCB2022, CCB2023}.  These numbers are derived from the rucio reports in Table \ref{tab:RSEUsage} and may not be complete. }
 \end{table}
 
 
