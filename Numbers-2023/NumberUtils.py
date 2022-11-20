@@ -256,6 +256,7 @@ def BothTex(shortname,figure,caption,label):
     print ("Call bothtex",shortname,figure)
     s = "\\begin{figure}[h]\n\\centering"
     s += "\\includegraphics[height=0.4\\textwidth]{%s-%s}"%(shortname,figure)
+    s += "\n"
     s += "\\csvautotabularright{%s}"%(shortname+"-"+figure.replace(".png",".csv"))
     s += "\\caption{%s}\n"%caption
     s += "\\label{fig:%s}\n"%label
