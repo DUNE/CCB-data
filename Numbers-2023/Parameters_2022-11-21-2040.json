@@ -1,5 +1,6 @@
 { "Version":5,
     "Changes":[
+        "2022-11-21 make units Memory weighted",
         "2022-11-18 introduce memory scaling for CPU",
         "2022-11-07 double FD Sim",
         "2022-11-07 add in memory use so cores, rescale analysis as smaller",
@@ -30,8 +31,8 @@
     "MaxYear":2026,
     "MinYear":2020,
     "Units":
-    {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"Memory-Weighted-MHr", "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"Memory-Weighted-MHr","Analysis-CPU":"Memory-Weighted-MHr", "All":"PB", "Years":"", "Total-CPU":"Memory-Weighted-MHr", "Cumulative-Tape":"PB", "Cumulative-Disk":"PB",
-        "Tape":"PB", "Disk":"PB","Cores":"2020 Vintage Memory-Weighted-Core-yr","HS06":"Memory-Weighted-kHS06-yr","WALL":"Memory-Weighted-MWallHr"
+    {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"Mem-Wgt-MWallHr", "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"Mem-Wgt-MWallHr","Analysis-CPU":"Mem-Wgt-MWallHr", "All":"PB", "Years":"", "Total-CPU":"Mem-Wgt-MWallHr", "Cumulative-Tape":"PB", "Cumulative-Disk":"PB",
+        "Tape":"PB", "Disk":"PB","Cores":"2020 Vintage Mem-Wgt-Core-Wallyr","HS06":"Reco-Data-CPU-kHS06-Wallyr","WALL":"Mem-Wgt-MWallHr"
     },
     "Formats":
     {"Events":"%8.1f", "Raw-Store":"%8.1f", "Test":"%8.1f","Raw+Test":"%8.1f", "Reco-Data-Store":"%8.1f", "Reco-Data-CPU":"%8.1f", "Sim-Events":"%8.1f", "Sim-Store":"%8.1f", "Sim-CPU":"%8.1f", "Analysis-CPU":"%8.1f","All":"%8.1f", "Years":"%d", "Total-CPU":"%8.1f", "Cumulative-Tape":"%8.1f", "Cumulative-Disk":"%8.1f",
@@ -205,31 +206,31 @@
     "SplitsYear":2027,
     "SplitsEarly":{ # these define the splits of storage - only for CCB use
         "Tape":{
-            "Raw-Store":{"FNAL":0.5,"CERN":0.5,"Collab":0.0},
-            "Sim-Store":{"FNAL":1.0,"CERN":0.0,"Collab":0.0},
-            "Reco-Data-Store":{"FNAL":1.0,"CERN":0.0,"Collab":0.0},
-            "Test":{"FNAL":0.5,"CERN":0.5,"Collab":0.0}
+            "Raw-Store":{"FNAL":0.5,"CERN":0.5,"National":0.0},
+            "Sim-Store":{"FNAL":1.0,"CERN":0.0,"National":0.0},
+            "Reco-Data-Store":{"FNAL":1.0,"CERN":0.0,"National":0.0},
+            "Test":{"FNAL":0.5,"CERN":0.5,"National":0.0}
         },
         "Disk":{
-            "Raw-Store":{"FNAL":0.5,"CERN":0.5,"Collab":0.0},
-            "Sim-Store":{"FNAL":0.25,"CERN":0.0,"Collab":0.75},
-            "Reco-Data-Store":{"FNAL":0.25,"CERN":0.0,"Collab":0.75},
-            "Test":{"FNAL":0.5,"CERN":0.5,"Collab":0.00}
+            "Raw-Store":{"FNAL":0.5,"CERN":0.5,"National":0.0},
+            "Sim-Store":{"FNAL":0.25,"CERN":0.0,"National":0.75},
+            "Reco-Data-Store":{"FNAL":0.25,"CERN":0.0,"National":0.75},
+            "Test":{"FNAL":0.5,"CERN":0.5,"National":0.00}
         }
     },
     "SplitsLater":{# these define the splits of storage - only for CCB use
         "Tape":{
-            "Raw-Store":{"FNAL":0.5,"CERN":0.0,"Collab":0.50},
-            "Sim-Store":{"FNAL":0.50,"CERN":0.0,"Collab":0.50},
-            "Reco-Data-Store":{"FNAL":0.50,"CERN":0.0,"Collab":0.50},
-            "Test":{"FNAL":0.5,"CERN":0.0,"Collab":0.5}
+            "Raw-Store":{"FNAL":0.5,"CERN":0.0,"National":0.50},
+            "Sim-Store":{"FNAL":0.50,"CERN":0.0,"National":0.50},
+            "Reco-Data-Store":{"FNAL":0.50,"CERN":0.0,"National":0.50},
+            "Test":{"FNAL":0.5,"CERN":0.0,"National":0.5}
         },
         "Disk":{
             #"Disk":{"Raw-Store":0.0,"Sim-Store":0.75,"Reco-Data-Store":0.75,"Test":0.00} old version
-            "Raw-Store":{"FNAL":1.0,"CERN":0.0,"Collab":0.0},
-            "Sim-Store":{"FNAL":0.25,"CERN":0.0,"Collab":0.75},
-            "Reco-Data-Store":{"FNAL":0.25,"CERN":0.0,"Collab":0.75},
-            "Test":{"FNAL":0.5,"CERN":0.0,"Collab":0.5}
+            "Raw-Store":{"FNAL":1.0,"CERN":0.0,"National":0.0},
+            "Sim-Store":{"FNAL":0.25,"CERN":0.0,"National":0.75},
+            "Reco-Data-Store":{"FNAL":0.25,"CERN":0.0,"National":0.75},
+            "Test":{"FNAL":0.5,"CERN":0.0,"National":0.5}
         }
     },
     "Explain":{
@@ -248,8 +249,8 @@
         "Cores":"Description of cores, efficiency and speed relative to 2020 vintage",
         "kHEPSPEC06PerCPU":"kHEPSPEC06 per core assumed",
         "SplitsYear":"Year CERN no longer responsible for disk or tape",
-        "SplitsEarly":"Division between FNAL/CERN/Collab for storage until SplitsYear",
-        "SplitsLater":"Division between FNAL/CERN/Collab for storage after SplitsYear",
+        "SplitsEarly":"Division between FNAL/CERN/National for storage until SplitsYear",
+        "SplitsLater":"Division between FNAL/CERN/National for storage after SplitsYear",
     },
     "Actual":{
         "wallactual": {"2021":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
@@ -261,8 +262,8 @@
             "2022":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30}
         },
         "tapeactual":{
-            "2021":{"FNAL":19.804,"CERN":5.02,"Collab":0.0},
-            "2022":{"FNAL":19.804,"CERN":5.02,"Collab":0.0}
+            "2021":{"FNAL":19.804,"CERN":5.02,"National":0.0},
+            "2022":{"FNAL":19.804,"CERN":5.02,"National":0.0}
         }
     }
 }
