@@ -49,11 +49,13 @@ Details are provided in the appendices while the main body of this note summariz
 Changes since the last report include:
 
 \begin{itemize}
-\item A later start for ProtoDUNE 2 running at CERN.
+\item A later start for ProtoDUNE-2 running at CERN. This leads to a spike in needs for storage/CPU in late 2023. 
 \item Use of memory-weighted-core time instead of CPU time as our codes often require more memory than is available for a single core.   This requires the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
 \item Revisions to near-term requests based on the 2022 experience including a hold on tape requests from the collaboration during protoDUNE activities. 
 \item Simulation disk copies has been reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
 \end{itemize}
+
+Proposed pledges for 2023 are  shown in sections: Disk(\ref{sec:diskresult}), Tape(\ref{sec:taperesult}) and CPU(\ref{sec:cpuresult} )below. 
 \clearpage
 
 \section{Disk and Tape}
@@ -89,16 +91,16 @@ Test: &  0.5&   0.5&  0.0\\
   Test: &  0.50& 0.50&   0.00\\
   \hline
    \end{tabular}
-  \caption{Proposed division between FNAL/CERN/National for storage until 2027}
+  \caption{Proposed division between FNAL/CERN/National for storage until 2027.}
 
    \label{tab:division}
    \end{centering}
    \end{table}
 
 \subsection{Disk}
-Table \ref{tab:RSEUsage} summarizes the disk utilization known to rucio augmented with information gathered from individual sites at a meeting on 2022-11-21.  Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports, while others (PIC) are still being filled.  
+Table \ref{tab:RSEUsage} summarizes the disk utilization known to rucio, augmented with information gathered from individual sites at a meeting on 2022-11-21.  Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports, while others (PIC) are still being filled.  The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
 
-Figure/Table  \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
 Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared to the actual amounts allocated and used from Table \ref{tab:RSEUsage} .   The 2023 request has been re-evaluated in light of underuse in 2021 and 2022 and should better match the likely capacity of the collaborating sites.  It is however, still higher than 2022 due to ProtoDUNE running and increased simulation for the far and near detectors. 
 
@@ -109,7 +111,7 @@ Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared 
 %\end{table}
 \begin{table}[ht]
 \centering\csvautotabularright{external/DiskSummary-2022-11-21.csv}
-\caption{Disk allocations and usage across sites.    These numbers are derived from the rucio reports in Table \ref{tab:RSEUsage} and from cross-checks with individual sites on 2022-11-21. }
+\caption{Disk allocations and usage across sites.    These numbers are derived from rucio reports and from cross-checks with individual sites on 2022-11-21. }
 \label{tab:RSEUsage}
 \end{table}
 
@@ -129,18 +131,22 @@ Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared 
 \label{tab:DiskPledges}
 \end{table}
 
-Conclusion:  The overall request for 2023 is 25.8 PB vs 22.6 PB on the floor so we need to find 3.2 PB or descope the number of copies on disk. Currently CERN and FNAL contribute more  (12.9 PB on the floor vs. 9.1 PB request) than they would under the current divisions in Table \ref{tab:divisions} while national contributions are currently 9.7 PB vs 15.4 in the request.   A suggestion is to ask the collaborating institutions for the extra  3.2 PB of additional disk instead of the 5.7 PB that the current allocations would suggest.
+\subsubsection{Conclusion}\label{sec:diskresult}
+The overall request for 2023 is 25.8 PB vs. the 22.6 PB already on the floor so we need to find 3.2 PB or descope the number of copies on disk. Currently CERN and FNAL contribute more  (12.9 PB on the floor vs. 9.1 PB request) than they would under the current divisions in Table \ref{tab:division} while national contributions are currently 9.7 PB vs 15.4 in the request based on the allocations in Table \ref{tab:division}.   A suggestion is to ask the collaborating institutions for the extra  3.2 PB of additional disk instead of the 5.7 PB that the current division of responsibility would suggest.  This is shown in Table \ref{tab:DiskPledges} as a modified request.
 
 
 \clearpage
 \subsection{Tape}
 
-DUNE currently has $\sim$23 PB of data on tape at Fermilab and 5 PB of protoDUNE data as a second copy at CERN.  The UK and the IN2P3 have made tape available but it has not yet been smoothly integrated into our data flow.  We will not be requesting additional tape space from other national sites until we can use it efficiently. 
+
 
 Figure and Table  \ref{fig:Cumulative-Tape}  summarize the cumulative  tape need projected by our model. These numbers are used to generate the requests for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
 
-Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.
+Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.  \subsubsection{Conclusion}\label{sec:taperesult}
+DUNE currently has $\sim$23 PB of data on tape at Fermilab and 5 PB of protoDUNE data as a second copy at CERN.  We anticipate needing up to 45 PB of tape (an increase of 16 PB from 2022) to accommodate the ProtoDUNE run 2 data and increased simulation. 
+
+The UK and the IN2P3 have made tape available but it has not yet been smoothly integrated into our data flow.  We will not be requesting additional tape space from other national sites until we can use it efficiently. 
 
 \begin{figure}[h]
 \centering\includegraphics[height=0.4\textwidth]{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Tape.png}
@@ -167,21 +173,22 @@ Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov
 
 \begin{figure}[h]
 \centering\includegraphics[height=0.4\textwidth]{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cores.png}
-\csvautotabularright{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cores.csv}
-\caption{Memory-weighted wall-time needs in number of 2000 MB cores. Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:CoresMain}
+\csvautotabularright{external/MoreSim_2022-11-21-2026-Cores.csv}  %had to fix so moved to external
+\caption{Proposed memory-weighted wall-time needs in number of 2000 MB cores. Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:CoresMain}
 \end{figure}
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/CPUresources-2021-2022-2023.csv}
-\caption{Summary  of DUNE wall-time pledges and contributions for 2021 and 2022.  The 2022 actual numbers are memory-weighted.  Individual nations are listed and then merged (with US OSG) into a National section. NOT YET UPDATED WITH LATEST MODEL.} 
+\caption{Summary  of DUNE wall-time pledges and contributions for 2021 and 2022.  The 2022 actual numbers are memory-weighted.  Individual nations are listed and then merged (with US OSG) into a National section.} 
 \label{tab:CPUUsage}
 \end{table}
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/EIGSummary.csv}
-\caption{Summary  of DUNE memory-weighted-core hours from European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}. These numbers differ slightly from the FNAL numbers in the previous table.} \label{tab:EIGSummary}
+\caption{Summary  of DUNE memory-weighted-core hours from European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}. These numbers differ, and are generally higher, than the FNAL numbers in the previous table.} \label{tab:EIGSummary}
 \end{table}
 
+\subsection{Conclusion}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in 2023 and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For 2023, we are requesting $\sim$12,800 memory-weighted core-years where 2000 MB/core is assumed to be 1 core. 
 
 %\section{
 %\input{MoreSim_2022-11-21-2026.tex}
