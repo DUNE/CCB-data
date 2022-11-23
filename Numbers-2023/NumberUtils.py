@@ -60,12 +60,17 @@ def dump(det,datatype,a,Units):
     s += "\n"
     return s
 
-def ToCSV1(name,second,years,values,Units,Formats): # loop over first index to make csv n
+def ToCSV1(name,second,years,values,Units,Formats,shorter=None): # loop over first index to make csv n
+# shorter is an alternative list instead of looping over all entries
     f = open(name+".csv",'w')
     # needs first as a hint to get the right secondary index set
     #print (first, values[first].keys())
     #years = values[first][second].keys()
-
+    if shorter == None:
+        items = list(values.keys())
+    else:
+        items = shorter
+    print ("CVS1 items",items,values.keys())
     comma = "\t,"
     s = second + comma
     for year in years:
@@ -75,7 +80,7 @@ def ToCSV1(name,second,years,values,Units,Formats): # loop over first index to m
     f.write(s)
     #print ("CSV1", list(values.keys()))
     stotal = ""
-    for l in list(values.keys()):
+    for l in items:
         if not second in values[l].keys(): # sorry, this type doesn't have this key
             print ("CSV1: no such key", l, second)
             continue
@@ -103,6 +108,7 @@ def ToCSV2(name,first,years,values,Units,Formats): # loop over second index to m
     s = first + comma
     for year in years:
         s += "%d \t,"%year
+    s = s[0:-3]
     s += "\n"
     f.write(s)
     stotal = ""
