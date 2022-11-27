@@ -53,16 +53,42 @@ Changes since the last report include:
 \item Use of memory-weighted-core time instead of CPU time as our codes often require more memory than is available for a single core.   This requires the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
 \item Revisions to near-term requests based on the 2022 experience including a hold on tape requests from the collaboration during protoDUNE activities. 
 \item Simulation disk copies has been reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
+\item A change in future tape requests to reflect the greater accessibility of tape archives at CERN and FNAL relative to other sites. 
 \end{itemize}
 
-Proposed pledges for 2023 are  shown in sections: Disk(\ref{sec:diskresult}), Tape(\ref{sec:taperesult}) and CPU(\ref{sec:cpuresult} )below. 
+Proposed pledges for 2023 are detailed  in sections: Disk(\ref{sec:diskresult}), Tape(\ref{sec:taperesult}) and CPU(\ref{sec:cpuresult} )below.   A summary of requests for 2023 is shown here in Table \ref{tab:summary2023}.
+
+\begin{table}[ht]
+\begin{centering}
+
+\begin{tabular}{|ll|rr|r|r|}
+\hline
+ 	&&	Disk (PB)	&	Modified Disk (PB)	&	Tape(PB)	&	CPU (MWC)	\\
+	\hline
+{\bf Model}	&&	25.80	&	25.80	&	45.60	&	12765.00	\\
+\hline
+{\bf Request}	&&		&		&		&		\\
+&FNAL	&	7.80	&	8.86	&	36.30	&	3191	\\
+&CERN	&	2.60	&	4.00	&	9.20	&	3191	\\
+&National	&	15.40	&	12.94	&	0.10	&	6383	\\
+\hline
+&{\bf Total}	&	25.80	&	25.80	&	45.60	&	12765	\\
+\hline
+\end{tabular}
+
+\caption{Proposed pledges for 2023.  Disk pledges are based on existing CERN and FNAL contributions with National contributions making up the rest of the model request.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges assume Fermilab and CERN each pledge 25\%.   }
+\end{centering}
+\label{tab:summary2023}
+\end{table}
+
+
 \clearpage
 
 \section{Disk and Tape}
 
 Generally, raw data are stored on tape at both CERN and FNAL.  Simulation and reconstructed data  have one tape copy at Fermilab and recent reconstructed and simulated samples have one (or two) disk copies with one at Fermilab and one in Europe.  Appendix \ref{storage} gives details on the size and types of data from the SAM data catalog.
 
-CERN and FNAL have special responsibilities for archival data storage and for disk space for raw data while contributions from  other collaborating institutions are aggregated under the heading National, which includes US sites outside of FNAL.  The proposed split between FNAL, CERN and National contributions until 2027 is shown in Table \ref{tab:division}.  
+CERN and FNAL have special responsibilities for archival data storage and for disk space for raw data while contributions from  other collaborating institutions are aggregated under the heading National, which includes US sites outside of FNAL.  The traditional split between FNAL, CERN and National contributions until 2027 is shown in Table \ref{tab:division}.  The pledges proposed here deviate slightly from those numbers with larger contributions from the host laboratories in 2023 due to resources already in place. 
 
 \begin{table}[h]
 \begin{centering}
@@ -146,7 +172,7 @@ Figure and Table  \ref{fig:Cumulative-Tape}  summarize the cumulative  tape need
 Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.  \subsubsection{Conclusion}\label{sec:taperesult}
 DUNE currently has $\sim$23 PB of data on tape at Fermilab and 5 PB of protoDUNE data as a second copy at CERN.  We anticipate needing up to 45 PB of tape (an increase of 16 PB from 2022) to accommodate the ProtoDUNE run 2 data and increased simulation. 
 
-The UK and the IN2P3 have made tape available but it has not yet been smoothly integrated into our data flow.  We will not be requesting additional tape space from other national sites until we can use it efficiently. 
+The UK and the IN2P3 have made $\sim 3$ PB of tape archive available but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for these resources to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. 
 
 \begin{figure}[h]
 \centering\includegraphics[height=0.4\textwidth]{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Tape.png}

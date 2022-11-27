@@ -1,0 +1,7 @@
+ ,Disk (PB),Modified Disk (PB),Tape(PB),CPU(MWC)
+Model,25.80,25.80,45.60,12765.00
+Request,,,,
+FNAL,7.80,8.86,36.30,3191
+CERN,2.60,4.00,9.20,3191
+National,15.40,12.94,0.1,6383
+Total,25.80,25.80,45.6,12765
