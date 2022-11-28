@@ -15,6 +15,7 @@
 \title{DUNE Offline Computing Model Calculations}
 \author{H. Schellman for the Computing Consortium}
 \date{\today}
+\newcommand{\hrefII}[1]{\href{#1}{#1}}
 \begin{document}
 
 
@@ -50,7 +51,7 @@ Changes since the last report include:
 
 \begin{itemize}
 \item A later start for ProtoDUNE-2 running at CERN. This leads to a spike in needs for storage/CPU in late 2023. 
-\item Use of memory-weighted-core time instead of CPU time as our codes often require more memory than is available for a single core.   This requires the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
+\item Use of memory-weighted-core time instead of wall-time as our codes often require more memory than is available on a single core.  This means that our jobs sometimes need to reserve more than one core for a single process. This motivates the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
 \item Revisions to near-term requests based on the 2022 experience including a hold on tape requests from the collaboration during protoDUNE activities. 
 \item Simulation disk copies has been reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
 \item A change in future tape requests to reflect the greater accessibility of tape archives at CERN and FNAL relative to other sites. 
@@ -136,7 +137,7 @@ Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared 
 %\label{tab:RSEUsage}
 %\end{table}
 \begin{table}[ht]
-\centering\csvautotabularright{external/DiskSummary-2022-11-21.csv}
+\centering\csvautotabularright{external/DiskSummary-2022-11-28.csv}
 \caption{Disk allocations and usage across sites.    These numbers are derived from rucio reports and from cross-checks with individual sites on 2022-11-21. }
 \label{tab:RSEUsage}
 \end{table}
@@ -186,24 +187,41 @@ The UK and the IN2P3 have made $\sim 3$ PB of tape archive available but it has 
 \clearpage
 \section{CPU Needs}
 
-DUNE differs from other HEP experiments in frequently requiring more memory/core than is available at particular sites.  For example an 8-slot pilot with 16 G of available memory could only accommodate four reconstruction processes.   As a result, we make our requests in terms of memory-weighted-core wall time (MWC)  with the base memory being 2000 MB.  Sites that offer more than 2000 MB/core can scale their contributions up by the local memory/core.
+DUNE differs from other HEP experiments in frequently requiring more memory/core than is available at particular sites.  For example an 8-slot pilot with 16 GB of available memory may only accommodate four reconstruction processes.   As a result, we make our requests in terms of memory-weighted-core wall time (MWC)  with the base memory being 2000 MB. This maps reasonably well to the memory weighted slot-time returned by HTCondor and the slot-time reported in EGI statistics.  Sites that offer more  (or less) than 2000 MB/core can scale their contributions up by the local memory/core.
 
-Wall-time estimates are created by estimating the number of simulated and raw events taken and then scaling by the measured CPU time on a gpvm corrected to wall-time by the estimated efficiency (default 70\%) and for the memory utilization factor that takes into account the differing memory needs for different applications and the number of cores needed to satisfy those needs.  Here we assume that analysis takes 3000 MB, reconstruction takes 4000MB, and simulation takes 6000MB.  Contributions are then requested in units of MWC-time which is wall-time$\times$2000 MB units. 
+\subsection{Model calculation}
+The wall-time estimates in the model are created by estimating the number of simulated and raw events taken and then scaling by the measured CPU time on a gpvm corrected to wall-time by the estimated efficiency (default 70\%) and for a memory utilization factor that takes into account the differing memory needs for different applications. Here we assume that analysis takes 3000 MB, reconstruction takes 4000MB, and simulation takes 6000MB.  Contributions are then requested in units of MWC-time which is wall-time$\times$2000 MB units. 
 
-Figure/Table \ref{fig:CoresMain} shows the projected memory-weighted wall-time  (MWChr) need projections through 2026.  This is different than in previous years where memory weighting was not applied.   They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
-
-
-Table \ref{tab:CPUUsage} summarizes the pledges\cite{CCB2022} and measured usage using FNAL's  HTCondor memory-weighted wall-time statistics\cite{fifemonDUNE}.  The  usage numbers for 2022 are Nov 2021 to Oct 2022. 
-
-Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov 2021 to Oct 2022 derived from the EGI accounting\cite{EGI2022} which uses the number of cores allocated to a pilot.   If four 4000 MB reconstruction jobs were sent to an 8-core pilot on a system with 2000MB/core, this would be equivalent to using 8 MWC (memory-weighted wall-time units).   
-
-An example of a  pledge in MWC might be  1000 cores with 2GB available/core, 500 cores with 4 GB available/core and 100 cores with 8 GB available/core.  The MWC pledge would then be 2000+2000+800 or 4800 MWC units.  
 
 \begin{figure}[h]
 \centering\includegraphics[height=0.4\textwidth]{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cores.png}
 \csvautotabularright{external/MoreSim_2022-11-21-2026-Cores.csv}  %had to fix so moved to external
 \caption{Proposed memory-weighted wall-time needs in number of 2000 MB cores (MWC-years). Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:CoresMain}
 \end{figure}
+
+Figure/Table \ref{fig:CoresMain} shows the projected memory-weighted wall-time  (MWChr) need projections through 2026.  This is different than in previous years where memory weighting was not applied.   They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+
+
+\subsection{Example of memory weighted pledges}
+An example of a  national pledge in MWC might be  1000 cores with 2GB available/core, 500 cores with 4 GB available/core and 100 cores with 8 GB available/core.  The MWC pledge would then be 
+
+\newcommand{\GB}{\hbox{GB}}
+
+\begin{eqnarray*} 1000\times2\GB/2\GB &+& \\ 500\times4\GB/2\GB &+&\\100\times8\GB/2\GB\\&&= 2400 \hbox{\ MWC units}\end{eqnarray*}.
+
+A pledge with cores with $<$ 2 GB would get partial MWC units per core. 
+
+The idea here is make the additional load of running large DUNE jobs transparent to sites, which either need to provide more than 2GB of memory/job or assign more cores than are actually used to a given job.  How a site makes and meets a pledge is up to the site management. Table \ref{tab:VOcard} summarizes the memory specifications from existing "VO" cards for the different experiments.  DUNE and LHCb currently are the only ones with a stated maximum $>$ 2048 MB.
+
+\subsection{Requests}
+
+
+
+
+Table \ref{tab:CPUUsage} summarizes previous pledges\cite{CCB2022} and the measured usage  for 2021 and 2022 using FNAL's  HTCondor memory-weighted wall-time statistics\cite{fifemonDUNE}.  The  usage numbers for 2022 are Nov 2021 to Oct 2022. 
+
+Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov 2021 to Oct 2022 derived from the EGI accounting\cite{EGI2022} which uses the number of cores allocated to a pilot.   If four 4000 MB reconstruction jobs were sent to an 8-core pilot on a system with 2000MB/core, this would be equivalent to using 8 MWC (memory-weighted wall-time units).   
+
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/CPUresources-2021-2022-2023.csv}
@@ -213,10 +231,29 @@ An example of a  pledge in MWC might be  1000 cores with 2GB available/core, 500
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/EIGSummary.csv}
-\caption{Summary  of DUNE memory-weighted-core hours from European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}. These numbers differ, and are generally higher, than the FNAL numbers in the previous table.} \label{tab:EIGSummary}
+\caption{Summary  of DUNE slot-hours used for European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}. These numbers reflect multiple-core slot reservations to account for larger memory use and are similar to, but  generally higher than, the FNAL accounting numbers in the previous table.} \label{tab:EIGSummary}
 \end{table}
 
-\subsection{Conclusion}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in 2023 and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For 2023, we are requesting $\sim$12,800 memory-weighted core-years (MWC-years) where 2000 MB/core is assumed to be 1 core. 
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Expt.&Max Memory& EGI VO Card\\
+\hline
+DUNE & 4000& \hrefII https://operations-portal.egi.eu/vo/view/voname/DUNE \\
+ATLAS & 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/atlas \\
+CMS & 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/cms \\
+LHCb & 4000& \hrefII https://operations-portal.egi.eu/vo/view/voname/lhcb \\
+ALICE& 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/alice \\
+BelleII&2048& \hrefII https://operations-portal.egi.eu/vo/view/voname/belle \\
+\hline
+\end{tabular}
+\caption{Maximum memory statements from the VO cards of major experiments.}
+\label{tab:VOcard}
+\end{table}
+
+\pagebreak
+\subsection{Conclusion}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in 2023 and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For 2023, we are requesting $\sim$12,800 memory-weighted core-years (MWC-years) where a system with 2000 MB/core is assumed to offer 1 MWC/core.  
 
 %\section{
 %\input{MoreSim_2022-11-21-2026.tex}
