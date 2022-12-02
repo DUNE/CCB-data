@@ -12,7 +12,7 @@
 \usepackage{draftwatermark}
 \SetWatermarkText{Draft}
 \SetWatermarkScale{5}
-\title{DUNE Offline Computing Model Calculations}
+\title{DUNE Offline Computing Model Calculations for 2023}
 \author{H. Schellman for the Computing Consortium}
 \date{\today}
 \newcommand{\hrefII}[1]{\href{#1}{#1}}
@@ -66,14 +66,14 @@ Proposed pledges for 2023 are detailed  in sections: Disk(\ref{sec:diskresult}),
 \hline
  	&&	Disk (PB)	&	Modified Disk (PB)	&	Tape(PB)	&	CPU (MWC-years)	\\
 	\hline
-{\bf Model}	&&	25.80	&	25.80	&	45.60	&	12765	\\
+{\bf Model}	&&	25.80	&	25.80	&	45.5	&	12765	\\
 \hline
 {\bf Request}	&&		&		&		&		\\
-&FNAL	&	7.80	&	8.86	&	36.30	&	3191	\\
-&CERN	&	2.60	&	4.00	&	9.20	&	3191	\\
-&National	&	15.40	&	12.94	&	0.10	&	6383	\\
+&FNAL	&	7.80	&	8.86	&	36.2	&	3191	\\
+&CERN	&	2.60	&	4.00	&	9.2	&	3191	\\
+&National	&	15.40	&	12.94	&	0.1	&	6383	\\
 \hline
-&{\bf Total}	&	25.80	&	25.80	&	45.60	&	12765	\\
+&{\bf Total}	&	25.80	&	25.80	&	45.5	&	12765	\\
 \hline
 \end{tabular}
 
@@ -94,18 +94,18 @@ CERN and FNAL have special responsibilities for archival data storage and for di
 \begin{table}[h]
 \begin{centering}
 %\caption{Division between FNAL/CERN/National for storage until 2027}
-{\bf Tape}
-\begin{tabular}{|rrrr|}
-\hline
- &FNAL&CERN & National \\
- \hline
-Raw:&  0.5&  0.5&  0.0\\
-Sim:& 1.0&   0.0&   0.0\\ 
-Reco-Data:& 1.0&   0.0&   0.0\\
-Test: &  0.5&   0.5&  0.0\\
-
- \hline
-  \end{tabular}
+%{\bf Tape}
+%\begin{tabular}{|rrrr|}
+%\hline
+% &FNAL&CERN & National \\
+% \hline
+%Raw:&  0.5&  0.5&  0.0\\
+%Sim:& 1.0&   0.0&   0.0\\ 
+%Reco-Data:& 1.0&   0.0&   0.0\\
+%Test: &  0.5&   0.5&  0.0\\
+%
+% \hline
+%  \end{tabular}
 
    {\bf Disk}
      \begin{tabular}{|rrrr|}
@@ -118,7 +118,7 @@ Test: &  0.5&   0.5&  0.0\\
   Test: &  0.50& 0.50&   0.00\\
   \hline
    \end{tabular}
-  \caption{Proposed division between FNAL/CERN/National for storage until 2027.}
+  \caption{Proposed division between FNAL/CERN/National for storage until 2027.  The tape division is not yet finalized as we work on integration of National tape archives. In the long run, National sites are expected to take over from CERN. }
 
    \label{tab:division}
    \end{centering}
@@ -146,7 +146,7 @@ Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared 
 \centering\includegraphics[height=0.5\textwidth]{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Disk.png}
 \csvautotabularright{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Disk-Source.csv}
 \csvautotabularright{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Disk-Request.csv}
-\caption{Cumulative Disk needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split using the fractions from Table \ref{tab:division}. }\label{fig:Cumulative-Disk}
+\caption{Cumulative Disk needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split using the fractions from Table \ref{tab:division} and a modified version which reflects the disk already in place at FNAL and CERN, thus reducing the National request. }\label{fig:Cumulative-Disk}
 \end{figure}
 
 
@@ -167,10 +167,10 @@ The overall request for 2023 is 25.8 PB vs. the 22.6 PB already on the floor so 
 
 
 
-Figure and Table  \ref{fig:Cumulative-Tape}  summarize the cumulative  tape need projected by our model. These numbers are used to generate the requests for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape need projected by our model. These numbers are used to generate the requests for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
 
-Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.  \subsubsection{Conclusion}\label{sec:taperesult}
+\subsubsection{Conclusion}\label{sec:taperesult}
 DUNE currently has $\sim$23 PB of data on tape at Fermilab and 5 PB of protoDUNE data as a second copy at CERN.  We anticipate needing up to 45 PB of tape (an increase of 16 PB from 2022) to accommodate the ProtoDUNE run 2 data and increased simulation. 
 
 The UK and the IN2P3 have made $\sim 3$ PB of tape archive available but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for these resources to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. 
@@ -179,13 +179,15 @@ The UK and the IN2P3 have made $\sim 3$ PB of tape archive available but it has 
 \centering\includegraphics[height=0.4\textwidth]{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Tape.png}
 
 \csvautotabularright{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Tape-Source.csv}
-\csvautotabularright{MoreSim_2022-11-21-2026/MoreSim_2022-11-21-2026-Cumulative-Tape-Request.csv}\caption{Cumulative Tape needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split.}\label{fig:Cumulative-Tape}
+\csvautotabularright{external/MoreSim_2022-12-02-2026-Cumulative-Tape-Request.csv}\caption{Cumulative Tape requests in PB, includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split.  National contributions are set low in 2023 and grow thereafter as more tape archives are integrated. }\label{fig:Cumulative-Tape}
 \end{figure}
 
 
 
 \clearpage
 \section{CPU Needs}
+
+%Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.  
 
 DUNE differs from other HEP experiments in frequently requiring more memory/core than is available at particular sites.  For example an 8-slot pilot with 16 GB of available memory may only accommodate four reconstruction processes.   As a result, we make our requests in terms of memory-weighted-core wall time (MWC)  with the base memory being 2000 MB. This maps reasonably well to the memory weighted slot-time returned by HTCondor and the slot-time reported in EGI statistics.  Sites that offer more  (or less) than 2000 MB/core can scale their contributions up by the local memory/core.
 
