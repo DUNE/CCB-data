@@ -1,0 +1,77 @@
+\documentclass[12pt,landscape]{article}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{csvsimple}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\parindent=0pt
+\parskip=5 pt
+\setlength{\textwidth=9in}
+\setlength{\oddsidemargin=-.25 in}
+\setlength{\topmargin=0 in}
+\setlength{\textheight=7 in}
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft}
+\SetWatermarkScale{5}
+\title{DUNE Offline Computing Model Calculations - out to 2040}
+\author{H. Schellman for the Computing Consortium}
+\date{\today}
+\begin{document}
+
+
+\makeatletter
+\csvset{
+  autotabularright/.style={
+    file=#1,
+    after head=\csv@pretable\begin{tabular}{|*{\csv@columncount}{r|}}\csv@tablehead,
+    table head=\hline\csvlinetotablerow\\\hline,
+    late after line=\\,
+    table foot=\\\hline,
+    late after last line=\csv@tablefoot\end{tabular}\csv@posttable,
+    command=\csvlinetotablerow},
+}
+\makeatother
+\newcommand{\csvautotabularright}[2][]{\small\csvloop{autotabularright={#2},#1}}
+
+\maketitle
+%\appendix
+%
+%\section{Information about storage from SAM}\label{storage}
+%
+%This section provides information on the sizes of data samples known to the SAM data catalog as of Nov. 1, 2022.  If a file has multiple copies, that is not shown here.  Tables \ref{tab:MCinSAM} and \ref{tab:DataInSam} show the total across all streams and data tiers while table \ref{tab:LargestSizes} shows the distribution of the largest samples.  
+%
+%
+%\begin{table}[ht]
+% \centering\csvautotabularright{external/mc.csv}
+%\caption{Summary  of total simulation in SAM by detector type as of Nov 1, 2022.} 
+%\label{tab:MCinSAM}
+%\end{table}
+%
+%\begin{table}[ht]
+% \centering\csvautotabularright{external/detector.csv}
+% \caption{Summary  of total detector data in SAM by detector type as of Nov 1, 2022.}
+% \label{tab:DataInSam}
+%\end{table}
+%
+%
+%
+%\begin{table}[ht]
+% \centering\csvautotabularright{external/TOPTYPES.csv}
+%\caption{Classification of the largest data samples in SAM.  They are classified as detector(data) or mc, by the detector producing the data, by the stream (readout time) and by the data tier.  Some types, test and noise for example are archival only.  }
+% \label{tab:LargestSizes}
+%\end{table}
+%\clearpage
+\section{Model Details}
+
+This appendix shows the parameters used in the model and plots of all the input and derived quantities as a function of time. 
+
+Resource needs for reconstructed data for a given year are based on the number of events produced over the previous "Reprocess" years.   For ProtoDUNEs that is 2-4 years. 
+
+Simulation resource needs are instead calculated based on a number of simulation events each year. The assumption is that new software versions imply resimulation.
+
+Disk and tape lifetimes for different data types are specified as well as the desirable number of copies. 
+
+The splits parameters make CERN responsible for raw data until 2027 with the collaboration taking over after that point. 
+
+\input{MoreSIm_2022-12-02-2040/tables.tex}
+\end{document}
+

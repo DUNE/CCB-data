@@ -1,0 +1,1959 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Page not found at /wlcg/countries/elap_processors-month/SITE/Year/2021/11/2022/11/custom-dune/localinfrajobs/CSV/</title>
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background:#eee; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; margin-bottom:.4em; }
+    h1 span { font-size:60%; color:#666; font-weight:normal; }
+    table { border:none; border-collapse: collapse; width:100%; }
+    td, th { vertical-align:top; padding:2px 3px; }
+    th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    #info { background:#f6f6f6; }
+    #info ol { margin: 0.5em 4em; }
+    #info ol li { font-family: monospace; }
+    #summary { background: #ffc; }
+    #explanation { background:#eee; border-bottom: 0px none; }
+  </style>
+</head>
+<body>
+  <div id="summary">
+    <h1>Page not found <span>(404)</span></h1>
+    <table class="meta">
+      <tr>
+        <th>Request Method:</th>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <th>Request URL:</th>
+        <td>https://accounting.egi.eu/wlcg/countries/elap_processors-month/SITE/Year/2021/11/2022/11/custom-dune/localinfrajobs/CSV/</td>
+      </tr>
+      
+    </table>
+  </div>
+  <div id="info">
+    
+      <p>
+      Using the URLconf defined in <code>accounting.urls</code>,
+      Django tried these URL patterns, in this order:
+      </p>
+      <ol>
+        
+          <li>
+            
+                ^admin/
+                
+            
+          </li>
+        
+          <li>
+            
+                ^$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^/
+                
+            
+          </li>
+        
+          <li>
+            
+                ^/images/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/resource_centres/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;report&gt;[\w]+)/(?P&lt;infra&gt;[\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/resource_centres/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/resource_centres/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;report&gt;[\w]+)/(?P&lt;infra&gt;[\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/resource_centres/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/disciplines/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;infra&gt;[\w\s]+)/(?P&lt;include_parent&gt;[\w\s]+)/(?P&lt;disciplines&gt;[\w\W\s;]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/disciplines/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/disciplines/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;infra&gt;[\w\s]+)/(?P&lt;include_parent&gt;[\w\s]+)/(?P&lt;disciplines&gt;[\w\W\s;]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/disciplines/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/interngi/(?P&lt;query&gt;[\w-]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/interngi/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/vomet/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^report/vomet/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/cloud/(?P&lt;discipline&gt;[^/]*?)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/cloud/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/cloud/(?P&lt;discipline&gt;[^/]*?)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/(htc/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/(htc/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/(htc/|)(?P&lt;discipline&gt;[^/]*?)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/(htc/|)(?P&lt;discipline&gt;[^/]*?)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/cloud/(?P&lt;discipline&gt;[^/]*?)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/cloud/(?P&lt;discipline&gt;[^/]*?)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^disciplines/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/(?P&lt;discipline&gt;[^/]*?)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^discipline/(?P&lt;discipline&gt;[^/]*?)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/node/(?P&lt;node&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/node/(?P&lt;node&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1_pledges/node/(?P&lt;node&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1_pledges/node/(?P&lt;node&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1_pledges/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1_pledges/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1_pledges/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier1_pledges/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/federation/(?P&lt;federation&gt;[\s\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/federation/(?P&lt;federation&gt;[\s\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/federation/(?P&lt;federation&gt;[\s\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/federation/(?P&lt;federation&gt;[\s\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/federation/(?P&lt;federation&gt;[\s\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/federation/(?P&lt;federation&gt;[\s\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/federation/(?P&lt;federation&gt;[\s\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/federation/(?P&lt;federation&gt;[\s\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?tier2/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV|)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)countries/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(operation_centres/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(operation_centres/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(htc/|)(operation_centres/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/ngi/(?P&lt;ngi&gt;[\w-]+)/?$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/country/(?P&lt;country&gt;[\w\s-]+)/?$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/countries/?$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^egi/(?P&lt;query&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/countries/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/(?P&lt;query&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/countries/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/(?P&lt;query&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/ngi/(?P&lt;ngi&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^storage/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/(htc/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/(htc/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/(htc/|)site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/(htc/|)site/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/cloud/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?osg/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?(resource_centre|site)_admin/cloud/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?(resource_centre|site)_admin/cloud/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?(resource_centre|site)_admin/(htc/|)(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?(resource_centre|site)_admin/(htc/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?site_admin/cloud/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?site_admin/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?site_admin/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?site_admin/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(operation_centres/|)(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(operation_centres/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)(operation_centres/|)(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(htc/|)(operation_centres/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;vo&gt;[\W\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;vo&gt;[\W\w\s]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/(?P&lt;vo&gt;[\W\w\s]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?vo_admin/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(operation_centres/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(operation_centres/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/countries/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/countries/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/ngi/(?P&lt;ngi&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(htc/|)(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(htc/|)(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(htc/|)(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(htc/|)(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(htc/|)(operation_centres/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(htc/|)(operation_centres/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/ngi/(?P&lt;ngi&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(?P&lt;wlcg&gt;wlcg/|)?user/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/countries/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/(operation_centres/|)(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/(operation_centres/|)(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/(resource_centre|site)/(?P&lt;site&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/(operation_centre|ngi)/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^(egi/|)cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/countries/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/site/(?P&lt;site&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/site/(?P&lt;site&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/ngi/(?P&lt;ngi&gt;[\w-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/ngi/(?P&lt;ngi&gt;[\w-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cloud/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/countries/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/(?P&lt;format&gt;JSON|CSV)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/country/(?P&lt;country&gt;[\w\s-]+)/(?P&lt;query&gt;[\w-]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/countries/(?P&lt;query&gt;[\w\s]+)/(?P&lt;yRange&gt;[\w\s]+)/(?P&lt;xRange&gt;[\w\s]+)/(?P&lt;sYear&gt;\d\d\d\d)/(?P&lt;sMonth&gt;\d{1,2})/(?P&lt;eYear&gt;\d\d\d\d)/(?P&lt;eMonth&gt;\d{1,2})/(?P&lt;VOGroup&gt;[\w\S]+)/(?P&lt;localJobGroup&gt;[\w]+)/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/countries/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^cookies/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^wlcg/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^terms_of_use/$
+                
+            
+          </li>
+        
+          <li>
+            
+                ^data_protection/$
+                
+            
+          </li>
+        
+      </ol>
+      <p>The current URL, <code>wlcg/countries/elap_processors-month/SITE/Year/2021/11/2022/11/custom-dune/localinfrajobs/CSV/</code>, didn't match any of these.</p>
+    
+  </div>
+
+  <div id="explanation">
+    <p>
+      You're seeing this error because you have <code>DEBUG = True</code> in
+      your Django settings file. Change that to <code>False</code>, and Django
+      will display a standard 404 page.
+    </p>
+  </div>
+</body>
+</html>

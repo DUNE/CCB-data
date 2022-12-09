@@ -118,6 +118,7 @@ def ToCSV2(name,first,years,values,Units,Formats): # loop over second index to m
         for y in years:
             #print (Formats[first])
             s += (Formats[first]+" \t,")%(values[first][l][y])
+        s = s[0:-3]
         s +="\n"
         if "Total" not in l: # put total at the end
             f.write(s)
@@ -270,8 +271,8 @@ def BothTex(shortname,figure,caption,label):
     return s
 
 def TableTex(shortname,caption,label):
-    s = "\\begin{table}[h]\n\\centering"
-    s += "\\csvautotabularright{%s}"%(shortname+".csv")
+    s = "\\begin{table}[h]\n\\centering{\footnotesize"
+    s += "\\csvautotabularright{%s}}"%(shortname+".csv")
     s += "\\label{tab:%s}\n"%label
     s += "\\caption{%s}\n"%caption
     s += "\\end{table}\n"
