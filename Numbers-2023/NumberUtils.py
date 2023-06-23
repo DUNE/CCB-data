@@ -165,7 +165,7 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
     #print (Years)
     maxyears = Years[len(Years)-1]
 
-    fig=plt.figure()
+    fig=plt.figure(figsize=(10,5))
     ax = fig.add_axes([0.2,0.2,0.7,0.7])
     ax.set_xlim(Years[0],maxyears)
     if len(Years)<10:
@@ -195,7 +195,7 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
                 else:
                     print (t ,"not in ", detcolors)
     ax.legend(frameon=False,loc='center left')
-    ax.set_title(Value)
+    ax.set_title(Value,fontsize=20)
     ax.set_xlabel("Year")
     ax.set_ylabel(Value + ", " + Units[Value])
     #print("ylim",ax.get_ylim())
@@ -207,7 +207,7 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
     dunestyle.Preliminary()
     plt.grid()
     dunestyle.Preliminary()
-    plt.savefig(Name+"-"+Value.replace(" ","-")+".png",transparent=True)
+    plt.savefig(Name+"-"+Value.replace(" ","-")+".png",transparent=False)
     #plt.savefig(Value+"_w.jpg",transparent=False)
 
     plt.show()
@@ -218,7 +218,7 @@ def DrawDet(Name,Value,InYears,Data,Types,Units,detcolors,detlines,points=None):
 # draw by data type (transpose of the detectors)
 
 def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,contributions=None):
-    fig=plt.figure()
+    fig=plt.figure(figsize=(10,5))
     ax = fig.add_axes([0.2,0.2,0.7,0.7])
     maxyears = Years[-1]
     ax.set_xlim(Years[0],maxyears)
@@ -253,7 +253,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     ax.legend(frameon=False,loc='center left')
     ax.set_xlabel("Year")
     ax.set_ylabel(Value + ", " + Units[Value])
-    ax.set_title(Value)
+    ax.set_title(Value,fontsize=20)
     #print("ylim",ax.get_ylim())
     tmp = ax.get_ylim() 
     #print (tmp)
@@ -262,7 +262,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     ax.set_ylim(top=tmp2[1])
     dunestyle.Preliminary()
     plt.grid()
-    plt.savefig(Name + "-"+Value.replace(" ","-")+".png",transparent=True)
+    plt.savefig(Name + "-"+Value.replace(" ","-")+".png",transparent=False)
     #plt.savefig(Value+"_w.jpg",transparent=False)
 
     plt.show()
