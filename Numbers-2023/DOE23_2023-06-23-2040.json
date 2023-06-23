@@ -84,7 +84,7 @@
             0,  0,  0], # commissioning stuff in TB
         "Sim-Events":[  0,  0,  0,  0,  5,  5,     5,     5,     5,  5,
             5,  5,  0,  0,  0,  0,  0,  0,  0,  0,
-            0,  0,  0] #millions
+            0,  0,  0], #millions
     },
     "DP":{
         "Comment":"extend testing to 2024",
@@ -174,14 +174,7 @@
             50, 50, 100, 100, 100, 100, 100, 100, 100, 100,
             100, 100, 100]
     },
-    "Parameter estimation":
-    {"Comment":"New",
-        "HPC-CPU":100,
-        "HPC-Storage":0.2,
-        "HPC-runs":[0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
-            2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-            2, 2, 2]
-    },
+    # add NDLAR and Parameters
     "MARS":
     {"Comment":"Make it 20MHr's year",
         "Raw-Store":0,
@@ -201,8 +194,9 @@
       1, 1, 1],
         "Add":["PDs", "FDs", "ND"]
     },
-    "Reprocess":{"SP":3,"DP":2,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND":100,"MARS":1}, # of years of data reprocessed when do a new pass
+    "Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND":100,"MARS":1}, # of years of data reprocessed when do a new pass
     "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"HD":0.1,"VD":0.1,"FDs":0.1,"ND":0.9,"MARS":0}, #fraction of time spent on PR as opposed to hit-finding
+    "AnalysisFactor":{"SP":0.5,"PDHD":0.5,"DP":0.5,"PDVD":0.5,"PDs":0.5,"HD":1.0,"VD":1.0,"FDs":1.0,"ND":0.1,"MARS":0}, #fraction of time spent on analysis
     "TapeLifetimes":{"Raw-Store":100, "Test":0.5, "Reco-Data-Store":15, "Sim-Store":15},
     "DiskLifetimes":{"Raw-Store":1, "Test":0.5, "Reco-Data-Store":3, "Sim-Store":2},  # raw and test only hang around a short while, can be restaged
     "TapeCopies":{"Raw-Store":2, "Test":1, "Reco-Data-Store":1, "Sim-Store":1},  # will take some coding to make these work out with 2 copies.
