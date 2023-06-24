@@ -156,6 +156,30 @@ def cumulateMap(years,a,lifetime=100):
   #print (b)
     return b
 
+# sum backwards over lifetime of record
+def extendMap(years,a,lifetime=0):
+    lifetimebase = math.floor(lifetime)
+    lifetimeextra = lifetime - lifetimebase
+  #print(lifetimeextra)
+    b = {}
+    for i in years:
+        b[i] = a[i] 
+    for i in years:
+        # only extend if needed
+        if a[i] != 0:
+            continue
+        for j in range(1,lifetimebase+1):
+            if i-j < years[0]:
+                continue
+            if a[i-j] != 0:
+                print ("extend",i,j,a[i],a[i-j])
+                b[i]= a[i-j] 
+                break
+        
+    
+   
+    return b
+
 # Utility function: DrawDet(Value,Years,Data,Types,Units,detcolors,detlines)
 
 # for detector values
