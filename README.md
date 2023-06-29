@@ -15,11 +15,13 @@ The code for 2023 is in subdirectory Numbers-2023
 
 * Uses a jupyter notebook (versioned by date for history) 
   
-  -  Example: 2023-06-23.ipynb
+  -  Example: 2023-06-24.ipynb
+ 
+  -  This implements NDLAr as a separate detector and add retention times and ratios between analysia and reco+sim times for detectors. 
 
 * Which reads a json file (versioned by date for history)
   
-  -  Example: DOE23_2023-06-22-2040.json
+  -  Example: DOE23-NDLAr_2023-06-24-2040.json
 
 * The json file has parameters for particular DUNE detectors and running periods. 
 
