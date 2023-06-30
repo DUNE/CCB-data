@@ -224,7 +224,7 @@
     "PerYear":
     {"Raw-Store":1, "Test":1, "Reco-Data-Store":1, "Sim-Store":1, "Events":1, "Sim-Events":1, "Reco-Data-CPU":1, "Sim-CPU":1, "Analysis":1, "Analysis-CPU":1}, # of times you redo them per year, CPU is reco CPU, Sim-CPU is sim CPU
     "Cores":{
-        "Efficiency":0.7,  # CPU reasonable
+        "Efficiency":1.0,  # CPU reasonable
         "2020Units":1  # raise this # if machines get faster
     },
     "kHEPSPEC06PerCPU":0.011,
