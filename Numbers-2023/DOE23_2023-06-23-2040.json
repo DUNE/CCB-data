@@ -212,7 +212,7 @@
     "CPU Accounting":"end of fiscal year",
     "Tape Accounting":"end of fiscal year",
     "Disk Accounting":"October 1",
-    "TypeColors": {"Raw-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Sim-Store":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange"},
+    "TypeColors": {"Raw-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Sim-Store":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange","Reco-Data-CPU":"red","Sim-CPU":"blue","Analysis-CPU":"green"},
     "TypeLines": {"Raw-Store":"solid","Raw+Test":"solid", "Test":"dashed", "Reco-Data-Store":"solid", "Sim-Store":"dashed", "Total":"solid"},
     "DetColors": {"SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue", "HD":"red",
         "VD":"red","FDs":"red","ND":"grey", "Analysis":"orange", "Total":"black","MARS":"purple",
