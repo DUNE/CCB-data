@@ -33,12 +33,34 @@ def dump(det,datatype,a,Units):
   s += "\n"
   return s
 
+# sum backwards over lifetime of record
+def cumulate(a,lifetime=100):
+  lifetimebase = math.floor(lifetime)
+  lifetimeextra = lifetime - lifetimebase
+
+  b = np.zeros(len(a))
+  if lifetimeextra == 0:
+      for i in range(0,len(a)):
+        begin = max(0,i-lifetimebase+1)
+        for j in range(begin,i+1):
+          b[i] += a[j]
+ # here for partial years.
+  else:
+      for i in range(0,len(a)):
+        begin = max(0,i-lifetimebase+1)
+        for j in range(begin,i+1):
+          b[i] += a[j]
+        if begin > 0:
+            b[i]+= a[begin-1]*lifetimeextra
+  print ("cumulate",a,b)
+  return b
+
 
 # Utility function: DrawDet(Value,Years,Data,Types,Units,detcolors,detlines)
 
 # for detector values
 def DrawDet(Name,Value,Years,Data,Types,Units,detcolors,detlines,points=None):
-    
+
     maxyears = Years[-1]
 
     fig=plt.figure()
@@ -70,7 +92,7 @@ def DrawDet(Name,Value,Years,Data,Types,Units,detcolors,detlines,points=None):
     plt.grid()
     plt.savefig(Name+"-"+Value.replace(" ","-")+".png",transparent=True)
     #plt.savefig(Value+"_w.jpg",transparent=False)
-   
+
     plt.show()
 
 
@@ -94,7 +116,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
         for y in points:
             for t in points[y]:
                 ax.plot(y,points[y][t],color=typecolors[t],marker="o",label="actual "+t,markerfacecolor='none')
-    
+
     if contributions != None:
         for y in contributions:
             for t in contributions[y]:
@@ -109,7 +131,7 @@ def DrawType(Name,Value,Years,Data,Types,Units,typecolors,typelines,points=None,
     plt.grid()
     plt.savefig(Name + "-"+Value.replace(" ","-")+".png",transparent=True)
     #plt.savefig(Value+"_w.jpg",transparent=False)
-    
+
     plt.show()
 
 def DrawTex(shortname,figure,caption,label):
