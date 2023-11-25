@@ -29,11 +29,25 @@ import csv
 
 # wenlong https://fifemon.fnal.gov/kibana/app/kibana#/dashboard/83d7b0c0-8b1c-11ee-804b-5759672b811c?_g=(refreshInterval:(pause:!t,value:0),time:(from:now-1y,mode:quick,to:now))&_a=(description:%27%27,filters:!(),fullScreenMode:!f,options:(darkTheme:!t,hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:14,i:%271%27,w:48,x:0,y:0),id:%2757162130-8b1b-11ee-804b-5759672b811c%27,panelIndex:%271%27,type:visualization,version:%276.8.23%27),(embeddableConfig:(),gridData:(h:16,i:%272%27,w:48,x:0,y:14),id:%275ee81fc0-8b1c-11ee-804b-5759672b811c%27,panelIndex:%272%27,type:visualization,version:%276.8.23%27)),query:(language:lucene,query:%27%27),timeRestore:!t,title:fifebatch-jobs-dune,viewMode:view)
 
+# choose your units
 
 name = 'DUNE monthly slot hours by site and role-2.csv'
 inunits="Hr"
+HoursPerYear=(24*365)
+HoursPerMonth=HoursPerYear/12.
+CPUHrPerkHS23=1000/11.
+Units = {"MHr":1000000.,"CoreYears":HoursPerYear,"kHS23-Hrs":CPUHrPerkHS23}
 outunits = "MHr"
-units=1000000.
+
+# make choices here
+lowdate = "2022-11"
+highdate = "2023-10" # this is not inclusive
+units=Units[outunits]
+
+
+# In[4]:
+
+
 Data = {}
 ByCountry = {}
 sites = []
@@ -42,7 +56,7 @@ dates = []
 countries = []
 
 
-# In[4]:
+# In[5]:
 
 
 # read in csv and parse into array
@@ -89,13 +103,14 @@ print (countries)
 print (dates)
 
 sites.sort()
+countries.sort()
  
 
 
-# In[5]:
+# In[6]:
 
 
-# fill in the blanks and sort by country
+# fill in the blanks 
 
 for type in types:
     for site in sites:
@@ -106,20 +121,38 @@ for type in types:
                 Data[type][site][date] = 0.0
         #print (type,site, Data[type][site])
         
+# make a NoMARS class
 
-
-# In[6]:
-
-
-lowdate = "2022-11"
-highdate = "2023-10"
+types.append("NoMARS")
+Data["NoMARS"] = {}
+for site in sites:
+    Data["NoMARS"][site] = {}
+    for date in dates:
+        Data["NoMARS"][site][date] = Data["Total"][site][date]-Data["MARS"][site][date]
+        
 
 
 # In[7]:
 
 
-print ("Usage in %s between %s and %s"%(outunits,lowdate,highdate))
+
+
+# trim the date slist
+newdates = []
+for date in dates:
+    if date < lowdate or date > highdate:
+                continue
+    newdates.append(date)
+dates = newdates
+print (dates)
+
+
+# In[8]:
+
+
+print ("                                     Usage in %s between %s and %s"%(outunits,lowdate,highdate))
 print ("%30s %10s %10s %10s %10s %10s"%("Site","Production","Analysis","NoMARS","MARS","Total"))
+
 
 totalacrosssite={}
 for type in types:
@@ -130,11 +163,15 @@ for site in sites:
         use[type] = 0.0        
         for date in dates:
             use[type] += Data[type][site][date]
+        if outunits == "Cores": 
+            print ("fix core ")
+            use[type]/=12. 
         totalacrosssite[type] += use[type]
-    use["NoMARS"] = use["Total"] - use["MARS"]  
+    
+     
     print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
 
-totalacrosssite["NoMARS"] = totalacrosssite["Total"] - totalacrosssite["MARS"]
+#totalacrosssite["NoMARS"] = totalacrosssite["Total"] - totalacrosssite["MARS"]
 print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
@@ -144,7 +181,7 @@ print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Produ
 
 
 
-# In[8]:
+# In[9]:
 
 
 # do by country
@@ -160,11 +197,12 @@ for type in types:
             ByCountry[type][country][date]+=Data[type][site][date]
 
 
-# In[9]:
+# In[10]:
 
 
 print ("                              Usage in %s between %s and %s"%(outunits,lowdate,highdate))
 print ("%30s %10s %10s %10s %10s %10s"%("Country","Production","Analysis","NoMARS","MARS","Total"))
+
 
 totalacrosssites={}
 for type in types:
@@ -176,11 +214,98 @@ for site in countries:
         for date in dates:
             use[type] += ByCountry[type][site][date]
         totalacrosssite[type] += use[type]
-    use["NoMARS"] = use["Total"] - use["MARS"]  
+    #use["NoMARS"] = use["Total"] - use["MARS"]  
     print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
 
 totalacrosssite["NoMARS"] = totalacrosssite["Total"] - totalacrosssite["MARS"]
 print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
+
+
+# In[11]:
+
+
+# Make a table for each type:
+
+
+# In[12]:
+
+
+header = "   time in %s by site        "%outunits
+header2 = header
+
+for date in dates:
+    header += "%10s"%date
+    header2 += ",%s"%date
+header += "     Total"
+header2 += ",Total\n"
+
+out = {}
+for type in types:
+    outname = "output/%s_BySite_%s_%s_%s.csv"%(type,outunits,lowdate,highdate)
+    out[type] = open(outname,'w')
+    out[type].write(header2+"\n")
+
+print (sites) 
+for type in types:   
+    for site in sites:
+        result = "%30s"%site
+        outstring = "%s"%site
+        total = 0.0
+        for date in dates:
+            result += " %10.3f"%Data[type][site][date]
+            outstring += ", %10.3f"%(Data[type][site][date])
+            total += Data[type][site][date]
+        #print (outstring)
+        outstring += ",%10.3f\n"%total
+        out[type].write(outstring)
+    out[type].close()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[13]:
+
+
+header = "   time in %s by country      "%outunits
+header2 = header
+
+for date in dates:
+    header += "%10s"%date
+    header2 += ",%s"%date
+header += "     Total"
+header2 += ",Total\n"
+
+out = {}
+for type in types:
+    outname = "output/%s_ByCountry_%s_%s_%s.csv"%(type,outunits,lowdate,highdate)
+    out[type] = open(outname,'w')
+    out[type].write(header2)
+
+print (countries) 
+for type in types:   
+    for site in countries:
+        result = "%30s"%site
+        outstring = "%s"%site
+        total = 0.0
+        for date in dates:
+            result += " %10.3f"%(ByCountry[type][site][date])
+            outstring += ", %10.3f"%(ByCountry[type][site][date])
+            total += (ByCountry[type][site][date])
+        
+        outstring += ",%10.3f\n"%total
+        print (outstring)
+        out[type].write(outstring)
+    out[type].close()
 
 
 # In[ ]:
