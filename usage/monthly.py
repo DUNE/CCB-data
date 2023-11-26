@@ -13,13 +13,68 @@
 # go to that link, go to inspect and save as formatted csv
 
 
-# In[ ]:
-
-
-
-
-
 # In[3]:
+
+
+# define  bydate(array=None,types=None,locations=None,dates=None,units=None,tag=None):
+
+
+# In[4]:
+
+
+def bydate(array=None,types=None,locations=None,dates=None,units=None,tag=None):
+   # metdefhod that makes a table from an array indexed by type, location and date by location and date.
+   # tag is a tag that tells what the array was
+   # adds a sum across both row and column
+   # output is a csv file of the table
+   lowdate = dates[0]
+   highdate = dates[-1]
+   print (lowdate,highdate)
+   header = "   time in %s by %s     "%(units,tag)
+   header2 = header
+
+   for date in dates:
+       header += "%10s"%date
+       header2 += ",%s"%date
+   header += "     Total"
+   header2 += ",Total\n"
+
+   out = {}
+   for type in types:
+       outname = "output/%s_%s_%s_%s_%s.csv"%(type,tag,units,lowdate,highdate)
+       out[type] = open(outname,'w')
+       out[type].write(header2)
+
+   print (locations) 
+
+   for type in types:  
+       totalbydate = {}
+       for date in dates:
+           totalbydate[date] = 0.0
+       totaltotal = 0.0
+       for site in locations:
+           result = "%30s"%site
+           outstring = "%s"%site
+           total = 0.0
+
+           for date in dates:
+               result += " %10.3f"%(array[type][site][date])
+               outstring += ", %10.3f"%(array[type][site][date])
+               total += (array[type][site][date])
+               totalbydate[date]+= (array[type][site][date])
+           totaltotal+=total           
+           outstring += ",%10.3f\n"%total
+           #print (outstring)
+           out[type].write(outstring)
+       outstring = "%s"%"Total"
+       for date in dates:
+           outstring += ", %10.3f"%(totalbydate[date])
+       outstring += ",%10.3f\n"%totaltotal 
+       out[type].write(outstring)
+       out[type].close()
+
+
+# In[5]:
 
 
 import csv
@@ -37,15 +92,15 @@ HoursPerYear=(24*365)
 HoursPerMonth=HoursPerYear/12.
 CPUHrPerkHS23=1000/11.
 Units = {"MHr":1000000.,"CoreYears":HoursPerYear,"kHS23-Hrs":CPUHrPerkHS23}
-outunits = "MHr"
+outunits = "kHS23-Hrs"
 
 # make choices here
-lowdate = "2022-11"
-highdate = "2023-10" # this is not inclusive
+lowdate = "2022-01"
+highdate = "2022-12" 
 units=Units[outunits]
 
 
-# In[4]:
+# In[6]:
 
 
 Data = {}
@@ -56,7 +111,7 @@ dates = []
 countries = []
 
 
-# In[5]:
+# In[7]:
 
 
 # read in csv and parse into array
@@ -107,7 +162,7 @@ countries.sort()
  
 
 
-# In[6]:
+# In[8]:
 
 
 # fill in the blanks 
@@ -132,7 +187,7 @@ for site in sites:
         
 
 
-# In[7]:
+# In[9]:
 
 
 
@@ -147,7 +202,7 @@ dates = newdates
 print (dates)
 
 
-# In[8]:
+# In[10]:
 
 
 print ("                                     Usage in %s between %s and %s"%(outunits,lowdate,highdate))
@@ -181,7 +236,7 @@ print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Produ
 
 
 
-# In[9]:
+# In[11]:
 
 
 # do by country
@@ -197,7 +252,7 @@ for type in types:
             ByCountry[type][country][date]+=Data[type][site][date]
 
 
-# In[10]:
+# In[12]:
 
 
 print ("                              Usage in %s between %s and %s"%(outunits,lowdate,highdate))
@@ -221,91 +276,103 @@ totalacrosssite["NoMARS"] = totalacrosssite["Total"] - totalacrosssite["MARS"]
 print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[11]:
+# In[13]:
 
 
 # Make a table for each type:
 
 
-# In[12]:
+# In[14]:
 
 
-header = "   time in %s by site        "%outunits
-header2 = header
+# header = "   time in %s by site        "%outunits
+# header2 = header
 
-for date in dates:
-    header += "%10s"%date
-    header2 += ",%s"%date
-header += "     Total"
-header2 += ",Total\n"
+# for date in dates:
+#     header += "%10s"%date
+#     header2 += ",%s"%date
+# header += "     Total"
+# header2 += ",Total\n"
 
-out = {}
-for type in types:
-    outname = "output/%s_BySite_%s_%s_%s.csv"%(type,outunits,lowdate,highdate)
-    out[type] = open(outname,'w')
-    out[type].write(header2+"\n")
+# out = {}
+# for type in types:
+#     outname = "output/%s_BySite_%s_%s_%s.csv"%(type,outunits,lowdate,highdate)
+#     out[type] = open(outname,'w')
+#     out[type].write(header2+"\n")
 
-print (sites) 
-for type in types:   
-    for site in sites:
-        result = "%30s"%site
-        outstring = "%s"%site
-        total = 0.0
-        for date in dates:
-            result += " %10.3f"%Data[type][site][date]
-            outstring += ", %10.3f"%(Data[type][site][date])
-            total += Data[type][site][date]
-        #print (outstring)
-        outstring += ",%10.3f\n"%total
-        out[type].write(outstring)
-    out[type].close()
-
-
-# In[ ]:
+# print (sites) 
+# for type in types:   
+#     for site in sites:
+#         result = "%30s"%site
+#         outstring = "%s"%site
+#         total = 0.0
+#         for date in dates:
+#             result += " %10.3f"%Data[type][site][date]
+#             outstring += ", %10.3f"%(Data[type][site][date])
+#             total += Data[type][site][date]
+#         #print (outstring)
+#         outstring += ",%10.3f\n"%total
+#         out[type].write(outstring)
+#     out[type].close()
 
 
+# In[15]:
 
 
-
-# In[ ]:
-
+bydate(array=Data,types=types,locations=sites,dates=dates,units=outunits,tag="BySite")
 
 
+# In[16]:
 
 
-# In[13]:
+bydate(array=ByCountry,types=types,locations=countries,dates=dates,units=outunits,tag="ByCountry")
 
 
-header = "   time in %s by country      "%outunits
-header2 = header
+# In[17]:
 
-for date in dates:
-    header += "%10s"%date
-    header2 += ",%s"%date
-header += "     Total"
-header2 += ",Total\n"
 
-out = {}
-for type in types:
-    outname = "output/%s_ByCountry_%s_%s_%s.csv"%(type,outunits,lowdate,highdate)
-    out[type] = open(outname,'w')
-    out[type].write(header2)
+# header = "   time in %s by country      "%outunits
+# header2 = header
 
-print (countries) 
-for type in types:   
-    for site in countries:
-        result = "%30s"%site
-        outstring = "%s"%site
-        total = 0.0
-        for date in dates:
-            result += " %10.3f"%(ByCountry[type][site][date])
-            outstring += ", %10.3f"%(ByCountry[type][site][date])
-            total += (ByCountry[type][site][date])
+# for date in dates:
+#     header += "%10s"%date
+#     header2 += ",%s"%date
+# header += "     Total"
+# header2 += ",Total\n"
+
+# out = {}
+# for type in types:
+#     outname = "output/%s_ByCountry_%s_%s_%s.csv"%(type,outunits,lowdate,highdate)
+#     out[type] = open(outname,'w')
+#     out[type].write(header2)
+
+# print (countries) 
+
+# for type in types:  
+#     totalbydate = {}
+#     for date in dates:
+#         totalbydate[date] = 0.0
+#     totaltotal = 0.0
+#     for site in countries:
+#         result = "%30s"%site
+#         outstring = "%s"%site
+#         total = 0.0
         
-        outstring += ",%10.3f\n"%total
-        print (outstring)
-        out[type].write(outstring)
-    out[type].close()
+#         for date in dates:
+#             result += " %10.3f"%(ByCountry[type][site][date])
+#             outstring += ", %10.3f"%(ByCountry[type][site][date])
+#             total += (ByCountry[type][site][date])
+#             totalbydate[date]+= (ByCountry[type][site][date])
+#         totaltotal+=total           
+#         outstring += ",%10.3f\n"%total
+#         #print (outstring)
+#         out[type].write(outstring)
+#     outstring = "%s"%"Total"
+#     for date in dates:
+#         outstring += ", %10.3f"%(totalbydate[date])
+#     outstring += ",%10.3f\n"%totaltotal 
+#     out[type].write(outstring)
+#     out[type].close()
 
 
 # In[ ]:
