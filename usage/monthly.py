@@ -22,7 +22,28 @@
 # In[4]:
 
 
-def bydate(array=None,types=None,locations=None,dates=None,units=None,format="10.3f",tag=None):
+import csv
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[5]:
+
+
+def bydate(array=None,types=None,locations=None,dates=None,unitlabel=None,format="10.3f",tag=None):
    # metdefhod that makes a table from an array indexed by type, location and date by location and date.
    # tag is a tag that tells what the array was
    # adds a sum across both row and column
@@ -30,7 +51,7 @@ def bydate(array=None,types=None,locations=None,dates=None,units=None,format="10
    lowdate = dates[0]
    highdate = dates[-1]
    print (lowdate,highdate)
-   header = "   time in %s by %s     "%(units,tag)
+   header = "   time in %s by %s     "%(unitlabel,tag)
    header2 = header
 
    for date in dates:
@@ -41,11 +62,11 @@ def bydate(array=None,types=None,locations=None,dates=None,units=None,format="10
    form = ", %%%s"%format
    out = {}
    for type in types:
-       outname = "output/%s_%s_%s_%s_%s.csv"%(type,tag,units,lowdate,highdate)
+       outname = "output/%s_%s_%s_%s_%s.csv"%(type,tag,unitlabel,lowdate,highdate)
        out[type] = open(outname,'w')
        out[type].write(header2)
 
-   print (locations) 
+   #print (locations) 
 
    for type in types:  
        totalbydate = {}
@@ -77,19 +98,78 @@ def bydate(array=None,types=None,locations=None,dates=None,units=None,format="10
        out[type].close()
 
 
-# In[5]:
+# In[6]:
 
 
-import csv
+def plotme(tuple=None,unitlabel=None,tag=None):
+     
+    ny = len(tuple.keys())
+    for y in tuple.keys():
+        nx = len(tuple[y])
+        break
+    
+    data = np.zeros((nx,ny),dtype=float)
+    #print (nx,ny)
+    #print (data)
+    
+    ix = 0
+    for kx  in list(tuple.keys()):
+        if kx == "Total": continue
+        iy = 0
+        
+        for ky in list(tuple[kx].keys()):
+            if ky == "Total": continue
+            #print (kx,ky,ix,iy)
+            # convert to log without messing with original data
+            data[iy][ix] = (tuple[kx][ky])
+            if data[iy][ix] <= 0: data[iy][ix] = .001
+            data[iy][ix] = math.log10(data[iy][ix])       
+            iy += 1
+        ix += 1
+   
+    data = data.transpose()
+    
+    
+    
+    plt.figure(figsize = (nx/3.,ny/3.))
+    plt.imshow(data,aspect='auto') 
+    plt.subplots_adjust(left=0.30)
+    ax = plt.gca()
+    #plt.set_size_inches(nx/3., ny/3.) 
+
+    # axes = plt.gcf().axes 
+    # ax = axes[0]
+    # ay = axes[1]
+    # print (axes)
+    plt.ylabel("Country")
+    y_tick_labels = list(tuple.keys())
+    x_tick_labels = list(tuple[y_tick_labels[0]].keys())
+    plt.title("Log10 %s"%unitlabel)
+    ax.xaxis.set_ticks(np.arange(0,len(x_tick_labels),1))
+    ax.yaxis.set_ticks(np.arange(0,len(y_tick_labels),1))
+    ax.set_xticklabels(x_tick_labels, rotation='vertical', fontsize=10)
+    ax.set_yticklabels(y_tick_labels, fontsize=10)
+    plt.xlabel("Month")
+    cbar = plt.colorbar()
+    cbar.set_label("Log10 of %s"%unitlabel, rotation=270)
+    plt.savefig(tag+".png",transparent=False)       
+    
+    
+
+
+# In[7]:
+
+
+
 
 # ken
-#  "https://fifemon.fnal.gov/kibana/app/kibana#/visualize/edit/33d02c40-8b41-11ee-804b-5759672b811c?_g=(refreshInterval:(pause:!t,value:0),time:(from:'2022-01-01T06:00:00.000Z',mode:absolute,to:'2023-11-25T03:09:25.714Z'))&_a=(filters:!(),linked:!f,query:(language:lucene,query:'Jobsub_Group:dune'),uiState:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),vis:(aggs:!((enabled:!t,id:'1',params:(field:SlotHours),schema:metric,type:sum),(enabled:!t,id:'3',params:(field:MachineAttrGLIDEIN_DUNESite0,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!f,otherBucketLabel:Other,size:50),schema:bucket,type:terms),(enabled:!t,id:'5',params:(customInterval:'2h',drop_partials:!f,extended_bounds:(),field:'@timestamp',interval:M,min_doc_count:1,timeRange:(from:'2022-01-01T06:00:00.000Z',mode:absolute,to:'2023-11-25T03:09:25.714Z'),useNormalizedEsInterval:!t),schema:bucket,type:date_histogram),(enabled:!t,id:'4',params:(filters:!((input:(query:'NOT(Owner:dunepro)%20AND%20NOT(Jobsub_SubGroup:mars)'),label:Analysis),(input:(query:'Owner:dunepro'),label:Production),(input:(query:'Jobsub_SubGroup:mars'),label:MARS),(input:(query:'*'),label:Total))),schema:bucket,type:filters)),params:(perPage:24,showMetricsAtAllLevels:!f,showPartialRows:!f,showTotal:!f,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'DUNE%20monthly%20slot%20hours%20by%20site%20and%20role',type:table))"
+#  https://fifemon.fnal.gov/kibana/app/kibana#/visualize/edit/33d02c40-8b41-11ee-804b-5759672b811c?_g=(refreshInterval:(pause:!t,value:0),time:(from:'2022-01-01T06:00:00.000Z',mode:absolute,to:'2023-11-25T03:09:25.714Z'))&_a=(filters:!(),linked:!f,query:(language:lucene,query:'Jobsub_Group:dune'),uiState:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),vis:(aggs:!((enabled:!t,id:'1',params:(field:SlotHours),schema:metric,type:sum),(enabled:!t,id:'3',params:(field:MachineAttrGLIDEIN_DUNESite0,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!f,otherBucketLabel:Other,size:50),schema:bucket,type:terms),(enabled:!t,id:'5',params:(customInterval:'2h',drop_partials:!f,extended_bounds:(),field:'@timestamp',interval:M,min_doc_count:1,timeRange:(from:'2022-01-01T06:00:00.000Z',mode:absolute,to:'2023-11-25T03:09:25.714Z'),useNormalizedEsInterval:!t),schema:bucket,type:date_histogram),(enabled:!t,id:'4',params:(filters:!((input:(query:'NOT(Owner:dunepro)%20AND%20NOT(Jobsub_SubGroup:mars)'),label:Analysis),(input:(query:'Owner:dunepro'),label:Production),(input:(query:'Jobsub_SubGroup:mars'),label:MARS),(input:(query:'*'),label:Total))),schema:bucket,type:filters)),params:(perPage:24,showMetricsAtAllLevels:!f,showPartialRows:!f,showTotal:!f,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'DUNE%20monthly%20slot%20hours%20by%20site%20and%20role',type:table))
 
 # wenlong https://fifemon.fnal.gov/kibana/app/kibana#/dashboard/83d7b0c0-8b1c-11ee-804b-5759672b811c?_g=(refreshInterval:(pause:!t,value:0),time:(from:now-1y,mode:quick,to:now))&_a=(description:%27%27,filters:!(),fullScreenMode:!f,options:(darkTheme:!t,hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:14,i:%271%27,w:48,x:0,y:0),id:%2757162130-8b1b-11ee-804b-5759672b811c%27,panelIndex:%271%27,type:visualization,version:%276.8.23%27),(embeddableConfig:(),gridData:(h:16,i:%272%27,w:48,x:0,y:14),id:%275ee81fc0-8b1c-11ee-804b-5759672b811c%27,panelIndex:%272%27,type:visualization,version:%276.8.23%27)),query:(language:lucene,query:%27%27),timeRestore:!t,title:fifebatch-jobs-dune,viewMode:view)
 
 # choose your units
 
-name = 'DUNE monthly slot hours by site and role-2.csv'
+name = 'DUNE monthly slot hours by site and role-2023-11-26.csv'
 inunits="Hr"
 HoursPerYear=(24*365)
 HoursPerMonth=HoursPerYear/12.
@@ -105,7 +185,7 @@ units=Units[outunits]
 format=Formats[outunits]
 
 
-# In[6]:
+# In[8]:
 
 
 Data = {}
@@ -116,7 +196,7 @@ dates = []
 countries = []
 
 
-# In[7]:
+# In[9]:
 
 
 # read in csv and parse into array
@@ -158,16 +238,16 @@ with open(name,'r') as csv_file:
          
         
         # print (Data)
-print (sites)
-print (countries)  
-print (dates)
+#print (sites)
+#print (countries)  
+#print (dates)
 
 sites.sort()
 countries.sort()
  
 
 
-# In[8]:
+# In[10]:
 
 
 # fill in the blanks 
@@ -192,12 +272,12 @@ for site in sites:
         
 
 
-# In[9]:
+# In[11]:
 
 
 
 
-# trim the date slist
+# trim the dates list
 newdates = []
 for date in dates:
     if date < lowdate or date > highdate:
@@ -207,7 +287,20 @@ dates = newdates
 print (dates)
 
 
-# In[10]:
+# In[12]:
+
+
+BySite = {}
+# do by site within date range
+for type in types:
+    BySite[type]={}
+    for site in sites:
+        BySite[type][site]={}
+        for date in dates:
+            BySite[type][site][date] = Data[type][site][date]
+
+
+# In[13]:
 
 
 print ("                                     Usage in %s between %s and %s"%(outunits,lowdate,highdate))
@@ -222,7 +315,7 @@ for site in sites:
     for type in types:
         use[type] = 0.0        
         for date in dates:
-            use[type] += Data[type][site][date]
+            use[type] += BySite[type][site][date]
         if outunits == "Cores": 
             print ("fix core ")
             use[type]/=12. 
@@ -241,13 +334,7 @@ else:
     print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[ ]:
-
-
-
-
-
-# In[11]:
+# In[14]:
 
 
 # do by country
@@ -263,7 +350,7 @@ for type in types:
             ByCountry[type][country][date]+=Data[type][site][date]
 
 
-# In[12]:
+# In[15]:
 
 
 print ("                              Usage in %s between %s and %s"%(outunits,lowdate,highdate))
@@ -293,13 +380,13 @@ else:
     print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[13]:
+# In[16]:
 
 
 # Make a table for each type:
 
 
-# In[14]:
+# In[17]:
 
 
 # header = "   time in %s by site        "%outunits
@@ -333,19 +420,26 @@ else:
 #     out[type].close()
 
 
-# In[15]:
+# In[ ]:
 
 
-bydate(array=Data,types=types,locations=sites,dates=dates,units=outunits,format=format,tag="BySite")
 
 
-# In[16]:
+
+# In[18]:
 
 
-bydate(array=ByCountry,types=types,locations=countries,dates=dates,units=outunits,format=format,tag="ByCountry")
+bydate(array=Data,types=types,locations=sites,dates=dates,unitlabel=outunits,format=format,tag="BySite")
 
 
-# In[17]:
+# In[19]:
+
+
+
+bydate(array=ByCountry,types=types,locations=countries,dates=dates,unitlabel=outunits,format=format,tag="ByCountry")
+
+
+# In[20]:
 
 
 # header = "   time in %s by country      "%outunits
@@ -390,6 +484,20 @@ bydate(array=ByCountry,types=types,locations=countries,dates=dates,units=outunit
 #     outstring += ",%10.3f\n"%totaltotal 
 #     out[type].write(outstring)
 #     out[type].close()
+
+
+# In[21]:
+
+
+plttag = "%s_%s_%s_%s_%s"%(type,"ByCountry",outunits,lowdate,highdate)
+plotme(ByCountry["Total"],outunits,tag=plttag)
+
+
+# In[23]:
+
+
+plttag = "%s_%s_%s_%s_%s"%(type,"BySite",outunits,lowdate,highdate)
+plotme(BySite["NoMARS"],outunits,tag=plttag)
 
 
 # In[ ]:
