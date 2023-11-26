@@ -22,7 +22,7 @@
 # In[4]:
 
 
-def bydate(array=None,types=None,locations=None,dates=None,units=None,tag=None):
+def bydate(array=None,types=None,locations=None,dates=None,units=None,format="10.3f",tag=None):
    # metdefhod that makes a table from an array indexed by type, location and date by location and date.
    # tag is a tag that tells what the array was
    # adds a sum across both row and column
@@ -38,7 +38,7 @@ def bydate(array=None,types=None,locations=None,dates=None,units=None,tag=None):
        header2 += ",%s"%date
    header += "     Total"
    header2 += ",Total\n"
-
+   form = ", %%%s"%format
    out = {}
    for type in types:
        outname = "output/%s_%s_%s_%s_%s.csv"%(type,tag,units,lowdate,highdate)
@@ -56,20 +56,23 @@ def bydate(array=None,types=None,locations=None,dates=None,units=None,tag=None):
            result = "%30s"%site
            outstring = "%s"%site
            total = 0.0
-
+           
+           #print (form)
            for date in dates:
                result += " %10.3f"%(array[type][site][date])
-               outstring += ", %10.3f"%(array[type][site][date])
+               outstring += form%(array[type][site][date])
                total += (array[type][site][date])
                totalbydate[date]+= (array[type][site][date])
            totaltotal+=total           
-           outstring += ",%10.3f\n"%total
+           outstring += form%total
+           outstring += "\n"
            #print (outstring)
            out[type].write(outstring)
        outstring = "%s"%"Total"
        for date in dates:
-           outstring += ", %10.3f"%(totalbydate[date])
-       outstring += ",%10.3f\n"%totaltotal 
+           outstring += form%(totalbydate[date])
+       outstring += form%totaltotal 
+       outstring += "\n"
        out[type].write(outstring)
        out[type].close()
 
@@ -92,12 +95,14 @@ HoursPerYear=(24*365)
 HoursPerMonth=HoursPerYear/12.
 CPUHrPerkHS23=1000/11.
 Units = {"MHr":1000000.,"CoreYears":HoursPerYear,"kHS23-Hrs":CPUHrPerkHS23}
+Formats = {"Mhr":"10.3f", "CoreYears":"10.1f", "kHS23-Hrs":"10d"}
 outunits = "kHS23-Hrs"
 
 # make choices here
-lowdate = "2022-01"
-highdate = "2022-12" 
+lowdate = "2022-12"
+highdate = "2023-11" 
 units=Units[outunits]
+format=Formats[outunits]
 
 
 # In[6]:
@@ -223,11 +228,17 @@ for site in sites:
             use[type]/=12. 
         totalacrosssite[type] += use[type]
     
-     
-    print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
+    if "10.3" in format: 
+        print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
+    else:
+        print ("%30s %10d %10d %10d %10d %10d"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
 
+        
 #totalacrosssite["NoMARS"] = totalacrosssite["Total"] - totalacrosssite["MARS"]
-print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
+if "10.3" in format:
+    print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))  
+else:
+    print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
 # In[ ]:
@@ -270,10 +281,16 @@ for site in countries:
             use[type] += ByCountry[type][site][date]
         totalacrosssite[type] += use[type]
     #use["NoMARS"] = use["Total"] - use["MARS"]  
-    print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
+    if "10.3" in format:
+        print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
+    else:
+        print ("%30s %10d %10d %10d %10d %10d"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
 
 totalacrosssite["NoMARS"] = totalacrosssite["Total"] - totalacrosssite["MARS"]
-print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
+if "10.3" in format:
+    print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))  
+else:
+    print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
 # In[13]:
@@ -319,13 +336,13 @@ print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%("Total",totalacrosssite["Produ
 # In[15]:
 
 
-bydate(array=Data,types=types,locations=sites,dates=dates,units=outunits,tag="BySite")
+bydate(array=Data,types=types,locations=sites,dates=dates,units=outunits,format=format,tag="BySite")
 
 
 # In[16]:
 
 
-bydate(array=ByCountry,types=types,locations=countries,dates=dates,units=outunits,tag="ByCountry")
+bydate(array=ByCountry,types=types,locations=countries,dates=dates,units=outunits,format=format,tag="ByCountry")
 
 
 # In[17]:
