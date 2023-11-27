@@ -131,7 +131,7 @@ def plotme(tuple=None,unitlabel=None,tag=None):
     
     
     
-    plt.figure(figsize = (nx/3.,ny/3.))
+    plt.figure(figsize = (nx/2.,ny/3.))
     plt.imshow(data,aspect='auto') 
     plt.subplots_adjust(left=0.30)
     ax = plt.gca()
@@ -141,18 +141,18 @@ def plotme(tuple=None,unitlabel=None,tag=None):
     # ax = axes[0]
     # ay = axes[1]
     # print (axes)
-    plt.ylabel("Country")
+    plt.ylabel("Location")
     y_tick_labels = list(tuple.keys())
     x_tick_labels = list(tuple[y_tick_labels[0]].keys())
-    plt.title("Log10 %s"%unitlabel)
+    plt.title("Log10 %s for %s"%(unitlabel,tag.replace("_"," ")))
     ax.xaxis.set_ticks(np.arange(0,len(x_tick_labels),1))
     ax.yaxis.set_ticks(np.arange(0,len(y_tick_labels),1))
-    ax.set_xticklabels(x_tick_labels, rotation='vertical', fontsize=10)
+    ax.set_xticklabels(x_tick_labels, rotation=70, fontsize=10)
     ax.set_yticklabels(y_tick_labels, fontsize=10)
     plt.xlabel("Month")
     cbar = plt.colorbar()
     cbar.set_label("Log10 of %s"%unitlabel, rotation=270)
-    plt.savefig(tag+".png",transparent=False)       
+    plt.savefig("pix/"+tag+".png",transparent=False)       
     
     
 
@@ -173,10 +173,12 @@ name = 'DUNE monthly slot hours by site and role-2023-11-26.csv'
 inunits="Hr"
 HoursPerYear=(24*365)
 HoursPerMonth=HoursPerYear/12.
-CPUHrPerkHS23=1000/11.
-Units = {"MHr":1000000.,"CoreYears":HoursPerYear,"kHS23-Hrs":CPUHrPerkHS23}
-Formats = {"Mhr":"10.3f", "CoreYears":"10.1f", "kHS23-Hrs":"10d"}
-outunits = "kHS23-Hrs"
+HS23PerCPUHr = 11.
+kHS23PerCPUHr = HS23PerCPUHr/1000.
+kHS23PerCPUYr=kHS23PerCPUHr/HoursPerYear
+Units = {"MHr":1/1000000.,"CoreYears":1./HoursPerYear,"kHS23-Hrs":kHS23PerCPUHr,"kHS23-Yrs":kHS23PerCPUYr}
+Formats = {"Mhr":"10.3f", "CoreYears":"10.1f", "kHS23-Hrs":"10d","kHS23-Yrs":"10.3f"}
+outunits = "kHS23-Yrs"
 
 # make choices here
 lowdate = "2022-12"
@@ -215,7 +217,7 @@ with open(name,'r') as csv_file:
         country = site.split("_")[0]
         date = row[1][0:7] # truncate the day
         type = row[2]
-        value = float(row[3].replace(",",""))/units
+        value = float(row[3].replace(",",""))*units
         
 
         
@@ -307,20 +309,25 @@ print ("                                     Usage in %s between %s and %s"%(out
 print ("%30s %10s %10s %10s %10s %10s"%("Site","Production","Analysis","NoMARS","MARS","Total"))
 
 
+# In[14]:
+
+
+ByType={}
+for site in sites:
+    ByType[site]={}
 totalacrosssite={}
-for type in types:
+for type in ["Production","Analysis","MARS","NoMARS","Total"]:
     totalacrosssite[type] = 0.0
 for site in sites:
     use = {}
-    for type in types:
+    for type in ["Production","Analysis","MARS","NoMARS","Total"]:
         use[type] = 0.0        
         for date in dates:
             use[type] += BySite[type][site][date]
-        if outunits == "Cores": 
-            print ("fix core ")
-            use[type]/=12. 
-        totalacrosssite[type] += use[type]
-    
+        #totalacrosssite[type] += use[type]
+        ByType[site][type]=use[type]
+    #print ("bt",ByType[site])
+    #ByType[site]["NoMARS"] = ByType[site]["Total"] - ByType[site]["MARS"] 
     if "10.3" in format: 
         print ("%30s %10.3f %10.3f %10.3f %10.3f %10.3f"%(site,use["Production"],use["Analysis"],use["NoMARS"],use["MARS"],use["Total"])) 
     else:
@@ -334,7 +341,7 @@ else:
     print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[14]:
+# In[15]:
 
 
 # do by country
@@ -350,7 +357,7 @@ for type in types:
             ByCountry[type][country][date]+=Data[type][site][date]
 
 
-# In[15]:
+# In[16]:
 
 
 print ("                              Usage in %s between %s and %s"%(outunits,lowdate,highdate))
@@ -380,13 +387,13 @@ else:
     print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[16]:
+# In[17]:
 
 
 # Make a table for each type:
 
 
-# In[17]:
+# In[18]:
 
 
 # header = "   time in %s by site        "%outunits
@@ -426,20 +433,20 @@ else:
 
 
 
-# In[18]:
+# In[19]:
 
 
 bydate(array=Data,types=types,locations=sites,dates=dates,unitlabel=outunits,format=format,tag="BySite")
 
 
-# In[19]:
+# In[20]:
 
 
 
 bydate(array=ByCountry,types=types,locations=countries,dates=dates,unitlabel=outunits,format=format,tag="ByCountry")
 
 
-# In[20]:
+# In[21]:
 
 
 # header = "   time in %s by country      "%outunits
@@ -486,7 +493,7 @@ bydate(array=ByCountry,types=types,locations=countries,dates=dates,unitlabel=out
 #     out[type].close()
 
 
-# In[21]:
+# In[22]:
 
 
 plttag = "%s_%s_%s_%s_%s"%(type,"ByCountry",outunits,lowdate,highdate)
@@ -498,6 +505,20 @@ plotme(ByCountry["Total"],outunits,tag=plttag)
 
 plttag = "%s_%s_%s_%s_%s"%(type,"BySite",outunits,lowdate,highdate)
 plotme(BySite["NoMARS"],outunits,tag=plttag)
+
+
+# In[24]:
+
+
+plotme(ByType,outunits,tag="bysite")
+print (ByType["US_FermiGrid"])
+
+
+# In[25]:
+
+
+plttag = "%s_%s_%s_%s_%s"%(type,"AllData",outunits,lowdate,highdate)
+plotme(Data["NoMARS"],outunits,tag=plttag)
 
 
 # In[ ]:
