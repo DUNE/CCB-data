@@ -30,30 +30,39 @@
         "2021-03-24 try with CERN/FNAL combined for raw and test.",
         "2021-03-22 add Collab vs FNAL shares, restore sim disk lifetime to 2."
     ],
-    "Interpretation":" Real numbers from 2021 are shown. Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\\\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\\pagebreak ",
-    "Years":[
+  "Interpretation":" Real numbers from 2021 are shown. Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\\\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\\pagebreak ",
+  "Years":[
         2018,  2019,   2020,   2021,   2022,   2023,   2024,   2025,   2026,   2027,
         2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
         2038,  2039,   2040
     ],
-    "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
-     
-    "Cap":30, # cap in PB
-    "MWCWeight":0, # logical to do MWC weight
-    "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
-    "MaxYear":2040,
-    "MinYear":2020,
-    "Units":
-    {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"MWC-CPU MHrs", "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"MWC-CPU MHrs","Analysis-CPU":"MWC-CPU MHrs", "All":"PB", "Years":"", "Total-CPU":"MWC-CPU MHrs", "Cumulative-Tape":"PB", "Cumulative-Disk":"PB",
-        "Tape":"PB", "Disk":"PB","Cores":"2020-vintage MWC Cores","HS23":"Memory weighted kHS23-yrs",
-        "Wall":"Memory Weighted Wall MHrs","HPC-Storage":"PB","HPC-CPU":"MWC-CPU MHrs", "Reco-Data-GPU":"GPU MHrs", "Sim-GPU":"GPU MHrs"
+  "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
+  
+  "Cap":30, # cap in PB
+  "MWCWeight":0, # logical to do MWC weight
+  "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
+  "MaxYear":2040,
+  "MinYear":2020,
+  "Units":
+  {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"MWC-CPU MHrs",
+   "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"MWC-CPU MHrs","Analysis-CPU":"MWC-CPU MHrs", "All":"PB", "Years":"",
+   "Total-CPU":"MWC-CPU MHrs", "Cumulative-Tape":"PB", "Cumulative-Disk":"PB", "Tape":"PB", "Disk":"PB","Cores":"2020-vintage MWC Cores",
+   "HS23":"Memory weighted kHS23-yrs", "Wall":"Memory Weighted Wall MHrs","HPC-Storage":"PB","HPC-CPU":"MWC-CPU MHrs",
+   "Reco-Data-GPU":"GPU MHrs", "Sim-GPU":"GPU MHrs"
+  },
+  "Formats":
+  {"Events":"%8.1f", "Raw-Store":"%8.1f", "Test":"%8.1f","Raw+Test":"%8.1f", "Reco-Data-Store":"%8.1f", "Reco-Data-CPU":"%8.1f",
+   "Sim-Events":"%8.1f", "Sim-Store":"%8.1f", "Sim-CPU":"%8.1f", "Analysis-CPU":"%8.1f","All":"%8.1f", "Years":"%d",
+   "Total-CPU":"%8.1f", "Cumulative-Tape":"%8.1f", "Cumulative-Disk":"%8.1f", "Tape":"%8.1f", "Disk":"%8.1f","Cores":"%d",
+   "HS23":"%d","Wall":"%d","HPC-Storage":"%f8.1f","HPC-CPU":"%8.1f", "Reco-Data-GPU":"%8.1f", "Sim-GPU":"%8.1f"
     },
-    "Formats":
-    {"Events":"%8.1f", "Raw-Store":"%8.1f", "Test":"%8.1f","Raw+Test":"%8.1f", "Reco-Data-Store":"%8.1f", "Reco-Data-CPU":"%8.1f", "Sim-Events":"%8.1f", "Sim-Store":"%8.1f", "Sim-CPU":"%8.1f", "Analysis-CPU":"%8.1f","All":"%8.1f", "Years":"%d", "Total-CPU":"%8.1f", "Cumulative-Tape":"%8.1f", "Cumulative-Disk":"%8.1f",
-        "Tape":"%8.1f", "Disk":"%8.1f","Cores":"%d","HS23":"%d","Wall":"%d","HPC-Storage":"%f8.1f","HPC-CPU":"%8.1f", "Reco-Data-GPU":"%8.1f", "Sim-GPU":"%8.1f"
-    },
-    "CombinedDetectors":["PDs","FDs","ND-SAND","ND-LAr+TMS"],
-    "SP":
+  "CombinedDetectors":["PDs","FDs","ND-SAND","ND-LAr+TMS"],
+
+  "//comment_about_detectors":"This is the start of the definitions of the different inputs for things listed in Detectors",
+  "//comment_about_detectors":"each detector listed in the Detectors item above has an entry defining its event projections, storage, and processing profile",
+  "//comment_about_detectors":"this includes CPU an GPU, and a memory profile for the CPU processing",
+
+  "SP":
     {"Comment":"move main test beam to 2023, extend cosmics by one year",
         "Raw-Store":70, # from first beam test in MB/Event
         "Reco-Data-CPU":0.1667, #Hr/Event
@@ -233,11 +242,11 @@
     #   0.5,0.5,0.5],
     #    "Add":["PDs", "FDs", "ND-SAND","ND-LAr+TMS"]
     #},
-    "Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND-SAND":100,
+"Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND-SAND":100,
         "ND-LAr+TMS":100}, # of years of data reprocessed when do a new pass
-    "AnalysisExtend":2, # of years of analysis after end of reco/sim extends CPU and disk
+"AnalysisExtend":2, # of years of analysis after end of reco/sim extends CPU, and GPU and disk
     "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"HD":0.1,"VD":0.1,"FDs":0.1,
-        "ND-SAND":0.9,"ND-LAr+TMS":0.9,"MARS":0}, #fraction of time spent on PR as opposed to hit-finding
+		       "ND-SAND":0.9,"ND-LAr+TMS":0.9,"MARS":0}, #fraction of time spent on PR as opposed to hit-finding
     "TapeLifetimes":{"Raw-Store":100, "Test":0.5, "Reco-Data-Store":15, "Sim-Store":15},
     "DiskLifetimes":{"Raw-Store":1, "Test":0.5, "Reco-Data-Store":3, "Sim-Store":2},  # raw and test only hang around a short while, can be restaged
     "TapeCopies":{"Raw-Store":2, "Test":1, "Reco-Data-Store":1, "Sim-Store":1},  # will take some coding to make these work out with 2 copies.
