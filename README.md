@@ -7,23 +7,31 @@ This repository, and all software contained within, is licensed under the Apache
 http://www.apache.org/licenses/LICENSE-2.0
 Copyright is granted to FERMI NATIONAL ACCELERATOR LABORATORY on behalf of the Deep Underground Neutrino Experiment (DUNE). Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-Primary author: Heidi Schellman
+Primary authors: Heidi Schellman, Mike Kirby
 
-# 2023 simulations
+# CCB 2023/24 simulations/usage
 
-The code for 2023 is in subdirectory Numbers-2023
+The code for the CCB in Dec 2023 is on branch CCB-Dec23 in subdirectory Numbers-2024/
+
+New usage information is in subdirectory usage/
+
+usage requires downloading a csv file by hand from the link at the top that dumps a fifemon summary and then running either monthly.py or monthly.ipynb
+
+# 2024 simulations
+
+The code for 2024 is in subdirectory Numbers-2024
 
 * Uses a jupyter notebook (versioned by date for history) 
   
   -  Example: 2023-06-24.ipynb
-  -  LATEST: 2023-06-29.ipynb, mainly added a wall-time plot
+  -  LATEST: 2023-11-07.ipynb, mainly added a wall-time plot
  
   -  This implements NDLAr as a separate detector and add retention times and ratios between analysia and reco+sim times for detectors. 
 
 * Which reads a json file (versioned by date for history)
   
   -  Example: DOE23-NDLAr_2023-06-24-2040.json
-  -  LATEST: DOE23-NDLAr_2023-06-30-2040.json - revised ND numbers after checking with Mat and Chris and Dom
+  -  LATEST: DOE23-NDLAr_2023-11-03-2040.json - has ability to turn of MWC
 
 * The json file has parameters for particular DUNE detectors and running periods. 
 
@@ -45,13 +53,13 @@ The notebook uses NumberUtils.py which does things like make plots, calculate cu
 
 2. clone DUNE/CCB-data  - maybe make your own branch while playing around
 
-3. `cd Numbers-2023 directory`
+3. `cd Numbers-2024 directory`
    
-4. open DOE23_2023-06-22-2040.json in an editor - save your own version 
+4. open DOE23-NDLAr_2023-11-03-2040.json in an editor - save your own version 
 
-6. `jupyter-lab 2023-06-23.ipynb &` will create a webpage with the notebook 
+6. `jupyter-lab 2023-11-07.ipynb &` will create a webpage with the notebook 
    
-7. edit the notebook to point to your version of the json file.
+7. edit the notebook to point to your version of the json file.  DOE23-NDLAr_2023-11-03-2040.json is an example
 
 8. you can then edit the json file and iterate.  Plots will appear in the notebook and in a subdirectory named after your json file. 
 
