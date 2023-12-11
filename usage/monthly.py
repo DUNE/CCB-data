@@ -169,7 +169,7 @@ def plotme(tuple=None,unitlabel=None,tag=None):
 
 # choose your units
 
-name = 'DUNE monthly slot hours by site and role-2023-11-26.csv'
+name = 'SlotHours-2023-12-11.csv'
 inunits="Hr"
 HoursPerYear=(24*365)
 HoursPerMonth=HoursPerYear/12.
@@ -177,11 +177,11 @@ HS23PerCPUHr = 11.
 kHS23PerCPUHr = HS23PerCPUHr/1000.
 kHS23PerCPUYr=kHS23PerCPUHr/HoursPerYear
 Units = {"MHr":1/1000000.,"CoreYears":1./HoursPerYear,"kHS23-Hrs":kHS23PerCPUHr,"kHS23-Yrs":kHS23PerCPUYr}
-Formats = {"Mhr":"10.3f", "CoreYears":"10.1f", "kHS23-Hrs":"10d","kHS23-Yrs":"10.3f"}
-outunits = "kHS23-Yrs"
+Formats = {"MHr":"10.3f", "CoreYears":"10.1f", "kHS23-Hrs":"10d","kHS23-Yrs":"10.3f"}
+outunits = "kHS23-Hrs"
 
 # make choices here
-lowdate = "2022-12"
+lowdate = "2022-01"
 highdate = "2023-11" 
 units=Units[outunits]
 format=Formats[outunits]
@@ -302,16 +302,17 @@ for type in types:
             BySite[type][site][date] = Data[type][site][date]
 
 
+# In[ ]:
+
+
+
+
+
 # In[13]:
 
 
 print ("                                     Usage in %s between %s and %s"%(outunits,lowdate,highdate))
 print ("%30s %10s %10s %10s %10s %10s"%("Site","Production","Analysis","NoMARS","MARS","Total"))
-
-
-# In[14]:
-
-
 ByType={}
 for site in sites:
     ByType[site]={}
@@ -341,7 +342,7 @@ else:
     print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[15]:
+# In[14]:
 
 
 # do by country
@@ -357,7 +358,7 @@ for type in types:
             ByCountry[type][country][date]+=Data[type][site][date]
 
 
-# In[16]:
+# In[15]:
 
 
 print ("                              Usage in %s between %s and %s"%(outunits,lowdate,highdate))
@@ -387,13 +388,13 @@ else:
     print ("%30s %10d %10d %10d %10d %10d"%("Total",totalacrosssite["Production"],totalacrosssite["Analysis"],totalacrosssite["NoMARS"],totalacrosssite["MARS"],totalacrosssite["Total"]))      
 
 
-# In[17]:
+# In[16]:
 
 
 # Make a table for each type:
 
 
-# In[18]:
+# In[17]:
 
 
 # header = "   time in %s by site        "%outunits
@@ -433,20 +434,20 @@ else:
 
 
 
-# In[19]:
+# In[18]:
 
 
 bydate(array=Data,types=types,locations=sites,dates=dates,unitlabel=outunits,format=format,tag="BySite")
 
 
-# In[20]:
+# In[19]:
 
 
 
 bydate(array=ByCountry,types=types,locations=countries,dates=dates,unitlabel=outunits,format=format,tag="ByCountry")
 
 
-# In[21]:
+# In[20]:
 
 
 # header = "   time in %s by country      "%outunits
@@ -493,28 +494,28 @@ bydate(array=ByCountry,types=types,locations=countries,dates=dates,unitlabel=out
 #     out[type].close()
 
 
-# In[22]:
+# In[21]:
 
 
 plttag = "%s_%s_%s_%s_%s"%(type,"ByCountry",outunits,lowdate,highdate)
 plotme(ByCountry["Total"],outunits,tag=plttag)
 
 
-# In[23]:
+# In[22]:
 
 
 plttag = "%s_%s_%s_%s_%s"%(type,"BySite",outunits,lowdate,highdate)
 plotme(BySite["NoMARS"],outunits,tag=plttag)
 
 
-# In[24]:
+# In[23]:
 
 
 plotme(ByType,outunits,tag="bysite")
 print (ByType["US_FermiGrid"])
 
 
-# In[25]:
+# In[24]:
 
 
 plttag = "%s_%s_%s_%s_%s"%(type,"AllData",outunits,lowdate,highdate)
