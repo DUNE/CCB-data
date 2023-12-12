@@ -326,18 +326,18 @@
         "SplitsEarly":"Division between FNAL/CERN/National for storage until SplitsYear",
         "SplitsLater":"Division between FNAL/CERN/National for storage after SplitsYear"
     },
-    // "Actual":{
-    //     "wallactual": {"2021":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
-    //         "2022":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3}
-    //     },
+    "Actual":{
+        "wallactual": {"2021":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
+            "2022":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3}
+        },
 
-    //     "diskactual":{
-    //         "2021":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
-    //         "2022":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30}
-    //     },
-    //     "tapeactual":{
-    //         "2021":{"FNAL":19.804,"CERN":5.02,"National":0.0},
-    //         "2022":{"FNAL":19.804,"CERN":5.02,"National":0.0}
-    //     }
-    // }
+        "diskactual":{
+            "2021":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
+            "2022":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30}
+        },
+        "tapeactual":{
+            "2021":{"FNAL":19.804,"CERN":5.02,"National":0.0},
+            "2022":{"FNAL":19.804,"CERN":5.02,"National":0.0}
+        }
+    }
 }
