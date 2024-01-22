@@ -1,5 +1,7 @@
 { "Version":15,
-    "Changes":["2024-01-21 start new iteration based on Kirby's changes",
+    "Changes":[
+        "2024-01-22 Heidi fixes extension algorithm",
+        "2023-12-11 Heidi increase sim for ND to x4",
         "2023-11-03 Heidi commits all old changes and adds option to not do MWC",
         "2023-07-03 Kirby added some comments for documentation and worked on adding GPU for ND-LAr",
         "2023-06-30 lower memory for FD reco to 2GB",
@@ -36,12 +38,12 @@
         2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
         2038,  2039,   2040
     ],
-  "Detectors":["SP","PDHD","DP","PDVD","2x2","HighE","LowE","LBL","Calib","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
+  "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
   
   "Cap":30, # cap in PB
   "MWCWeight":0, # logical to do MWC weight
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
-  "MaxYear":2040,
+  "MaxYear":2030,
   "MinYear":2020,
   "Units":
   {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"MWC-CPU MHrs",
@@ -57,11 +59,12 @@
    "HS23":"%d","Wall":"%d","HPC-Storage":"%f8.1f","HPC-CPU":"%8.1f", "Reco-Data-GPU":"%8.1f", "Sim-GPU":"%8.1f"
     },
   "CombinedDetectors":["PDs","FDs","ND-SAND","ND-LAr+TMS"],
+
   "//comment_about_detectors":"This is the start of the definitions of the different inputs for things listed in Detectors",
   "//comment_about_detectors":"each detector listed in the Detectors item above has an entry defining its event projections, storage, and processing profile",
   "//comment_about_detectors":"this includes CPU an GPU, and a memory profile for the CPU processing",
 
- "SP":
+  "SP":
     {"Comment":"move main test beam to 2023, extend cosmics by one year",
         "Raw-Store":70, # from first beam test in MB/Event
         "Reco-Data-CPU":0.1667, #Hr/Event
@@ -73,17 +76,44 @@
         "Reco-Memory":4000, #MB
         "Sim-Memory":6000, #MB
         "Analysis-CPU":0.5, #ratio of Analysis to reco+sim
-        "Events":[  10.9,   19.4,   6.5,    6.5,    0,  0,  0,  0,  0,  0,
+        "Events":[  10.9,   19.4,   6.5,    0,    0,  0,  0,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], #millions
         "Test":[    157,    600,    500,    0,    0,  0,  0,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], # commissioning stuff in TB
-        "Sim-Events":[  1.25,   5,  5,  10,     5,     0,  0,  0,  0,  0,
+        "Sim-Events":[  1.25,   5,  5,  10,     5,     5,  5,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0] #millions
     },
-   "DP":{
+    "PDHD":  # UPDATE FOR 2023 delay
+    {"Comment":"move main test beam to 2023, extend cosmics by one year",
+        "Raw-Store":140, # no compression MB/Event, 4 APA 14 bit
+        "Reco-Data-CPU":0.1667, #Hr/Event
+        "Sim-CPU":0.75, #Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":35, #MB/Event
+        "Sim-Store":220, #MB/Event
+        "Reco-Memory":4000, #MB
+        "Sim-Memory":6000, #MB
+        "Analysis-CPU":0.5,
+        #"Years":[
+        #    2018,  2019,   2020,   2021,   2022,   2023,   2024,   2025,   2026,   2027,
+        #    2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
+        #    2038,  2039,   2040
+        #],
+        "Events":[  0,  0,  0,  0,  5,  5, 20, 0,  0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], #millions
+        "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], # commissioning stuff in TB
+        "Sim-Events":[  0,  0,  0,  0,  5,  5,  5,  5, 5,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0] #millions
+    },
+    "DP":{
         "Comment":"extend testing to 2024",
         "Raw-Store":110, # MB/Event
         "Reco-Data-CPU":0.1667, #Hr/Event
@@ -100,121 +130,72 @@
         "Test":[0, 42, 500, 231, 231, 231, 500, 500, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0],
         "Sim-Events":[1.25, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0]
     },
- "2x2":
-   {"Raw-Store":2, # MB/Spill            #this is the size of a spill in the raw data (90% light waveforms)
-       "Reco-Data-CPU":0.03, # Hr/Spill      #this is the amount of CPU hours needed to process each spill in data
-       "Sim-CPU":0.06, # Hr/Spill                      #this is the amount of CPU hours needed for gen, G4, detector response, and reconstruction of a simulated spill
-       "Reco-Data-GPU":0.0001, #Hr/Spill            #this is the amount of GPU hours needed to process each spill in data
-       "Sim-GPU":0.0002, #Hr/Spill                  #thisis the amount of GPU hours needed for gen, G4, detector response, and reconstruction of a simulated spill
-       "Reco-Data-Store":10, # MB/Spill        #this is the size of the reconstruction output for a spill in data (very rough guess)
-       "Sim-Store":20, # MB/Spill                     #this is the size of the output of all simulated event formats needed for simulation
-       "Reco-Memory":4000, #MB                         #memory needed for CPU processing reconstruction on each trigger record in data (we don't know what Pandora actually needs)
-       "Sim-Memory":1500, #MB                  #memory needed for CPU processing gen, G4, detector response, and reco of a simulated event
-       "Analysis-CPU":0,                             #estimate of the scaling of analysis CPU processing needed compared with the Data/Sim CPU processing (we have no idea)
-       "Events":[  0,  0,  0,  0,  0,  0, 12, 12, 12,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0], #millions
-       "Test":[0,  0,  0,  0, 0,   0,    1,   1, 1,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0], #millions
-       "Sim-Events":[  0,  0,  0,  0,  0,  1,   120,     120,     120,  120, 0.0,  0.0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0]
-},
-"HighE":
-{"Comment":"Uses largely same numbers as for LBL",
-"Raw-Store":4000, # MB/Event   #scaled PDSP data (57MB/event)
-"Reco-Data-CPU":0.167, # Hr/Event      #Assumed dominated by signal processing
- "Sim-CPU":0.167, # Hr/Event      #Based on Haiwang’s full FD study using 8 threads 
- "Reco-Data-GPU":0, #Hr/Event
- "Sim-GPU":0, #Hr/Event
- "Reco-Data-Store":4, # MB/Event     #Assumed dropping raw info
- "Sim-Store":10, # MB/Event             #Assumed not saving rawdigits
- "Reco-Memory":6000, #MB        #A loose estimate based on Haiwang’s full FD study
- "Sim-Memory":6000, #MB      #Haiwang’s full FD study: 8 threads
- "Analysis-CPU":0.5,
-2018,  2019,   2020,   2021,   2022,   2023,   2024,   2025,   2026,   2027,  2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037, 2038,  2039,   2040
- "Events":[0,0,0,0,0,0,0,0,0,0,0,0.00249,0,0.01,0.015,0,0,0.04,0,0,0.07,0,0], #millions
- "Test":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # commissioning stuff in TB
- "Sim-Events":[0,0,0,0,0,0,14,0,14,0,14,14,0,0,14,0,0,14,0,0,14,0,0] #millions
-},
-"LBL":
-{"Comment":"NA",
- "Raw-Store":4000, # MB/Event   #scaled PDSP data (57MB/event)
- "Reco-Data-CPU":0.167, # Hr/Event      #Assumed dominated by signal processing
- "Sim-CPU":0.167, # Hr/Event      #Based on Haiwang’s full FD study using 8 threads 
- "Reco-Data-GPU":0, #Hr/Event
- "Sim-GPU":0, #Hr/Event
- "Reco-Data-Store":4, # MB/Event     #Assumed dropping raw info
- "Sim-Store":10, # MB/Event             #Assumed not saving rawdigits
- "Reco-Memory":6000, #MB        #A loose estimate based on Haiwang’s full FD study
- "Sim-Memory":6000, #MB      #Haiwang’s full FD study: 8 threads
- "Analysis-CPU":0.5,
- "Events":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.00136,0,0.004080,0,0.008160,0, 0.016320,0,0.021761], #millions
- "Test":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # commissioning stuff in TB
- "Sim-Events":[0,0,0,0,0,24,24,0,0,24,0,0,0,24,24,0,24,0,24,0,24,0,24] #millions
-},
-"LowE":{"Comment":"This has used LBL numbers where possible, but radiologicals complicate (inflate) things.  Memory based on tests for the upcoming production",
- "Raw-Store":4000, # MB/Event   #scaled PDSP data (57MB/event)
- "Reco-Data-CPU":0.167, # Hr/Event      #Assumed dominated by signal processing
- "Sim-CPU":0.4, # Hr/Event   #Maybe sped up by multithreading but tests not been done 
- "Reco-Data-GPU":0, #Hr/Event
- "Sim-GPU":0, #Hr/Event
- "Reco-Data-Store":4, # MB/Event     #Assumed dropping raw info
- "Sim-Store":1500, # MB/Event             #Assumed not saving rawdigits #radiologicals
- "Reco-Memory":6000, #MB        #A loose estimate based on Haiwang’s full FD study
- "Sim-Memory":24000, #MB      #Radiologicals in the full FD will be a problem
- "Analysis-CPU":0.5,
- "Events":[0,0,0,0,0,0,0,0,0,0,0,0.0091,0,0.046,0,0,0.1,0,0,0.19, 0,0,0.3], #millions
- "Test":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # commissioning stuff in TB
- "Sim-Events":[0,0,0,0,0,10,0,0,10,0,0,10,0,10,0,0,10,0,0,10, 0,0,10] #millions
-},
-"Calib":{"Comment":"Uses largely same numbers as for LBL",
- "Raw-Store":4000, # MB/Event   #scaled PDSP data (57MB/event)
- "Reco-Data-CPU":0.167, # Hr/Event      #Assumed dominated by signal processing
- "Sim-CPU":0.167, # Hr/Event      #Based on Haiwang’s full FD study using 8 threads 
- "Reco-Data-GPU":0, #Hr/Event
- "Sim-GPU":0, #Hr/Event
- "Reco-Data-Store":4, # MB/Event     #Assumed dropping raw info
- "Sim-Store":10, # MB/Event             #Assumed not saving rawdigits
- "Reco-Memory":6000, #MB        #A loose estimate based on Haiwang’s full FD study
- "Sim-Memory":6000, #MB      #Haiwang’s full FD study: 8 threads
- "Analysis-CPU":0.5,
- "Events":[0,0,0,0,0,0,0,0,0,0,1.83,3.65,3.65,3.65,3.65,3.65,5.48,5.48,7.3,7.3,7.3,7.3,7.3], #millions
- "Test":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # commissioning stuff in TB
- "Sim-Events":[0,0,0,0,0,0,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6,2.6] #millions
-},
-"PDVD":
-   {   "Raw-Store":150, # MB/Event            #this is the size of a trigger record in the raw data
-       "Reco-Data-CPU":0.09 , #0.1667, # Hr/Event      #this is the amount of CPU hours needed to process each trigger record in data
-       "Sim-CPU":0.75, # Hr/Event                      #this is the amount of CPU hours needed for gen, G4, detector response, and reconstruction of a simulated event
-       "Reco-Data-GPU":0, #Hr/Event            #this is the amount of GPU hours needed to process each trigger record in data
-       "Sim-GPU":0, #Hr/Event                  #thisis the amount of GPU hours needed for gen, G4, detector response, and reconstruction of a simulated event
-       "Reco-Data-Store": 80, # MB/Event        #this is the size of the reconstruction output for a trigger record in data
-       "Sim-Store":1700, # MB/Event                     #this is the size of the output of all simulated event formats needed for simulation
-       "Reco-Memory":4000, #MB                         #memory needed for CPU processing reconstruction on each trigger record in data
-       "Sim-Memory":6000, #MB                  #memory needed for CPU processing gen, G4, detector response, and reco of a simulated event
-       "Analysis-CPU":0.5,                             #estimate of the scaling of analysis CPU processing needed compared with the Data/Sim CPU processing
-       "Events":[  0,  0,  0,  0,  0 ,  0, 4.7, 0, 0 ,  0 ,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0], #millions
-                       #this is the data events produced and processed in each year starting in 2018
-       "Test":[0,  0,  0,  0,  0,   0,    0,   0, 0,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0], #millions
-                       #commissioning data produced from the detector in each year in TB starting in 2018
-       "Sim-Events":[  0,  0,  0,  0,  0,  0,    0.08 ,     0.08 ,     0.0,  0.0, 0.0,  0.0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0] #millions
-                       #this is the number of simulated events produced and processed in each year starting in 2018
-},
-"PDHD":
-    { "Raw-Store":110, # MB/Event            #this is the size of a trigger record in the raw data
-        "Reco-Data-CPU":0.10, # Hr/Event      #this is the amount of CPU hours needed to process each trigger record in data
-        "Sim-CPU":0.21, # Hr/Event                      #this is the amount of CPU hours needed for gen, G4, detector response, and reconstruction of a simulated event
-        "Reco-Data-GPU":0, #Hr/Event            #this is the amount of GPU hours needed to process each trigger record in data
-        "Sim-GPU":0, #Hr/Event                  #thisis the amount of GPU hours needed for gen, G4, detector response, and reconstruction of a simulated event
-        "Reco-Data-Store":180, # MB/Event        #this is the size of the reconstruction output for a trigger record in data
-        "Sim-Store":140, # MB/Event                     #this is the size of the output of all simulated event formats needed for simulation
-        "Reco-Memory":4250, #MB                         #memory needed for CPU processing reconstruction on each trigger record in data
-        "Sim-Memory":6000, #MB                  #memory needed for CPU processing gen, G4, detector response, and reco of a simulated event
-        "Analysis-CPU":0.5,                             #estimate of the scaling of analysis CPU processing needed compared with the Data/Sim CPU processing
-        "Events":[  0,  0,  0,  0,  0,  0,  7,  7,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0], #millions
-                        #this is the data events produced and processed in each year starting in 2018
-        "Test":     [  0,  0,  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0], #millions
-                        #commissioning data produced from the detector in each year in TB starting in 2018
-        "Sim-Events": [  0,  0,  0,  0,  0,  0,  14,  14,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0] #millions
-                        #this is the number of simulated events produced and processed in each year starting in 2018
-},
-"ND-SAND":
+    "PDVD":
+    {"Comment":"extend testing to 2024",  # 2025?
+        "Raw-Store":110, # MB/Event
+        "Reco-Data-CPU":0.1667, # Hr/Event
+        "Sim-CPU":0.75, # Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":220, # MB/Event
+        "Reco-Memory":4000, #MB
+        "Sim-Memory":6000, #MB
+        "Analysis-CPU":0.5, 
+        "Events":[  0,  0,  0,  0,  5.1,  5.1, 5.1, 20.4,  5.1,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], #millions
+        "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 500,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], # commissioning stuff in TB
+        "Sim-Events":[  0,  0,  0,  0,  5.1,  5.1,    5.1,     5.1,     5.1,  5.1,
+            0.0,  0.0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0] #millions
+    },
+    "HD":{"Comment":"make testing continue from 2027",
+        "Raw-Store":3750, # no compression MB/Event
+        "Reco-Data-CPU":1.25, # Hr/Event comes from scaling up ~30 sec/apa to 150 + PR
+        "Sim-CPU":0.08, # Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":40, # MB/Event based on large VD sample
+        "Reco-Memory":2000, #MB
+        "Sim-Memory":3000, #MB
+        "Analysis-CPU":0.5,
+        "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0.5, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 4.4, 4.4, 4.4,
+            4.4, 4.4, 4.4], # is the doubling in the out years from beam intensity?
+        "Test":[0, 0, 0, 0, 0, 0, 0, 0, 1000, 5000,
+            5000, 6000, 6000, 6000, 6000, 6000, 6000,6000, 6000, 1000,
+            1000, 1000, 1000 ],
+        "Sim-Events":[0, 0, 0, 0, 0, 10, 10, 10, 10, 10,
+            10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+            10, 10, 10] #millions
+    },
+    "VD":
+    { "Comment":"make testing continue from 2028",
+        "Raw-Store":8000, # MB/Event no compression
+        "Reco-Data-CPU":1.33, # # Hr/Event scale up from 30 s/CRP
+        "Sim-CPU":0.13, # MB/Event
+        "Reco-Data-GPU":0.1, #Hr/Event
+        "Sim-GPU":0.1, #Hr/Event
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":40,   # MB/Event drop hits, 2x6 
+        "Reco-Memory":2000, #MB
+        "Sim-Memory":4000, #MB
+        "Analysis-CPU":0.5,
+        "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0.0, 1.1, 2.2, 2.2, 2.2, 2.2, 2.2, 4.4, 4.4, 4.4,
+            4.4, 4.4, 4.4], # is the doubling in the out years from beam intensity?
+        "Test":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            5100, 5100, 6100, 6100,6100, 6100, 6100,6100, 6100, 1100,
+            1100, 1100, 1100 ], # small offset so you can see it
+        "Sim-Events":[0, 0, 0, 0, 5.1, 10.2, 10.2, 10.2, 10.2, 10.2,
+            10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2,
+            10.2, 10.2, 10.2] # small offset so you can see it
+    },
+    "ND-SAND":
     {"Comment":"Just Sand from MAT 6/29/23",
         "Raw-Store":5, # MB/Event 
         "Reco-Data-CPU":0.0022, # Hr/Event
@@ -225,15 +206,15 @@
         "Sim-Store":25, # MB/Event
         "Reco-Memory":2000, # MB
         "Sim-Memory":2000, # MB
-        "Analysis-CPU":0.5,
+        "Analysis-CPU":0.25,
         "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
           0, 0, 0, 15, 15, 15, 15, 15, 15, 15,
         15, 15, 15,],
         "Test":[0, 0, 0, 0, 300, 1000, 1000, 1000, 1000, 1000,
             1000, 1000, 1000, 1000, 500, 500, 500, 500, 500, 500, 500,500, 500 ],
-        "Sim-Events":[0, 0, 0, 10, 10, 10, 10, 10, 10, 15,
-            15, 15, 15, 15, 15, 15, 15, 15,15, 15,
-          15, 15, 15, 15,]
+        "Sim-Events":[0, 0, 0, 0, 1, 1, 1, 1, 5, 10,
+            20, 30, 45, 60, 60, 60, 60, 60,60, 60,
+          60, 60, 60, 60,]
     },
     "ND-LAr+TMS":
     {"Comment":"new as very different needs a lot of input from 2x2 ",
@@ -246,21 +227,27 @@
         "Sim-Store":50, # MB/Event
         "Reco-Memory":2000, # MB
         "Sim-Memory":2000, # MB
-        "Analysis-CPU":0.5,
+        "Analysis-CPU":0.25,  # fraction of the CPU use -  decrease as MC goes up
         "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 15, 15, 15, 15, 15, 15, 15,
           15, 15, 15,],
         "Test":[0, 0, 0, 0, 300, 1000, 1000, 1000, 1000, 1000,
             1000, 1000, 1000, 1000, 500, 500, 500, 500, 500, 500, 500,500, 500 ],
         "Sim-Events":[0, 0, 0, 0, 1, 1, 1, 1, 5, 10,
-            15, 15, 15, 15, 15, 15, 15, 15,15, 15,
-          15, 15, 15, 15,]
+            20, 30, 45, 60, 60, 60, 60, 60,60, 60,
+          60, 60, 60, 60,]
     },
-
-"Reprocess":{"SP":3,"DP":3,"PDHD":3,"PDVD":3,"PDs":3,"2x2":3,"LowE":100,"HighE":100,"Calib":3,"LBL":100,"FDs":100,"ND-SAND":100,
+    #  Parameters
+    #"Analysis":
+    #{"Scale":[0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+    #   0.5, 0.5, 0.5,0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+    #   0.5,0.5,0.5],
+    #    "Add":["PDs", "FDs", "ND-SAND","ND-LAr+TMS"]
+    #},
+"Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND-SAND":100,
         "ND-LAr+TMS":100}, # of years of data reprocessed when do a new pass
 "AnalysisExtend":2, # of years of analysis after end of reco/sim extends CPU, and GPU and disk
-    "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"HighE":0.1,"LowE":0.1,"LBL":0.1,"2x2":0.25,"Calib":0.75,"FDs":0.1,
+    "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"HD":0.1,"VD":0.1,"FDs":0.1,
 		       "ND-SAND":0.9,"ND-LAr+TMS":0.9,"MARS":0}, #fraction of time spent on PR as opposed to hit-finding
     "TapeLifetimes":{"Raw-Store":100, "Test":0.5, "Reco-Data-Store":15, "Sim-Store":15},
     "DiskLifetimes":{"Raw-Store":1, "Test":0.5, "Reco-Data-Store":3, "Sim-Store":2},  # raw and test only hang around a short while, can be restaged
@@ -279,12 +266,12 @@
     "Disk Accounting":"October 1",
     "TypeColors": {"Raw-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Sim-Store":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange"},
     "TypeLines": {"Raw-Store":"solid","Raw+Test":"solid", "Test":"dashed", "Reco-Data-Store":"solid", "Sim-Store":"dashed", "Total":"solid"},
-    "DetColors": {"SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue","2x2":"cyan","LBL":"red",
-        "HighE":"red","LowE":"red","Calib":"red","FDs":"red","ND-SAND":"grey","ND-LAr+TMS":"black","Analysis":"orange", "Total":"black","MARS":"purple",
+    "DetColors": {"SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue", "HD":"red",
+        "VD":"red","FDs":"red","ND-SAND":"grey","ND-LAr+TMS":"black","Analysis":"orange", "Total":"black","MARS":"purple",
         "Production":"blue", "FNAL":"orange", "CERN":"cyan", "National":"green"
     },
-    "DetLines": {"SP":"solid","PDHD":"dashed", "DP":"solid","PDVD":"dotted", "PDs":"solid","2x2":"dotted", "HighE":"dashed","LowE":"dashed","LBL":"solid",
-        "Calib":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","FNAL":"solid", "CERN":"solid", "National":"solid"
+    "DetLines": {"SP":"solid","PDHD":"dashed", "DP":"solid","PDVD":"dotted", "PDs":"solid", "HD":"solid",
+        "VD":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","FNAL":"solid", "CERN":"solid", "National":"solid"
         
     },
     "SplitsYear":2029,

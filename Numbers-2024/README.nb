@@ -1,0 +1,17 @@
+This is the directory for 2024 studies.  There are two projects
+
+NearTerm emphasizes protoDUNE and simulation for FD/ND startup
+
+LongTerm emphasizes the breakdown of FD between different areas. 
+
+Both should be analyzable with 2024-01-21-HMS.ipynb
+
+DOE23-NDLAR_2023-12-11-2040 was used for the pre-CCB
+
+It is replaced by NearTerm
+
+Mike Kirby implemented the FD split that goes into LongTerm
+
+his work was in CCB_Prep_2023-12-11-2040.json
+
+
