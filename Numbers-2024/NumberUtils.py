@@ -158,7 +158,7 @@ def cumulateMap(years,a,lifetime=100):
   #print (b)
     return b
 
-# sum backwards over lifetime of record
+# extend a record from the max value to N years past the last value (overwrites positive values past the max)
 def extendMap(years,a,lifetime=0,tag=None):
 
     # extend map by the average of previous lifetime years
@@ -181,7 +181,7 @@ def extendMap(years,a,lifetime=0,tag=None):
         b[i] = a[i] 
     
     lastentry = years[len(years)-1]
-    print ("first,last",first,last)
+    #print ("first,last",first,last)
     avg = {}
 
     # loop, if < maxbin, b = a, if >= maxbin, b = max for extend years
@@ -192,22 +192,10 @@ def extendMap(years,a,lifetime=0,tag=None):
             b[i] = a[i]
         else:
             b[i] = max
-    print ("extending",tag,a)
-    print ("extended",tag,b)
+    #print ("extending",tag,a)
+    #print ("extended",tag,b)
     return b
-    # for i in years:
-    #     # only extend if needed
-    #     if a[i] != 0:
-    #         continue
-    #     for j in range(1,lifetimebase+1):
-    #         if i-j < years[0]:
-    #             continue
-    #         if a[i-j] != 0:
-    #             print ("extend",i,j,a[i],a[i-j],tag)
-    #             b[i]= a[i-j] 
-    #             print ("original",a)
-    #             print ("extended",b)
-    #             break
+    
 
 # sum backwards over lifetime of record
 def extendMapold(years,a,lifetime=0,tag=None):

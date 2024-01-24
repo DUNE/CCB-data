@@ -1,7 +1,5 @@
 { "Version":15,
     "Changes":[
-        "2024-01-23 Add timeline feature",
-        "2024-01-22 Heidi fixes extension algorithm",
         "2023-12-11 Heidi increase sim for ND to x4",
         "2023-11-03 Heidi commits all old changes and adds option to not do MWC",
         "2023-07-03 Kirby added some comments for documentation and worked on adding GPU for ND-LAr",
@@ -40,11 +38,11 @@
         2038,  2039,   2040
     ],
   "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
-  //"Timeline":"NearTerm_2024-01-22-2040_timeline.csv",
+  
   "Cap":30, # cap in PB
   "MWCWeight":0, # logical to do MWC weight
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
-  "MaxYear":2030,
+  "MaxYear":2040,
   "MinYear":2020,
   "Units":
   {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"MWC-CPU MHrs",
@@ -77,13 +75,13 @@
         "Reco-Memory":4000, #MB
         "Sim-Memory":6000, #MB
         "Analysis-CPU":0.5, #ratio of Analysis to reco+sim
-        "Events":[  10.9,   19.4,   6.5,    0,    0,  0,  0,  0,  0,  0,
+        "Events":[  10.9,   19.4,   6.5,    6.5,    0,  0,  0,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], #millions
         "Test":[    157,    600,    500,    0,    0,  0,  0,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], # commissioning stuff in TB
-        "Sim-Events":[  1.25,   5,  5,  10,     5,     5,  5,  0,  0,  0,
+        "Sim-Events":[  1.25,   5,  5,  10,     5,     0,  0,  0,  0,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0] #millions
     },
@@ -104,13 +102,13 @@
         #    2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
         #    2038,  2039,   2040
         #],
-        "Events":[  0,  0,  0,  0,  5,  5, 20, 0,  0,  0,
+        "Events":[  0,  0,  0,  0,  5,  5, 20, 20,  5,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], #millions
-        "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 0,  0,
+        "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 500,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], # commissioning stuff in TB
-        "Sim-Events":[  0,  0,  0,  0,  5,  5,  5,  5, 5,  0,
+        "Sim-Events":[  0,  0,  0,  0,  5,  5,     5,     5,     5,  5,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0] #millions
     },
@@ -143,7 +141,7 @@
         "Reco-Memory":4000, #MB
         "Sim-Memory":6000, #MB
         "Analysis-CPU":0.5, 
-        "Events":[  0,  0,  0,  0,  5.1,  5.1, 5.1, 20.4,  5.1,  0,
+        "Events":[  0,  0,  0,  0,  5.1,  5.1, 20.4, 20.4,  5.1,  0,
             0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
             0,  0,  0], #millions
         "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 500,  0,
