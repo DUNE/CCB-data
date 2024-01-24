@@ -11,7 +11,7 @@ Primary authors: Heidi Schellman, Mike Kirby
 
 # CCB 2023/24 simulations/usage
 
-The code for the CCB in Dec 2023 is on branch CCB-Dec23 in subdirectory Numbers-2024/
+The code for the CCB in Dec 2023 is on branch CCB-Feb24 in subdirectory Numbers-2024/Dec23
 
 New usage information is in subdirectory usage/
 
@@ -23,15 +23,18 @@ The code for 2024 is in subdirectory Numbers-2024
 
 * Uses a jupyter notebook (versioned by date for history) 
   
-  -  Example: 2023-06-24.ipynb
-  -  LATEST: 2023-11-07.ipynb, mainly added a wall-time plot
- 
+  - 2024-01-21-HMS.ipynb is the latest version.  It has fixed extension algorithms and can now read in the timeline from a csv file instead of those long lists of years. 
+  
   -  This implements NDLAr as a separate detector and add retention times and ratios between analysia and reco+sim times for detectors. 
 
 * Which reads a json file (versioned by date for history)
   
   -  Example: DOE23-NDLAr_2023-06-24-2040.json
-  -  LATEST: DOE23-NDLAr_2023-11-03-2040.json - has ability to turn of MWC
+  -     DOE23-NDLAr_2023-11-03-2040.json - has ability to turn of MWC
+  - LongTerm_2024-01-23-2040.json  is a new model Kirby started that includes TP, Calib, and various physics types
+  - NearTerm_2024-01-23-2040.json is the old model used in Dec 23 
+  
+LongTerm is still under development while NearTerm is similar to the 2023 models. 
 
 * The json file has parameters for particular DUNE detectors and running periods. 
 
@@ -55,11 +58,15 @@ The notebook uses NumberUtils.py which does things like make plots, calculate cu
 
 3. `cd Numbers-2024 directory`
    
-4. open DOE23-NDLAr_2023-11-03-2040.json in an editor - save your own version 
+4. open NearTerm_2024-01-23-2040.json in an editor - save your own version 
 
-6. `jupyter-lab 2023-11-07.ipynb &` will create a webpage with the notebook 
+5. It will point to a Timeline file: NearTerm_2024-01-23-2040_timeline.json - that has year by year event and Test stream volumes in cvs format.  Much better for getting things in the right year.  If you comment out the "Timeline" line in the  top level json file, the code will use the old method with the lists in the top level json file. 
+
+If you want your own version, make your own top level json file and then have it point to a new csv file. 
+
+6. `jupyter-lab 2024-01-21-HMS.ipynb &` will create a webpage with the notebook 
    
-7. edit the notebook to point to your version of the json file.  DOE23-NDLAr_2023-11-03-2040.json is an example
+7. edit the notebook to point to your version of the json file.  NearTerm_2024-01-23-2040.json is an example
 
 8. you can then edit the json file and iterate.  Plots will appear in the notebook and in a subdirectory named after your json file. 
 
