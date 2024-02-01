@@ -1,0 +1,20 @@
+Country,                          RSE,Allocation,account  lim (TB),rse  usage (TB),percent used
+ CERN,                CERN  PDUNE  EOS,3020,2000,1504,50
+ CERN,                 DUNE  CERN  EOS,1000,1000,454,45
+   CZ,                        PRAGUE,1126,1000,561,50
+   ES,                   DUNE  ES  PIC,720,1000,192,27
+   FR,          DUNE  FR  CCIN2P3  DISK,537,500,180,33
+   IN,                  DUNE  IN  TIFR,0,0,0,299
+   IT,             DUNE  IT  INFN  CNAF,300,300,0,0
+   NL,                        NIKHEF,1143,1000,550,48
+   NL,                      SURFSARA,756,750,6,1
+   UK,        DUNE  UK  LANCASTER  CEPH,500,500,485,97
+   UK,                    MANCHESTER,1078,1000,976,91
+   UK,                          QMUL,1100,1000,770,70
+   UK,                        RAL-PP,625,400,99,16
+   UK,                      RAL  ECHO,1000,1050,819,82
+   US,              DUNE  US  BNL  SDCC,830,830,2,0
+   US,       DUNE  US  FNAL  DISK  STAGE,1000,1000,809,81
+   US,                   FNAL  DCACHE,8780,8780,8780,100
+   US,           FNAL  DCACHE  STAGING,50,50,0,0
+   US,                   T3  US  NERSC,20,20,1,3
