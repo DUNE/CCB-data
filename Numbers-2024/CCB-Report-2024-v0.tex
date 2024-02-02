@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{csvsimple}
+\usepackage{rotating}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \parindent=0pt
@@ -78,13 +79,13 @@ Proposed pledges for 2024 are detailed  in sections: Disk(\ref{sec:diskresult}),
 {\bf Request}	&&		&		&		&		\\
 &FNAL	&	7.80	&	8.86	&	36.2	&	3,792	\\
 &CERN	&	2.60	&	4.00	&	9.2	&	3,792	\\
-&National	&	15.40	&	12.94	&	0.1	&	7,585\\
+&Global	&	15.40	&	12.94	&	0.1	&	7,585\\
 \hline
 &{\bf Total}	&	25.80	&	25.80	&	45.5	&	15,169	\\
 \hline
 \end{tabular}
 
-\caption{Requests from previous year (2023).  Disk pledges are based on existing CERN and FNAL contributions with National contributions making up the rest of the model request.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges are in units of memory-weighted-core-years and assume Fermilab and CERN each pledge 25\%.   }
+\caption{Requests from previous year (2023).  Disk pledges are based on existing CERN and FNAL contributions with Global contributions making up the rest of the model request.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges are in units of memory-weighted-core-years and assume Fermilab and CERN each pledge 25\%.   }
 \end{centering}
 \label{tab:summary2023}
 \end{table}
@@ -101,13 +102,13 @@ Proposed pledges for 2024 are detailed  in sections: Disk(\ref{sec:diskresult}),
 {\bf Request}	&&		&		&		&		\\
 &FNAL	&	7.80	&	8.86	&	36.2	&	3,792	\\
 &CERN	&	2.60	&	4.00	&	9.2	&	3,792	\\
-&National	&	15.40	&	12.94	&	0.1	&	7,585\\
+&Global	&	15.40	&	12.94	&	0.1	&	7,585\\
 \hline
 &{\bf Total}	&	25.80	&	25.80	&	45.5	&	15,169	\\
 \hline
 \end{tabular}
 
-\caption{Requests for 2024).  Disk pledges are based on existing CERN and FNAL contributions with National contributions making up the rest of the model request.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges are in units of memory-weighted-core-years and assume Fermilab and CERN each pledge 25\%.   }
+\caption{Requests for 2024).  Disk pledges are based on existing CERN and FNAL contributions with Global contributions making up the rest of the model request.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges are in units of memory-weighted-core-years and assume Fermilab and CERN each pledge 25\%.   }
 \end{centering}
 \label{tab:summary2024}
 \end{table}
@@ -124,11 +125,11 @@ CERN and FNAL have special responsibilities for archival data storage and for di
 
 \begin{table}[h]
 \begin{centering}
-%\caption{Division between FNAL/CERN/National for storage until 2027}
+%\caption{Division between FNAL/CERN/Global for storage until 2027}
 %{\bf Tape}
 %\begin{tabular}{|rrrr|}
 %\hline
-% &FNAL&CERN & National \\
+% &FNAL&CERN & Global \\
 % \hline
 %Raw:&  0.5&  0.5&  0.0\\
 %Sim:& 1.0&   0.0&   0.0\\ 
@@ -149,16 +150,16 @@ CERN and FNAL have special responsibilities for archival data storage and for di
   Test: &  0.50& 0.50&   0.00\\
   \hline
    \end{tabular}
-  \caption{Proposed division between FNAL/CERN/National for storage until 2028.  The tape division is not yet finalized as we work on integration of Global tape archives. In the long run, Global sites are expected to take over some of the tape provision currently provided by CERN. }
+  \caption{Proposed division between FNAL/CERN/Global for storage until 2028.  The tape division is not yet finalized as we work on integration of Global tape archives. In the long run, Global sites are expected to take over some of the tape provision currently provided by CERN. }
 
    \label{tab:division}
    \end{centering}
    \end{table}
 
 \subsection{Disk}
-Table \ref{tab:RSEUsage} summarizes the disk utilization known to rucio, augmented with information gathered from individual sites at a meeting on 2022-11-21.  Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports, while others (PIC) are still being filled.  The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
+Table \ref{tab:RSEUsage} summarizes the disk utilization reported by sites via \cite{scotgrid}, supplemented by  rucio reports.   Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports.  The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
 
-Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for 2023.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
 Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared to the actual amounts allocated and used from Table \ref{tab:RSEUsage} .   The 2023 request has been re-evaluated in light of underuse in 2021 and 2022 and should better match the likely capacity of the collaborating sites.  It is however, still higher than 2022 due to ProtoDUNE running and increased simulation for the far and near detectors. 
 
@@ -167,27 +168,29 @@ Table \ref{tab:DiskPledges} summarizes the pledges from previous years compared 
 %\caption{Summary  of DUNE disk areas known to rucio \cite{scotgrid}.  The CASTOR and FNAL Dcache areas are partially tape-backed and expandable. FNAL and CERN allocations are not provided by the reports but usage is.  }
 %\label{tab:RSEUsage}
 %\end{table}
-\begin{table}[ht]
+\begin{sidewaystable}[ht]
+%\begin{table}[ht]
 \centering
 \csvautotabularright{external/RSEdata.csv}
-\caption{Disk allocations and usage across sites.    These numbers are derived from rucio reports and from cross-checks with individual sites on 2024-02-01. }
+\caption{Disk allocations and usage across sites.    These numbers are derived from usage reports,  rucio reports and from cross-checks with individual sites on 2024-02-01.  The percentages are Used/Allocation. }
 \label{tab:RSEUsage}
-\end{table}
+%\end{table}
+\end{sidewaystable}
 
-\end{document}
+%\end{document}
 
 \begin{figure}[h]
-\centering\includegraphics[height=0.5\textwidth]{NearTerm_2024-01-22-2030_noMWC/NearTerm_2024-01-22-2030_noMWC-Cumulative-Disk.png}
-\csvautotabularright{NearTerm_2024-01-22-2030_noMWC/NearTerm_2024-01-22-2030_noMWC-Cumulative-Disk-Source.csv}
-\csvautotabularright{NearTerm_2024-01-22-2030_noMWC/NearTerm_2024-01-22-2030_noMWC-Cumulative-Disk-Request.csv}
-\caption{Cumulative Disk needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split using the fractions from Table \ref{tab:division} and a modified version which reflects the disk already in place at FNAL and CERN, thus reducing the National request. }\label{fig:Cumulative-Disk}
+\centering\includegraphics[height=0.5\textwidth]{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cumulative-Disk.png}
+\csvautotabularright{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cumulative-Disk-Source.csv}
+\csvautotabularright{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cumulative-Disk-Request.csv}
+\caption{Cumulative Disk needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split using the fractions from Table \ref{tab:division} and a modified version which reflects the disk already in place at FNAL and CERN, thus reducing the Global request. }\label{fig:Cumulative-Disk}
 \end{figure}
 
 
 
 
 \begin{table}[ht]
-\centering\csvautotabularright{external/DiskResources-2021-2022-2023-Detail-update.csv}
+\centering\csvautotabularright{external/DiskResources-2021-2022-2023-2024-Details.csv}
 \caption{Summary of disk pledges, allocations and usage for 2021-2022 with model request for 2023.  This is based on the 2022 CCB tables which are available in indico  \cite{CCB2022,CCB2023}.  These numbers are derived from the rucio reports in Table \ref{tab:RSEUsage} and may not be complete.  }
 \label{tab:DiskPledges}
 \end{table}
@@ -201,7 +204,7 @@ The overall request for 2023 is 25.8 PB vs. the 22.6 PB already on the floor so 
 
 
 
-Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape need projected by our model. These numbers are used to generate the requests for 2023.  They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape need projected by our model. These numbers are used to generate the requests for 2023.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
 
 \subsubsection{Conclusion}\label{sec:taperesult}
@@ -210,10 +213,11 @@ DUNE currently has $\sim$23 PB of data on tape at Fermilab and 5 PB of protoDUNE
 The UK and the IN2P3 have made $\sim 3$ PB of tape archive available but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for these resources to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. 
 
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-01-22-2030_noMWC/NearTerm_2024-01-22-2030_noMWC-Cumulative-Tape.png}
+\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cumulative-Tape.png}
 
-\csvautotabularright{NearTerm_2024-01-22-2030_noMWC/NearTerm_2024-01-22-2030_noMWC-Cumulative-Tape-Source.csv}
-\csvautotabularright{external/MoreSim_2022-12-02-2026-Cumulative-Tape-Request.csv}\caption{Cumulative Tape requests in PB, includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split.  National contributions are set low in 2023 and grow thereafter as more tape archives are integrated. }\label{fig:Cumulative-Tape}
+\csvautotabularright{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cumulative-Tape-Source.csv}
+%\csvautotabularright{external/NearTerm_2024-02-01-2030_noMWC-Cumulative-Tape-Request.csv}
+\caption{Cumulative Tape requests in PB, includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split.  Global contributions are set low in 2023 and grow thereafter as more tape archives are integrated. }\label{fig:Cumulative-Tape}
 \end{figure}
 
 
@@ -230,12 +234,19 @@ The wall-time estimates in the model are created by estimating the number of sim
 
 
 \begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{MoreSim_2022-12-04-2026/MoreSim_2022-12-04-2026-Cores.png}
-\csvautotabularright{MoreSim_2022-12-04-2026//MoreSim_2022-12-04-2026-Cores.csv}  %had to fix so moved to external
-\caption{Proposed memory-weighted wall-time needs in number of 2000 MB cores (MWC-years). Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:CoresMain}
+\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cores.png}
+\csvautotabularright{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-Cores.csv}  %had to fix so moved to external
+\caption{Proposed wall-time needs in number of 2000 MB cores (MWC-years). Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:CoresMain}
 \end{figure}
 
-Figure/Table \ref{fig:CoresMain} shows the projected memory-weighted wall-time  (MWChr) need projections through 2026.  This is different than in previous years where memory weighting was not applied.   They are divided into the two host laboratories (CERN and FNAL) and National, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+\begin{figure}[h]
+\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-HS23.png}
+\csvautotabularright{NearTerm_2024-02-01-2030_noMWC/NearTerm_2024-02-01-2030_noMWC-HS23.csv}  %had to fix so moved to external
+\caption{Proposed wall-time needs in  HS23 units. }\label{fig:HS23Main}
+\end{figure}
+
+
+Figure/Table \ref{fig:HS23Main} shows the projected wall-time  (HS23-yrs) need projections through 2030.   They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
 
 \subsection{Example of memory weighted pledges}
@@ -256,18 +267,18 @@ The idea here is make the additional load of running large DUNE jobs transparent
 
 Table \ref{tab:CPUUsage} summarizes previous pledges\cite{CCB2022} and the measured usage  for 2021 and 2022 using FNAL's  HTCondor memory-weighted wall-time statistics\cite{fifemonDUNE}.  The  usage numbers for 2022 are Nov 2021 to Oct 2022. 
 
-Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov 2021 to Oct 2022 derived from the EGI accounting\cite{EGI2022} which uses the number of cores allocated to a pilot.   If four 4000 MB reconstruction jobs were sent to an 8-core pilot on a system with 2000MB/core, this would be equivalent to using 8 MWC (memory-weighted wall-time units).   
+%Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov 2021 to Oct 2022 derived from the EGI accounting\cite{EGI2022} which uses the number of cores allocated to a pilot.   If four 4000 MB reconstruction jobs were sent to an 8-core pilot on a system with 2000MB/core, this would be equivalent to using 8 MWC (memory-weighted wall-time units).   
 
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/CPUresources-2021-2022-2023-v3.csv}
-\caption{Summary  of DUNE wall-time pledges and contributions for 2021 and 2022.  The 2022 actual numbers are memory-weighted core-years.  Individual nations are listed and then merged (with US OSG) into a National section.} 
+\caption{Summary  of DUNE wall-time pledges and contributions for 2021 and 2022.  The 2022 actual numbers are memory-weighted core-years.  Individual nations are listed and then merged (with US OSG) into a Global section.} 
 \label{tab:CPUUsage}
 \end{table}
 
 \begin{table}[ht]
 \centering\csvautotabularright{external/EIG-2022.csv}
-\centering\csvautotabularright{external/EIG-2022-National.csv}
+\centering\csvautotabularright{external/EIG-2022-Global.csv}
 \caption{Summary  of DUNE slot-years used for European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}.  The top shows all sites with EGI records, the bottom shows the summed contributions. These numbers reflect multiple-core slot reservations to account for larger memory use and are similar to, but  generally higher than, the FNAL accounting numbers in the previous table.} \label{tab:EIGSummary}
 \end{table}
 
@@ -293,7 +304,7 @@ BelleII&2048& \hrefII https://operations-portal.egi.eu/vo/view/voname/belle \\
 \subsection{Conclusion}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in 2023 and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For 2023, we are requesting $\sim$12,800 memory-weighted core-years (MWC-years) where a system with 2000 MB/core is assumed to offer 1 MWC/core.  
 
 %\section{
-%\input{NearTerm_2024-01-22-2030_noMWC.tex}
+%\input{NearTerm_2024-02-01-2030_noMWC.tex}
 
 %\section{Model Assumptions}
 
@@ -338,6 +349,6 @@ Disk and tape lifetimes for different data types are specified as well as the de
 
 The splits parameters make CERN responsible for raw data until 2027 with the collaboration taking over after that point. 
 
-\input{MoreSim_2022-12-04-2026/tables.tex}
+\input{NearTerm_2024-02-01-2030_noMWC/tables.tex}
 \end{document}
 

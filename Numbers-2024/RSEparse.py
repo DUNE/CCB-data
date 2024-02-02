@@ -108,9 +108,9 @@ for rse in rsedata:
         if rse["account_lim"] < 0:
             continue
 
-        if rse["account_lim"] < rse["rse_usage"]:
-            print ("can't use more than you have", fullname)
-            rse["rse_usage"] = rse["account_lim"]
+        #if rse["account_lim"] < rse["rse_usage"]:
+        #    print ("can't use more than you have", fullname)
+        #    rse["rse_usage"] = rse["account_lim"]
     if fullname not in patches and rse["type"] == "TAPE":
         print ("skip this RSE as it is tape",fullname)
         continue
