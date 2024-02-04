@@ -3,6 +3,9 @@ Country,                           RSE,Allocation (TB), Used (TB),account lim (T
  CERN,                 DUNE CERN EOS,      1000,       495,      1000,       454,        49
    CZ,                        PRAGUE,      1126,       561,      1000,       561,        50
    ES,                   DUNE ES PIC,       720,       192,      1000,       192,        27
+ FNAL,       DUNE US FNAL DISK STAGE,      1000,       809,      1000,       809,        81
+ FNAL,                   FNAL DCACHE,      8780,      6200,      8780,     11429,        71
+ FNAL,           FNAL DCACHE STAGING,        50,         0,        50,         0,         0
    FR,          DUNE FR CCIN2P3 DISK,       537,       180,       500,       180,        33
    IN,                  DUNE IN TIFR,         0,         0,         0,         0,       299
    IT,             DUNE IT INFN CNAF,       300,         0,       300,         0,         0
@@ -14,7 +17,4 @@ Country,                           RSE,Allocation (TB), Used (TB),account lim (T
    UK,                        RAL-PP,       625,       116,       400,        99,        19
    UK,                      RAL ECHO,      1000,       965,      1050,       819,        96
    US,              DUNE US BNL SDCC,       830,        13,       830,         2,         2
-   US,       DUNE US FNAL DISK STAGE,      1000,       809,      1000,       809,        81
-   US,                   FNAL DCACHE,      8780,      6200,      8780,      8780,        71
-   US,           FNAL DCACHE STAGING,        50,         0,        50,         0,         0
    US,                   T3 US NERSC,        20,         1,        20,         1,         3
