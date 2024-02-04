@@ -1,5 +1,6 @@
 { "Version":16,
     "Changes":[
+        "2024-02-04 add tex macros for important numbers",
         "2024-02-01 put in # from FD production, raise CPU to reflect 2 passes",
         "2024-01-31 clean up timeline",
         "2024-01-23 Add timeline feature",
@@ -48,6 +49,7 @@
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
   "MaxYear":2030,
   "MinYear":2022,
+  "RequestYear":2024,
   "Units":
   {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"MWC-CPU MHrs",
    "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"MWC-CPU MHrs","Analysis-CPU":"MWC-CPU MHrs", "All":"PB", "Years":"",

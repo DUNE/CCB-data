@@ -20,6 +20,8 @@
 
 
 \newcommand{\hrefII}[1]{\href{#1}{#1}}
+
+\input{NearTerm_2024-02-02-2030_noMWC/NearTerm_2024-02-02-2030_noMWC_macros}
 \begin{document}
 
 
@@ -237,22 +239,26 @@ The overall request for 2023 is 25.8 PB vs. the 22.6 PB already on the floor so 
 \clearpage
 \subsection{Tape}
 
+\subsubsection{Model Projections}
+
+Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape needs projected by  the model. These numbers are used to generate the requests for 2024.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
+The UK and the IN2P3 have offered $\sim 3$ PB of tape archive  but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for these resources to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. .
+
+The increase in 2024-2025 is mainly storage of raw data from the upcoming runs of PDHD and PDVD
 
 
-Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape need projected by our model. These numbers are used to generate the requests for 2024.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 
-
-\subsubsection{Conclusion}\label{sec:taperesult}
+\subsubsection{Current Status and Request}\label{sec:taperesult}
 DUNE currently has $\sim$24.3 PB of data on tape at Fermilab and 5.7 PB of protoDUNE data as a second copy at CERN.  We anticipate needing up to 45 PB of tape (an increase of 16 PB from 2023) to accommodate the ProtoDUNE run 2 data and increased simulation. 
 
-The UK and the IN2P3 have made $\sim 3$ PB of tape archive available but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for these resources to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. 
 
 \begin{figure}[h]
 \centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-02-2030_noMWC/NearTerm_2024-02-02-2030_noMWC-Cumulative-Tape.png}
 
 \csvautotabularright{NearTerm_2024-02-02-2030_noMWC/NearTerm_2024-02-02-2030_noMWC-Cumulative-Tape-Source.csv}
+\csvautotabularright{NearTerm_2024-02-02-2030_noMWC/NearTerm_2024-02-02-2030_noMWC-Cumulative-Tape-Request.csv}
 %\csvautotabularright{external/NearTerm_2024-02-02-2030_noMWC-Cumulative-Tape-Request.csv}
-\caption{Cumulative Tape requests in PB, includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split.  Global contributions are set low in 2023 and grow thereafter as more tape archives are integrated. }\label{fig:Cumulative-Tape}
+\caption{Cumulative Tape needs from the model in PB, includes data lifetimes.  The top table shows the origin of the data while the bottom table  shows the proposed split.  Global contributions are set low in 2024 and grow thereafter as more tape archives are integrated. }\label{fig:Cumulative-Tape}
 \end{figure}
 
 
@@ -352,7 +358,7 @@ Table \ref{tab:CPUUsage} summarizes previous pledges\cite{CCB2022} and the measu
 %\end{table}
 %
 \pagebreak
-\subsection{Conclusion}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in 2024 and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For 2024, we are requesting XXX kHS23-Yrs
+\subsection{Conclusion}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in 2024 and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For 2024, we are requesting \CPUTotal  kHS23-Yrs
 %\section{
 %\input{NearTerm_2024-02-02-2030_noMWC.tex}
 
