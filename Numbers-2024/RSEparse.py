@@ -50,6 +50,7 @@ patches = {"FNAL_DCACHE":8780000,
            "CERN_PDUNE_CASTOR":-1,
            "FNAL_DCACHE_TEST":-1,
            "LANCASTER":-1,
+           "DUNE_IN_TIFR":750000,
             }
 " here dcache is from Steve Timm, rest are set to -1 as the are not real anymore "
 

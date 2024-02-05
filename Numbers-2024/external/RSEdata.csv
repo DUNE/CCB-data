@@ -7,7 +7,7 @@ Country,                           RSE,Allocation (TB), Used (TB),account lim (T
  FNAL,                   FNAL DCACHE,      8780,      6200,      8780,     11429,        71
  FNAL,           FNAL DCACHE STAGING,        50,         0,        50,         0,         0
    FR,          DUNE FR CCIN2P3 DISK,       537,       180,       500,       180,        33
-   IN,                  DUNE IN TIFR,         0,         0,         0,         0,       299
+   IN,                  DUNE IN TIFR,       750,         0,         0,         0,         0
    IT,             DUNE IT INFN CNAF,       300,         0,       300,         0,         0
    NL,                        NIKHEF,      1143,       546,      1000,       550,        48
    NL,                      SURFSARA,       756,         5,       750,         6,         1
