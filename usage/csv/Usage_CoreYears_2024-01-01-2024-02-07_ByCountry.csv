@@ -1,0 +1,15 @@
+                          Site,Production,  Analysis,    NoMARS,      MARS,     Total
+                            BR,         0,         0,         0,         0,         0
+                            CA,         0,         0,         0,         0,         0
+                          CERN,         2,         5,         8,         0,         8
+                            CZ,         0,         2,         2,         0,         2
+                            ES,         0,         1,         1,         0,         1
+                            FR,         0,         1,         2,         0,         2
+                            IN,         0,         0,         0,         0,         0
+                            IT,         0,         3,         3,         0,         3
+                            NL,         0,         4,         4,         0,         4
+                            UK,         2,        34,        37,         0,        37
+                       US FNAL,         3,        88,        92,       125,       217
+                   US non-FNAL,         1,         9,        10,         0,        10
+                     undefined,         0,         0,         0,         0,         0
+                         Total,        10,       152,       163,       125,       288
