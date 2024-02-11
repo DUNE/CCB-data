@@ -1,5 +1,6 @@
 { "Version":16,
     "Changes":[
+        "2024-02-10 raise cap to 50 PB",
         "2024-02-05 cut off in 2028", 
         "2024-02-04 add tex macros for important numbers",
         "2024-02-01 put in # from FD production, raise CPU to reflect 2 passes",
@@ -45,7 +46,7 @@
     ],
   "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
   "Timeline":"NearTerm_2024-02-05-2040_timeline.csv",
-  "Cap":30, # cap in PB
+  "Cap":50, # cap in PB
   "MWCWeight":0, # logical to do MWC weight
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
   "MaxYear":2040,
@@ -315,7 +316,7 @@
     
     "Explain":{
         "Detectors":"Detectors included in the calculation",
-        "Cap":"Cap on Raw data/year in PB",
+        "Cap":"Cap on Raw data per year in PB",
         "Base-Memory":"MB of memory per slot assumed as the average",
         "MaxYear":"Plot until year",
         "MinYear":"Plot starting with year",
