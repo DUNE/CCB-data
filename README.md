@@ -9,6 +9,10 @@ Copyright is granted to FERMI NATIONAL ACCELERATOR LABORATORY on behalf of the D
 
 Primary authors: Heidi Schellman, Mike Kirby
 
+Current version is now on branch CCB-Jun24
+
+The code for the CCB in Feb 24 is on branch CCB-Feb24 in subdirectory Numbers-2024/
+
 # CCB 2023/24 simulations/usage
 
 The code for the CCB in Dec 2023 is on branch CCB-Dec23 in subdirectory Numbers-2024/
