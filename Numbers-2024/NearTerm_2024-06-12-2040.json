@@ -62,7 +62,7 @@
    "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"MWC-CPU MHrs","Analysis-CPU":"MWC-CPU MHrs", "All":"PB", "Years":"",
    "Total-CPU":"MWC-CPU MHrs", "Cumulative-Tape":"PB", "Cumulative-Disk":"PB", "Tape":"PB", "Disk":"PB","Cores":"2020-vintage MWC Cores",
    "HS23":"Memory weighted kHS23-yrs", "Wall":"Memory Weighted Wall MHrs","HPC-Storage":"PB","HPC-CPU":"MWC-CPU MHrs",
-   "Reco-Data-GPU":"GPU MHrs", "Sim-GPU":"GPU MHrs"
+   "Reco-Data-GPU":"GPU MHrs", "Sim-GPU":"GPU MHrs","Store":"PB","CPU":"CPU MHrs","GPU":"GPU MHrs"
   },
   "Formats":
   {"Events":"%8.1f", "Raw-Store":"%8.1f", "Test":"%8.1f","Raw+Test":"%8.1f", "Reco-Data-Store":"%8.1f", "Reco-Data-CPU":"%8.1f",
