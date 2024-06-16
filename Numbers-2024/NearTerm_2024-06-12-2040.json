@@ -44,10 +44,11 @@
         2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
         2038,  2039,   2040
     ],
-    "Indices":{"Detectors":0,"Datatypes":1,"Resources":2,"Locations":3,"Years":4},
-    "Resources":["Tape","Disk","GPU","CPU","Cumulative-Tape","Cumulative-Disk","dummy"],
-    "DataTypes":["Events","Sim-Events","TP","Sim","Data-Reco","Sim-Reco","Test","Analysis"],
+    "Indices":{"Detectors":0,"DataTypes":1,"Resources":2,"Locations":3,"Years":4},
+    "Resources":["Tape","Disk","GPU","CPU","dummy"],
+    "DataTypes":["Events","Sim-Events","TP","Sim","Reco-Data","Test","Analysis"],
     "Locations":["FNAL","CERN","US","World"],
+    "NativeTypes":["Events","Sim-Events","TP","Test"],
   "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
   "Timeline":"NearTerm_2024-02-05-2040_timeline.csv",
   "Cap":50, # cap in PB
