@@ -50,7 +50,7 @@
     "Locations":["FNAL","CERN","US","World"],
     "NativeTypes":["Events","Sim-Events","TP","Test"],
   "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
-  "Timeline":"NearTerm_2024-02-05-2040_timeline.csv",
+  "Timeline":"NearTerm_2024-06-12-2040_timeline.csv",
   "Cap":50, # cap in PB
   "MWCWeight":0, # logical to do MWC weight
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
