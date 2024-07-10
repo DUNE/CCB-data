@@ -69,7 +69,7 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 # In[ ]:
 
 
-configfilename = "NearTerm_2024-06-12-2040.json"
+configfilename = "NearTerm_2024-07-10-2040.json"
 #if len(sys.argv) > 1:
 #  configfile = sys.argv[1]
 
@@ -200,9 +200,11 @@ Explain = config["Explain"]
 Explain["filename"] = "Input configuration file"
 
 holder = DataHolder(config)
-csvData = holder.csvDump()
-print (csvData)
-sys.exit(1)
+csvname = configfilename.replace(".json",".csv")
+csvData = holder.csvDump(csvname)
+holder.jsonDump(configfilename.replace(".json","safe.json"))
+#print (csvData)
+#sys.exit(1)
  
 
 holder.sumAcross("Detectors",Detectors,"Total")
@@ -237,7 +239,7 @@ for f in Explain.keys():
 # In[ ]:
 
 
-dofirst = ["Events","Test","Sim-Events"]
+
 print ("Detector Parameters",DetectorParameters)
 # read in the raw information
 
@@ -329,7 +331,8 @@ for detector in Detectors:
     print ("--------------- raw-storage ------------------")
 
     # first events, which have to be stored. 
-    for datatype in ["Events","TP","Test","Sim-Events"]:
+    # Make "dummy" locations in to "Store" scled by config[detector][type]
+    for datatype in config["NativeTypes"]:
         for resource in ["Store"]:
             for location in ["ALL"]:
                 if holder.hasTag(detector,datatype,"dummy",location):
@@ -339,6 +342,7 @@ for detector in Detectors:
                         factor = config[detector]["Raw-Store"]
                     if datatype == "Sim-Events":
                         factor = config[detector]["Sim-Store"]
+                    # TP and Test are already in units of GB
                     if DEBUG: print ("storage",detector,datatype,resource,location,factor)
                     newtag = holder.scale(detector,datatype,"dummy",location,{"Resources":resource},factor)
                     holder.printByTag(newtag)
@@ -347,8 +351,10 @@ for detector in Detectors:
 
     # here you need to code reconstruction effects on all resources. 
 
+    
+
     print ("---------------  makereco ------------------") 
-    for datatype in ["Reco-Data"]:
+    for datatype in ["Reco-Data","Sim"]:
         input = "Events"
         # Reco gets reprocessed so has a special cumulation
         for resource in ["CPU","GPU","Store"]:
@@ -357,10 +363,10 @@ for detector in Detectors:
                     holder.printByTag(holder.tag(detector,input,resource,location))                 
                     factor = config[detector][datatype+"-"+resource]
                     if datatype == "Reco-Data":
-                        factor = config[detector]["Reco-"+resource]*Reprocess[detector]
+                        factor = config[detector]["Reco-Data-"+resource]*Reprocess[detector]*PerYear["Reco-Data-"+resource]
                         input = "Events"
                     if datatype == "Sim":
-                        factor = config[detector]["Sim-"+resource]
+                        factor = config[detector]["Sim-"+resource]*PerYear["Sim-"+resource]
                         input = "Sim-Events"
                         # do two transforms to change both datatype and label. 
                     newtag = holder.cumulateMe(detector,input,"dummy",location,{"Resources":resource,"DataTypes":datatype},factor)          
@@ -368,10 +374,10 @@ for detector in Detectors:
                     if DEBUG:
                         print ("Try to extend", detector,datatype,resource,location)
                     if datatype in ["Reco-Data","Sim"]:
-                        newtag = holder.extendMe(detector,datatype,resource,location,{"Datatypes":datatype},AnalysisExtend)
+                        newtag = holder.extendMe(detector,datatype,resource,location,{"DataTypes":datatype},AnalysisExtend)
                     holder.printByTag(newtag)
 
-
+holder.csvDump("after-reco.csv")
     
 #     for key in DetectorParameters:
         
@@ -432,15 +438,20 @@ for detector in Detectors:
          # right now this uses MWC - may be ok as reading in big stuff uses memory
     # make an analysis type
     #
+
+print ("---------------  make analysis ------------------")
 for detector in Detectors:
     for resource in ["CPU"]:   
         for location in ["ALL"]:
-            recoAtag = holder.scale(detector,"Reco-Data",resource,location,{"DataTypes":"Analyze-Data"},config[detector]["Analysis-CPU"])
-            recoAtag = holder.scale(detector,"Reco-Data",resource,location,{"DataTypes":"Analyze-Sim"},config[detector]["Analysis-CPU"])
-            newtag = holder.sumAcross("DataTypes",["Analysis-Data","Analysis-Sim"],"Analysis-Total")
-            holder.printByTag(newtag)
+            recoAtag = holder.scale(detector,"Reco-Data",resource,location,{"DataTypes":"Analysis-Data"},config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"])
+            simAtag = holder.scale(detector,"Sim",resource,location,{"DataTypes":"Analysis-Sim"},config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"])
+            
+            newtags = holder.sumAcross("DataTypes",["Analysis-Data","Analysis-Sim"],"Total-Analysis")
+            
+            
+            
 
-sys.exit()
+holder.csvDump("after-analyze.csv")
 
     # for datatype in ["Analysis"]:  # keep analyzing for a few years. 
     #     for resource in Resources:
@@ -457,15 +468,15 @@ sys.exit()
     #     if DEBUG: print ("other key",det,key)
 
 
-sys.exit(1)
+
 # do a little cleanup
 
-for det in Inputs.keys():
+# for det in Inputs.keys():
     
-    if "Sim-Memory" in Inputs[det]:
-        Inputs[det].pop("Sim-Memory")
-    if "Reco-Memory" in Inputs[det]:
-        Inputs[det].pop("Reco-Memory")
+#     if "Sim-Memory" in Inputs[det]:
+#         Inputs[det].pop("Sim-Memory")
+#     if "Reco-Memory" in Inputs[det]:
+#         Inputs[det].pop("Reco-Memory")
 
 
 # In[ ]:
@@ -480,30 +491,30 @@ if PerYear["Sim-Store"]!=PerYear["Sim-CPU"]:
     print ("Sim growth has to match reprocessing cycles/year")
     PerYear["Sim-Store"] = PerYear["Sim-CPU"]
 
-Data = {}
-dump = open("dump.txt",'w')
+#Data = {}
+#dump = open("dump.txt",'w')
 
     
 #print (Inputs.keys())
-fields = list(Inputs["ND-SAND"].keys())
-print ("fields",fields)
-for dtype in fields:
-    Data[dtype] = {}
-    if "Memory" in dtype:
-        continue
-    for det in Inputs.keys():
-        Data[dtype][det] = {}
-        # this allows you to, say, do 2 passes of reco/year
+# fields = config["Scales"]
+# print ("fields",fields)
+# for dtype in fields:
+#     Data[dtype] = {}
+#     if "Memory" in dtype:
+#         continue
+#     for det in Detectors:
         
-        # print("makeData",dtype, det, Inputs[det][dtype][year])
-        for year in Years:
-            Data[dtype][det][year] = float(Inputs[det][dtype][year]) * float(PerYear[dtype])
-        # compensate for nominal units being millions and TB or singles and MB
-        if Units[dtype] == "PB":
-            for year in Years:
-                Data[dtype][det][year] *= 0.001
-        ds = "data %s %s %f\n"%(dtype,det,Data[dtype][det][2022])
-        dump.write(ds)
+#         # this allows you to, say, do 2 passes of reco/year
+        
+#         # print("makeData",dtype, det, Inputs[det][dtype][year])
+#         for year in Years:
+#             Data[dtype][det][year] = float(Inputs[det][dtype][year]) * float(PerYear[dtype])
+#         # compensate for nominal units being millions and TB or singles and MB
+#         if Units[dtype] == "PB":
+#             for year in Years:
+#                 Data[dtype][det][year] *= 0.001
+#         ds = "data %s %s %f\n"%(dtype,det,Data[dtype][det][2022])
+#         dump.write(ds)
 
 
 # - impose a cap at Cap (30 PB/year if set)
@@ -512,7 +523,7 @@ for dtype in fields:
 
 
 # impose a cap at Cap on things derived from raw data
-
+sys.exit(1)
 dtype = "Raw-Store"
 
 Data["Raw-Store"]["Total"] = {}

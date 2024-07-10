@@ -1,0 +1,377 @@
+{ "Version":21,
+    "Changes":[
+        "2024-07-10 change name for PerYear",
+        "2024-02-10 raise cap to 50 PB",
+        "2024-02-05 cut off in 2028", 
+        "2024-02-04 add tex macros for important numbers",
+        "2024-02-01 put in # from FD production, raise CPU to reflect 2 passes",
+        "2024-01-31 clean up timeline",
+        "2024-01-23 Add timeline feature",
+        "2024-01-22 Heidi fixes extension algorithm",
+        "2023-12-11 Heidi increase sim for ND to x4",
+        "2023-11-03 Heidi commits all old changes and adds option to not do MWC",
+        "2023-07-03 Kirby added some comments for documentation and worked on adding GPU for ND-LAr",
+        "2023-06-30 lower memory for FD reco to 2GB",
+        "2023-06-29 new ND from Mat",
+        "2023-06-20 new VD/HD #'s from Dom",
+        "2023-06-28 make NDLAr optional controled by CombinedDetectors",
+        "2023-06-24 add support for analysis by detector",
+        "2023-06-23 match to milestones, add NDLAr",
+        "2023-06-22 update for DOE review, extend PD analysis, raise analysis levels for FD/ND",
+        "2023-05-05 update for DOE review, delay PD2 yet again",
+        "2023-01-31 version for FCSRG - change CERN/FNAL weights, raise ND test for 2x2",
+        "2022-11-21 make units Memory weighted",
+        "2022-11-18 introduce memory scaling for CPU",
+        "2022-11-07 double FD Sim",
+        "2022-11-07 add in memory use so cores, rescale analysis as smaller",
+        "Number reprocessing is only X percent of original as you keep the hits?",
+        "Number why does CPU ->0 even though Sim still running in 2027",
+        "2022-10-23 update the code",
+        "2022-05-19 revert pre 2023 to CdunCB sim numbers but keep updated daq estimates",
+        "2022-05-18 add in MARS",
+        "2022-02-21 add in new numbers for PD2, FD sim, reflect daq document",
+        "2022-01-22 add actual numbers's",
+        "2022-01-14 updates for VD channels and new drift times.",
+        "2021-07-25 see effects of PD 2 delay",
+        "2021-04-27 change HSPEC06 to 11 from 15 per CMS numbers from Kirby",
+        "2021-04-21 clarify CERN vs Collab for first 10 years",
+        "2021-03-26 clearer plots, go to v3 of the code to preserve the RRB code in v2",
+        "2021-03-24 try with CERN/FNAL combined for raw and test.",
+        "2021-03-22 add Collab vs FNAL shares, restore sim disk lifetime to 2."
+    ],
+  "Interpretation":" Real numbers from 2021 are shown. Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\\\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\\pagebreak ",
+  "Years":[
+        2018,  2019,   2020,   2021,   2022,   2023,   2024,   2025,   2026,   2027,
+        2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
+        2038,  2039,   2040
+    ],
+    "Indices":{"Detectors":0,"DataTypes":1,"Resources":2,"Locations":3,"Years":4},
+    "Resources":["Tape","Disk","GPU","CPU","dummy"],
+    "DataTypes":["Events","Sim-Events","TP","Sim","Reco-Data","Test","Analysis"],
+    "Locations":["FNAL","CERN","US","World"],
+    "NativeTypes":["Events","Sim-Events","TP","Test"],
+    "Scales":["Raw-Store", # MB/Event 
+        "Reco-Data-CPU", # Hr/Event
+        "Sim-CPU", # Hr/Event 
+        "Reco-Data-GPU", #Hr/Event
+        "Sim-GPU", #Hr/Event
+        "Reco-Data-Store", # MB/Event
+        "Sim-Store", # MB/Event
+        "Reco-Memory", # MB
+        "Sim-Memory", # MB
+        "Analysis-CPU"], # fraction of Reco+Sim
+  "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
+  "Timeline":"NearTerm_2024-06-12-2040_timeline.csv",
+  "Cap":50, # cap in PB
+  "MWCWeight":0, # logical to do MWC weight
+  "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
+  "MaxYear":2040,
+  "MinYear":2022,
+  "RequestYear":2024,
+  "Units":
+  {"Events":"Million", "Raw-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"MWC-CPU MHrs",
+   "Sim-Events":"M", "Sim-Store":"PB", "Sim-CPU":"MWC-CPU MHrs","Analysis-CPU":"MWC-CPU MHrs", "All":"PB", "Years":"",
+   "Total-CPU":"MWC-CPU MHrs", "Cumulative-Tape":"PB", "Cumulative-Disk":"PB", "Tape":"PB", "Disk":"PB","Cores":"2020-vintage MWC Cores",
+   "HS23":"Memory weighted kHS23-yrs", "Wall":"Memory Weighted Wall MHrs","HPC-Storage":"PB","HPC-CPU":"MWC-CPU MHrs",
+   "Reco-Data-GPU":"GPU MHrs", "Sim-GPU":"GPU MHrs","Store":"PB","CPU":"CPU MHrs","GPU":"GPU MHrs"
+  },
+  "Formats":
+  {"Events":"%8.1f", "Raw-Store":"%8.1f", "Test":"%8.1f","Raw+Test":"%8.1f", "Reco-Data-Store":"%8.1f", "Reco-Data-CPU":"%8.1f",
+   "Sim-Events":"%8.1f", "Sim-Store":"%8.1f", "Sim-CPU":"%8.1f", "Analysis-CPU":"%8.1f","All":"%8.1f", "Years":"%d",
+   "Total-CPU":"%8.1f", "Cumulative-Tape":"%8.1f", "Cumulative-Disk":"%8.1f", "Tape":"%8.1f", "Disk":"%8.1f","Cores":"%d",
+   "HS23":"%d","Wall":"%d","HPC-Storage":"%f8.1f","HPC-CPU":"%8.1f", "Reco-Data-GPU":"%8.1f", "Sim-GPU":"%8.1f"
+    },
+  "CombinedDetectors":["PDs","FDs","ND-SAND","ND-LAr+TMS"],
+
+  "//comment_about_detectors0":"This is the start of the definitions of the different inputs for things listed in Detectors",
+  "//comment_about_detectors1":"each detector listed in the Detectors item above has an entry defining its event projections, storage, and processing profile",
+  "//comment_about_detectors2":"this includes CPU an GPU, and a memory profile for the CPU processing",
+
+  "SP":
+    {"Comment":"move main test beam to 2023, extend cosmics by one year",
+        "Raw-Store":70, # from first beam test in MB/Event
+        "Reco-Data-CPU":0.1667, #Hr/Event
+        "Sim-CPU":0.75, #Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":35, #MB/Event
+        "Sim-Store":220, #MB/Event
+        "Reco-Memory":4000, #MB
+        "Sim-Memory":6000, #MB
+        "Analysis-CPU":0.5, #ratio of Analysis to reco+sim
+        "Events":[  10.9,   19.4,   6.5,    0,    0,  0,  0,  0,  0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], #millions
+        "Test":[    157,    600,    500,    0,    0,  0,  0,  0,  0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], # commissioning stuff in TB
+        "Sim-Events":[  1.25,   5,  5,  10,     5,     5,  5,  0,  0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0] #millions
+    },
+    "PDHD":  # UPDATE FOR 2023 delay
+    {"Comment":"move main test beam to 2023, extend cosmics by one year",
+        "Raw-Store":140, # no compression MB/Event, 4 APA 14 bit
+        "Reco-Data-CPU":0.1667, #Hr/Event
+        "Sim-CPU":0.75, #Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":35, #MB/Event
+        "Sim-Store":220, #MB/Event
+        "Reco-Memory":4000, #MB
+        "Sim-Memory":6000, #MB
+        "Analysis-CPU":0.5,
+        #"Years":[
+        #    2018,  2019,   2020,   2021,   2022,   2023,   2024,   2025,   2026,   2027,
+        #    2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
+        #    2038,  2039,   2040
+        #],
+        "Events":[  0,  0,  0,  0,  5,  5, 20, 0,  0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], #millions
+        "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], # commissioning stuff in TB
+        "Sim-Events":[  0,  0,  0,  0,  5,  5,  5,  5, 5,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0] #millions
+    },
+    "DP":{
+        "Comment":"extend testing to 2024",
+        "Raw-Store":110, # MB/Event
+        "Reco-Data-CPU":0.1667, #Hr/Event
+        "Sim-CPU":0.75, #Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":35, #MB/Event
+        "Sim-Store":220, #MB/Event
+        "Reco-Memory":4000, #MB
+        "Sim-Memory":6000, #MB
+        "Analysis-CPU":0.5,
+        "Events":[  0,  0.5,    0.9,    2,  0,     0,     0,     0,  0,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+        "Test":[0, 42, 500, 231, 231, 231, 500, 500, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0],
+        "Sim-Events":[1.25, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0]
+    },
+    "PDVD":
+    {"Comment":"extend testing to 2024",  # 2025?
+        "Raw-Store":110, # MB/Event
+        "Reco-Data-CPU":0.1667, # Hr/Event
+        "Sim-CPU":0.75, # Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":220, # MB/Event
+        "Reco-Memory":4000, #MB
+        "Sim-Memory":6000, #MB
+        "Analysis-CPU":0.5, 
+        "Events":[  0,  0,  0,  0,  5.1,  5.1, 5.1, 20.4,  5.1,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], #millions
+        "Test":[0,  0,  0,  0,  1000,   1000,    100,   500, 500,  0,
+            0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0], # commissioning stuff in TB
+        "Sim-Events":[  0,  0,  0,  0,  5.1,  5.1,    5.1,     5.1,     5.1,  5.1,
+            0.0,  0.0,  0,  0,  0,  0,  0,  0,  0,  0,
+            0,  0,  0] #millions
+    },
+    "HD":{"Comment":"make testing continue from 2027",
+        "Raw-Store":3750, # no compression MB/Event
+        "Reco-Data-CPU":1.25, # Hr/Event comes from scaling up ~30 sec/apa to 150 + PR
+        "Sim-CPU":0.125, # Hr/Event
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":40, # MB/Event based on large VD sample
+        "Reco-Memory":2000, #MB
+        "Sim-Memory":3000, #MB
+        "Analysis-CPU":0.5,
+        "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0.5, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2, 4.4, 4.4, 4.4,
+            4.4, 4.4, 4.4], # is the doubling in the out years from beam intensity?
+        "Test":[0, 0, 0, 0, 0, 0, 0, 0, 1000, 5000,
+            5000, 6000, 6000, 6000, 6000, 6000, 6000,6000, 6000, 1000,
+            1000, 1000, 1000 ],
+        "Sim-Events":[0, 0, 0, 0, 0, 10, 10, 10, 10, 10,
+            10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+            10, 10, 10] #millions
+    },
+    "VD":
+    { "Comment":"make testing continue from 2028",
+        "Raw-Store":8000, # MB/Event no compression
+        "Reco-Data-CPU":1.33, # # Hr/Event scale up from 30 s/CRP
+        "Sim-CPU":0.125, # MB/Event
+        "Reco-Data-GPU":0.1, #Hr/Event
+        "Sim-GPU":0.1, #Hr/Event
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":40,   # MB/Event drop hits, 2x6 
+        "Reco-Memory":2000, #MB
+        "Sim-Memory":4000, #MB
+        "Analysis-CPU":0.5,
+        "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0.0, 1.1, 2.2, 2.2, 2.2, 2.2, 2.2, 4.4, 4.4, 4.4,
+            4.4, 4.4, 4.4], # is the doubling in the out years from beam intensity?
+        "Test":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            5100, 5100, 6100, 6100,6100, 6100, 6100,6100, 6100, 1100,
+            1100, 1100, 1100 ], # small offset so you can see it
+        "Sim-Events":[0, 0, 0, 0, 5.1, 10.2, 10.2, 10.2, 10.2, 10.2,
+            10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2, 10.2,
+            10.2, 10.2, 10.2] # small offset so you can see it
+    },
+    "ND-SAND":
+    {"Comment":"Just Sand from MAT 6/29/23",
+        "Raw-Store":5, # MB/Event 
+        "Reco-Data-CPU":0.0022, # Hr/Event
+        "Sim-CPU":0.24, # Hr/Event note that this includes the 3x data scaling for simulation
+        "Reco-Data-GPU":0, #Hr/Event
+        "Sim-GPU":0, #Hr/Event
+        "Reco-Data-Store":10, # MB/Event
+        "Sim-Store":25, # MB/Event
+        "Reco-Memory":2000, # MB
+        "Sim-Memory":2000, # MB
+        "Analysis-CPU":0.25,
+        "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15,],
+        "Test":[0, 0, 0, 0, 300, 1000, 1000, 1000, 1000, 1000,
+            1000, 1000, 1000, 1000, 500, 500, 500, 500, 500, 500, 500,500, 500 ],
+        "Sim-Events":[0, 0, 0, 0, 1, 1, 1, 1, 5, 10,
+            20, 30, 45, 60, 60, 60, 60, 60,60, 60,
+          60, 60, 60, 60,]
+    },
+    "ND-LAr+TMS":
+    {"Comment":"new as very different needs a lot of input from 2x2 ",
+        "Raw-Store":10, # MB/Event
+        "Reco-Data-CPU":0.76, # Hr/Event 
+        "Sim-CPU":4.6, # Hr/Event this comes from (0.384 (fid sim) x3 for data stats) + 1.15 (rock sim)) then double for systematic samples
+        "Reco-Data-GPU":0.76, #Hr/Event
+        "Sim-GPU":4.6, #Hr/Event this comes from (0.768 (fid sim) x3 for data stats) + 0 for sim rock) then double for systematic samples
+        "Reco-Data-Store":20, # MB/Event
+        "Sim-Store":50, # MB/Event
+        "Reco-Memory":2000, # MB
+        "Sim-Memory":2000, # MB
+        "Analysis-CPU":0.25,  # fraction of the CPU use -  decrease as MC goes up
+        "Events":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 15, 15, 15, 15, 15, 15, 15,
+          15, 15, 15,],
+        "Test":[0, 0, 0, 0, 300, 1000, 1000, 1000, 1000, 1000,
+            1000, 1000, 1000, 1000, 500, 500, 500, 500, 500, 500, 500,500, 500 ],
+        "Sim-Events":[0, 0, 0, 0, 1, 1, 1, 1, 5, 10,
+            20, 30, 45, 60, 60, 60, 60, 60,60, 60,
+          60, 60, 60, 60,]
+    },
+    #  Parameters
+    #"Analysis":
+    #{"Scale":[0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+    #   0.5, 0.5, 0.5,0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+    #   0.5,0.5,0.5],
+    #    "Add":["PDs", "FDs", "ND-SAND","ND-LAr+TMS"]
+    #},
+"Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND-SAND":100,
+        "ND-LAr+TMS":100}, # of years of data reprocessed when do a new pass
+"AnalysisExtend":3, # of years of analysis after end of reco/sim extends CPU, and GPU and disk
+    "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"HD":0.1,"VD":0.1,"FDs":0.1,
+		       "ND-SAND":0.9,"ND-LAr+TMS":0.9,"MARS":0}, #fraction of time spent on PR as opposed to hit-finding
+    "TapeLifetimes":{"Raw-Store":100, "Test":1.0, "Reco-Data-Store":15, "Sim-Store":15},
+    "DiskLifetimes":{"Raw-Store":1, "Test":1.0, "Reco-Data-Store":3, "Sim-Store":2},  # raw and test only hang around a short while, can be restaged
+    "TapeCopies":{"Raw-Store":2, "Test":1, "Reco-Data-Store":1, "Sim-Store":1},  # will take some coding to make these work out with 2 copies.
+    "DiskCopies":{"Raw-Store":1, "Test":1, "Reco-Data-Store":2, "Sim-Store":1.5},
+    // "PerYear":
+    // {"Raw-Store":1, "Test":1, "Reco-Data-Store":1, "Sim-Store":1, "Events":1, "Sim-Events":1, "Reco-Data-CPU":1, "Sim-CPU":1, "Analysis":1, "Analysis-CPU":1, "Reco-Data-GPU":1, "Sim-GPU":1}, # of times you redo them per year, CPU is reco CPU, Sim-CPU is sim CPU
+    "PerYear": {
+        "Reco-Data-Store": 1,
+        "Sim-Store": 1,
+        "Reco-Data-CPU": 1,
+        "Sim-CPU": 1,
+        "Analysis-CPU": 1,
+        "Analysis-GPU": 1,
+        "Reco-Data-GPU": 1,
+        "Sim-GPU": 1
+    },
+    "Cores":{
+        "Efficiency":0.7,  # CPU conversion to Wall time, per K. Herner
+        "2020Units":1  # raise this # if machines get faster
+    },
+    "kHEPSPEC06PerCPU":0.011,
+    "FiscalYearStart":"April 1",
+    "CPU Accounting":"end of fiscal year",
+    "Tape Accounting":"end of fiscal year",
+    "Disk Accounting":"October 1",
+    "TypeColors": {"Raw-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Sim-Store":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange"},
+    "TypeLines": {"Raw-Store":"solid","Raw+Test":"solid", "Test":"dashed", "Reco-Data-Store":"solid", "Sim-Store":"dashed", "Total":"solid"},
+    "DetColors": {"SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue", "HD":"red",
+        "VD":"red","FDs":"red","ND-SAND":"grey","ND-LAr+TMS":"black","Analysis":"orange", "Total":"black","MARS":"purple",
+        "Production":"blue", "FNAL":"orange", "CERN":"cyan", "Global":"green"
+    },
+    "DetLines": {"SP":"solid","PDHD":"dashed", "DP":"solid","PDVD":"dotted", "PDs":"solid", "HD":"solid",
+        "VD":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","FNAL":"solid", "CERN":"solid", "Global":"solid"
+        
+    },
+    "SplitsYear":2029,
+    "SplitsEarly":{ # these define the splits of storage - only for CCB use
+        "Tape":{
+            "Raw-Store":{"FNAL":0.5,"CERN":0.5,"Global":0.0},
+            "Sim-Store":{"FNAL":1.0,"CERN":0.0,"Global":0.0},
+            "Reco-Data-Store":{"FNAL":1.0,"CERN":0.0,"Global":0.0},
+            "Test":{"FNAL":0.5,"CERN":0.5,"Global":0.0}
+        },
+        "Disk":{
+            "Raw-Store":{"FNAL":0.5,"CERN":0.5,"Global":0.0},
+            "Sim-Store":{"FNAL":0.4,"CERN":0.1,"Global":0.5},
+            "Reco-Data-Store":{"FNAL":0.4,"CERN":0.1,"Global":0.5},
+            "Test":{"FNAL":0.5,"CERN":0.5,"Global":0.00}
+        },
+        "CPU":{"CPU":{"FNAL":0.4,"CERN":0.1,"Global":0.5}}
+    },
+    "SplitsLater":{# these define the splits of storage - only for CCB use
+        "Tape":{
+            "Raw-Store":{"FNAL":0.5,"CERN":0.25,"Global":0.25},
+            "Sim-Store":{"FNAL":0.50,"CERN":0.0,"Global":0.50},
+            "Reco-Data-Store":{"FNAL":0.50,"CERN":0.0,"Global":0.50},
+            "Test":{"FNAL":0.5,"CERN":0.0,"Global":0.5}
+        },
+        "Disk":{
+            #"Disk":{"Raw-Store":0.0,"Sim-Store":0.75,"Reco-Data-Store":0.75,"Test":0.00} old version
+            "Raw-Store":{"FNAL":1.0,"CERN":0.0,"Global":0.0},
+            "Sim-Store":{"FNAL":0.25,"CERN":0.0,"Global":0.75},
+            "Reco-Data-Store":{"FNAL":0.25,"CERN":0.0,"Global":0.75},
+            "Test":{"FNAL":0.5,"CERN":0.0,"Global":0.5}
+        },
+        "CPU":{"CPU":{"FNAL":0.5,"CERN":0.0,"Global":0.5}}
+    },
+    
+    "Explain":{
+        "Detectors":"Detectors included in the calculation",
+        "Cap":"Cap on Raw data per year in PB",
+        "Base-Memory":"MB of memory per slot assumed as the average",
+        "MaxYear":"Plot until year",
+        "MinYear":"Plot starting with year",
+        "Reprocess":"Number of years of data reprocessed when doing a new pass",
+        "AnalysisExtend":"Years analysis continues after last reco/sim",
+        "PatternFraction":"Fraction of time taken in pattern recognition",
+        "TapeLifetimes":"Number of years kept on tape",
+        "DiskLifetimes":"Number of years kept on disk",
+        "TapeCopies":"Number of copies kept on tape",
+        "DiskCopies":"Number of copies kept on disk",
+        "PerYear":"Number of reprocessing done per year",
+        "Cores":"Description of cores, efficiency and speed relative to 2020 vintage",
+        "kHEPSPEC06PerCPU":"kHEPSPEC06 per core assumed",
+        "SplitsYear":"Year CERN no longer responsible for disk or tape",
+        "SplitsEarly":"Division between FNAL/CERN/Global for storage until SplitsYear",
+        "SplitsLater":"Division between FNAL/CERN/Global for storage after SplitsYear"
+    },
+    "Actual":{
+        "wallactual": {"2021":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
+            "2022":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3}
+        },
+
+        "diskactual":{
+            "2021":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
+            "2022":{"FNAL":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30}
+        },
+        "tapeactual":{
+            "2021":{"FNAL":19.804,"CERN":5.02,"Global":0.0},
+            "2022":{"FNAL":19.804,"CERN":5.02,"Global":0.0}
+        }
+    }
+}
