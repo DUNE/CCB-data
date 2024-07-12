@@ -34,6 +34,7 @@ class DataHolder:
     datatype: events, sim, reco, raw?
     resource: CPU, disk, tape
     location: of the resource (does this need to be separate)
+    units: units
     years:  
     '''
 
@@ -47,10 +48,11 @@ class DataHolder:
         self.NativeTypes = config["NativeTypes"]
         self.Resources = config["Resources"] 
         self.Locations = config["Locations"] 
+        self.Units = config["Units"]
         self.config=config
         self.MaxYear = config["MaxYear"]
         self.MinYear = config["MinYear"]
-        self.Units = config["Units"]
+        self.PlotUnits = config["Units"]
         
         print ("detectors",self.Detectors)
         self.Years = config["Years"]
@@ -84,12 +86,14 @@ class DataHolder:
                 thetype = row[1].strip()
                 if thetype not in  self.DataTypes:
                     print ("unrecognized datatype", thetype)
-
+                resource = row[2].strip()
+                location = row[3].strip()
+                units = row[4].strip()
                 local = {}
                 for year in self.Years:       
-                    local[year] = float(row[year - self.Years[0]+2])
-                if not self.hasTag(det,thetype,"dummy","ALL"):
-                    self.placeData(detector=det,datatype=thetype,resource="dummy",location="ALL",series=local)
+                    local[year] = float(row[year - self.Years[0]+5])
+                if not self.hasTag(det,thetype,resource,location,units):
+                    self.placeData(detector=det,datatype=thetype,resource=resource,location=location,units=units,series=local)
         csvfile.close()
         if DEBUG:
             for x in self.holder:
@@ -122,9 +126,9 @@ class DataHolder:
         # self.SplitsLater = config["SplitsLater"]
        
 
-    def tag(self,detector,datatype,resource,location):
+    def tag(self,detector,datatype,resource,location,units):
         ' make a tag from the categories '
-        return "%s!%s!%s!%s"%(detector,datatype,resource,location)
+        return "%s!%s!%s!%s!%s"%(detector,datatype,resource,location,units)
     
     def parseTag(self,tag):
         ' make a list of categories from a tag'
@@ -136,7 +140,7 @@ class DataHolder:
         items = self.parseTag(tag)
         for category,value in newcategories.items():
             items[self.Indices[category]] = value
-        newtag = self.tag(items[0],items[1],items[2],items[3])
+        newtag = self.tag(items[0],items[1],items[2],items[3],items[4])
         if DEBUG:
             print ("newtag",tag,newtag)
         return newtag
@@ -147,16 +151,16 @@ class DataHolder:
         index = self.Indices(category)
         return self.parseTag(tag)[index] == value
     
-    def getData(self,detector,datatype,resource,location):
+    def getData(self,detector,datatype,resource,location,units):
         ' return data by categories '
-        return  self.holder[self.tag(detector,datatype,resource,location)]
+        return  self.holder[self.tag(detector,datatype,resource,location,units)]
     
     def jsonDump(self,newfile):
         newfile = newfile.replace(".json","_holder.json")
         newlist = []
         for tag in self.holder:
             fields = tag.split("!")
-            newlist.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3]}|self.holder[tag])
+            newlist.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}|self.holder[tag])
         f = open(newfile,'w')
         commentjson.dump(newlist,f,indent=4)
         f.close()
@@ -169,7 +173,7 @@ class DataHolder:
         for tag in self.holder:
             print (tag)
             fields = tag.split("!")
-            result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3]}|self.holder[tag])
+            result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}|self.holder[tag])
         fieldnames = list(result[0].keys())
         with open(newfile, 'w', newline='') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -178,17 +182,17 @@ class DataHolder:
                 writer.writerow(line)
         return  result
     
-    def placeData(self,detector,datatype,resource,location,series):
+    def placeData(self,detector,datatype,resource,location,units,series):
         ' make a new data entry '
-        tag = self.tag(detector,datatype,resource,location)
+        tag = self.tag(detector,datatype,resource,location,units)
         if tag in self.holder:
             print ("Will overwrite existing", tag)
         self.holder[tag] = series
         return tag
 
-    def makeEmpty(self,detector,datatype,resource,location):
+    def makeEmpty(self,detector,datatype,resource,location,units):
         ' make a new data entry  full of zeros'
-        return self.placeData(self,detector,datatype,resource,location,self.zeroes)
+        return self.placeData(self,detector,datatype,resource,location,units,self.zeroes)
 
 
     def zeroes(self):
@@ -211,9 +215,9 @@ class DataHolder:
             self.holder[newtag][y] = round(self.holder[tag][y]*factor,3)
         return newtag
 
-    def scale(self,detector,datatype,resource,location,categories,factor):
+    def scale(self,detector,datatype,resource,location,units,categories,factor):
         ' scale a time series by factor and rename with the keys listed in categories'
-        tag = self.tag(detector,datatype,resource,location)
+        tag = self.tag(detector,datatype,resource,location,units)
         return self.scaleByTag(tag,categories,factor)
     
     def combineByTag(self,tags,newtag):
@@ -254,9 +258,9 @@ class DataHolder:
             self.holder.pop(tag)
             print ("tag",tag,"removed")
 
-    def cumulateMe(self,det,datatype,resource,location,categories,period):
+    def cumulateMe(self,det,datatype,resource,location,units,categories,period):
         ' cumulate over period years and give it name based on categories '
-        tag = self.tag(det,datatype,resource,location)
+        tag = self.tag(det,datatype,resource,location,units)
         if DEBUG: print ("test cumulation")
         if tag not in self.holder:
             print ("cannot cumulate missing tag",tag)
@@ -270,9 +274,9 @@ class DataHolder:
             print ("postcumlate",newtag,self.holder[newtag])
         return newtag
         
-    def extendMe(self,det,datatype,resource,location,categories,period): 
+    def extendMe(self,det,datatype,resource,location,units,categories,period): 
         ' extend a category and give it a new name based on categories'
-        tag = self.tag(det,datatype,resource,location)
+        tag = self.tag(det,datatype,resource,location,units)
         if DEBUG:
             print ("\n preextend",tag,self.holder[tag])
         
@@ -295,11 +299,11 @@ class DataHolder:
         else:
             print ("\n",tag,self.holder[tag])
         
-    def hasTag(self,detector,datatype,resource,location):
+    def hasTag(self,detector,datatype,resource,location,units):
         ' is this tag already here'
-        return self.tag(detector,datatype,resource,location) in self.holder   
+        return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Name,Value,tags):
+    def Draw(self,Name,Value,Category,tags):
         #print (InYears)
 
         Years = np.array(self.PlotYears)
@@ -315,10 +319,11 @@ class DataHolder:
             ax.xaxis.set_major_locator(MultipleLocator(5))
         ax.spines['bottom'].set_position('zero')
         #print (Data)
-        
+        units = "unknown"
         for tag in tags:
             parse = self.parseTag(tag)
-            type = parse[0]
+            type = parse[self.Indices[Category]]
+            units = parse[4]
             if type not in self.DetColors:
                 print (type, "not in ",self.DetColors)
             else:
@@ -330,7 +335,7 @@ class DataHolder:
         ax.legend(frameon=False,loc='center left')
         ax.set_title(Name,fontsize=20)
         ax.set_xlabel("Year")
-        ax.set_ylabel(Value + ", " + self.Units[Value])
+        ax.set_ylabel(Value + ", " + units)
         #print("ylim",ax.get_ylim())
         tmp = ax.get_ylim() 
         #print (tmp)
@@ -349,7 +354,7 @@ class DataHolder:
 
 if __name__ == '__main__':
     ' test the methods'
-    configfilename = "NearTerm_2024-06-12-2040.json"
+    configfilename = "NearTerm_2024-07-12-2040.json"
     if os.path.exists(configfilename):
         with open(configfilename,'r') as f:
             config = commentjson.load(f)
@@ -362,23 +367,34 @@ if __name__ == '__main__':
     for tag in data.listTags():
         data.printByTag(tag)
 
+    print ("\n-------- scaling ")
+    data.printByTag(data.tag("SP","Raw-Events","dummy","ALL","Million"))
+    newtag = data.scale("SP","Raw-Events","dummy","ALL","Million",{"Units":"TB","Resources":"Store"},10.0)
+
+     
+    data.printByTag(newtag)
+
+
+
     print ("\n-------- totals ")
     newtags = data.sumAcross(category="Detectors",sumOver=config["Detectors"],sumName="Total")
     for newtag in newtags:
         data.printByTag(newtag)
     print ("\n-------- cumulate ")
 
-    newtag = data.cumulateMe("SP","Events","dummy","ALL",{"DataTypes":"Events-Cumulative"},2)
+     
+
+    newtag = data.cumulateMe("SP","Raw-Events","dummy","ALL","Million",{"DataTypes":"Events-Cumulative"},2)
     data.printByTag(newtag)
 
     print ("\n-------- extend")
 
-    newtag = data.extendMe("SP","Events","dummy","ALL",{"DataTypes":"Events-Extended"},2)
+    newtag = data.extendMe("SP","Raw-Events","dummy","ALL","Million",{"DataTypes":"Events-Extended"},2)
     data.printByTag(newtag)
    
     print ("\n-------- scale ")
-    data.printByTag(data.tag("SP","Events","dummy","ALL"))
-    newtag = data.scale("SP","Events","dummy","ALL",{"DataTypes":"Scaled-Events","Resources":"Test-Scale"},2)
+    data.printByTag(data.tag("SP","Raw-Events","dummy","ALL","Million"))
+    newtag = data.scale("SP","Raw-Events","dummy","ALL","Million",{"DataTypes":"Scaled-Events","Resources":"Test-Scale"},2)
     data.printByTag(newtag)
 
     print ("\n--- results")
@@ -387,9 +403,9 @@ if __name__ == '__main__':
 
     tags = []
     for detector  in data.Detectors:
-        tags.append(data.tag(detector,"Events","dummy","ALL"))
+        tags.append(data.tag(detector,"Raw-Events","dummy","ALL","Million"))
     print (tags)
 
-    data.Draw("TestPix","Events",tags)
+    data.Draw("TestPix","RawEVents","Detectors",tags)
 
     
