@@ -453,6 +453,16 @@ for detector in Detectors:
 
 holder.csvDump("after-analyze.csv")
 
+EventTags = []
+RecoCPUTags = []
+for detector  in Detectors:
+    EventTags.append(holder.tag(detector,"Events","dummy","ALL"))
+    RecoCPUTags.append(holder.tag(detector,"Reco-Data","CPU","ALL"))
+
+
+holder.Draw("Test1","Events",EventTags)
+holder.Draw("Test2","Reco-Data",RecoCPUTags)
+
     # for datatype in ["Analysis"]:  # keep analyzing for a few years. 
     #     for resource in Resources:
     #         for location in Locations:
