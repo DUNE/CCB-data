@@ -21,10 +21,10 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from matplotlib.ticker import (MultipleLocator, FormatStrFormatter, AutoMinorLocator)
 import numpy as np
-import scipy
+#import scipy
 import dunestyle.matplotlib as dunestyle
 
-DEBUG = False
+DEBUG = True
 
 class DataHolder:
     ''' Container for data for DUNE data volume estimates
@@ -38,9 +38,10 @@ class DataHolder:
     years:  
     '''
 
-    def __init__(self,theconfig=None):
+    def __init__(self,theconfig=None,name="Base",debug=False):
         ' initialization, needs a config dictionary'
         self.holder={}
+        self.name = name
         config = theconfig.copy()
         self.Indices = config["Indices"]
         self.Detectors = config["Detectors"] 
@@ -53,24 +54,27 @@ class DataHolder:
         self.MaxYear = config["MaxYear"]
         self.MinYear = config["MinYear"]
         self.PlotUnits = config["Units"]
-        
+        self.debug = debug
         print ("detectors",self.Detectors)
         self.Years = config["Years"]
         self.size = len(self.Years)
         self.PlotYears = []
         for i in range(self.MinYear,self.MaxYear+1):
             self.PlotYears.append(i)
+        self.slices={}
+        self.DetColors=config["DetColors"]
+        self.DetLines = config["DetLines"]
         
-                    
-# fill out the actual data array
-
-        if "Timeline" in config:
-            print ("Timeline from ", config["Timeline"])
-        if not os.path.exists(config["Timeline"]):
-            print ("timeline file ", config["Timeline"]," does not exist:")
+# fill out the actual data arrays
+    def readTimeline(self):
+        'read in the individual timelines from csv file'
+        if "Timeline" in self.config:
+            print ("Timeline from ", self.config["Timeline"])
+        if not os.path.exists(self.config["Timeline"]):
+            print ("timeline file ", self.config["Timeline"]," does not exist:")
         
         counter = 0
-        with open(config["Timeline"], newline='') as csvfile:
+        with open(self.config["Timeline"], newline='') as csvfile:
             timedata = reader(csvfile)
             for row in timedata:
                 if counter == 0: 
@@ -95,9 +99,9 @@ class DataHolder:
                 if not self.hasTag(det,thetype,resource,location,units):
                     self.placeData(detector=det,datatype=thetype,resource=resource,location=location,units=units,series=local)
         csvfile.close()
-        if DEBUG:
-            for x in self.holder:
-                print ( x, self.holder)      
+        # if DEBUG:
+        #     for x in self.holder:
+        #         print ( x, self.holder)      
        
         # self.RequestYear=2024
         # if "RequestYear" in config:
@@ -107,23 +111,14 @@ class DataHolder:
         # self.Cap = config["Cap"]
         # self.BaseMemory = config["Base-Memory"]
         # self.CombinedDetectors = config["CombinedDetectors"]
-        self.DetectorParameters = list(config["SP"].keys())
+
+        # self.DetectorParameters = list(config["SP"].keys())
 
 
-        if "Comment" in self.DetectorParameters:
-            self.DetectorParameters.remove("Comment")
-
+        # if "Comment" in self.DetectorParameters:
+        #     self.DetectorParameters.remove("Comment")
         
-        # self.PerYear = config["PerYear"]
-        # # plot config
-        self.DetColors=config["DetColors"]
-        self.DetLines = config["DetLines"]
-        # self.TypeColors=config["TypeColors"]
-        # self.TypeLines = config["TypeLines"]
-        # self.PatternFraction = config["PatternFraction"]
-        # self.SplitsYear = config["SplitsYear"]
-        # self.SplitsEarly = config["SplitsEarly"]
-        # self.SplitsLater = config["SplitsLater"]
+        
        
 
     def tag(self,detector,datatype,resource,location,units):
@@ -134,6 +129,18 @@ class DataHolder:
         ' make a list of categories from a tag'
         items = tag.split("!")
         return items
+    
+    def tagToDict(self,tag):
+        ' make a dict of categories from a tag'
+        catlist = tag.split("!")
+        newdict = {}
+        #if DEBUG: print (catlist,self.Indices)
+        for cat,index in self.Indices.items(): 
+            if index >= len(catlist): continue
+            #if DEBUG: print (cat,index)
+            value = catlist[index]
+            newdict[cat]=value
+        return newdict
     
     def newTag(self,tag,newcategories):
         'generate a new tag with newkey substituted in category'
@@ -155,6 +162,10 @@ class DataHolder:
         ' return data by categories '
         return  self.holder[self.tag(detector,datatype,resource,location,units)]
     
+    def clearHolder(self):
+        ' clear out the list of series but keep configuration'
+        self.holder={}
+
     def jsonDump(self,newfile):
         newfile = newfile.replace(".json","_holder.json")
         newlist = []
@@ -165,6 +176,10 @@ class DataHolder:
         commentjson.dump(newlist,f,indent=4)
         f.close()
         return True
+    
+    def printSlice(self,name=None):
+        for x in self.slices[name]:
+            print("slice", name,x,self.holder[x])
     
     def csvDump(self,newfile):
         ' return data by categories '
@@ -205,19 +220,24 @@ class DataHolder:
     def scaleByTag(self,tag,categories,factor):
         ' scale a time series by factor and rename with the keys listed in categories'
         newtag = self.newTag(tag,categories)
+        if self.debug: print(tag)
         if tag not in self.holder:
             print ("Atempt to scale a non-existent tag",tag)
         if newtag in self.holder:
             print ("will overwrite existing data",newtag)
         else:
             self.holder[newtag]={}
+        if self.debug: print("scale",factor)
         for y in self.Years:
-            self.holder[newtag][y] = round(self.holder[tag][y]*factor,3)
+            self.holder[newtag][y] = self.holder[tag][y]*factor 
+        print ("newscale",self.holder[tag][2018],self.holder[newtag][2018])
+        if self.debug: print(newtag)
         return newtag
 
     def scale(self,detector,datatype,resource,location,units,categories,factor):
         ' scale a time series by factor and rename with the keys listed in categories'
         tag = self.tag(detector,datatype,resource,location,units)
+        if self.debug: print ("scale:",tag)
         return self.scaleByTag(tag,categories,factor)
     
     def combineByTag(self,tags,newtag):
@@ -230,16 +250,48 @@ class DataHolder:
             for y in self.Years:
                 self.holder[newtag][y] += self.holder[tag][y]
         return newtag
+    
+    def makeSlice(self,criteria=None,name=None):
+        ''' pick out things that match certain criteria'''
+        newslice = []
+        if DEBUG: print ("Slice",criteria)
+        for tag in self.holder.keys():
+            struct = self.tagToDict(tag)
+            match = True
+            for cat in criteria.keys():
+                if DEBUG: print ("match",cat,struct[cat],criteria[cat])
+                if struct[cat] not in criteria[cat]:
+                    match *= False
+                    break
+            if match: 
+                newslice.append(tag)
+                if DEBUG: print("new slice element",tag)
+        self.slices[name] = newslice
+        # returns list of tags
+        return name
+            
+
+    
         
-    def sumAcross(self,category="Detectors",sumOver=None,sumName="Total"):
+    def sumAcrossSlice(self,category="Detectors",sumOver=None,slice=None,sumName="Total"):
         ' sum across sumOver members of a category and call it sumName'
         totals = {}
         index = self.Indices[category]
         if DEBUG: print ("index",index)
-        for tag in self.holder.keys():
+        inputs = []
+        if slice == None:
+            inputs = self.holder.keys()
+        else:
+            inputs = self.slices[slice]
+            #sumName = slice + ":" + sumName
+        if sumName in self.slices:
+            print ("WARNING: overwriting a slice",sumName)
+        self.slices[sumName]=[]
+        for tag in inputs:
             types = self.parseTag(tag)
-            if types[index] == "Total": continue
+            if "Total" in types[index]: continue
             if types[index] not in sumOver: continue
+
             sumtag = tag.replace(types[index],sumName) 
             if sumtag not in totals:
                 #print ("make a new total",sumtag)
@@ -251,7 +303,17 @@ class DataHolder:
                 print ("Sums",x,totals[x])
         for x in totals:
             self.holder[x] = totals[x]
+            print ("add new total")
+            self.slices[sumName].append(x)
         return list(totals.keys())
+    
+    def copyToNewHolder(self,otherholder=None,slice=None):
+        ' copy specific items listed in tags to another holder'
+        for x in self.slices[slice]:
+            otherholder.holder[x] = self.holder[x].copy()
+        otherholder.slices[slice]=self.slices[slice]
+
+            
     
     def removeTag(self,tag):
         if tag in self.holder:
@@ -303,9 +365,9 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Name,Value,Category,tags):
+    def Draw(self,Name,Value,Category,tags=None):
         #print (InYears)
-
+        if tags == None:  tags = self.holder.keys()
         Years = np.array(self.PlotYears)
         
         maxyears = Years[len(Years)-1]
@@ -362,14 +424,15 @@ if __name__ == '__main__':
         print ("no config file",configfilename)
 
     data = DataHolder(config)
+    data.readTimeline()
 
     print ("\n--- inputs")
     for tag in data.listTags():
         data.printByTag(tag)
 
     print ("\n-------- scaling ")
-    data.printByTag(data.tag("SP","Raw-Events","dummy","ALL","Million"))
-    newtag = data.scale("SP","Raw-Events","dummy","ALL","Million",{"Units":"TB","Resources":"Store"},10.0)
+    data.printByTag(data.tag("SP","Raw-Events","input","ALL","Million"))
+    newtag = data.scale("SP","Raw-Events","input","ALL","Million",{"Units":"TB","Resources":"Store"},10.0)
 
      
     data.printByTag(newtag)
@@ -384,17 +447,17 @@ if __name__ == '__main__':
 
      
 
-    newtag = data.cumulateMe("SP","Raw-Events","dummy","ALL","Million",{"DataTypes":"Events-Cumulative"},2)
+    newtag = data.cumulateMe("SP","Raw-Events","input","ALL","Million",{"DataTypes":"Events-Cumulative"},2)
     data.printByTag(newtag)
 
     print ("\n-------- extend")
 
-    newtag = data.extendMe("SP","Raw-Events","dummy","ALL","Million",{"DataTypes":"Events-Extended"},2)
+    newtag = data.extendMe("SP","Raw-Events","input","ALL","Million",{"DataTypes":"Events-Extended"},2)
     data.printByTag(newtag)
    
     print ("\n-------- scale ")
-    data.printByTag(data.tag("SP","Raw-Events","dummy","ALL","Million"))
-    newtag = data.scale("SP","Raw-Events","dummy","ALL","Million",{"DataTypes":"Scaled-Events","Resources":"Test-Scale"},2)
+    data.printByTag(data.tag("SP","Raw-Events","input","ALL","Million"))
+    newtag = data.scale("SP","Raw-Events","input","ALL","Million",{"DataTypes":"Scaled-Events","Resources":"Test-Scale"},2)
     data.printByTag(newtag)
 
     print ("\n--- results")
@@ -403,7 +466,7 @@ if __name__ == '__main__':
 
     tags = []
     for detector  in data.Detectors:
-        tags.append(data.tag(detector,"Raw-Events","dummy","ALL","Million"))
+        tags.append(data.tag(detector,"Raw-Events","input","ALL","Million"))
     print (tags)
 
     data.Draw("TestPix","RawEVents","Detectors",tags)

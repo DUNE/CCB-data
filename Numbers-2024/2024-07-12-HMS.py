@@ -25,8 +25,8 @@ from csv import reader
 #import matplotlib.pyplot as plt
 #import matplotlib.colors as mcolors
 
-DEBUG = True
-DRAW = False
+DEBUG = False
+DRAW = True
 import numpy as np
 #import scipy
 import dunestyle.matplotlib as dunestyle
@@ -60,7 +60,8 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # ## 
 
-# "Tex"# read in a configfile
+# "Tex"# read in a 
+# file
 # #configfilename = "Parameters_2022-11-21-2040.json"
 # 
 # #configfilename = "DOE23-NDLAr_2023-11-03-2040b.json"
@@ -102,8 +103,7 @@ if MWCWeight: MWCstring=""
 config["filename"] = configfilename
 MinYear = config["MinYear"]
 Detectors = config["Detectors"]
-if DEBUG:
-    Detectors = ["SP","PDHD","DP"]
+
 #HMS Years = np.array(config["Years"])
 Years = config["Years"]
 #if DEBUG:
@@ -147,13 +147,12 @@ NativeTypes = config["NativeTypes"]
 Resources = config["Resources"]
 Locations = config["Locations"]
 Scales = config["Scales"]
-
+# if DEBUG:
+#     Detectors = ["SP","PDHD","FDHD"]
 Cap = config["Cap"]
 
 BaseMemory = config["Base-Memory"]
 
-if DEBUG:
-    Detectors = ["SP","PDHD","DP"]
 
 print (Detectors)
 
@@ -200,17 +199,17 @@ SplitsLater = config["SplitsLater"]
 Explain = config["Explain"]
 Explain["filename"] = "Input configuration file"
 
-holder = DataHolder(config)
+holder = DataHolder(theconfig=config,debug=DEBUG)
+holder.readTimeline()
+
 csvname = configfilename.replace(".json",".csv")
 csvData = holder.csvDump(csvname)
 holder.jsonDump(configfilename.replace(".json","safe.json"))
-#print (csvData)
-#sys.exit(1)
- 
 
-holder.sumAcross("Detectors",Detectors,"Total")
-holder.sumAcross("DataTypes",DataTypes,"Total")
-holder.sumAcross("Locations",Locations,"Total")
+
+holder.sumAcrossSlice("Detectors",Detectors,None,"Total")
+holder.sumAcrossSlice("DataTypes",DataTypes,None,"Total")
+holder.sumAcrossSlice("Locations",Locations,None,"Total")
 
 # diskactual = config["Actual"]["diskactual"]
 # tapeactual = config["Actual"]["tapeactual"]
@@ -332,15 +331,15 @@ for detector in Detectors:
     print ("--------------- raw-storage ------------------")
 
     # first raw data events which have to be stored. 
-    # Make "dummy" locations in to "Store" scled by config[detector][type]
+    # Make "input" locations in to "Store" scled by config[detector][type]
     for olddatatype in config["NativeTypes"]:
-        units = Scales[olddatatype]
-        oldresource = "dummy"
+        oldunits = Scales[olddatatype]
+        oldresource = "input"
         newresource = "Store"
         location = "ALL"
                  
-        if holder.hasTag(detector,olddatatype,oldresource,location,units):
-            holder.printByTag(holder.tag(detector,olddatatype,oldresource,location,units))
+        if holder.hasTag(detector,olddatatype,oldresource,location,oldunits):
+            holder.printByTag(holder.tag(detector,olddatatype,oldresource,location,oldunits))
             factor = 1
             if olddatatype == "Raw-Events":
                 newdatatype = "Raw-Data"
@@ -348,51 +347,54 @@ for detector in Detectors:
                 newunits = Scales["Raw-Data-Store"]
             else:
                 newdatatype = olddatatype
-                newunits = units
+                newunits = oldunits
             # TP and Test are already in units of GB
-            if DEBUG: print ("storage",detector,olddatatype,newresource,location,units,factor)
-            newtag = holder.scale(detector,olddatatype,oldresource,location,units,{"DataTypes":newdatatype,"Resources":newresource,"Units":newunits},factor)
+            # if DEBUG: print ("storage",detector,olddatatype,newresource,location,newunits,factor)
+            newtag = holder.scale(detector,olddatatype,oldresource,location,oldunits,{"DataTypes":newdatatype,"Resources":newresource,"Units":newunits},factor)
             holder.printByTag(newtag)
         else:
-            print ("could not find", detector,olddatatype,oldresource,location)
+            print ("could not find", detector,olddatatype,oldresource,location,oldunits)
 
     # here you need to code reconstruction effects on all resources. 
 
-    
+for detector in Detectors:
 
     print ("---------------  makereco ------------------") 
     for newdatatype in ["Reco-Data","Reco-Sim"]:
-        oldresource = "dummy"
+        oldresource = "input"
         if newdatatype == "Reco-Data": 
-            input = "Raw-Events"
+            olddatatype = "Raw-Events"
         if newdatatype == "Reco-Sim":
-            input = "Sim-Events"
-        oldunits = Scales[input]
+            olddatatype = "Sim-Events"
+        oldunits = Scales[olddatatype]
         location = "ALL"
         # Reco gets reprocessed so has a special cumulation
         for resource in ["CPU","GPU","Store"]:
             newunits = Scales[newdatatype+"-"+resource]    
-            if holder.hasTag(detector,input,oldresource,location,oldunits):
-                holder.printByTag(holder.tag(detector,input,oldresource,location,oldunits))                 
-                print ("--before Events->Things",input,resource)
+            if holder.hasTag(detector,olddatatype,oldresource,location,oldunits):
+                holder.printByTag(holder.tag(detector,olddatatype,oldresource,location,oldunits))                 
+                if DEBUG: print ("--before Events->Things",olddatatype,resource)
                 newunits = Scales[newdatatype+"-"+resource]
                 factor = config[detector][newdatatype + "-" +resource]*PerYear[newdatatype+"-"+resource]
-                print ("factor",detector,newdatatype,resource,factor)
-                newtag = holder.scale(detector,olddatatype,oldresource,location,units,{"DataTypes":newdatatype,"Resources":resource,"Units":newunits},factor)
+                if DEBUG: print ("factor",detector,newdatatype,resource,factor)
+                newtag = holder.scale(detector,olddatatype,oldresource,location,oldunits,{"DataTypes":newdatatype,"Resources":resource,"Units":newunits},factor)
                 holder.printByTag(newtag)
-                print ("--after Events->Things",newdatatype,resource)
+                if DEBUG: print ("--after Events->Things",newdatatype,resource)
+
+                # special to say you redo previous Reprocess years of reco every year.
                 if newdatatype == "Reco-Data":  
-                    newtag = holder.cumulateMe(detector,newdatatype,resource,location,newunits,{"DataTypes":"Reco-Data-Reprocess"},Reprocess[detector])   
+                    newtag = holder.cumulateMe(detector,newdatatype,resource,location,newunits,{"DataTypes":"Reco-Data"},Reprocess[detector])   
                            
-                # extend Recodata. 
+                # extend both Sim and Data for analysis
                 if DEBUG:
                     print ("newtag",newtag)
                     print ("Try to extend", detector,newdatatype,resource,location,newunits)
                 if newdatatype in ["Reco-Data","Reco-Sim"]:
-                    newtag = holder.extendMe(detector,newdatatype,resource,location,newunits,{"DataTypes":newdatatype},AnalysisExtend)
+                    nwtag = holder.extendMe(detector,newdatatype,resource,location,newunits,{"DataTypes":newdatatype},AnalysisExtend)
                 holder.printByTag(newtag)
 
 holder.csvDump("after-reco.csv")
+
     
 #     for key in DetectorParameters:
         
@@ -462,22 +464,38 @@ for detector in Detectors:
         recoAtag = holder.scale(detector,"Reco-Data",resource,location,Scales["Reco-Data-CPU"],{"DataTypes":"Analysis-Data"},config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"])
         simAtag = holder.scale(detector,"Reco-Sim",resource,location,Scales["Reco-Sim-CPU"],{"DataTypes":"Analysis-Sim"},config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"])
         
-        newtags = holder.sumAcross("DataTypes",["Analysis-Data","Analysis-Sim"],"Total-Analysis")
+
+CPUSlice = holder.makeSlice(criteria={"Detectors":Detectors,"Resources":["CPU"]},name="CPUSlice")
+
+CPUholder = DataHolder(theconfig=config)
+
+holder.copyToNewHolder(otherholder=CPUholder,slice=CPUSlice)
+
+
+
+holder.printSlice("CPUSlice")
+newtags = CPUholder.sumAcrossSlice(category="DataTypes",sumOver=["Analysis-Data","Analysis-Sim","Reco-Sim","Reco-Data"],slice="CPUSlice",sumName="Total")
+
+CPUholder.csvDump("CPUholder.csv")
+print (newtags)
             
             
-            
+#newtags = holder.sumAcross("DataTypes",["Total-Analysis","Reco-Data","Reco-Sim"])          
 
 holder.csvDump("after-analyze.csv")
 
 EventTags = []
 RecoCPUTags = []
+
 for detector  in Detectors:
     EventTags.append(holder.tag(detector,"Raw-Data","Store","ALL",Scales["Raw-Data-Store"]))
     RecoCPUTags.append(holder.tag(detector,"Reco-Data","CPU","ALL",Scales["Reco-Data-CPU"]))
+    CPUTags
+if DRAW: CPUholder.Draw("CPU by Detector","Total","Detectors")
 
-
-holder.Draw("Test1","Raw-Data","Detectors",EventTags)
-holder.Draw("Test2","Reco-Data","Detectors",RecoCPUTags)
+sys.exit(1)
+if DRAW: holder.Draw("Test1","Raw-Data","Detectors",EventTags)
+if DRAW: holder.Draw("CPU","Reco-Data","Detectors",RecoCPUTags)
 
     # for datatype in ["Analysis"]:  # keep analyzing for a few years. 
     #     for resource in Resources:
@@ -513,9 +531,9 @@ holder.Draw("Test2","Reco-Data","Detectors",RecoCPUTags)
 if PerYear["Reco-Data-Store"]!=PerYear["Reco-Data-CPU"]:
     print ("Data growth has to match reprocessing cycles/year")
     PerYear["Reco-Data-Store"] = PerYear["Reco-Data-CPU"]
-if PerYear["Sim-Store"]!=PerYear["Sim-CPU"]:
+if PerYear["Reco-Sim-Store"]!=PerYear["Reco-Sim-CPU"]:
     print ("Sim growth has to match reprocessing cycles/year")
-    PerYear["Sim-Store"] = PerYear["Sim-CPU"]
+    PerYear["Reco-Sim-Store"] = PerYear["Reco-Sim-CPU"]
 
 #Data = {}
 #dump = open("dump.txt",'w')

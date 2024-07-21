@@ -49,7 +49,7 @@
     "Indices":{"Detectors":0,"DataTypes":1,"Resources":2,"Locations":3,"Units":4,"Years":5},
     "Units":["Millions","GB","TB","PB","MHr","Slots","kHS23-Yr"],
     "Resources":["Tape","Disk","GPU","CPU","dummy"],
-    "DataTypes":["Raw-Events","Reco-Sim-Events","TP","Reco-Sim","Reco-Data","Test","Analysis"],
+    "DataTypes":["Raw-Events","Sim-Events","TP","Reco-Sim","Reco-Data","Test","Analysis"],
     "Locations":["FNAL","CERN","US","World"],
     "NativeTypes":["Raw-Events","TP","Test"],
     "Scales":{
@@ -68,13 +68,14 @@
         "Reco-Memory":"MB", # MB
         "Sim-Memory":"MB", # MB
         "Analysis-CPU":"unitless"}, # fraction of Reco+Sim
-  "Detectors":["SP","PDHD","DP","PDVD","HD","VD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
+  "Detectors":["SP","PDHD","DP","PDVD","FDHD","FDVD","ND-SAND","ND-LAr+TMS"], # SP+DP and HD+VD are merged into ProtoDUNE and FD later
+  //"Detectors":["SP"],
   "Timeline":"NearTerm_2024-07-12-2040_timeline.csv",
   "Cap":30, # cap in PB
   "MWCWeight":0, # logical to do MWC weight
   "Base-Memory":2000, # mb assumed memory use used for rescaling CPU.
-  "MaxYear":2040,
-  "MinYear":2022,
+  "MaxYear":2030,
+  "MinYear":2018,
   "RequestYear":2024,
   "PlotUnits":
   {"Raw-Events":"Million", "Store":"PB", "Raw-Data-Store":"PB", "Test":"PB","Raw+Test":"PB", "Reco-Data-Store":"PB", "Reco-Data-CPU":"CPU MHrs",
@@ -147,7 +148,7 @@
         "Sim-Memory":6000, #MB
         "Analysis-CPU":0.5
     },
-    "HD":{"Comment":"make testing continue from 2027",
+    "FDHD":{"Comment":"make testing continue from 2027",
         "Raw-Data-Store":3750, # no compression TB/MEvents
         "Reco-Data-CPU":1.25, # Hr/Event comes from scaling up ~30 sec/apa to 150 + PR
         "Reco-Sim-CPU":0.125, # Hr/Event
@@ -159,7 +160,7 @@
         "Sim-Memory":3000, #MB
         "Analysis-CPU":0.5
     },
-    "VD":
+    "FDVD":
     { "Comment":"make testing continue from 2028",
         "Raw-Data-Store":8000, # TB/MEvents no compression
         "Reco-Data-CPU":1.33, # # Hr/Event scale up from 30 s/CRP
@@ -199,10 +200,10 @@
         "Analysis-CPU":0.25
     },
         
-    "Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"VD":100,"HD":100,"FDs":100,"ND-SAND":100,
+    "Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"FDVD":100,"FDHD":100,"FDs":100,"ND-SAND":100,
             "ND-LAr+TMS":100}, # of years of data reprocessed when do a new pass
     "AnalysisExtend":3, # of years of analysis after end of reco/sim extends CPU, and GPU and disk
-    "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"HD":0.1,"VD":0.1,"FDs":0.1,
+    "PatternFraction":{"SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"FDHD":0.1,"FDVD":0.1,"FDs":0.1,
 		       "ND-SAND":0.9,"ND-LAr+TMS":0.9,"MARS":0}, #fraction of time spent on PR as opposed to hit-finding
     "TapeLifetimes":{"Raw-Data-Store":100, "Test":1.0, "Reco-Data-Store":15, "Reco-Sim-Store":15},
     "DiskLifetimes":{"Raw-Data-Store":1, "Test":1.0, "Reco-Data-Store":3, "Reco-Sim-Store":2},  # raw and test only hang around a short while, can be restaged
@@ -229,12 +230,12 @@
     "Disk Accounting":"October 1",
     "TypeColors": {"Raw-Data-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Reco-Sim-Store":"grey", "Total":"black","FNAL":"blue","UK":"red","CZ":"green","CERN":"cyan","US":"orange"},
     "TypeLines": {"Raw-Data-Store":"solid","Raw+Test":"solid", "Test":"dashed", "Reco-Data-Store":"solid", "Reco-Sim-Store":"dashed", "Total":"solid"},
-    "DetColors": {"SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue", "HD":"red",
-        "VD":"red","FDs":"red","ND-SAND":"grey","ND-LAr+TMS":"black","Analysis":"orange", "Total":"black","MARS":"purple",
+    "DetColors": {"SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue", "FDHD":"red",
+        "FDVD":"red","FDs":"red","ND-SAND":"grey","ND-LAr+TMS":"black","Analysis":"orange", "Total":"black","MARS":"purple",
         "Production":"blue", "FNAL":"orange", "CERN":"cyan", "Global":"green"
     },
-    "DetLines": {"SP":"solid","PDHD":"dashed", "DP":"solid","PDVD":"dotted", "PDs":"solid", "HD":"solid",
-        "VD":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","FNAL":"solid", "CERN":"solid", "Global":"solid"
+    "DetLines": {"SP":"solid","PDHD":"dashed", "DP":"solid","PDVD":"dotted", "PDs":"solid", "FDHD":"solid",
+        "FDVD":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","FNAL":"solid", "CERN":"solid", "Global":"solid"
         
     },
     "SplitsYear":2029,
