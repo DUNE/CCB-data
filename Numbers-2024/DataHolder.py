@@ -145,7 +145,9 @@ class DataHolder:
     def newTag(self,tag,newcategories):
         'generate a new tag with newkey substituted in category'
         items = self.parseTag(tag)
+        if self.debug: print ("newTag",tag, newcategories)
         for category,value in newcategories.items():
+            print ("check",category,value)
             items[self.Indices[category]] = value
         newtag = self.tag(items[0],items[1],items[2],items[3],items[4])
         if DEBUG:
@@ -205,9 +207,9 @@ class DataHolder:
         self.holder[tag] = series
         return tag
 
-    def makeEmpty(self,detector,datatype,resource,location,units):
-        ' make a new data entry  full of zeros'
-        return self.placeData(self,detector,datatype,resource,location,units,self.zeroes)
+    # def makeEmpty(self,detector,datatype,resource,location,units):
+    #     ' make a new data entry  full of zeros'
+    #     return self.placeData(self,detector,datatype,resource,location,units,self.zeroes)
 
 
     def zeroes(self):
@@ -269,8 +271,51 @@ class DataHolder:
         self.slices[name] = newslice
         # returns list of tags
         return name
+    
+    def makeFilter(self,criteria=None):
+        ''' pick out things that match certain criteria'''
+        newfilter = []
+        if DEBUG: print ("Slice",criteria)
+        for tag in self.holder.keys():
+            struct = self.tagToDict(tag)
+            match = True
+            for cat in criteria.keys():
+                if DEBUG: print ("match",cat,struct[cat],criteria[cat])
+                if struct[cat] not in criteria[cat]:
+                    match *= False
+                    break
+            if match: 
+                newfilter.append(tag)
+                if DEBUG: print("new slice element",tag)
+        return newfilter
             
+    def sumAcrossFilters(self,filters=None,sumCat=None,sumName="Total"):
+        
+        newtags = []
+        sumover = filters.pop(sumCat)
+        print ("sumover",sumover)
+        print (filters)
+        tags = self.makeFilter(filters)
+        print (tags)
+        for tag in tags:
+            print ("sumAcrossFilters",{sumCat:sumName})
+            newtag = self.newTag(tag,{sumCat:sumName})
+            print ("sumAcrossFilters:",newtag)
+            if newtag in self.holder:
+                print ("sumAcrossFilter replacing ", newtag)
+            self.holder[newtag]=self.zeroes()
+            for field in sumover:
+                oldtag = self.newTag(tag,{sumCat:field})
+                for y in self.Years:              
+                    self.holder[newtag][y] += self.holder[oldtag][y]
+            newtags.append(newtag)
+        print (newtags)
 
+                
+        
+
+                
+                
     
         
     def sumAcrossSlice(self,category="Detectors",sumOver=None,slice=None,sumName="Total"):
