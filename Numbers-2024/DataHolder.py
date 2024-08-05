@@ -64,6 +64,7 @@ class DataHolder:
         self.slices={}
         self.DetColors=config["DetColors"]
         self.DetLines = config["DetLines"]
+        self.filters={}
         
 # fill out the actual data arrays
     def readTimeline(self):
@@ -145,13 +146,13 @@ class DataHolder:
     def newTag(self,tag,newcategories):
         'generate a new tag with newkey substituted in category'
         items = self.parseTag(tag)
-        if self.debug: print ("newTag",tag, newcategories)
+        #if self.debug: print ("newTag:",tag, newcategories)
         for category,value in newcategories.items():
-            print ("check",category,value)
+            #print ("check",category,value)
             items[self.Indices[category]] = value
         newtag = self.tag(items[0],items[1],items[2],items[3],items[4])
-        if DEBUG:
-            print ("newtag",tag,newtag)
+        # if self.debug:
+        #     print ("newTag:",tag,newtag)
         return newtag
     
     
@@ -272,30 +273,39 @@ class DataHolder:
         # returns list of tags
         return name
     
-    def makeFilter(self,criteria=None):
+    def makeFilter(self,criteria=None,name=None):
         ''' pick out things that match certain criteria'''
         newfilter = []
-        if DEBUG: print ("Slice",criteria)
+        if self.debug: print ("makeFilter:",criteria)
         for tag in self.holder.keys():
             struct = self.tagToDict(tag)
             match = True
             for cat in criteria.keys():
-                if DEBUG: print ("match",cat,struct[cat],criteria[cat])
+                if self.debug: print ("makeFilter:",cat,struct[cat],criteria[cat])
                 if struct[cat] not in criteria[cat]:
+                    if self.debug: print("match fails")
                     match *= False
                     break
             if match: 
                 newfilter.append(tag)
-                if DEBUG: print("new slice element",tag)
+                if self.debug: print("makeFilter: new filter element",tag)
+        if self.debug: print ("Name is ",name,len(newfilter))
+        if name is not None:
+            if name in self.filters:
+                print ("replacing filter",name)
+            self.filters[name]=newfilter
+            if self.debug: print ("Store filter",name)
         return newfilter
             
     def sumAcrossFilters(self,filters=None,sumCat=None,sumName="Total"):
         
         newtags = []
-        sumover = filters.pop(sumCat)
+        temp = filters.copy()
+    
+        sumover = temp.pop(sumCat)
         print ("sumover",sumover)
         print (filters)
-        tags = self.makeFilter(filters)
+        tags = self.makeFilter(temp,None)
         print (tags)
         for tag in tags:
             print ("sumAcrossFilters",{sumCat:sumName})
@@ -306,10 +316,11 @@ class DataHolder:
             self.holder[newtag]=self.zeroes()
             for field in sumover:
                 oldtag = self.newTag(tag,{sumCat:field})
-                for y in self.Years:              
-                    self.holder[newtag][y] += self.holder[oldtag][y]
+                if oldtag in self.holder:
+                    for y in self.Years:              
+                        self.holder[newtag][y] += self.holder[oldtag][y]
             newtags.append(newtag)
-        print (newtags)
+        if self.debug: print ("sumAcrossFilters:",newtags)
 
                 
         
@@ -410,8 +421,14 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Name,Value,Category,tags=None):
+    def Draw(self,Title,YAxis,Category,tags=None):
+        ''' Name = title at top
+        Value = thing to plot
+        Category = categories to show as separate lines
+        tags = list of tags, needs to be filtered'''
         #print (InYears)
+        if self.debug:
+            print("Draw",YAxis,Category,tags)
         if tags == None:  tags = self.holder.keys()
         Years = np.array(self.PlotYears)
         
@@ -427,10 +444,16 @@ class DataHolder:
         ax.spines['bottom'].set_position('zero')
         #print (Data)
         units = "unknown"
+        unitcheck = []
         for tag in tags:
             parse = self.parseTag(tag)
             type = parse[self.Indices[Category]]
             units = parse[4]
+            if units not in unitcheck:
+                unitcheck.append(units)
+                if len(unitcheck) > 1:
+                    print ("Draw ERROR: units are mixed up - ",unitcheck)
+                    return
             if type not in self.DetColors:
                 print (type, "not in ",self.DetColors)
             else:
@@ -440,9 +463,9 @@ class DataHolder:
                 linestyle=self.DetLines[type],label="model "+type)
         
         ax.legend(frameon=False,loc='center left')
-        ax.set_title(Name,fontsize=20)
+        ax.set_title(Title,fontsize=20)
         ax.set_xlabel("Year")
-        ax.set_ylabel(Value + ", " + units)
+        ax.set_ylabel(YAxis + ", " + units)
         #print("ylim",ax.get_ylim())
         tmp = ax.get_ylim() 
         #print (tmp)
@@ -452,7 +475,7 @@ class DataHolder:
         dunestyle.Preliminary()
         plt.grid()
         dunestyle.Preliminary()
-        plt.savefig(Name+"-"+Value.replace(" ","-")+".png",transparent=False)
+        plt.savefig(Title+"-"+YAxis.replace(" ","-")+".png",transparent=False)
         #plt.savefig(Value+"_w.jpg",transparent=False)
 
         plt.show()

@@ -23,6 +23,7 @@ print(sys.executable)
 import os,commentjson
 
 from csv import reader
+import json
 #import matplotlib.pyplot as plt
 #import matplotlib.colors as mcolors
 
@@ -358,6 +359,30 @@ for detector in Detectors:
 
     # here you need to code reconstruction effects on all resources. 
 
+holder.csvDump("after-raw.csv")
+
+RealDataTypes=["Raw-Data","TP","Test"]
+
+realDataFilter={"Detectors":Detectors,"DataTypes":RealDataTypes,"Resources":"Store","Locations":"ALL"}
+
+realDataTotal=holder.sumAcrossFilters(
+    filters=realDataFilter,sumCat="Detectors",sumName="Total")
+
+realDataFilter={"Detectors":(Detectors+["Total"]),"DataTypes":RealDataTypes,"Resources":"Store","Locations":"ALL"}
+
+realDataTotalResources=holder.sumAcrossFilters(
+    filters=realDataFilter,sumCat="Resources",sumName="Total")
+    
+realDataFilter={"Detectors":(["Total"]),"DataTypes":RealDataTypes,"Resources":"Store","Locations":"ALL"}
+
+newfilter = holder.makeFilter(realDataFilter,"realDataFilter")
+
+holder.Draw(Title="RealData",YAxis="Storage",Category="DataTypes",tags=holder.filters["realDataFilter"])
+            
+holder.csvDump("realData.csv")
+
+
+
 for detector in Detectors:
 
     print ("---------------  makereco ------------------") 
@@ -396,11 +421,6 @@ for detector in Detectors:
 
 holder.csvDump("after-reco.csv")
 
-CPUTotals=holder.sumAcrossFilters(\
-    filters={"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data"],"Resources":["CPU","GPU"],"Locations":["ALL"]},sumCat="DataTypes",sumName="Total")
-holder.csvDump("after-total.csv")
-
-sys.exit(1)
     
 #     for key in DetectorParameters:
         
@@ -466,40 +486,86 @@ print ("---------------  make analysis ------------------")
 for detector in Detectors:
     for resource in ["CPU"]:   
         location = "ALL"
-        print ("PerYear",PerYear)
         recoAtag = holder.scale(detector,"Reco-Data",resource,location,Scales["Reco-Data-CPU"],{"DataTypes":"Analysis-Data"},config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"])
         simAtag = holder.scale(detector,"Reco-Sim",resource,location,Scales["Reco-Sim-CPU"],{"DataTypes":"Analysis-Sim"},config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"])
+        print ("make analysis:",recoAtag,simAtag)
+
+
         
+holder.debug = False
 
-CPUSlice = holder.makeSlice(criteria={"Detectors":Detectors,"Resources":["CPU"]},name="CPUSlice")
-
-CPUholder = DataHolder(theconfig=config)
-
-holder.copyToNewHolder(otherholder=CPUholder,slice=CPUSlice)
+filter = {"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"],"Resources":["CPU","GPU"],"Locations":["ALL"]}
+show = json.dumps(filter,indent=4)
 
 
 
-holder.printSlice("CPUSlice")
-newtags = CPUholder.sumAcrossSlice(category="DataTypes",sumOver=["Analysis-Data","Analysis-Sim","Reco-Sim","Reco-Data"],slice="CPUSlice",sumName="Total")
+CPUTotals=holder.sumAcrossFilters(\
+    filters=filter,sumCat="DataTypes",sumName="Total")
+holder.csvDump("after-total.csv")
 
-CPUholder.csvDump("CPUholder.csv")
-print (newtags)
+print("-----------------------------------------------------------------------------------")
+print (show)
+
+filter2 = {"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"]+["Total"],"Resources":["CPU","GPU"],"Locations":["ALL"]}
+
+CPUTotalsAllDetectors=holder.sumAcrossFilters(filters=filter2, sumCat="Detectors",sumName= "Total")
+print ("DataTypes",DataTypes)
+
+CPUByDetector = {"Detectors":Detectors+["Total"],"DataTypes":["Total"],"Resources":["CPU"],"Locations":["ALL"]}
+CPUByType = {"Detectors":["Total"],"DataTypes":(DataTypes+["Total"]),"Resources":["CPU"],"Locations":["ALL"]}
+
+
+
+holder.makeFilter(criteria=CPUByDetector,name="CPUByDetector")
+print ("CPUByType - dict",CPUByType)
+
+holder.debug=True
+holder.makeFilter(criteria=CPUByType,name="CPUByType")
+
+print ("CPUByType -list ",holder.filters["CPUByType"])
+holder.debug=False
+holder.Draw(Title="CPU by Detector",YAxis="CPU",Category="Detectors",tags=holder.filters["CPUByDetector"])
+
+holder.Draw(Title="CPU by type",YAxis="CPU",Category="DataTypes",tags=holder.filters["CPUByType"])
+
+CPUTotalsAllDetectors=holder.sumAcrossFilters(filters=filter2, sumCat="Detectors",sumName= "Total")
+
+holder.csvDump("after-total2.csv")
+
+print (json.dumps(filter2,indent=4))
+
+
+# CPUSlice = holder.makeSlice(criteria={"Detectors":Detectors,"Resources":["CPU"]},name="CPUSlice")
+
+# CPUholder = DataHolder(theconfig=config)
+
+# holder.copyToNewHolder(otherholder=CPUholder,slice=CPUSlice)
+
+
+
+# holder.printSlice("CPUSlice")
+# newtags = CPUholder.sumAcrossSlice(category="DataTypes",sumOver=["Analysis-Data","Analysis-Sim","Reco-Sim","Reco-Data"],slice="CPUSlice",sumName="Total")
+
+# CPUholder.csvDump("CPUholder.csv")
+# print (newtags)
             
             
 #newtags = holder.sumAcross("DataTypes",["Total-Analysis","Reco-Data","Reco-Sim"])          
 
 holder.csvDump("after-analyze.csv")
 
-EventTags = []
-RecoCPUTags = []
 
-for detector  in Detectors:
-    EventTags.append(holder.tag(detector,"Raw-Data","Store","ALL",Scales["Raw-Data-Store"]))
-    RecoCPUTags.append(holder.tag(detector,"Reco-Data","CPU","ALL",Scales["Reco-Data-CPU"]))
-    CPUTags
-if DRAW: CPUholder.Draw("CPU by Detector","Total","Detectors")
 
-sys.exit(1)
+# EventTags = []
+# RecoCPUTags = []
+
+# for detector  in Detectors:
+#     EventTags.append(holder.tag(detector,"Raw-Data","Store","ALL",Scales["Raw-Data-Store"]))
+#     RecoCPUTags.append(holder.tag(detector,"Reco-Data","CPU","ALL",Scales["Reco-Data-CPU"]))
+#     CPUTags
+# if DRAW: CPUholder.Draw("CPU by Detector","Total","Detectors")
+
+# sys.exit(1)
 if DRAW: holder.Draw("Test1","Raw-Data","Detectors",EventTags)
 if DRAW: holder.Draw("CPU","Reco-Data","Detectors",RecoCPUTags)
 
@@ -573,7 +639,9 @@ if PerYear["Reco-Sim-Store"]!=PerYear["Reco-Sim-CPU"]:
 
 
 # impose a cap at Cap on things derived from raw data
-sys.exit(1)
+
+
+
 dtype = "Raw-Store"
 
 Data["Raw-Store"]["Total"] = {}
