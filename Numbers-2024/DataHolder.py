@@ -24,7 +24,7 @@ import numpy as np
 #import scipy
 import dunestyle.matplotlib as dunestyle
 
-DEBUG = True
+DEBUG = False
 
 class DataHolder:
     ''' Container for data for DUNE data volume estimates
@@ -40,6 +40,7 @@ class DataHolder:
 
     def __init__(self,theconfig=None,name="Base",debug=False):
         ' initialization, needs a config dictionary'
+        print ("make a new holder")
         self.holder={}
         self.name = name
         config = theconfig.copy()
@@ -65,6 +66,8 @@ class DataHolder:
         self.DetColors=config["DetColors"]
         self.DetLines = config["DetLines"]
         self.filters={}
+        self.tagsets={}
+        self.nosum=["Total","Sub-Total"]
         
 # fill out the actual data arrays
     def readTimeline(self):
@@ -81,7 +84,7 @@ class DataHolder:
                 if counter == 0: 
                     counter = 1
                     continue
-                if DEBUG: print (row)
+                if self.debug: print (row)
                 det = row[0].strip()
                 #print (det)
                 if det not in self.Detectors:
@@ -186,10 +189,11 @@ class DataHolder:
     
     def csvDump(self,newfile):
         ' return data by categories '
-        
+        #print ("csvDump")
+        #if self.debug: print ("test of debug")
         result = []
         for tag in self.holder:
-            print (tag)
+            #if self.debug: print (tag)
             fields = tag.split("!")
             result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}|self.holder[tag])
         fieldnames = list(result[0].keys())
@@ -198,13 +202,13 @@ class DataHolder:
             writer.writeheader()
             for line in result:
                 writer.writerow(line)
-        return  result
+        #return  result
     
     def placeData(self,detector,datatype,resource,location,units,series):
         ' make a new data entry '
         tag = self.tag(detector,datatype,resource,location,units)
         if tag in self.holder:
-            print ("Will overwrite existing", tag)
+            print ("WARNING placeData Will overwrite existing", tag)
         self.holder[tag] = series
         return tag
 
@@ -223,17 +227,18 @@ class DataHolder:
     def scaleByTag(self,tag,categories,factor):
         ' scale a time series by factor and rename with the keys listed in categories'
         newtag = self.newTag(tag,categories)
-        if self.debug: print(tag)
+        if self.debug: print("scaleByTag new tag", tag,newtag)
         if tag not in self.holder:
             print ("Atempt to scale a non-existent tag",tag)
+            return None
         if newtag in self.holder:
-            print ("will overwrite existing data",newtag)
+            print ("WARNING scaleByTag will overwrite existing data",newtag)
         else:
             self.holder[newtag]={}
         if self.debug: print("scale",factor)
         for y in self.Years:
             self.holder[newtag][y] = self.holder[tag][y]*factor 
-        print ("newscale",self.holder[tag][2018],self.holder[newtag][2018])
+        #print ("newscale",self.holder[tag][2018],self.holder[newtag][2018])
         if self.debug: print(newtag)
         return newtag
 
@@ -257,62 +262,69 @@ class DataHolder:
     def makeSlice(self,criteria=None,name=None):
         ''' pick out things that match certain criteria'''
         newslice = []
-        if DEBUG: print ("Slice",criteria)
+        if self.debug: print ("Slice",criteria)
         for tag in self.holder.keys():
             struct = self.tagToDict(tag)
             match = True
             for cat in criteria.keys():
-                if DEBUG: print ("match",cat,struct[cat],criteria[cat])
+                if self.debug: print ("match",cat,struct[cat],criteria[cat])
                 if struct[cat] not in criteria[cat]:
                     match *= False
                     break
             if match: 
                 newslice.append(tag)
-                if DEBUG: print("new slice element",tag)
+                if self.debug: print("new slice element",tag)
         self.slices[name] = newslice
         # returns list of tags
         return name
     
-    def makeFilter(self,criteria=None,name=None):
+    def storeFilter(self,filter=None,name=None):
+        self.filters[name]=filter
+
+    def makeTagSet(self,filter=None,name=None):
         ''' pick out things that match certain criteria'''
-        newfilter = []
-        if self.debug: print ("makeFilter:",criteria)
+        newtagset = []
+        if self.debug: print ("maketagset:",filter)
         for tag in self.holder.keys():
             struct = self.tagToDict(tag)
             match = True
-            for cat in criteria.keys():
-                if self.debug: print ("makeFilter:",cat,struct[cat],criteria[cat])
-                if struct[cat] not in criteria[cat]:
-                    if self.debug: print("match fails")
+            for cat in filter.keys():
+                if self.debug: print ("maketagset:",cat,struct[cat],filter[cat])
+                if struct[cat] not in filter[cat]:
+                    if self.debug: print("match fails",cat)
                     match *= False
                     break
             if match: 
-                newfilter.append(tag)
-                if self.debug: print("makeFilter: new filter element",tag)
-        if self.debug: print ("Name is ",name,len(newfilter))
+                newtagset.append(tag)
+                if self.debug: print("maketagset: new tagset element",tag)
+        if self.debug: print ("Name is ",name,len(newtagset))
         if name is not None:
-            if name in self.filters:
-                print ("replacing filter",name)
-            self.filters[name]=newfilter
-            if self.debug: print ("Store filter",name)
-        return newfilter
+            if name in self.tagsets:
+                print ("WARNING makeTagSet replacing tagset",name)
+            self.tagsets[name]=newtags
+            if self.debug: print ("Store tagset",name)
+        return newtagset
             
-    def sumAcrossFilters(self,filters=None,sumCat=None,sumName="Total"):
+    def sumAcrossFilters(self,filter=None,sumCat=None,sumName="Total"):
         
         newtags = []
-        temp = filters.copy()
-    
-        sumover = temp.pop(sumCat)
-        print ("sumover",sumover)
-        print (filters)
-        tags = self.makeFilter(temp,None)
-        print (tags)
+        local = filter.copy()
+        
+        for x in self.nosum:
+            if x in local[sumCat]:
+                print ("Remove Total from",x,sumCat)
+                local[sumCat].remove(x)
+        sumover = local[sumCat]
+        if self.debug: print ("sumover",sumover)
+        if self.debug: print (filter)
+        tags = self.makeTagSet(local,None)
+        if self.debug: print (tags)
         for tag in tags:
-            print ("sumAcrossFilters",{sumCat:sumName})
+            if self.debug: print ("sumAcrossFilters",{sumCat:sumName})   
             newtag = self.newTag(tag,{sumCat:sumName})
-            print ("sumAcrossFilters:",newtag)
+            if self.debug: print ("sumAcrossFilters:",newtag)
             if newtag in self.holder:
-                print ("sumAcrossFilter replacing ", newtag)
+                print ("WARNING sumAcrossFilter replacing ", newtag)
             self.holder[newtag]=self.zeroes()
             for field in sumover:
                 oldtag = self.newTag(tag,{sumCat:field})
@@ -320,20 +332,25 @@ class DataHolder:
                     for y in self.Years:              
                         self.holder[newtag][y] += self.holder[oldtag][y]
             newtags.append(newtag)
-        if self.debug: print ("sumAcrossFilters:",newtags)
+        if self.debug: print ("sumAcrossFilters:",sumCat,newtags)
+        return newtags
 
-                
+
+    def sumAcrossAll(self,filter=filter,sumName="Total"):
         
-
-                
-                
-    
+        newtags = []
+        for category in ["Detectors","DataTypes"]:
+            if category == "DataTypes":
+                filter["Detectors"]=["Total"]
+            print ("All",filter)
+            newtags += self.sumAcrossFilters(filter=filter,sumCat=category,sumName=sumName)
+        print ("sumacross",newtags)
         
     def sumAcrossSlice(self,category="Detectors",sumOver=None,slice=None,sumName="Total"):
         ' sum across sumOver members of a category and call it sumName'
         totals = {}
         index = self.Indices[category]
-        if DEBUG: print ("index",index)
+        if self.debug:  print ("index",index)
         inputs = []
         if slice == None:
             inputs = self.holder.keys()
@@ -355,11 +372,11 @@ class DataHolder:
             for y in self.Years:
                 totals[sumtag][y]+=self.holder[tag][y]
         for x in totals:
-            if DEBUG:
+            if self.debug: 
                 print ("Sums",x,totals[x])
         for x in totals:
             self.holder[x] = totals[x]
-            print ("add new total")
+            if self.debug: print ("add new total")
             self.slices[sumName].append(x)
         return list(totals.keys())
     
@@ -376,32 +393,32 @@ class DataHolder:
             self.holder.pop(tag)
             print ("tag",tag,"removed")
 
-    def cumulateMe(self,det,datatype,resource,location,units,categories,period):
+    def cumulateMe(self,detector,datatype,resource,location,units,categories,period):
         ' cumulate over period years and give it name based on categories '
-        tag = self.tag(det,datatype,resource,location,units)
-        if DEBUG: print ("test cumulation")
+        tag = self.tag(detector,datatype,resource,location,units)
+        if self.debug:  print ("test cumulation")
         if tag not in self.holder:
             print ("cannot cumulate missing tag",tag)
             return None
-        if DEBUG:
+        if self.debug: 
             print ("precumulate",tag,self.holder[tag])
         newtag = self.newTag(tag,categories)
         new = cumulateMap(self.Years,self.holder[tag],period)
         self.holder[newtag]=new
-        if DEBUG:
+        if self.debug: 
             print ("postcumlate",newtag,self.holder[newtag])
         return newtag
         
     def extendMe(self,det,datatype,resource,location,units,categories,period): 
         ' extend a category and give it a new name based on categories'
         tag = self.tag(det,datatype,resource,location,units)
-        if DEBUG:
+        if self.debug: 
             print ("\n preextend",tag,self.holder[tag])
         
         newtag = self.newTag(tag,categories)
         new = extendMap(self.Years,self.holder[tag],period)
         self.holder[newtag]=new
-        if DEBUG:
+        if self.debug: 
             print ("postextend",newtag,self.holder[newtag])
         return newtag
 
@@ -413,7 +430,7 @@ class DataHolder:
     def printByTag(self,tag):
         ' print by tag'
         if tag is None or tag not in self.holder:
-            print ("request to print nonexistent tag",tag)
+            print ("WARNING printByTag request to print nonexistent tag",tag)
         else:
             print ("\n",tag,self.holder[tag])
         
@@ -421,12 +438,15 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Title,YAxis,Category,tags=None):
+    def Draw(self,Title,YAxis,Category,filter=filter):
         ''' Name = title at top
         Value = thing to plot
         Category = categories to show as separate lines
         tags = list of tags, needs to be filtered'''
         #print (InYears)
+        
+        filter[Category] += ["Total"]
+        tags = self.makeTagSet(filter)
         if self.debug:
             print("Draw",YAxis,Category,tags)
         if tags == None:  tags = self.holder.keys()
@@ -446,6 +466,7 @@ class DataHolder:
         units = "unknown"
         unitcheck = []
         for tag in tags:
+             
             parse = self.parseTag(tag)
             type = parse[self.Indices[Category]]
             units = parse[4]
@@ -456,11 +477,13 @@ class DataHolder:
                     return
             if type not in self.DetColors:
                 print (type, "not in ",self.DetColors)
-            else:
-                ypoints = makeArray(Years,self.holder[tag])
+                self.DetColors[type]="black"
+                self.DetLines[type]="dashed"
+            
+            ypoints = makeArray(Years,self.holder[tag])
             #print ("y points",Value,type,ypoints)
-                ax.plot(Years,ypoints,color=self.DetColors[type],\
-                linestyle=self.DetLines[type],label="model "+type)
+            ax.plot(Years,ypoints,color=self.DetColors[type],\
+            linestyle=self.DetLines[type],label="model "+type)
         
         ax.legend(frameon=False,loc='center left')
         ax.set_title(Title,fontsize=20)
@@ -499,8 +522,8 @@ if __name__ == '__main__':
         data.printByTag(tag)
 
     print ("\n-------- scaling ")
-    data.printByTag(data.tag("SP","Raw-Events","input","ALL","Million"))
-    newtag = data.scale("SP","Raw-Events","input","ALL","Million",{"Units":"TB","Resources":"Store"},10.0)
+    data.printByTag(data.tag("SP","Raw-Events","input","Total","Million"))
+    newtag = data.scale("SP","Raw-Events","input","Total","Million",{"Units":"TB","Resources":"Store"},10.0)
 
      
     data.printByTag(newtag)
@@ -515,17 +538,17 @@ if __name__ == '__main__':
 
      
 
-    newtag = data.cumulateMe("SP","Raw-Events","input","ALL","Million",{"DataTypes":"Events-Cumulative"},2)
+    newtag = data.cumulateMe("SP","Raw-Events","input","Total","Million",{"DataTypes":"Events-Cumulative"},2)
     data.printByTag(newtag)
 
     print ("\n-------- extend")
 
-    newtag = data.extendMe("SP","Raw-Events","input","ALL","Million",{"DataTypes":"Events-Extended"},2)
+    newtag = data.extendMe("SP","Raw-Events","input","Total","Million",{"DataTypes":"Events-Extended"},2)
     data.printByTag(newtag)
    
     print ("\n-------- scale ")
-    data.printByTag(data.tag("SP","Raw-Events","input","ALL","Million"))
-    newtag = data.scale("SP","Raw-Events","input","ALL","Million",{"DataTypes":"Scaled-Events","Resources":"Test-Scale"},2)
+    data.printByTag(data.tag("SP","Raw-Events","input","Total","Million"))
+    newtag = data.scale("SP","Raw-Events","input","Total","Million",{"DataTypes":"Scaled-Events","Resources":"Test-Scale"},2)
     data.printByTag(newtag)
 
     print ("\n--- results")
@@ -534,7 +557,7 @@ if __name__ == '__main__':
 
     tags = []
     for detector  in data.Detectors:
-        tags.append(data.tag(detector,"Raw-Events","input","ALL","Million"))
+        tags.append(data.tag(detector,"Raw-Events","input","Total","Million"))
     print (tags)
 
     data.Draw("TestPix","RawEVents","Detectors",tags)
