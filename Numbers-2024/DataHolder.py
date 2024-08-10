@@ -455,7 +455,7 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Title,YAxis,Category,filter=filter):
+    def Draw(self,Dir,Title,YAxis,Category,filter=filter):
         ''' Name = title at top
         Value = thing to plot
         Category = categories to show as separate lines
@@ -515,7 +515,7 @@ class DataHolder:
         dunestyle.Preliminary()
         plt.grid()
         dunestyle.Preliminary()
-        plt.savefig(Title+"-"+YAxis.replace(" ","-")+".png",transparent=False)
+        plt.savefig(Dir+"/"+Title+"-"+YAxis.replace(" ","-")+".png",transparent=False)
         #plt.savefig(Value+"_w.jpg",transparent=False)
 
         plt.show()
