@@ -42,7 +42,7 @@
         "2021-03-22 add Collab vs FNAL shares, restore sim disk lifetime to 2."
     ],
   "Interpretation":" Real numbers from 2021 are shown. Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\\\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\\pagebreak ",
-  "Test":0,
+  "Test":1,
   "Years":[
         2018,  2019,   2020,   2021,   2022,   2023,   2024,   2025,   2026,   2027,
         2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
@@ -92,8 +92,7 @@
         "Analysis-Data",
         "Analysis-Sim"
     ],
-    "Timeline":"NearTerm_2024-08-09-2040_timeline.csv",
-    //"Timeline": "NearTerm_2024-01-31-2040-new_timeline.csv",
+    "Timeline":"NearTerm_2024-01-31-2040-new_timeline.csv",
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.

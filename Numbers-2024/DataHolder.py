@@ -44,9 +44,15 @@ class DataHolder:
         self.holder={}
         self.name = name
         config = theconfig.copy()
+        self.test = config["Test"]
         self.Indices = config["Indices"]
+        
         self.Detectors = config["Detectors"] 
         self.DataTypes = config["DataTypes"] 
+        if self.test:
+            self.Detectors = config["TestDetectors"] 
+            self.DataTypes = config["TestTypes"] 
+            
         self.NativeTypes = config["NativeTypes"]
         self.Resources = config["Resources"] 
         self.Locations = config["Locations"] 
@@ -229,7 +235,7 @@ class DataHolder:
         newtag = self.newTag(tag,categories)
         if self.debug: print("scaleByTag new tag", tag,newtag)
         if tag not in self.holder:
-            print ("Atempt to scale a non-existent tag",tag)
+        #     print ("Atempt to scale a non-existent tag",tag)
             return None
         if newtag in self.holder:
             print ("WARNING scaleByTag will overwrite existing data",newtag)
@@ -284,25 +290,28 @@ class DataHolder:
     def makeTagSet(self,filter=None,name=None):
         ''' pick out things that match certain criteria'''
         newtagset = []
-        if self.debug: print ("maketagset:",filter)
+        if self.debug: print ("maketagset:",filter,name)
         for tag in self.holder.keys():
             struct = self.tagToDict(tag)
             match = True
             for cat in filter.keys():
-                if self.debug: print ("maketagset:",cat,struct[cat],filter[cat])
+                #if self.debug: print ("maketagset:",cat,struct[cat],filter[cat])
                 if struct[cat] not in filter[cat]:
-                    if self.debug: print("match fails",cat)
+                    #if self.debug: print("match fails",cat)
                     match *= False
                     break
             if match: 
                 newtagset.append(tag)
-                if self.debug: print("maketagset: new tagset element",tag)
-        if self.debug: print ("Name is ",name,len(newtagset))
+                #if self.debug: print("maketagset: new tagset element",tag)
+        #if self.debug: print ("Name is ",name,len(newtagset))
         if name is not None:
             if name in self.tagsets:
                 print ("WARNING makeTagSet replacing tagset",name)
             self.tagsets[name]=newtags
             if self.debug: print ("Store tagset",name)
+        if self.debug:
+            for t in newtagset:
+                print ("new tag",t)
         return newtagset
             
     def sumAcrossFilters(self,filter=None,sumCat=None,sumName="Total"):
@@ -323,14 +332,16 @@ class DataHolder:
             if self.debug: print ("sumAcrossFilters",{sumCat:sumName})   
             newtag = self.newTag(tag,{sumCat:sumName})
             if self.debug: print ("sumAcrossFilters:",newtag)
-            if newtag in self.holder:
-                print ("WARNING sumAcrossFilter replacing ", newtag)
+            #if newtag in self.holder:
+                #print ("WARNING sumAcrossFilter replacing ", newtag)
             self.holder[newtag]=self.zeroes()
             for field in sumover:
                 oldtag = self.newTag(tag,{sumCat:field})
                 if oldtag in self.holder:
                     for y in self.Years:              
                         self.holder[newtag][y] += self.holder[oldtag][y]
+            if self.debug:
+                print (newtag,self.holder[newtag])
             newtags.append(newtag)
         if self.debug: print ("sumAcrossFilters:",sumCat,newtags)
         return newtags
@@ -339,12 +350,18 @@ class DataHolder:
     def sumAcrossAll(self,filter=filter,sumName="Total"):
         
         newtags = []
+        if self.debug:
+            print ("sumacross",filter)
         for category in ["Detectors","DataTypes"]:
-            if category == "DataTypes":
-                filter["Detectors"]=["Total"]
-            print ("All",filter)
+            
             newtags += self.sumAcrossFilters(filter=filter,sumCat=category,sumName=sumName)
-        print ("sumacross",newtags)
+        # make Total Total
+        newfilter=filter.copy()
+        newfilter["Detectors"]=[sumName]
+        if self.debug:
+            print ("sumacross", newfilter)
+        newtags += self.sumAcrossFilters(filter=newfilter,sumCat="DataTypes",sumName=sumName)
+        #print ("sumacross",newtags)
         
     def sumAcrossSlice(self,category="Detectors",sumOver=None,slice=None,sumName="Total"):
         ' sum across sumOver members of a category and call it sumName'
