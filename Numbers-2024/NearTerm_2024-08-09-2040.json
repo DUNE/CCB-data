@@ -50,7 +50,7 @@
     ],
     "Indices":{"Detectors":0,"DataTypes":1,"Resources":2,"Locations":3,"Units":4,"Years":5},
     "Units":["Millions","GB","TB","PB","MHr","Slots","kHS23-Yr"],
-    "Resources":["Tape","Disk","GPU","CPU","Total"],
+    "Resources":["Tape","Disk","GPU","CPU","Total","CPU Wall","CPU kHS23-Yr", "CPU Cores"],
     "DataTypes":["Raw-Events","Sim-Events","Raw-Data","TP","Reco-Sim","Reco-Data","Test","Analysis-Data","Analysis-Sim"],
     "Locations":["US","CERN","Global","Total"],
     "NativeTypes":["Raw-Events","TP","Test"],
@@ -80,7 +80,7 @@
         "SP",
         "PDHD",
         "DP",
-        "PDVD",
+        "PDVD"
     ], 
     "TestTypes": [
         "Raw-Events",

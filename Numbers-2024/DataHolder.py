@@ -321,7 +321,7 @@ class DataHolder:
         
         for x in self.nosum:
             if x in local[sumCat]:
-                print ("Remove Total from",x,sumCat)
+                if self.debug: print ("Remove Total from",x,sumCat)
                 local[sumCat].remove(x)
         sumover = local[sumCat]
         if self.debug: print ("sumover",sumover)
@@ -415,7 +415,7 @@ class DataHolder:
         tag = self.tag(detector,datatype,resource,location,units)
         if self.debug:  print ("test cumulation")
         if tag not in self.holder:
-            print ("cannot cumulate missing tag",tag)
+            if self.debug: print ("WARNING: cannot cumulate missing tag",tag)
             return None
         if self.debug: 
             print ("precumulate",tag,self.holder[tag])
@@ -431,7 +431,6 @@ class DataHolder:
         tag = self.tag(det,datatype,resource,location,units)
         if self.debug: 
             print ("\n preextend",tag,self.holder[tag])
-        
         newtag = self.newTag(tag,categories)
         new = extendMap(self.Years,self.holder[tag],period)
         self.holder[newtag]=new
@@ -510,7 +509,7 @@ class DataHolder:
         tmp = ax.get_ylim() 
         #print (tmp)
         tmp2 = (tmp[0],tmp[1]*1.2)
-        print (tmp,tmp2)
+        #print (tmp,tmp2)
         ax.set_ylim(top=tmp2[1])
         dunestyle.Preliminary()
         plt.grid()
@@ -542,7 +541,6 @@ if __name__ == '__main__':
     data.printByTag(data.tag("SP","Raw-Events","input","Total","Million"))
     newtag = data.scale("SP","Raw-Events","input","Total","Million",{"Units":"TB","Resources":"Store"},10.0)
 
-     
     data.printByTag(newtag)
 
 
