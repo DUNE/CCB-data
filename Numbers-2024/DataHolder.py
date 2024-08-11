@@ -315,7 +315,6 @@ class DataHolder:
         return newtagset
             
     def sumAcrossFilters(self,filter=None,sumCat=None,sumName="Total"):
-        
         newtags = []
         local = filter.copy()
         
@@ -353,7 +352,6 @@ class DataHolder:
         if self.debug:
             print ("sumacross",filter)
         for category in ["Detectors","DataTypes"]:
-            
             newtags += self.sumAcrossFilters(filter=filter,sumCat=category,sumName=sumName)
         # make Total Total
         newfilter=filter.copy()
