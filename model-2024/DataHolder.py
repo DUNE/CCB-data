@@ -68,7 +68,7 @@ class DataHolder:
         self.PlotYears = []
         for i in range(self.MinYear,self.MaxYear+1):
             self.PlotYears.append(i)
-        self.slices={}
+        #self.slices={}
         self.DetColors=config["DetColors"]
         self.DetLines = config["DetLines"]
         self.filters={}
@@ -135,7 +135,7 @@ class DataHolder:
         ' make a tag from the categories '
         return "%s!%s!%s!%s!%s"%(detector,datatype,resource,location,units)
     
-    def parseTag(self,tag):
+    def tagToList(self,tag):
         ' make a list of categories from a tag'
         items = tag.split("!")
         return items
@@ -154,8 +154,8 @@ class DataHolder:
     
     def newTag(self,tag,newcategories):
         'generate a new tag with newkey substituted in category'
-        items = self.parseTag(tag)
-        #if self.debug: print ("newTag:",tag, newcategories)
+        items = self.tagToList(tag)
+        if self.debug: print ("newTag:",tag, newcategories)
         for category,value in newcategories.items():
             #print ("check",category,value)
             items[self.Indices[category]] = value
@@ -168,7 +168,7 @@ class DataHolder:
     def checkIfInTag(self,tag,category,value):
         ' true if value is in right category in tag '
         index = self.Indices(category)
-        return self.parseTag(tag)[index] == value
+        return self.tagToList(tag)[index] == value
     
     def getData(self,detector,datatype,resource,location,units):
         ' return data by categories '
@@ -188,10 +188,6 @@ class DataHolder:
         commentjson.dump(newlist,f,indent=4)
         f.close()
         return True
-    
-    def printSlice(self,name=None):
-        for x in self.slices[name]:
-            print("slice", name,x,self.holder[x])
     
     def csvDump(self,newfile):
         ' return data by categories '
@@ -218,11 +214,6 @@ class DataHolder:
         self.holder[tag] = series
         return tag
 
-    # def makeEmpty(self,detector,datatype,resource,location,units):
-    #     ' make a new data entry  full of zeros'
-    #     return self.placeData(self,detector,datatype,resource,location,units,self.zeroes)
-
-
     def zeroes(self):
         ' make an array of zeroes'
         new = {}
@@ -232,11 +223,11 @@ class DataHolder:
     
     def scaleByTag(self,tag,categories,factor):
         ' scale a time series by factor and rename with the keys listed in categories'
-        newtag = self.newTag(tag,categories)
-        if self.debug: print("scaleByTag new tag", tag,newtag)
+
         if tag not in self.holder:
         #     print ("Atempt to scale a non-existent tag",tag)
             return None
+        newtag = self.newTag(tag,categories)
         if newtag in self.holder:
             print ("WARNING scaleByTag will overwrite existing data",newtag)
         else:
@@ -253,37 +244,7 @@ class DataHolder:
         tag = self.tag(detector,datatype,resource,location,units)
         if self.debug: print ("scale:",tag)
         return self.scaleByTag(tag,categories,factor)
-    
-    def combineByTag(self,tags,newtag):
-    
-        self.holder[newtag]=self.zeroes()
-        for tag in tags:
-            if tag not in self.holder:
-                print ("combineByTag skipping tag",tag)
-                continue
-            for y in self.Years:
-                self.holder[newtag][y] += self.holder[tag][y]
-        return newtag
-    
-    def makeSlice(self,criteria=None,name=None):
-        ''' pick out things that match certain criteria'''
-        newslice = []
-        if self.debug: print ("Slice",criteria)
-        for tag in self.holder.keys():
-            struct = self.tagToDict(tag)
-            match = True
-            for cat in criteria.keys():
-                if self.debug: print ("match",cat,struct[cat],criteria[cat])
-                if struct[cat] not in criteria[cat]:
-                    match *= False
-                    break
-            if match: 
-                newslice.append(tag)
-                if self.debug: print("new slice element",tag)
-        self.slices[name] = newslice
-        # returns list of tags
-        return name
-    
+        
     def storeFilter(self,filter=None,name=None):
         self.filters[name]=filter
 
@@ -291,19 +252,31 @@ class DataHolder:
         ''' pick out things that match certain criteria'''
         newtagset = []
         if self.debug: print ("maketagset:",filter,name)
-        for tag in self.holder.keys():
-            struct = self.tagToDict(tag)
-            match = True
-            for cat in filter.keys():
-                #if self.debug: print ("maketagset:",cat,struct[cat],filter[cat])
-                if struct[cat] not in filter[cat]:
-                    #if self.debug: print("match fails",cat)
-                    match *= False
-                    break
-            if match: 
-                newtagset.append(tag)
-                #if self.debug: print("maketagset: new tagset element",tag)
-        #if self.debug: print ("Name is ",name,len(newtagset))
+        for detector in filter["Detectors"]:
+            for datatype in filter["DataTypes"]:
+                for resource in filter["Resources"]:
+                    for location in filter["Locations"]:
+                        for unit in filter["Units"]:
+                            tag = self.tag(detector,datatype,resource,location,unit)
+                            if self.debug: print ("new tag",tag)
+                            if tag not in self.holder:
+                                if self.debug: print ("tag not in holder",tag)
+                                continue
+                            newtagset.append(tag)
+        # match = True
+        # for tag in self.holder.keys():
+        #     struct = self.tagToDict(tag)
+            
+        #     for cat in filter.keys():
+        #         if self.debug: print ("maketagset:",cat,struct[cat],filter[cat])
+        #         if struct[cat] not in filter[cat]:
+        #             #if self.debug: print("match fails",cat)
+        #             match *= False
+        #             break
+        #     if match: 
+        #         newtagset.append(tag)
+        #         #if self.debug: print("maketagset: new tagset element",tag)
+        # #if self.debug: print ("Name is ",name,len(newtagset))
         if name is not None:
             if name in self.tagsets:
                 print ("WARNING makeTagSet replacing tagset",name)
@@ -360,49 +333,13 @@ class DataHolder:
             print ("sumacross", newfilter)
         newtags += self.sumAcrossFilters(filter=newfilter,sumCat="DataTypes",sumName=sumName)
         #print ("sumacross",newtags)
-        
-    def sumAcrossSlice(self,category="Detectors",sumOver=None,slice=None,sumName="Total"):
-        ' sum across sumOver members of a category and call it sumName'
-        totals = {}
-        index = self.Indices[category]
-        if self.debug:  print ("index",index)
-        inputs = []
-        if slice == None:
-            inputs = self.holder.keys()
-        else:
-            inputs = self.slices[slice]
-            #sumName = slice + ":" + sumName
-        if sumName in self.slices:
-            print ("WARNING: overwriting a slice",sumName)
-        self.slices[sumName]=[]
-        for tag in inputs:
-            types = self.parseTag(tag)
-            if "Total" in types[index]: continue
-            if types[index] not in sumOver: continue
-
-            sumtag = tag.replace(types[index],sumName) 
-            if sumtag not in totals:
-                #print ("make a new total",sumtag)
-                totals[sumtag]=self.zeroes()
-            for y in self.Years:
-                totals[sumtag][y]+=self.holder[tag][y]
-        for x in totals:
-            if self.debug: 
-                print ("Sums",x,totals[x])
-        for x in totals:
-            self.holder[x] = totals[x]
-            if self.debug: print ("add new total")
-            self.slices[sumName].append(x)
-        return list(totals.keys())
     
     def copyToNewHolder(self,otherholder=None,slice=None):
         ' copy specific items listed in tags to another holder'
         for x in self.slices[slice]:
             otherholder.holder[x] = self.holder[x].copy()
         otherholder.slices[slice]=self.slices[slice]
-
-            
-    
+  
     def removeTag(self,tag):
         if tag in self.holder:
             self.holder.pop(tag)
@@ -436,7 +373,6 @@ class DataHolder:
             print ("postextend",newtag,self.holder[newtag])
         return newtag
 
-
     def listTags(self):
         ' list all the tags'
         return (list(self.holder.keys()))
@@ -452,22 +388,25 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Dir,Title,YAxis,Category,filter=filter):
-        ''' Name = title at top
-        Value = thing to plot
+    def Draw(self,Dir,Title,YAxis,Resource,Category,filter=filter):
+        ''' 
+        Dir = directory to put in
+        Title = title at top and name of output file
+        YAxis = label for the Y axis 
         Category = categories to show as separate lines
-        tags = list of tags, needs to be filtered'''
+        thefilter = filter to use to define plot'''
         #print (InYears)
+        thefilter = filter.copy()
+        if "Total" not in thefilter[Category]: thefilter[Category] +=  ["Total"]
+        thefilter["Resources"]=[Resource]
+        if self.debug: print ("draw filter",thefilter)
+        tags = self.makeTagSet(thefilter)
         
-        filter[Category] += ["Total"]
-        tags = self.makeTagSet(filter)
         if self.debug:
             print("Draw",YAxis,Category,tags)
         if tags == None:  tags = self.holder.keys()
-        Years = np.array(self.PlotYears)
-        
+        Years = np.array(self.PlotYears)        
         maxyears = Years[len(Years)-1]
-
         fig=plt.figure(figsize=(10,5))
         ax = fig.add_axes([0.2,0.2,0.7,0.7])
         ax.set_xlim(Years[0],maxyears)
@@ -479,9 +418,8 @@ class DataHolder:
         #print (Data)
         units = "unknown"
         unitcheck = []
-        for tag in tags:
-             
-            parse = self.parseTag(tag)
+        for tag in tags:        
+            parse = self.tagToList(tag)
             type = parse[self.Indices[Category]]
             units = parse[4]
             if units not in unitcheck:

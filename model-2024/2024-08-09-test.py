@@ -56,7 +56,8 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # specify the json file here.  Will create a subdirectory for plots with a similar name
 
-configfilename = "NearTerm_2024-08-11-2040.json"
+configfilename = "NearTerm_2024-08-14-2040.json"
+print (configfilename)
 
 
 # In[ ]:
@@ -245,19 +246,19 @@ holder.csvDump(dirname+"/"+"after-raw.csv")
 print ("----------------------------- draw real data -----------------------")
 RealDataTypes=["Raw-Data","TP","Test"]
 
-realsubset={"Detectors":Detectors,"DataTypes":RealDataTypes,"Resources":"Store","Locations":"Total"}
+realsubset={"Detectors":Detectors,"DataTypes":RealDataTypes,"Resources":["Store"],"Locations":["Total"],"Units":["TB"]}
 
 realDataTotalDetector=holder.sumAcrossFilters(
     filter=realsubset,sumCat="Detectors",sumName="Sub-Total")
 
-realsubset2={"Detectors":Detectors+["Sub-Total"],"DataTypes":RealDataTypes,"Resources":"Store","Locations":"Total"}
+realsubset2={"Detectors":Detectors+["Sub-Total"],"DataTypes":RealDataTypes,"Resources":["Store"],"Locations":["Total"],"Units":["TB"]}
 
 realDataTotalDetectorStore=holder.sumAcrossFilters(
     filter=realsubset2,sumCat="DataTypes",sumName="Sub-Total")
     
-newsubset={"Detectors":(["Sub-Total"]),"DataTypes":RealDataTypes+["Sub-Total"],"Resources":"Store","Locations":"Total"}
+newsubset={"Detectors":(["Sub-Total"]),"DataTypes":RealDataTypes+["Sub-Total"],"Resources":["Store"],"Locations":["Total"],"Units":["TB"]}
 
-holder.Draw(dirname,Title="RealData",YAxis="Storage",Category="DataTypes",filter=newsubset)
+holder.Draw(dirname,Title="RealData",YAxis="Storage",Resource="Store",Category="DataTypes",filter=newsubset)
             
 holder.csvDump(dirname+"/"+"realData.csv")
 
@@ -329,7 +330,7 @@ holder.csvDump(dirname+"/after-analysis.csv")
 
 
 print ("---------------  make different CPU units ------------------")
-DEBUG=True
+
 MHrsPerYear = 1000000./365/24.
 for detector in Detectors:
     for datatype in DataTypes:
@@ -354,7 +355,7 @@ for detector in Detectors:
                 newtag = holder.scale(detector,datatype,oldresource,location,oldunits,{"DataTypes":datatype,"Resources":newresource,"Units":newunits},factor)
                 if newtag != None and DEBUG:
                     print (newtag,holder.holder[newtag])
-DEBUG=False                
+              
 holder.csvDump(dirname+"/"+"after-CPUscale.csv")
 
 
@@ -374,17 +375,18 @@ print("---------------------- sum across CPU ---------------------------------")
 # filter on derived event types
 
 CPUTypes = ["GPU","CPU","Total","CPU Wall","CPU kHS23-Yr", "CPU Cores"] 
-filter = {"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"],"Resources":CPUTypes,"Locations":["Total"]}
+filter = {"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"],"Resources":CPUTypes,"Locations":["Total"],"Units":Units}
 if DEBUG:
     show = json.dumps(filter,indent=4)
     print (show)
 
 CPUTotals=holder.sumAcrossFilters(filter=filter,sumCat="DataTypes",sumName="Total")
 
-filter2 = {"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"]+["Total"],"Resources":CPUTypes,"Locations":["Total"]}
+filter2 = {"Detectors":Detectors,"DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"]+["Total"],"Resources":CPUTypes,"Locations":["Total"],"Units":Units}
 
+#print (filter2)
 CPUTotalsAllDetectors=holder.sumAcrossFilters(filter=filter2, sumCat="Detectors",sumName= "Total")
-print ("DataTypes",DataTypes)
+#print ("DataTypes",DataTypes)
 
 
 
@@ -392,6 +394,7 @@ print ("DataTypes",DataTypes)
 
 
 # make filters and then draw
+print ("draw CPU info")
 
 CPUByDetector = {"Detectors":Detectors+["Total"],"DataTypes":["Total"],"Resources":["CPU"],"Locations":["Total"]}
 CPUByType = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["CPU"],"Locations":["Total"]}
@@ -404,27 +407,36 @@ kHS23ByType = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources"
 CoresByDetector = {"Detectors":Detectors+["Total"],"DataTypes":["Total"],"Resources":["CPU Cores"],"Locations":["Total"]}
 CoresByType = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["CPU Cores"],"Locations":["Total"]}
 
+CPUResources = ["CPU","CPU kHS23-Yr","CPU Wall","CPU Cores"]
+CPUResourcesByDetector = {"Detectors":Detectors+["Total"],"DataTypes":["Total"],"Resources":CPUResources,"Locations":["Total"],"Units":Units}
+CPUResourcesByType = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":CPUResources,"Locations":["Total"],"Units":Units}
+
+
+
 
 holder.storeFilter(filter=CPUByDetector,name="CPUByDetector")
 holder.storeFilter(filter=CPUByType,name="CPUByType")
 
-holder.Draw(Dir=dirname,Title="CPU by Detector",YAxis="CPU",Category="Detectors",filter=CPUByDetector)
+# holder.Draw(Dir=dirname,Title="CPU by Detector",YAxis="CPU",Category="Detectors",filter=CPUByDetector)
 
-holder.Draw(Dir=dirname,Title="CPU by Type",YAxis="CPU",Category="DataTypes",filter=CPUByType)
+# holder.Draw(Dir=dirname,Title="CPU by Type",YAxis="CPU",Resource="CPU",Category="DataTypes",filter=CPUByType)
 
-holder.Draw(Dir=dirname,Title="Wall time by Detector",YAxis="CPU",Category="Detectors",filter=WallByDetector)
+# holder.Draw(Dir=dirname,Title="Wall time by Detector",YAxis="CPU",Category="Detectors",filter=WallByDetector)
 
-holder.Draw(Dir=dirname,Title="Wall time by Type",YAxis="CPU",Category="DataTypes",filter=WallByType)
+# holder.Draw(Dir=dirname,Title="Wall time by Type",YAxis="CPU",Category="DataTypes",filter=WallByType)
 
-holder.Draw(Dir=dirname,Title="kHS23-Yr by Detector",YAxis="CPU",Category="Detectors",filter=kHS23ByDetector)
+# holder.Draw(Dir=dirname,Title="kHS23-Yr by Detector",YAxis="CPU",Category="Detectors",filter=kHS23ByDetector)
 
-holder.Draw(Dir=dirname,Title="kHS23-Yr by Type",YAxis="CPU",Category="DataTypes",filter=kHS23ByType)
+# holder.Draw(Dir=dirname,Title="kHS23-Yr by Type",YAxis="CPU",Category="DataTypes",filter=kHS23ByType)
 
-holder.Draw(Dir=dirname,Title="Core-Yr by Detector",YAxis="CPU",Category="Detectors",filter=CoresByDetector)
+# holder.Draw(Dir=dirname,Title="Core-Yr by Detector",YAxis="CPU",Category="Detectors",filter=CoresByDetector)
 
-holder.Draw(Dir=dirname,Title="Core-Yr by Type",YAxis="CPU",Category="DataTypes",filter=CoresByType)
+# holder.Draw(Dir=dirname,Title="Core-Yr by Type",YAxis="CPU",Category="DataTypes",filter=CoresByType)
 
-
+for resource in CPUResources:
+    holder.Draw(Dir=dirname,Title="Core-Yr by Type",YAxis=resource,Resource=resource,Category="DataTypes",filter=CPUResourcesByType)
+    holder.Draw(Dir=dirname,Title="Core-Yr by Detector",YAxis=resource,Resource=resource,Category="Detectors",filter=CPUResourcesByDetector)
+holder.debug = DEBUG
 holder.csvDump(dirname+"/"+"after-total2.csv")
 
 if DEBUG: print (json.dumps(filter2,indent=4))
@@ -595,7 +607,7 @@ print (Detectors)
 print ("------------------ sum across storage types -------------------")
 StorageTypes=["Tape","Disk","Cumulative-Tape","Cumulative-Disk"]
 
-Storage = {"Detectors":Detectors,"DataTypes":DataTypes,"Resources":StorageTypes,"Locations":Locations}
+Storage = {"Detectors":Detectors,"DataTypes":DataTypes,"Resources":StorageTypes,"Locations":Locations,"Units":["TB"]}
 
 #holder.debug=True
 holder.sumAcrossAll(filter=Storage,sumName="Total")
@@ -610,52 +622,52 @@ print (Detectors)
 # In[ ]:
 
 
-Storage = {"Detectors":(Detectors+["Total"]),"DataTypes":DataTypes+["Total"],"Resources":StorageTypes,"Locations":["Total"]}
+Storage = {"Detectors":(Detectors+["Total"]),"DataTypes":DataTypes+["Total"],"Resources":StorageTypes,"Locations":["Total"],"Units":["TB"]}
 
-TapeStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Tape"],"Locations":["Total"]}
+TapeStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Tape"],"Locations":["Total"],"Units":["TB"]}
 
-CumulativeTapeStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"]}
+CumulativeTapeStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"],"Units":["TB"]}
 
-DiskStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Disk"],"Locations":["Total"]}
+DiskStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Disk"],"Locations":["Total"],"Units":["TB"]}
 
-DiskStorageFDVD = {"Detectors":["FDVD"],"DataTypes":DataTypes+["Total"],"Resources":["Disk"],"Locations":["Total"]}
+DiskStorageFDVD = {"Detectors":["FDVD"],"DataTypes":DataTypes+["Total"],"Resources":["Disk"],"Locations":["Total"],"Units":["TB"]}
 
-CumulativeDiskStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"]}
+CumulativeDiskStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
 
-DiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations+["Total"]}
-DiskStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Disk"],"Locations":["Total"]}
-TapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations+["Total"]}
-TapeStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Tape"],"Locations":["Total"]}
+DiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
+DiskStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Disk"],"Locations":["Total"],"Units":["TB"]}
+TapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
+TapeStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Tape"],"Locations":["Total"],"Units":["TB"]}
 
-CumulativeDiskStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"]}
-CumulativeDiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations+["Total"]}
+CumulativeDiskStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
+CumulativeDiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
 
-CumulativeTapeStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"]}
-CumulativeTapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations+["Total"]}
-
-
-# In[ ]:
-
-
-holder.Draw(dirname,"New Tape by Type",YAxis="Storage",Category="DataTypes",filter=TapeStorage)
-holder.Draw(dirname,"New Tape by Detector",YAxis="Storage",Category="Detectors",filter=TapeStorageByDetector)
-holder.Draw(dirname,"New Tape by Site",YAxis="Storage",Category="Locations",filter=TapeStorageBySite)
-holder.Draw(dirname,"Cumulative Tape by Type",YAxis="Storage",Category="DataTypes",filter=CumulativeTapeStorage)
-holder.Draw(dirname,"Cumulative Tape by Detector",YAxis="Storage",Category="Detectors",filter=CumulativeTapeStorageByDetector)
-holder.Draw(dirname,"Cumulative Tape by Site",YAxis="Storage",Category="Locations",filter=CumulativeTapeStorageBySite)
-
+CumulativeTapeStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"],"Units":["TB"]}
+CumulativeTapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
 
 
 # In[ ]:
 
 
-holder.Draw(dirname,"New Disk by Type",YAxis="Storage",Category="DataTypes",filter=DiskStorage)
-holder.Draw(dirname,"New Disk by Type for FDVD",YAxis="Storage",Category="DataTypes",filter=DiskStorageFDVD)
-holder.Draw(dirname,"New Disk by Detector",YAxis="Storage",Category="Detectors",filter=DiskStorageByDetector)
-holder.Draw(dirname,"New Disk by Site",YAxis="Storage",Category="Locations",filter=DiskStorageBySite)
-holder.Draw(dirname,"Cumulative Disk by Type",YAxis="Storage",Category="DataTypes",filter=CumulativeDiskStorage)
-holder.Draw(dirname,"Cumulative Disk by Detector",YAxis="Storage",Category="Detectors",filter=CumulativeDiskStorageByDetector)
-holder.Draw(dirname,"Cumulative Disk by Site",YAxis="Storage",Category="Locations",filter=CumulativeDiskStorageBySite)
+holder.Draw(dirname,"New Tape by Type",YAxis="Storage",Resource="Tape",Category="DataTypes",filter=TapeStorage)
+holder.Draw(dirname,"New Tape by Detector",YAxis="Storage",Resource="Tape",Category="Detectors",filter=TapeStorageByDetector)
+holder.Draw(dirname,"New Tape by Site",YAxis="Storage",Resource="Tape",Category="Locations",filter=TapeStorageBySite)
+holder.Draw(dirname,"Cumulative Tape by Type",YAxis="Storage",Resource="Cumulative-Tape",Category="DataTypes",filter=CumulativeTapeStorage)
+holder.Draw(dirname,"Cumulative Tape by Detector",YAxis="Storage",Resource="Cumulative-Tape",Category="Detectors",filter=CumulativeTapeStorageByDetector)
+holder.Draw(dirname,"Cumulative Tape by Site",YAxis="Storage",Resource="Cumulative-Tape",Category="Locations",filter=CumulativeTapeStorageBySite)
+
+
+
+# In[ ]:
+
+
+holder.Draw(dirname,"New Disk by Type",YAxis="Storage",Resource="Disk",Category="DataTypes",filter=DiskStorage)
+holder.Draw(dirname,"New Disk by Type for FDVD",YAxis="Storage",Resource="Disk",Category="DataTypes",filter=DiskStorageFDVD)
+holder.Draw(dirname,"New Disk by Detector",YAxis="Storage",Resource="Disk",Category="Detectors",filter=DiskStorageByDetector)
+holder.Draw(dirname,"New Disk by Site",YAxis="Storage",Resource="Disk",Category="Locations",filter=DiskStorageBySite)
+holder.Draw(dirname,"Cumulative Disk by Type",YAxis="Storage",Resource="Cumulative-Disk",Category="DataTypes",filter=CumulativeDiskStorage)
+holder.Draw(dirname,"Cumulative Disk by Detector",YAxis="Storage",Resource="Cumulative-Disk",Category="Detectors",filter=CumulativeDiskStorageByDetector)
+holder.Draw(dirname,"Cumulative Disk by Site",YAxis="Storage",Resource="Cumulative-Disk",Category="Locations",filter=CumulativeDiskStorageBySite)
 
 
 # In[ ]:
@@ -665,35 +677,35 @@ holder.Draw(dirname,"Cumulative Disk by Site",YAxis="Storage",Category="Location
 
 for detector in Detectors:
     if detector == "Total": continue
-    TapeStorage = {"Detectors":detector,"DataTypes":DataTypes+["Total"],"Resources":["Tape"],"Locations":["Total"]}
+    TapeStorage = {"Detectors":[detector],"DataTypes":DataTypes+["Total"],"Resources":["Tape"],"Locations":["Total"],"Units":["TB"]}
 
-    CumulativeTapeStorage = {"Detectors":detector,"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"]}
+    CumulativeTapeStorage = {"Detectors":[detector],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"],"Units":["TB"]}
 
-    DiskStorage = {"Detectors":detector,"DataTypes":DataTypes+["Total"],"Resources":["Disk"],"Locations":["Total"]}
+    DiskStorage = {"Detectors":[detector],"DataTypes":DataTypes+["Total"],"Resources":["Disk"],"Locations":["Total"],"Units":["TB"]}
 
-    CumulativeDiskStorage = {"Detectors":detector,"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"]}
+    CumulativeDiskStorage = {"Detectors":[detector],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
 
-    DiskStorageBySite = {"Detectors":detector,"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations+["Total"]}
+    DiskStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
     
-    TapeStorageBySite = {"Detectors":detector,"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations+["Total"]}
+    TapeStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
 
-    CumulativeDiskStorageBySite = {"Detectors":detector,"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations+["Total"]}
+    CumulativeDiskStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
     
-    CumulativeTapeStorageBySite = {"Detectors":detector,"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations+["Total"]}
+    CumulativeTapeStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
 
-    holder.Draw(dirname,"New Disk by Type "+detector,YAxis="Storage",Category="DataTypes",filter=DiskStorage)
+    holder.Draw(dirname,"New Disk by Type "+detector,YAxis="Storage",Resource="Disk",Category="DataTypes",filter=DiskStorage)
     
-    holder.Draw(dirname,"New Disk by Site "+detector,YAxis="Storage",Category="Locations",filter=DiskStorageBySite)
-    holder.Draw(dirname,"Cumulative Disk by Type "+detector,YAxis="Storage",Category="DataTypes",filter=CumulativeDiskStorage)
+    holder.Draw(dirname,"New Disk by Site "+detector,YAxis="Storage",Resource="Disk",Category="Locations",filter=DiskStorageBySite)
+    holder.Draw(dirname,"Cumulative Disk by Type "+detector,YAxis="Storage",Resource="Cumulative-Disk",Category="DataTypes",filter=CumulativeDiskStorage)
     
-    holder.Draw(dirname,"Cumulative Disk by Site "+detector,YAxis="Storage",Category="Locations",filter=CumulativeDiskStorageBySite)
+    holder.Draw(dirname,"Cumulative Disk by Site "+detector,YAxis="Storage",Resource="Cumulative-Disk",Category="Locations",filter=CumulativeDiskStorageBySite)
 
-    holder.Draw(dirname,"New Tape by Type "+detector,YAxis="Storage",Category="DataTypes",filter=TapeStorage)
+    holder.Draw(dirname,"New Tape by Type "+detector,YAxis="Storage",Resource="Tape",Category="DataTypes",filter=TapeStorage)
     #holder.Draw(dirname,"New Tape by Detector",YAxis="Storage",Category="Detectors",filter=TapeStorageByDetector)
-    holder.Draw(dirname,"New Tape by Site "+detector,YAxis="Storage",Category="Locations",filter=TapeStorageBySite)
-    holder.Draw(dirname,"Cumulative Tape by Type "+detector,YAxis="Storage",Category="DataTypes",filter=CumulativeTapeStorage)
+    holder.Draw(dirname,"New Tape by Site "+detector,YAxis="Storage",Resource="Tape",Category="Locations",filter=TapeStorageBySite)
+    holder.Draw(dirname,"Cumulative Tape by Type "+detector,YAxis="Storage",Resource="Cumulative-Tape",Category="DataTypes",filter=CumulativeTapeStorage)
     #holder.Draw(dirname,"Cumulative Tape by Detector",YAxis="Storage",Category="Detectors",filter=CumulativeTapeStorageByDetector)
-    holder.Draw(dirname,"Cumulative Tape by Site "+detector,YAxis="Storage",Category="Locations",filter=CumulativeTapeStorageBySite)
+    holder.Draw(dirname,"Cumulative Tape by Site "+detector,YAxis="Storage",Resource="Cumulative-Tape",Category="Locations",filter=CumulativeTapeStorageBySite)
 
 
 # In[ ]:
