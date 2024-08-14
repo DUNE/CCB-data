@@ -1,5 +1,7 @@
-{"Version":22,
+{"Version":23,
     "Changes":[
+        "2024-08-11 put in real protodune numbers",
+        "2024-08-12 reduce reco-data lifetime to 2 years as now have extend working",
         "2024-08-01 create filter concept",
         "2024-07-12 move units into tags",
         "2024-07-10 change name for PerYear",
@@ -93,7 +95,7 @@
         "Analysis-Data",
         "Analysis-Sim"
     ],
-    "Timeline":"NearTerm_2024-08-09-2040_timeline.csv",
+    "Timeline":"NearTerm_2024-08-14-2040_timeline.csv",
     //"Timeline": "NearTerm_2024-01-31-2040-new_timeline.csv",
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
@@ -221,7 +223,7 @@
         "Reco-Data-GPU":0, // Hr/Event
         "Reco-Sim-GPU":0, // Hr/Event
         "Reco-Data-Store":20, //  TB/MEvents
-        "Reco-Sim-Store":40, //  TB/MEvents based on large VD sample
+        "Reco-Sim-Store":20, //  TB/MEvents based on large VD sample # measured in production
         "Reco-Memory":2000, // MB
         "Sim-Memory":3000, // MB
         "Analysis-CPU":0.5
@@ -234,7 +236,7 @@
         "Reco-Data-GPU":0.1, // Hr/Event
         "Reco-Sim-GPU":0.1, // Hr/Event
         "Reco-Data-Store":20, //  TB/MEvents
-        "Reco-Sim-Store":40,   //  TB/MEvents drop hits, 2x6 
+        "Reco-Sim-Store":20,   //  TB/MEvents # measured in production
         "Reco-Memory":2000, // MB
         "Sim-Memory":4000, // MB
         "Analysis-CPU":0.5
@@ -276,7 +278,7 @@
         "Raw-Data":100, "Test":1.0, "TP": 100, "Reco-Data":15, "Reco-Sim":15,"Analysis-Data":15,"Analysis-Sim":15
     },
     "DiskLifetimes":{
-        "Raw-Data":1, "Test":1.0, "TP":0.5, "Reco-Data":3, "Reco-Sim":2,"Analysis-Data": 5,
+        "Raw-Data":1, "Test":0.5, "TP":0.5, "Reco-Data":2, "Reco-Sim":2,"Analysis-Data": 5,
         "Analysis-Sim": 5
         },  //  raw and test only hang around a short while, can be restaged
     "TapeCopies":{
@@ -285,7 +287,7 @@
     "DiskCopies":{
         "Raw-Data":1, "Test":1,
         "TP": 1,
-        "Reco-Data":2, "Reco-Sim":1.5,"Analysis-Data":20,"Analysis-Sim":20
+        "Reco-Data":2, "Reco-Sim":2,"Analysis-Data":20,"Analysis-Sim":20
     },
     "PerYear": {
         "Reco-Data-Store": 1,
