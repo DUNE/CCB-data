@@ -1,6 +1,6 @@
-../clean.sh 2024-08-09-test.ipynb
-git add 2024-08-09-test.ipynb
-../convert.sh 2024-08-09-test.ipynb
+../clean.sh 2024-08-17.ipynb
+git add 2024-08-17.ipynb
+../convert.sh 2024-08-17.ipynb
 git add 2024-08-09-test.py
 git add DataHolder.py
 git add NumberUtils.py
