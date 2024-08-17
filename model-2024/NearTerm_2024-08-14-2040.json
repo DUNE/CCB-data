@@ -1,5 +1,7 @@
 {"Version":23,
     "Changes":[
+        "2024-08-17 make 2 raw data copies on disk so CERN has one",
+        "2024-08-17 reduce analysis extension to 2 years",
         "2024-08-11 put in real protodune numbers",
         "2024-08-12 reduce reco-data lifetime to 2 years as now have extend working",
         "2024-08-01 create filter concept",
@@ -270,7 +272,7 @@
         
     "Reprocess":{"SP":3,"DP":3,"PDHD":3, "PDVD":3, "PDs":3,"FDVD":100,"FDHD":100,"FDs":100,"ND-SAND":100,
             "ND-LAr+TMS":100}, //  of years of data reprocessed when do a new pass
-    "AnalysisExtend":3, //  of years of analysis after end of reco/sim extends CPU, and GPU and disk
+    "AnalysisExtend":2, //  of years of analysis after end of reco/sim extends CPU, and GPU and disk
     "PatternFraction":{
         "SP":0.7,"PDHD":0.7,"DP":0.7,"PDVD":0.7,"PDs":0.7,"FDHD":0.1,"FDVD":0.1,"FDs":0.1,
 		       "ND-SAND":0.9,"ND-LAr+TMS":0.9,"MARS":0}, // fraction of time spent on PR as opposed to hit-finding
@@ -285,7 +287,7 @@
         "Raw-Data":2, "Test":1, "TP":1,  "Reco-Data":1, "Reco-Sim":1,"Analysis-Data":1,"Analysis-Sim":1
         },  //  will take some coding to make these work out with 2 copies.
     "DiskCopies":{
-        "Raw-Data":1, "Test":1,
+        "Raw-Data":2, "Test":1,
         "TP": 1,
         "Reco-Data":2, "Reco-Sim":2,"Analysis-Data":20,"Analysis-Sim":20
     },

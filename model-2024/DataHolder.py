@@ -75,6 +75,7 @@ class DataHolder:
         self.tagsets={}
         self.nosum=["Total","Sub-Total"]
         self.explanation={}
+        self.showPlot=False
         
 # fill out the actual data arrays
     def readTimeline(self):
@@ -169,15 +170,22 @@ class DataHolder:
         f.close()
         return True
     
-    def csvDump(self,newfile):
-        'Dump the holder in csv format '
+    def csvDump(self,newfile,plotrange=True):
+        'Dump the holder in csv format, restrict to plot yeas if plotrange is True '
         #print ("csvDump")
         #if self.debug: print ("test of debug")
         result = []
         for tag in self.holder:
             #if self.debug: print (tag)
             fields = tag.split("!")
-            result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}| self.holder[tag] | {"Explanation":self.explanation[tag]})
+            if not plotrange:
+                result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}| self.holder[tag] | {"Explanation":self.explanation[tag]})
+            else:
+                short = {}
+                for year in range(self.MinYear,self.MaxYear+1):
+                    short[year]=self.holder[tag][year]
+                result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}| short | {"Explanation":self.explanation[tag]})
+                
         fieldnames = list(result[0].keys())
         with open(newfile, 'w', newline='') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -372,7 +380,7 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Dir,Title,YAxis,Resource,Category,filter=filter):
+    def Draw(self,Dir,Title,YAxis,Resource,Category,filter=filter,caption=None):
         ''' 
         Dir = directory to put in
         Title = title at top and name of output file
@@ -434,12 +442,25 @@ class DataHolder:
         dunestyle.Preliminary()
         plt.grid()
         dunestyle.Preliminary()
-        plt.savefig(Dir+"/"+Title+"-"+YAxis.replace(" ","-")+".png",transparent=False)
+        savename = Dir+"/"+Title.replace(" ","-")+"-"+YAxis.replace(" ","-")+".png"
+        plt.savefig(savename,transparent=False)
         #plt.savefig(Value+"_w.jpg",transparent=False)
 
-        plt.show()
-
-
+        if self.showPlot: 
+            plt.show()
+        else:
+            plt.close()
+        return savename
+    
+    def TexFigure(self,name,caption,label=None):
+        if label is None: label = name
+        s = "\\begin{figure}[h]\n\\centering"
+        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%(os.path.basename(name))
+        s += "\\caption{%s}\n"%caption
+        s += "\\label{fig:%s}\n"%label
+        s += "\\end{figure}\n"
+        return s
+    
 
 if __name__ == '__main__':
     ' test the methods'
@@ -449,6 +470,11 @@ if __name__ == '__main__':
             config = commentjson.load(f)
     else:
         print ("no config file",configfilename)
+    texfile = "test.tex"
+    
+    tex = open("test.tex",'w')
+    tex.write("\input Header.tex\n")
+
 
     data = DataHolder(config)
     data.readTimeline()
@@ -507,7 +533,9 @@ if __name__ == '__main__':
 
     Drawfilter= {"Detectors":data.Detectors,"DataTypes":["Total"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
 
-    data.Draw(Dir=".",Title="test of graphics",YAxis="Events",Resource="input",Category="Detectors",filter=Drawfilter)
-    
+    pic = data.Draw(Dir=".",Title="test of graphics",YAxis="Events",Resource="input",Category="Detectors",filter=Drawfilter)
+    tex.write(data.TexFigure(pic,caption="test figure",label="testpic"))
+
+    tex.write("\end{document}\n")
     data.csvDump("test.csv")
     
