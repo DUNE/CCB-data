@@ -57,7 +57,11 @@
     // "DataTypes":["Raw-Events","Sim-Events","Raw-Data","Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"],
     "Locations":["US","CERN","Global","Total"],
     "NativeTypes":["Raw-Events","TP","Test"],
-    "BaseUnits":{"Disk":"TB","Tape":"TB","CPU":"MHr","GPU":"Mhr"},
+    "BaseUnits":{"Disk":"TB","Tape":"TB","CPU":"MHr",
+    "GPU":"Mhr","CPU Wall":"Mhr",
+        "CPU kHS23-Yr":"kHS23-Yr",
+        "CPU Cores":""
+    },
     "Scales":{
         "Raw-Events":"Million",
         "Sim-Events":"Million",
