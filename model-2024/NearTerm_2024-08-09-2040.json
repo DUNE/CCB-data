@@ -371,7 +371,7 @@
         },
         "FD":{//  these define the splits of storage - only for CCB use
             "Tape":{
-                "Raw-Data":{"US":0.5,"CERN":0.0,"Global":0.25},
+                "Raw-Data":{"US":0.5,"CERN":0.0,"Global":0.5},
                 "Reco-Sim":{"US":0.5,"CERN":0.0,"Global":0.50},
                 "Reco-Data":{"US":0.50,"CERN":0.0,"Global":0.50},
                 "Test":{"US":0.5,"CERN":0.0,"Global":0.5},
