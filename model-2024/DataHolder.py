@@ -170,23 +170,38 @@ class DataHolder:
         f.close()
         return True
     
-    def csvDump(self,newfile,plotrange=True):
+    def csvDump(self,newfile,plotrange=True,filter=None,dropColumns=None,format="%.3f"):
         'Dump the holder in csv format, restrict to plot yeas if plotrange is True '
         #print ("csvDump")
         #if self.debug: print ("test of debug")
         result = []
-        for tag in self.holder:
-            #if self.debug: print (tag)
-            fields = tag.split("!")
+    
+        if filter is None:
+            tags = self.holder.keys()
+        else:
+            tags = self.makeTagSet(filter)
+
+        for tag in tags:
+        
+            newline=None
             if not plotrange:
-                result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}| self.holder[tag] | {"Explanation":self.explanation[tag]})
+                newline = (self.tagToDict(tag) | self.holder[tag] | {"Explanation":self.explanation[tag]})
             else:
                 short = {}
                 for year in range(self.MinYear,self.MaxYear+1):
-                    short[year]=self.holder[tag][year]
-                result.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}| short | {"Explanation":self.explanation[tag]})
+                    short[year]=format%self.holder[tag][year]
+                newline = (self.tagToDict(tag) | short | {"Explanation":self.explanation[tag]})
+            #print (newline)
+            if dropColumns is not None:
+                for x in dropColumns:
+                    newline.pop(x)
+            result.append(newline)
+            
+                
                 
         fieldnames = list(result[0].keys())
+
+            
         with open(newfile, 'w', newline='') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
@@ -323,11 +338,12 @@ class DataHolder:
         return newtags
         #print ("sumacross",newtags)
     
-    # def copyToNewHolder(self,otherholder=None,slice=None):
-    #     ' copy specific items listed in tags to another holder'
-    #     for x in self.slices[slice]:
-    #         otherholder.holder[x] = self.holder[x].copy()
-    #     otherholder.slices[slice]=self.slices[slice]
+    # def copyToNewHolder(self,otherholder=None,filter=None):
+    #      ' copy specific items listed in tags to another holder'
+    #      tags = maketagset(filter)
+    #      for x in self.slices[slice]:
+    #          otherholder.holder[x] = self.holder[x].copy()
+    #      otherholder.slices[slice]=self.slices[slice]
   
     def removeTag(self,tag):
         if tag in self.holder:
@@ -411,9 +427,10 @@ class DataHolder:
         units = "unknown"
         unitcheck = []
         for tag in tags:        
-            parse = self.tagToList(tag)
-            type = parse[self.Indices[Category]]
-            units = parse[4]
+            #parse = self.tagToList(tag)
+            tagDict = self.tagToDict(tag)
+            type = tagDict[Category]
+            units = tagDict["Units"]
             if units not in unitcheck:
                 unitcheck.append(units)
                 if len(unitcheck) > 1:
@@ -459,6 +476,14 @@ class DataHolder:
         s += "\\caption{%s}\n"%caption
         s += "\\label{fig:%s}\n"%label
         s += "\\end{figure}\n"
+        return s
+    
+    def TexTable(self,name,caption,label):
+        s = "\\begin{table}[h]\n\\centering{\\footnotesize"
+        s += "\\csvautotabularright{%s}}"%(os.path.basename(name))
+        s += "\\label{tab:%s}\n"%label
+        s += "\\caption{%s}\n"%caption
+        s += "\\end{table}\n"
         return s
     
 
@@ -532,6 +557,9 @@ if __name__ == '__main__':
     data.sumAcrossAll(filter=SumFilter,sumName="Total",explanation="Test of sumAcross Detectors")
 
     Drawfilter= {"Detectors":data.Detectors,"DataTypes":["Total"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
+
+    data.csvDump("Events.csv",filter=Drawfilter,dropColumns=["Resources","Locations","Explanation"],format="%.2f")
+    tex.write(data.TexTable("Events.csv","events.","events"))
 
     pic = data.Draw(Dir=".",Title="test of graphics",YAxis="Events",Resource="input",Category="Detectors",filter=Drawfilter)
     tex.write(data.TexFigure(pic,caption="test figure",label="testpic"))

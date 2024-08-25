@@ -55,7 +55,15 @@
     // "DataTypes":["Raw-Events","Sim-Events","Raw-Data","Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"],
     "Locations":["US","CERN","Global","Total"],
     "NativeTypes":["Raw-Events","TP","Test"],
-    "BaseUnits":{"Disk":"TB","Tape":"TB","CPU":"MHr","GPU":"Mhr"},
+    "BaseUnits": {
+        "Disk": "TB",
+        "Tape": "TB",
+        "CPU": "MHr",
+        "GPU": "Mhr",
+        "CPU Wall": "Mhr",
+        "CPU kHS23-Yr": "kHS23-Yr",
+        "CPU Cores": "Cores"
+    },
     "Scales":{
         "Raw-Events":"Million",
         "Sim-Events":"Million",
@@ -98,8 +106,8 @@
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
-    "MaxYear":2028,
-     "MinYear":2018,
+    "MaxYear":2030,
+     "MinYear":2022,
     "RequestYear":2024,
     "PlotUnits": {
         "Raw-Events": "Million",
