@@ -1,6 +1,5 @@
 {"Version":23,
     "Changes":[
-        "2024-08-25 PDHD and PDVD have 2 disk copies of raw data",
         "2024-08-11 put in real protodune numbers",
         "2024-08-12 reduce reco-data lifetime to 2 years as now have extend working",
         "2024-08-01 create filter concept",
@@ -116,8 +115,8 @@
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
-    "MaxYear": 2030,
-    "MinYear": 2022,
+    "MaxYear": 2040,
+    "MinYear": 2028,
     "RequestYear":2024,
     "PlotUnits": {
         "Raw-Events": "Million",
@@ -303,7 +302,7 @@
     "DiskCopies":{
         "Raw-Data":1, "Test":1,
         "TP": 1,
-        "Reco-Data":2, "Reco-Sim":1.5,"Analysis-Data":20,"Analysis-Sim":20
+        "Reco-Data":2, "Reco-Sim":2,"Analysis-Data":20,"Analysis-Sim":20
     },
     "PerYear": {
         "Reco-Data-Store": 1,

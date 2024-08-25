@@ -57,6 +57,7 @@ class DataHolder:
         self.Resources = config["Resources"] 
         self.Locations = config["Locations"] 
         self.Units = config["Units"]
+        self.UnitFormats = config["UnitFormats"]
         self.config=config
         self.MaxYear = config["MaxYear"]
         self.MinYear = config["MinYear"]
@@ -199,15 +200,18 @@ class DataHolder:
             
                 
                 
-        fieldnames = list(result[0].keys())
+        if len(result) > 0:
+            fieldnames = list(result[0].keys())
 
-        print (dir,name)    
-        with open(os.path.join(dir,name), 'w', newline='') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
-            for line in result:
-                writer.writerow(line)
-        return os.path.join(dir,name)
+            print (dir,name)    
+            with open(os.path.join(dir,name), 'w', newline='') as csvfile:
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                writer.writeheader()
+                for line in result:
+                    writer.writerow(line)
+            return os.path.join(dir,name)
+        else:
+            return None
     
     def placeData(self,detector,datatype,resource,location,units,series,explanation=None):
         ' make a new data entry '
@@ -334,7 +338,11 @@ class DataHolder:
                         self.holder[newtag][y] += self.holder[oldtag][y]
             if self.debug:
                 print (newtag,self.holder[newtag])
-            newtags.append(newtag)
+            if newtag not in newtags:
+                newtags.append(newtag)
+            else:
+                print ("WARNING: possible duplicate tag",newtag)
+                
         if self.debug: print ("sumAcrossFilters:",sumCat,newtags)
         return newtags
 
@@ -413,7 +421,7 @@ class DataHolder:
         ' is this tag already here'
         return self.tag(detector,datatype,resource,location,units) in self.holder   
     
-    def Draw(self,Dir,Title,YAxis,Resource,Category,filter=filter,caption=None):
+    def Draw(self,Dir,Title,YAxis,Resource,Category,filter=filter,format=None):
         ''' 
         Dir = directory to put in
         Title = title at top and name of output file
@@ -426,7 +434,15 @@ class DataHolder:
         thefilter["Resources"]=[Resource]
         if self.debug: print ("draw filter",thefilter)
         tags = self.makeTagSet(thefilter)
-        
+
+        # figure out units - CPU has several so a bit complex
+        if format is None:
+            format = self.UnitFormats[filter["Units"][0]]
+            if len(format) > 1 and " " in Resource:
+                unit = Resource.split(" ")[1]
+                format = self.UnitFormats[unit]
+                
+            #print ("set format",Title,filter["Units"], format)
         if self.debug:
             print("Draw",YAxis,Category,tags)
         if tags == None:  tags = self.holder.keys()
@@ -476,8 +492,12 @@ class DataHolder:
         dunestyle.Preliminary()
         plt.grid()
         dunestyle.Preliminary()
-        savename = Dir+"/"+Title.replace(" ","-")+"-"+YAxis.replace(" ","-")+".png"
+        savename = (Dir+"/"+Dir+"_").replace("/._","/")+Title.replace(" ","-")+"-"+YAxis.replace(" ","-")+".png"
         plt.savefig(savename,transparent=False)
+        tablename = os.path.basename(savename.replace(".png",".csv"))
+        drops = ["Resources","Explanation","Detectors","DataTypes","Locations","Units"]
+        drops.remove(Category)
+        self.csvDump(Dir,name=tablename,filter=thefilter,dropColumns=drops,format=format)
         #plt.savefig(Value+"_w.jpg",transparent=False)
 
         if self.showPlot: 
@@ -503,14 +523,20 @@ class DataHolder:
         s += "\\end{table}\n"
         return s
     
-    def TexBoth(self,figname,csvname,caption,label=None):
+    def TexBoth(self,figname,caption,label=None):
+        if figname is None:
+            return "%% empty file"+figname
+        csvname = figname.replace(".png",".csv")
         if label is None: label = name
-        s = "\\begin{figure}[h]\n\\centering"
+        s = "\\begin{figure}[ht]\n\\centering"
         s += "\\includegraphics[height=0.4\\textwidth]{%s}"%(os.path.basename(figname))
         #s += "\\caption{%s}\n"%caption
         #s += "\\label{fig:%s}\n"%label
+        
+        
         s += "\\end{figure}\n"
         s += self.TexTable(csvname,caption,label)
+        s += "\\pagebreak\n"
         return s
     
 
@@ -590,12 +616,14 @@ if __name__ == '__main__':
 
     Drawfilter= {"Detectors":data.Detectors+["Total"],"DataTypes":["Total"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
 
-    table = data.csvDump(name="Events.csv",filter=Drawfilter,dropColumns=["Resources","Locations","Explanation"],format="%.2f")
+    table = data.csvDump(name="Events.csv",filter=Drawfilter,dropColumns=["Resources","Locations","Explanation"])
     #tex.write(data.TexBoth("Events.csv","events.","events"))
 
     pic = data.Draw(Dir=".",Title="test of graphics",YAxis="Events",Resource="input",Category="Detectors",filter=Drawfilter)
     #tex.write(data.TexFigure(pic,caption="test figure",label="testpic"))
-    tex.write(data.TexBoth(pic,table,caption="test figure",label="testpic"))
+    new = data.TexBoth(pic,caption="test figure",label="testpic")
+    print (new)
+    tex.write(new)
     tex.write("\end{document}\n")
     data.csvDump(name="test.csv")
     

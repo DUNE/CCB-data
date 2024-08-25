@@ -1,0 +1,46 @@
+Detectors,DataTypes,Resources,Locations,Units,2022,2023,2024,2025,2026,2027,2028,2029,2030,Explanation
+SP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+SP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+SP,Sim-Events,input,Total,Million,5.000,5.000,5.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+PDHD,Raw-Events,input,Total,Million,0.000,0.000,20.000,5.000,5.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+PDHD,Test,input,Total,TB,1000.000,1000.000,100.000,500.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+PDHD,Sim-Events,input,Total,Million,5.000,5.000,5.000,5.000,5.000,5.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+DP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+DP,Test,input,Total,TB,231.000,231.000,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+DP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+PDVD,Raw-Events,input,Total,Million,0.000,0.000,5.100,20.400,5.100,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+PDVD,Test,input,Total,TB,1000.000,1000.000,1000.000,500.000,500.000,0.000,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+PDVD,Sim-Events,input,Total,Million,0.000,5.100,5.100,5.100,5.100,5.100,0.000,0.000,0.000,Inputs from Feb24_timeline.csv
+FDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.200,2.200,Inputs from Feb24_timeline.csv
+FDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,5000.000,6000.000,6000.000,Inputs from Feb24_timeline.csv
+FDHD,Sim-Events,input,Total,Million,0.000,15.000,15.000,15.000,15.000,15.000,30.000,30.000,30.000,Inputs from Feb24_timeline.csv
+FDVD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.100,2.200,Inputs from Feb24_timeline.csv
+FDVD,Test,input,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,5100.000,6100.000,6100.000,Inputs from Feb24_timeline.csv
+FDVD,Sim-Events,input,Total,Million,0.000,15.000,15.000,15.000,15.000,15.000,30.000,30.000,30.000,Inputs from Feb24_timeline.csv
+ND-SAND,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,15.000,Inputs from Feb24_timeline.csv
+ND-SAND,Test,input,Total,TB,0.000,0.000,200.000,200.000,200.000,200.000,1000.000,1000.000,1000.000,Inputs from Feb24_timeline.csv
+ND-SAND,Sim-Events,input,Total,Million,0.000,0.000,1.000,1.000,5.000,5.000,5.000,20.000,30.000,Inputs from Feb24_timeline.csv
+ND-LAr+TMS,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,15.000,Inputs from Feb24_timeline.csv
+ND-LAr+TMS,Test,input,Total,TB,0.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Inputs from Feb24_timeline.csv
+ND-LAr+TMS,Sim-Events,input,Total,Million,0.000,0.000,1.000,1.000,5.000,5.000,5.000,5.000,5.000,Inputs from Feb24_timeline.csv
+SP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 70.00
+SP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Raw-Data,Store,Total,TB,0.000,0.000,2800.000,700.000,700.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 140.00
+PDHD,Test,Store,Total,TB,1000.000,1000.000,100.000,500.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+DP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+DP,Test,Store,Total,TB,231.000,231.000,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDVD,Raw-Data,Store,Total,TB,0.000,0.000,561.000,2244.000,561.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+PDVD,Test,Store,Total,TB,1000.000,1000.000,1000.000,500.000,500.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+FDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,8250.000,8250.000,Change native types into storage using factor 3750.00
+FDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,5000.000,6000.000,6000.000,Change native types into storage using factor 1.00
+FDVD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,8800.000,17600.000,Change native types into storage using factor 8000.00
+FDVD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,5100.000,6100.000,6100.000,Change native types into storage using factor 1.00
+ND-SAND,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,75.000,Change native types into storage using factor 5.00
+ND-SAND,Test,Store,Total,TB,0.000,0.000,200.000,200.000,200.000,200.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+ND-LAr+TMS,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,150.000,Change native types into storage using factor 10.00
+ND-LAr+TMS,Test,Store,Total,TB,0.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+Sub-Total,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,17050.000,25850.000,Sum over raw data types from Far detector
+Sub-Total,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2000.000,5000.000,10100.000,12100.000,12100.000,Sum over raw data types from Far detector
+FDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,5000.000,14250.000,14250.000,second sum over raw types
+FDVD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,5100.000,14900.000,23700.000,second sum over raw types
+Sub-Total,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,2000.000,5000.000,10100.000,29150.000,37950.000,second sum over raw types

@@ -1,0 +1,326 @@
+Detectors,DataTypes,Resources,Locations,Units,2022,2023,2024,2025,2026,2027,2028,2029,2030,Explanation
+SP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+SP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+SP,Sim-Events,input,Total,Million,0.501,3.375,0.890,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,Raw-Events,input,Total,Million,0.000,0.000,20.000,5.000,5.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,TP,input,Total,TB,0.000,0.100,681.000,1000.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,Test,input,Total,TB,8.800,143.900,91.300,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,Sim-Events,input,Total,Million,0.000,0.000,2.653,5.000,5.000,5.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+DP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+DP,Test,input,Total,TB,130.100,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+DP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,Raw-Events,input,Total,Million,0.000,0.000,5.100,20.400,5.100,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,TP,input,Total,TB,0.000,0.300,0.000,1000.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,Test,input,Total,TB,0.000,5.200,0.200,500.000,500.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,Sim-Events,input,Total,Million,0.000,0.000,0.180,5.100,5.100,5.100,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.100,2.200,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDHD,TP,input,Total,TB,0.000,0.000,0.000,0.000,2000.000,3000.000,3000.000,2733.485,2429.150,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,2600.000,2277.904,2024.291,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDHD,Sim-Events,input,Total,Million,1.826,21.758,22.629,15.000,15.000,15.000,40.000,40.000,40.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDVD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.200,2.200,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDVD,TP,input,Total,TB,0.000,0.000,0.000,0.000,2100.000,3100.000,3100.000,2824.601,2510.121,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDVD,Test,input,Total,TB,0.000,0.000,0.000,0.000,1050.000,2600.000,2600.000,2369.021,2105.263,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDVD,Sim-Events,input,Total,Million,85.123,7.950,8.318,15.000,15.000,15.000,42.000,42.000,42.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-SAND,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,15.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-SAND,Test,input,Total,TB,0.000,0.000,200.000,200.000,200.000,200.000,1000.000,1000.000,1000.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-SAND,Sim-Events,input,Total,Million,0.000,0.000,0.000,1.000,5.000,5.000,5.000,20.000,30.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-LAr+TMS,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,15.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-LAr+TMS,Test,input,Total,TB,0.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-LAr+TMS,Sim-Events,input,Total,Million,0.000,0.000,0.000,1.000,5.000,5.000,5.000,5.000,5.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+SP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 70.00
+SP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+DP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+DP,Test,Store,Total,TB,130.100,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Raw-Data,Store,Total,TB,0.000,0.000,2800.000,700.000,700.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 140.00
+PDHD,TP,Store,Total,TB,0.000,0.100,681.000,1000.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Test,Store,Total,TB,8.800,143.900,91.300,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDVD,Raw-Data,Store,Total,TB,0.000,0.000,561.000,2244.000,561.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+PDVD,TP,Store,Total,TB,0.000,0.300,0.000,1000.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDVD,Test,Store,Total,TB,0.000,5.200,0.200,500.000,500.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+FDVD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,16036.446,14251.012,Change native types into storage using factor 8000.00 rescaled to meet cap of 30
+FDVD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,2100.000,3100.000,3100.000,2824.601,2510.121,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+FDVD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,1050.000,2600.000,2600.000,2369.021,2105.263,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+FDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,3758.542,6680.162,Change native types into storage using factor 3750.00 rescaled to meet cap of 30
+FDHD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,2000.000,3000.000,3000.000,2733.485,2429.150,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+FDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,2600.000,2277.904,2024.291,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+ND-SAND,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,75.000,Change native types into storage using factor 5.00
+ND-SAND,Test,Store,Total,TB,0.000,0.000,200.000,200.000,200.000,200.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+ND-LAr+TMS,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,150.000,Change native types into storage using factor 10.00
+ND-LAr+TMS,Test,Store,Total,TB,0.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+Sub-Total,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,19794.989,20931.174,Sum over raw data types from Far detector rescaled to meet cap of 30
+Sub-Total,TP,Store,Total,TB,0.000,0.000,0.000,0.000,4100.000,6100.000,6100.000,5558.087,4939.271,Sum over raw data types from Far detector rescaled to meet cap of 30
+Sub-Total,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2050.000,5100.000,5200.000,4646.925,4129.555,Sum over raw data types from Far detector rescaled to meet cap of 30
+FDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,3000.000,5500.000,5600.000,8769.932,11133.603,second sum over raw types rescaled to meet cap of 30
+FDVD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,3150.000,5700.000,5700.000,21230.068,18866.397,second sum over raw types rescaled to meet cap of 30
+Sub-Total,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,6150.000,11200.000,11300.000,30000.000,30000.000,second sum over raw types rescaled to meet cap of 30
+SP,Reco-Data,CPU,Total,MHr,1.084,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Data,Store,Total,TB,227.500,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Sim,CPU,Total,MHr,0.376,2.531,0.667,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+SP,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+SP,Reco-Sim,Store,Total,TB,110.220,742.500,195.800,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+DP,Reco-Data,CPU,Total,MHr,0.033,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Data,Store,Total,TB,7.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+DP,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+DP,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+PDHD,Reco-Data,CPU,Total,MHr,0.000,0.000,3.334,4.167,5.001,1.667,0.833,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Data,Store,Total,TB,0.000,0.000,700.000,875.000,1050.000,350.000,175.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Sim,CPU,Total,MHr,0.000,0.000,1.990,3.750,3.750,3.750,0.000,0.000,0.000,Scale inputs by 0.75
+PDHD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDHD,Reco-Sim,Store,Total,TB,0.000,0.000,583.660,1100.000,1100.000,1100.000,0.000,0.000,0.000,Scale inputs by 220.00
+PDVD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.850,4.251,5.101,4.251,0.850,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Data,Store,Total,TB,0.000,0.000,102.000,510.000,612.000,510.000,102.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.135,3.825,3.825,3.825,0.000,0.000,0.000,Scale inputs by 0.75
+PDVD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDVD,Reco-Sim,Store,Total,TB,0.000,0.000,39.600,1122.000,1122.000,1122.000,0.000,0.000,0.000,Scale inputs by 220.00
+FDVD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.926,5.852,Go back 100.00 years for Reco-Data
+FDVD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.220,0.440,Go back 100.00 years for Reco-Data
+FDVD,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,44.000,88.000,Go back 100.00 years for Reco-Data
+FDVD,Reco-Sim,CPU,Total,MHr,10.640,0.994,1.040,1.875,1.875,1.875,5.250,5.250,5.250,Scale inputs by 0.12
+FDVD,Reco-Sim,GPU,Total,MHr,8.512,0.795,0.832,1.500,1.500,1.500,4.200,4.200,4.200,Scale inputs by 0.10
+FDVD,Reco-Sim,Store,Total,TB,1702.460,159.000,166.360,300.000,300.000,300.000,840.000,840.000,840.000,Scale inputs by 20.00
+FDHD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.375,4.125,Go back 100.00 years for Reco-Data
+FDHD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+FDHD,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,22.000,66.000,Go back 100.00 years for Reco-Data
+FDHD,Reco-Sim,CPU,Total,MHr,0.228,2.720,2.829,1.875,1.875,1.875,5.000,5.000,5.000,Scale inputs by 0.12
+FDHD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+FDHD,Reco-Sim,Store,Total,TB,36.520,435.160,452.580,300.000,300.000,300.000,800.000,800.000,800.000,Scale inputs by 20.00
+ND-SAND,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.033,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,150.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.240,1.200,1.200,1.200,4.800,7.200,Scale inputs by 0.24
+ND-SAND,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+ND-SAND,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,25.000,125.000,125.000,125.000,500.000,750.000,Scale inputs by 25.00
+ND-LAr+TMS,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,11.400,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,11.400,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,300.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,4.600,23.000,23.000,23.000,23.000,23.000,Scale inputs by 4.60
+ND-LAr+TMS,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,4.600,23.000,23.000,23.000,23.000,23.000,Scale inputs by 4.60
+ND-LAr+TMS,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,50.000,250.000,250.000,250.000,250.000,250.000,Scale inputs by 50.00
+SP,Analysis-Data,CPU,Total,MHr,3.067,3.067,3.067,3.067,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 3.00 years
+SP,Analysis-Sim,CPU,Total,MHr,4.587,4.587,4.587,4.587,4.587,4.587,0.000,0.000,0.000,Extend Analysis processing by 3.00 years
+DP,Analysis-Data,CPU,Total,MHr,0.025,0.025,0.025,0.025,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 3.00 years
+DP,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 3.00 years
+PDHD,Analysis-Data,CPU,Total,MHr,0.000,0.000,1.667,2.084,2.500,2.500,2.500,2.500,2.500,Extend Analysis processing by 3.00 years
+PDHD,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.995,1.875,1.875,1.875,1.875,1.875,1.875,Extend Analysis processing by 3.00 years
+PDVD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.425,2.125,2.551,2.551,2.551,2.551,2.551,Extend Analysis processing by 3.00 years
+PDVD,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.068,1.912,1.912,1.912,1.912,1.912,1.912,Extend Analysis processing by 3.00 years
+FDVD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.463,2.926,Extend Analysis processing by 3.00 years
+FDVD,Analysis-Sim,CPU,Total,MHr,5.320,5.320,5.320,5.320,5.320,5.320,5.320,5.320,5.320,Extend Analysis processing by 3.00 years
+FDHD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.688,2.062,Extend Analysis processing by 3.00 years
+FDHD,Analysis-Sim,CPU,Total,MHr,0.114,1.360,1.414,0.938,0.938,0.938,2.500,2.500,2.500,Extend Analysis processing by 3.00 years
+ND-SAND,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.008,Extend Analysis processing by 3.00 years
+ND-SAND,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.060,0.300,0.300,0.300,1.200,1.800,Extend Analysis processing by 3.00 years
+ND-LAr+TMS,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.850,Extend Analysis processing by 3.00 years
+ND-LAr+TMS,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,1.150,5.750,5.750,5.750,5.750,5.750,Extend Analysis processing by 3.00 years
+SP,Reco-Sim,CPU Wall,Total,MHr,0.537,3.616,0.954,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.674,4.541,1.197,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Sim,CPU Cores,Total,Cores,61.277,412.794,108.855,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Reco-Data,CPU Wall,Total,MHr,1.548,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,1.944,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Data,CPU Cores,Total,Cores,176.704,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Analysis-Data,CPU Wall,Total,MHr,4.382,4.382,4.382,4.382,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,5.502,5.502,5.502,5.502,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Analysis-Data,CPU Cores,Total,Cores,500.209,500.209,500.209,500.209,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Analysis-Sim,CPU Wall,Total,MHr,6.553,6.553,6.553,6.553,6.553,6.553,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,8.229,8.229,8.229,8.229,8.229,8.229,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Analysis-Sim,CPU Cores,Total,Cores,748.104,748.104,748.104,748.104,748.104,748.104,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Data,CPU Wall,Total,MHr,0.048,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.060,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Data,CPU Cores,Total,Cores,5.437,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Analysis-Data,CPU Wall,Total,MHr,0.036,0.036,0.036,0.036,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.045,0.045,0.045,0.045,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Analysis-Data,CPU Cores,Total,Cores,4.078,4.078,4.078,4.078,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,2.842,5.357,5.357,5.357,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,3.569,6.727,6.727,6.727,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,324.486,611.546,611.546,611.546,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,4.763,5.954,7.144,2.381,1.191,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,5.981,7.476,8.971,2.990,1.495,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,543.705,679.631,815.558,271.853,135.926,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,2.381,2.977,3.572,3.572,3.572,3.572,3.572,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,2.990,3.738,4.486,4.486,4.486,4.486,4.486,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,271.853,339.816,407.779,407.779,407.779,407.779,407.779,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,1.421,2.679,2.679,2.679,2.679,2.679,2.679,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,1.785,3.364,3.364,3.364,3.364,3.364,3.364,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,162.243,305.773,305.773,305.773,305.773,305.773,305.773,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.193,5.464,5.464,5.464,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.242,6.862,6.862,6.862,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,22.016,623.777,623.777,623.777,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,1.215,6.073,7.287,6.073,1.215,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,1.525,7.625,9.151,7.625,1.525,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,138.645,693.224,831.869,693.224,138.645,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.607,3.036,3.644,3.644,3.644,3.644,3.644,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.763,3.813,4.575,4.575,4.575,4.575,4.575,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,69.322,346.612,415.934,415.934,415.934,415.934,415.934,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,0.096,2.732,2.732,2.732,2.732,2.732,2.732,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.121,3.431,3.431,3.431,3.431,3.431,3.431,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,11.008,311.888,311.888,311.888,311.888,311.888,311.888,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Sim,CPU Wall,Total,MHr,15.201,1.420,1.485,2.679,2.679,2.679,7.500,7.500,7.500,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,19.087,1.783,1.865,3.364,3.364,3.364,9.418,9.418,9.418,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Sim,CPU Cores,Total,Cores,1735.221,162.060,169.561,305.773,305.773,305.773,856.164,856.164,856.164,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Sim,GPU Wall,Total,MHr,12.160,1.136,1.188,2.143,2.143,2.143,6.000,6.000,6.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,15.270,1.426,1.492,2.691,2.691,2.691,7.534,7.534,7.534,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Sim,GPU Cores,Total,Cores,1388.177,129.648,135.649,244.618,244.618,244.618,684.932,684.932,684.932,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,4.180,8.360,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,5.249,10.498,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,477.169,954.338,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.314,0.629,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.395,0.789,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,35.877,71.755,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.090,4.180,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.624,5.249,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,238.584,477.169,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Analysis-Sim,CPU Wall,Total,MHr,7.600,7.600,7.600,7.600,7.600,7.600,7.600,7.600,7.600,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,9.544,9.544,9.544,9.544,9.544,9.544,9.544,9.544,9.544,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Analysis-Sim,CPU Cores,Total,Cores,867.610,867.610,867.610,867.610,867.610,867.610,867.610,867.610,867.610,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Sim,CPU Wall,Total,MHr,0.326,3.885,4.041,2.679,2.679,2.679,7.143,7.143,7.143,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.409,4.879,5.074,3.364,3.364,3.364,8.969,8.969,8.969,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Sim,CPU Cores,Total,Cores,37.223,443.534,461.289,305.773,305.773,305.773,815.395,815.395,815.395,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.964,5.893,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.467,7.400,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,224.234,672.701,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.982,2.946,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.233,3.700,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,112.117,336.350,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Analysis-Sim,CPU Wall,Total,MHr,0.163,1.943,2.020,1.339,1.339,1.339,3.571,3.571,3.571,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.205,2.439,2.537,1.682,1.682,1.682,4.485,4.485,4.485,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Analysis-Sim,CPU Cores,Total,Cores,18.611,221.767,230.645,152.886,152.886,152.886,407.697,407.697,407.697,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.343,1.714,1.714,1.714,6.857,10.286,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.431,2.153,2.153,2.153,8.611,12.916,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,39.139,195.695,195.695,195.695,782.779,1174.168,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.047,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.059,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,5.382,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.012,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.015,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.345,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.086,0.429,0.429,0.429,1.714,2.571,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.108,0.538,0.538,0.538,2.153,3.229,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,9.785,48.924,48.924,48.924,195.695,293.542,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,6.571,32.857,32.857,32.857,32.857,32.857,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,8.252,41.259,41.259,41.259,41.259,41.259,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,750.163,3750.815,3750.815,3750.815,3750.815,3750.815,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,6.571,32.857,32.857,32.857,32.857,32.857,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,8.252,41.259,41.259,41.259,41.259,41.259,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,750.163,3750.815,3750.815,3750.815,3750.815,3750.815,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,16.286,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,20.450,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1859.100,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,16.286,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,20.450,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1859.100,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,4.071,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,5.113,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,464.775,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,1.643,8.214,8.214,8.214,8.214,8.214,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,2.063,10.315,10.315,10.315,10.315,10.315,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,187.541,937.704,937.704,937.704,937.704,937.704,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU,Total,MHr,9.114,10.186,8.322,7.655,4.587,4.587,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU Wall,Total,MHr,13.020,14.551,11.889,10.935,6.553,6.553,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU kHS23-Yr,Total,kHS23-Yr,16.349,18.272,14.929,13.731,8.229,8.229,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU Cores,Total,Cores,1486.294,1661.106,1357.168,1248.313,748.104,748.104,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU,Total,MHr,0.058,0.025,0.025,0.025,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU Wall,Total,MHr,0.083,0.036,0.036,0.036,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.105,0.045,0.045,0.045,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU Cores,Total,Cores,9.515,4.078,4.078,4.078,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,CPU,Total,MHr,0.000,0.000,7.986,11.876,13.127,9.793,5.209,4.375,4.375,Sum processing across DataTypes
+PDHD,Total,CPU Wall,Total,MHr,0.000,0.000,11.408,16.966,18.752,13.989,7.441,6.251,6.251,Sum processing across DataTypes
+PDHD,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,14.325,21.304,23.547,17.566,9.344,7.849,7.849,Sum processing across DataTypes
+PDHD,Total,CPU Cores,Total,Cores,0.000,0.000,1302.287,1936.766,2140.656,1596.950,849.478,713.552,713.552,Sum processing across DataTypes
+PDVD,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+PDVD,Total,CPU,Total,MHr,0.000,0.000,1.478,12.114,13.389,12.539,5.313,4.463,4.463,Sum processing across DataTypes
+PDVD,Total,CPU Wall,Total,MHr,0.000,0.000,2.111,17.305,19.127,17.913,7.590,6.376,6.376,Sum processing across DataTypes
+PDVD,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,2.651,21.731,24.018,22.493,9.531,8.006,8.006,Sum processing across DataTypes
+PDVD,Total,CPU Cores,Total,Cores,0.000,0.000,240.991,1975.501,2183.469,2044.824,866.468,727.823,727.823,Sum processing across DataTypes
+FDVD,Total,GPU,Total,MHr,8.512,0.795,0.832,1.500,1.500,1.500,4.200,4.420,4.640,Sum processing across DataTypes
+FDVD,Total,CPU,Total,MHr,15.961,6.314,6.360,7.195,7.195,7.195,10.570,14.959,19.348,Sum processing across DataTypes
+FDVD,Total,CPU Wall,Total,MHr,22.801,9.020,9.086,10.279,10.279,10.279,15.100,21.370,27.640,Sum processing across DataTypes
+FDVD,Total,CPU kHS23-Yr,Total,kHS23-Yr,28.631,11.326,11.409,12.907,12.907,12.907,18.962,26.835,34.708,Sum processing across DataTypes
+FDVD,Total,CPU Cores,Total,Cores,2602.831,1029.670,1037.172,1173.383,1173.383,1173.383,1723.775,2439.528,3155.282,Sum processing across DataTypes
+FDHD,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+FDHD,Total,CPU,Total,MHr,0.342,4.080,4.243,2.812,2.812,2.812,7.500,9.562,13.688,Sum processing across DataTypes
+FDHD,Total,CPU Wall,Total,MHr,0.489,5.828,6.061,4.018,4.018,4.018,10.714,13.661,19.554,Sum processing across DataTypes
+FDHD,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.614,7.318,7.611,5.045,5.045,5.045,13.454,17.154,24.554,Sum processing across DataTypes
+FDHD,Total,CPU Cores,Total,Cores,55.834,665.301,691.934,458.659,458.659,458.659,1223.092,1559.442,2232.143,Sum processing across DataTypes
+ND-SAND,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+ND-SAND,Total,CPU,Total,MHr,0.000,0.000,0.000,0.300,1.500,1.500,1.500,6.000,9.041,Sum processing across DataTypes
+ND-SAND,Total,CPU Wall,Total,MHr,0.000,0.000,0.000,0.429,2.143,2.143,2.143,8.571,12.916,Sum processing across DataTypes
+ND-SAND,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.538,2.691,2.691,2.691,10.763,16.219,Sum processing across DataTypes
+ND-SAND,Total,CPU Cores,Total,Cores,0.000,0.000,0.000,48.924,244.618,244.618,244.618,978.474,1474.437,Sum processing across DataTypes
+ND-LAr+TMS,Total,GPU,Total,MHr,0.000,0.000,0.000,4.600,23.000,23.000,23.000,23.000,34.400,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU,Total,MHr,0.000,0.000,0.000,5.750,28.750,28.750,28.750,28.750,43.000,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU Wall,Total,MHr,0.000,0.000,0.000,8.214,41.071,41.071,41.071,41.071,61.429,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,10.315,51.574,51.574,51.574,51.574,77.136,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU Cores,Total,Cores,0.000,0.000,0.000,937.704,4688.519,4688.519,4688.519,4688.519,7012.394,Sum processing across DataTypes
+Total,Reco-Sim,GPU,Total,MHr,8.512,0.795,0.832,6.100,24.500,24.500,27.200,27.200,27.200,Sum processing across Detectors
+Total,Reco-Sim,CPU,Total,MHr,11.244,6.245,6.661,16.165,35.525,35.525,34.450,38.050,40.450,Sum processing across Detectors
+Total,Reco-Sim,CPU Wall,Total,MHr,16.063,8.921,9.515,23.093,50.750,50.750,49.214,54.357,57.786,Sum processing across Detectors
+Total,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,20.171,11.202,11.948,28.998,63.727,63.727,61.799,68.257,72.562,Sum processing across Detectors
+Total,Reco-Sim,CPU Cores,Total,Cores,1833.721,1018.387,1086.208,2636.171,5793.379,5793.379,5618.069,6205.153,6596.543,Sum processing across Detectors
+Total,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.220,11.840,Sum processing across Detectors
+Total,Reco-Data,CPU,Total,MHr,1.117,0.000,4.184,8.418,10.102,5.918,1.684,4.301,21.410,Sum processing across Detectors
+Total,Reco-Data,CPU Wall,Total,MHr,1.596,0.000,5.977,12.026,14.431,8.454,2.405,6.144,30.586,Sum processing across Detectors
+Total,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,2.004,0.000,7.506,15.101,18.122,10.616,3.020,7.715,38.407,Sum processing across Detectors
+Total,Reco-Data,CPU Cores,Total,Cores,182.141,0.000,682.350,1372.856,1647.427,965.077,274.571,701.402,3491.520,Sum processing across Detectors
+Total,Analysis-Data,CPU,Total,MHr,3.092,3.092,5.184,7.301,5.051,5.051,5.051,7.202,12.898,Sum processing across Detectors
+Total,Analysis-Data,CPU Wall,Total,MHr,4.418,4.418,7.406,10.431,7.216,7.216,7.216,10.288,18.425,Sum processing across Detectors
+Total,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,5.547,5.547,9.300,13.098,9.061,9.061,9.061,12.919,23.137,Sum processing across Detectors
+Total,Analysis-Data,CPU Cores,Total,Cores,504.287,504.287,845.462,1190.714,823.713,823.713,823.713,1174.415,2103.353,Sum processing across Detectors
+Total,Analysis-Sim,CPU,Total,MHr,10.022,11.267,12.384,15.843,20.683,20.683,17.658,18.558,19.158,Sum processing across Detectors
+Total,Analysis-Sim,CPU Wall,Total,MHr,14.317,16.096,17.692,22.632,29.547,29.547,25.225,26.511,27.368,Sum processing across Detectors
+Total,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,17.978,20.212,22.216,28.419,37.102,37.102,31.676,33.290,34.366,Sum processing across Detectors
+Total,Analysis-Sim,CPU Cores,Total,Cores,1634.326,1837.482,2019.610,2583.588,3372.890,3372.890,2879.597,3026.368,3124.215,Sum processing across Detectors
+Total,Total,GPU,Total,MHr,8.512,0.795,0.832,6.100,24.500,24.500,27.200,27.420,39.040,Sum processing across Detectors
+Total,Total,CPU,Total,MHr,25.475,20.604,28.413,47.727,71.361,67.176,58.842,68.110,93.915,Sum processing across Detectors
+Total,Total,CPU Wall,Total,MHr,36.393,29.435,40.591,68.182,101.944,95.966,84.061,97.300,134.165,Sum processing across Detectors
+Total,Total,CPU kHS23-Yr,Total,kHS23-Yr,45.699,36.962,50.970,85.617,128.011,120.506,105.555,122.181,168.472,Sum processing across Detectors
+Total,Total,CPU Cores,Total,Cores,4154.474,3360.155,4633.629,7783.329,11637.409,10955.059,9595.950,11107.338,15315.631,Sum processing across Detectors

@@ -1,0 +1,55 @@
+Detectors,DataTypes,Resources,Locations,Units,2022,2023,2024,2025,2026,2027,2028,2029,2030,Explanation
+SP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+SP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+SP,Sim-Events,input,Total,Million,0.501,3.375,0.890,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,Raw-Events,input,Total,Million,0.000,0.000,20.000,5.000,5.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,TP,input,Total,TB,0.000,0.100,681.000,1000.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,Test,input,Total,TB,8.800,143.900,91.300,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDHD,Sim-Events,input,Total,Million,0.000,0.000,2.653,5.000,5.000,5.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+DP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+DP,Test,input,Total,TB,130.100,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+DP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,Raw-Events,input,Total,Million,0.000,0.000,5.100,20.400,5.100,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,TP,input,Total,TB,0.000,0.300,0.000,1000.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,Test,input,Total,TB,0.000,5.200,0.200,500.000,500.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+PDVD,Sim-Events,input,Total,Million,0.000,0.000,0.180,5.100,5.100,5.100,0.000,0.000,0.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,1.100,2.200,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDHD,TP,input,Total,TB,0.000,0.000,0.000,0.000,2000.000,3000.000,3000.000,2733.485,2429.150,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,2600.000,2277.904,2024.291,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDHD,Sim-Events,input,Total,Million,1.826,21.758,22.629,15.000,15.000,15.000,40.000,40.000,40.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDVD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,2.200,2.200,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+FDVD,TP,input,Total,TB,0.000,0.000,0.000,0.000,2100.000,3100.000,3100.000,2824.601,2510.121,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDVD,Test,input,Total,TB,0.000,0.000,0.000,0.000,1050.000,2600.000,2600.000,2369.021,2105.263,Inputs from NearTerm_2024-08-14-2040_timeline.csv rescaled to meet cap of 30
+FDVD,Sim-Events,input,Total,Million,85.123,7.950,8.318,15.000,15.000,15.000,42.000,42.000,42.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-SAND,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,15.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-SAND,Test,input,Total,TB,0.000,0.000,200.000,200.000,200.000,200.000,1000.000,1000.000,1000.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-SAND,Sim-Events,input,Total,Million,0.000,0.000,0.000,1.000,5.000,5.000,5.000,20.000,30.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-LAr+TMS,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,15.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-LAr+TMS,Test,input,Total,TB,0.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+ND-LAr+TMS,Sim-Events,input,Total,Million,0.000,0.000,0.000,1.000,5.000,5.000,5.000,5.000,5.000,Inputs from NearTerm_2024-08-14-2040_timeline.csv
+SP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 70.00
+SP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+DP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+DP,Test,Store,Total,TB,130.100,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Raw-Data,Store,Total,TB,0.000,0.000,2800.000,700.000,700.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 140.00
+PDHD,TP,Store,Total,TB,0.000,0.100,681.000,1000.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Test,Store,Total,TB,8.800,143.900,91.300,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDVD,Raw-Data,Store,Total,TB,0.000,0.000,561.000,2244.000,561.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+PDVD,TP,Store,Total,TB,0.000,0.300,0.000,1000.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDVD,Test,Store,Total,TB,0.000,5.200,0.200,500.000,500.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+FDVD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,16036.446,14251.012,Change native types into storage using factor 8000.00 rescaled to meet cap of 30
+FDVD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,2100.000,3100.000,3100.000,2824.601,2510.121,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+FDVD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,1050.000,2600.000,2600.000,2369.021,2105.263,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+FDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,3758.542,6680.162,Change native types into storage using factor 3750.00 rescaled to meet cap of 30
+FDHD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,2000.000,3000.000,3000.000,2733.485,2429.150,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+FDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,1000.000,2500.000,2600.000,2277.904,2024.291,Change native types into storage using factor 1.00 rescaled to meet cap of 30
+ND-SAND,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,75.000,Change native types into storage using factor 5.00
+ND-SAND,Test,Store,Total,TB,0.000,0.000,200.000,200.000,200.000,200.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+ND-LAr+TMS,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,150.000,Change native types into storage using factor 10.00
+ND-LAr+TMS,Test,Store,Total,TB,0.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+Sub-Total,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,19794.989,20931.174,Sum over raw data types from Far detector rescaled to meet cap of 30
+Sub-Total,TP,Store,Total,TB,0.000,0.000,0.000,0.000,4100.000,6100.000,6100.000,5558.087,4939.271,Sum over raw data types from Far detector rescaled to meet cap of 30
+Sub-Total,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2050.000,5100.000,5200.000,4646.925,4129.555,Sum over raw data types from Far detector rescaled to meet cap of 30
+FDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,3000.000,5500.000,5600.000,8769.932,11133.603,second sum over raw types rescaled to meet cap of 30
+FDVD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,3150.000,5700.000,5700.000,21230.068,18866.397,second sum over raw types rescaled to meet cap of 30
+Sub-Total,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,6150.000,11200.000,11300.000,30000.000,30000.000,second sum over raw types rescaled to meet cap of 30
