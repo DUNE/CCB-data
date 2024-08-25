@@ -158,19 +158,19 @@ class DataHolder:
         ' clear out the list of series but keep configuration'
         self.holder={}
 
-    def jsonDump(self,newfile):
+    def jsonDump(self,dir=".",name="test.json"):
         'Dump the holder in json format'
-        newfile = newfile.replace(".json","_holder.json")
+        name = name.replace(".json","_holder.json")
         newlist = []
         for tag in self.holder:
             fields = tag.split("!")
             newlist.append({"detector":fields[0],"datatype":fields[1],"resource":fields[2],"location":fields[3],"units":fields[4]}| self.holder[tag]|{"Explanation":self.explanation[tag]})
-        f = open(newfile,'w')
+        f = open(os.path.join(dir,name),'w')
         commentjson.dump(newlist,f,indent=4)
         f.close()
         return True
     
-    def csvDump(self,newfile,plotrange=True,filter=None,dropColumns=None,format="%.3f"):
+    def csvDump(self,dir=".",name="empty.csv",plotrange=True,filter=None,dropColumns=None,format="%.3f"):
         'Dump the holder in csv format, restrict to plot yeas if plotrange is True '
         #print ("csvDump")
         #if self.debug: print ("test of debug")
@@ -201,13 +201,13 @@ class DataHolder:
                 
         fieldnames = list(result[0].keys())
 
-            
-        with open(newfile, 'w', newline='') as csvfile:
+        print (dir,name)    
+        with open(os.path.join(dir,name), 'w', newline='') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for line in result:
                 writer.writerow(line)
-        #return  result
+        return os.path.join(dir,name)
     
     def placeData(self,detector,datatype,resource,location,units,series,explanation=None):
         ' make a new data entry '
@@ -251,12 +251,29 @@ class DataHolder:
         return self.scaleByTag(tag,categories,factor,explanation)
     
     def cleanFilter(self,filter=None):
-        for x,value in filter.items():
+        thefilter = filter.copy()
+        if self.debug: print("raw filter",filter)
+        defaults = {"Detectors":self.Detectors,
+                    "DataTypes":self.DataTypes,
+                    "Resources":self.Resources,
+                    "Locations":self.Locations+["Total"],
+                    "Units":None
+                    }
+        for x,default in defaults.items():
+            if x not in thefilter:
+                thefilter[x] = default
+                if self.debug:
+                    print("adding default to filter",x,default)
+        for x,value in thefilter.items():
+            if x == "Units" and value == None:
+                print ("must supply units for any filter")
+                return {}
             #print ("cleanFilter:",x,type(value))
             if type(value) is not list:
-                filter[x] = [value]
-                print("filter has wrong entry type",x,value,filter[x])
-        return filter
+                thefilter[x] = [value]
+                print("WARNING: filter has wrong entry type - correcting",x,value,thefilter[x])
+        if self.debug: print("full filter",thefilter)
+        return thefilter
 
         
     def storeFilter(self,filter=None,name=None):
@@ -291,7 +308,7 @@ class DataHolder:
             
     def sumAcrossFilters(self,filter=None,sumCat=None,sumName="Total",explanation=None):
         newtags = []
-        local = filter.copy()
+        local = self.cleanFilter(filter.copy())
         
         for x in self.nosum:
             if x in local[sumCat]:
@@ -486,6 +503,16 @@ class DataHolder:
         s += "\\end{table}\n"
         return s
     
+    def TexBoth(self,figname,csvname,caption,label=None):
+        if label is None: label = name
+        s = "\\begin{figure}[h]\n\\centering"
+        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%(os.path.basename(figname))
+        #s += "\\caption{%s}\n"%caption
+        #s += "\\label{fig:%s}\n"%label
+        s += "\\end{figure}\n"
+        s += self.TexTable(csvname,caption,label)
+        return s
+    
 
 if __name__ == '__main__':
     ' test the methods'
@@ -551,19 +578,24 @@ if __name__ == '__main__':
     #     tags.append(data.tag(detector,"Raw-Events","input","Total","Million"))
     # print (tags)
     SumFilter = {"Detectors":data.Detectors,"DataTypes":data.DataTypes,"Resources":"input","Locations":["Total"],"Units":["Million"]}
+
+    SumFilter = {"Resources":"input","Locations":["Total"],"Units":["Million"]}
     # this has a deliberage error which cleanFilter should fix when you make the tagset
     
-    
+    test = data.makeTagSet(SumFilter)
+    print (test)
+    data.debug=True
     data.sumAcrossAll(filter=SumFilter,sumName="Total",explanation="Test of sumAcross Detectors")
+    data.debug=DEBUG
 
-    Drawfilter= {"Detectors":data.Detectors,"DataTypes":["Total"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
+    Drawfilter= {"Detectors":data.Detectors+["Total"],"DataTypes":["Total"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
 
-    data.csvDump("Events.csv",filter=Drawfilter,dropColumns=["Resources","Locations","Explanation"],format="%.2f")
-    tex.write(data.TexTable("Events.csv","events.","events"))
+    table = data.csvDump(name="Events.csv",filter=Drawfilter,dropColumns=["Resources","Locations","Explanation"],format="%.2f")
+    #tex.write(data.TexBoth("Events.csv","events.","events"))
 
     pic = data.Draw(Dir=".",Title="test of graphics",YAxis="Events",Resource="input",Category="Detectors",filter=Drawfilter)
-    tex.write(data.TexFigure(pic,caption="test figure",label="testpic"))
-
+    #tex.write(data.TexFigure(pic,caption="test figure",label="testpic"))
+    tex.write(data.TexBoth(pic,table,caption="test figure",label="testpic"))
     tex.write("\end{document}\n")
-    data.csvDump("test.csv")
+    data.csvDump(name="test.csv")
     
