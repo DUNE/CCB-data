@@ -62,7 +62,7 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # specify the json file here.  Will create a subdirectory for plots with a similar name
 
-configfilename = "NearTerm_2024-08-14-2040.json"
+configfilename = "NearTerm_2024-08-27-2040.json"
 if len(sys.argv) > 1 and sys.argv[1] == "old":
     configfilename = "Feb24.json"
 print (configfilename)
@@ -320,13 +320,16 @@ for tag in tagsToRescale:
     # if att["Detectors"] in FarDetectors and att["DataTypes"] in RealDataTypes+["Raw-Events"]:
 
     if DEBUG: holder.printByTag(tag)
+    maxfactor = 1.0
     for year in Years:
         if factors[year] < 1.0:
             holder.holder[tag][year] *= factors[year]
             modified = True
+            newfactor = 1/factors[year]
+            if newfactor > maxfactor: maxfactor=newfactor
     if modified:
-        print ("Rescale to fit cap of %d PB "%Cap)
-        holder.explanation[tag] += " rescaled to meet cap of %d"%Cap
+        print ("Rescale by up to factor of %.2f to fit cap of %d PB "%(maxfactor,Cap))
+        holder.explanation[tag] += " rescaled  downward by %.2f to meet cap of %d"%(maxfactor,Cap)
     if DEBUG: holder.printByTag(tag)
 
 
