@@ -551,7 +551,7 @@ if __name__ == '__main__':
     texfile = "test.tex"
     
     tex = open("test.tex",'w')
-    tex.write("\input Header.tex\n")
+    tex.write("\\input Header.tex\n")
 
 
     data = DataHolder(config)
@@ -624,6 +624,6 @@ if __name__ == '__main__':
     new = data.TexBoth(pic,caption="test figure",label="testpic")
     print (new)
     tex.write(new)
-    tex.write("\end{document}\n")
+    tex.write("\\end{document}\n")
     data.csvDump(name="test.csv")
     

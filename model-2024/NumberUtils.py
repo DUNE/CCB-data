@@ -11,7 +11,7 @@ import dunestyle.matplotlib as dunestyle
 # 2024-01-22, refactor extension code for reliability
 
 def makeParameter(name=None,value=None):
-    texname = name.replace("_","\_")
+    texname = name.replace("_","\\_")
     
     command = "\\newcommand{\\%s}{%s}"%(name,value.strip())
     return command
