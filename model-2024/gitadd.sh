@@ -10,4 +10,6 @@ git add *08-27*json
 git add *08-27*timeline.csv
 git add *08-14*json
 git add *08-14*timeline.csv
+git add json2tex.py
 git add gitadd.sh
+git add CCB-Report-2025-v0.tex

@@ -509,7 +509,7 @@ class DataHolder:
     def TexFigure(self,name,caption,label=None):
         if label is None: label = name
         s = "\\begin{figure}[h]\n\\centering"
-        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%(os.path.basename(name))
+        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%((name))
         s += "\\caption{%s}\n"%caption
         s += "\\label{fig:%s}\n"%label
         s += "\\end{figure}\n"
@@ -517,19 +517,24 @@ class DataHolder:
     
     def TexTable(self,name,caption,label):
         s = "\\begin{table}[h]\n\\centering{\\footnotesize"
-        s += "\\csvautotabularright{%s}}"%(os.path.basename(name))
+        s += "\\csvautotabularright{%s}}"%((name))
         s += "\\label{tab:%s}\n"%label
         s += "\\caption{%s}\n"%caption
         s += "\\end{table}\n"
         return s
     
     def TexBoth(self,figname,caption,label=None):
+        
         if figname is None:
             return "%% empty file"+figname
         csvname = figname.replace(".png",".csv")
+        texname = figname.replace(".png",".tex")
+        texfile = open(texname,'w')
         if label is None: label = name
         s = "\\begin{figure}[ht]\n\\centering"
-        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%(os.path.basename(figname))
+        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%((figname))
+        print (s)
+        
         #s += "\\caption{%s}\n"%caption
         #s += "\\label{fig:%s}\n"%label
         
@@ -537,8 +542,12 @@ class DataHolder:
         s += "\\end{figure}\n"
         s += self.TexTable(csvname,caption,label)
         s += "\\pagebreak\n"
+        texfile.write(s)
+        texfile.close()
         return s
-    
+
+
+
 
 if __name__ == '__main__':
     ' test the methods'
@@ -548,6 +557,7 @@ if __name__ == '__main__':
             config = commentjson.load(f)
     else:
         print ("no config file",configfilename)
+
     texfile = "test.tex"
     
     tex = open("test.tex",'w')

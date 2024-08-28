@@ -118,9 +118,9 @@
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
-    "MaxYear": 2033,
-    "MinYear": 2023,
-    "RequestYear":2024,
+    "MaxYear": 2030,
+    "MinYear": 2022,
+    "RequestYear":2025,
     "PlotUnits": {
         "Raw-Events": "Million",
         "Store": "PB",
@@ -305,7 +305,7 @@
     "DiskCopies":{
         "Raw-Data":1, "Test":1,
         "TP": 1,
-        "Reco-Data":2, "Reco-Sim":1.5,"Analysis-Data":20,"Analysis-Sim":20
+        "Reco-Data":2, "Reco-Sim":1.5,"Analysis-Data":2,"Analysis-Sim":2
     },
     "PerYear": {
         "Reco-Data-Store": 1,
@@ -427,7 +427,7 @@
                 "Raw-Data": {
                     "US": 0.5,
                     "CERN": 0.0,
-                    "Global": 0.25
+                    "Global": 0.5
                 },
                 "Reco-Sim": {
                     "US": 0.50,
@@ -486,9 +486,8 @@
                     "Global": 0.5
                 }
             }
-        }  
+        } 
     },
-    
     "Explain":{
         "Detectors":"Detectors included in the calculation",
         "Cap":"Cap on Raw data per year in PB",
