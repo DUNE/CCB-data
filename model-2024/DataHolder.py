@@ -341,7 +341,7 @@ class DataHolder:
             if newtag not in newtags:
                 newtags.append(newtag)
             else:
-                print ("WARNING: possible duplicate tag",newtag)
+                if self.debug: print ("WARNING: possible duplicate tag",newtag)
                 
         if self.debug: print ("sumAcrossFilters:",sumCat,newtags)
         return newtags
@@ -430,7 +430,10 @@ class DataHolder:
         thefilter = filter to use to define plot'''
         #print (InYears)
         thefilter = filter.copy()
-        if "Total" not in thefilter[Category]: thefilter[Category] +=  ["Total"]
+        print ("precheck", thefilter)
+        if "Total" not in thefilter[Category]:
+            print ("adding Total to ",thefilter[Category])
+            thefilter[Category] +=  ["Total"]
         thefilter["Resources"]=[Resource]
         if self.debug: print ("draw filter",thefilter)
         tags = self.makeTagSet(thefilter)
@@ -440,7 +443,9 @@ class DataHolder:
             format = self.UnitFormats[filter["Units"][0]]
             if len(format) > 1 and " " in Resource:
                 unit = Resource.split(" ")[1]
+                
                 format = self.UnitFormats[unit]
+                print ('unit',Resource,unit,format)
                 
             #print ("set format",Title,filter["Units"], format)
         if self.debug:
@@ -492,7 +497,8 @@ class DataHolder:
         dunestyle.Preliminary()
         plt.grid()
         dunestyle.Preliminary()
-        savename = (Dir+"/"+Dir+"_").replace("/._","/")+Title.replace(" ","-")+"-"+YAxis.replace(" ","-")+".png"
+        #savename = (Dir+"/"+Dir+"_").replace("/._","/")+Title.replace(" ","-")+"-"+YAxis.replace(" ","-")+".png"
+        savename = (Dir+"/").replace("/._","/")+Title.replace(" ","-")+"-"+YAxis.replace(" ","-")+".png"
         plt.savefig(savename,transparent=False)
         tablename = os.path.basename(savename.replace(".png",".csv"))
         drops = ["Resources","Explanation","Detectors","DataTypes","Locations","Units"]
@@ -518,14 +524,14 @@ class DataHolder:
     
     def TexTable(self,name,caption,label):
         label = label.replace(" ","-")
-        s = "\\begin{table}[h]\n\\centering{\\footnotesize"
-        s += "\\csvautotabularright{%s}}"%((name))
+        s = "\\begin{table}[h]\n\\centering"
+        s += "{\\footnotesize\\csvautotabularright{%s}}"%((name))
         s += "\\label{tab:%s}\n"%label
         s += "\\caption{%s}\n"%caption
         s += "\\end{table}\n"
         return s
     
-    def TexBoth(self,figname,caption,label=None):
+    def TexBoth2(self,figname,caption,label=None):
         
         if figname is None:
             return "%% empty file"+figname
@@ -537,12 +543,7 @@ class DataHolder:
         label = label.replace(" ","-")
         s = "\\begin{figure}[ht]\n\\centering"
         s += "\\includegraphics[height=0.4\\textwidth]{%s}"%((figname))
-        print (s)
-        
-        #s += "\\caption{%s}\n"%caption
-        #s += "\\label{fig:%s}\n"%label
-        
-        
+        #print (s)
         s += "\\end{figure}\n"
         s += self.TexTable(csvname,caption,label)
         s += "\\pagebreak\n"
@@ -550,7 +551,33 @@ class DataHolder:
         texfile.close()
         return s
 
+    def TexBoth(self,figname,caption,label=None):
+        
+        if figname is None:
+            return "%% empty file"+figname
+        csvname = figname.replace(".png",".csv")
+        texname = figname.replace(".png",".tex")
+        texfile = open(texname,'w')
+        if label is None: label = name
+    
+        label = label.replace(" ","-").replace("_","-")
+        if self.debug: print ("names", figname,csvname,texname,label)
+        s = "\\begin{figure}[ht]\n\\centering\n"
+        s += "\\includegraphics[height=0.4\\textwidth]{%s}"%((figname))
+        #print (s)
+        s += "\\\\"
+        s += "{\\footnotesize\\csvautotabularright{%s}}"%((csvname))
+        s += "\\label{tab:%s}\n"%label
+        s += "\\caption{%s}\n"%caption
+        s += "\\end{figure}\n"
+        #s += self.TexTable(csvname,caption,label)
 
+        s += "\\pagebreak\n"
+        texfile.write(s)
+        texfile.close()
+        return s
+
+    
 
 
 if __name__ == '__main__':

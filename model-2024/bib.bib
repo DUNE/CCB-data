@@ -1,0 +1,116 @@
+@article{DUNE:2022fcw,
+    author = "Abed Abud, Adam and others",
+    collaboration = "DUNE",
+    title = "{DUNE Offline Computing Conceptual Design Report}",
+    eprint = "2210.15665",
+    archivePrefix = "arXiv",
+    primaryClass = "physics.data-an",
+    reportNumber = "FERMILAB-DESIGN-2022-01",
+    month = "10",
+    year = "2022"
+}
+
+@misc{scotgrid,
+url = "{https://dune.monitoring.edi.scotgrid.ac.uk/app/dashboards#/view/7eb1cea0-ca5e-11ea-b9a5-15b75a959b33?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-1d,to:now))}",
+title = "{DUNE Rucio Storage Monitoring Site}",
+author = "{Yuan, Wenlong}",
+date = "2024-02-01"
+}
+
+@misc{fnaltape,
+url = "{https://landscape.fnal.gov/monitor/d/r6UDhH-iz/fcrsg-prep?var-expName=DUNE&var-graphiteQuery=%7Bdune%2CDUNE%2Cmarslbne%2Clbne%7D&var-esQuery=%28dune+OR+DUNE+OR+marslbne+OR+lbne%29&var-NASQuery=%28dune*+OR+DUNE*+OR+marslbne*+OR+lbne*%29&var-dCacheQuery=%28dune%7CDUNE%7Cmarslbne%7Clbne%29&var-enstoreQuery=%28dune%7CDUNE%7Cmarslbne%7Clbne%29&orgId=1&viewPanel=8}",
+title="{DUNE Tape usage at Fermilab}",
+author = "{Timm, Steven}",
+date = "2024-02-01"
+}
+
+@misc{cpureport,
+url = "{https://fifemon.fnal.gov/kibana/app/kibana#/visualize/edit/b31bfcc0-c095-11ee-82e9-098fee8b63d4?_g=(refreshInterval:(pause:!t,value:0),time:(from:'2022-01-01T06:00:00.000Z',mode:absolute,to:'2024-01-01T05:59:59.999Z'))&_a=(filters:!(),linked:!f,query:(language:lucene,query:'Jobsub_Group:dune'),uiState:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),vis:(aggs:!((enabled:!t,id:'1',params:(field:SlotHours),schema:metric,type:sum),(enabled:!t,id:'3',params:(field:MachineAttrGLIDEIN_DUNESite0,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!f,otherBucketLabel:Other,size:50),schema:bucket,type:terms),(enabled:!t,id:'5',params:(customInterval:'2h',drop_partials:!f,extended_bounds:(),field:'@timestamp',interval:M,min_doc_count:1,timeRange:(from:'2022-01-01T06:00:00.000Z',mode:absolute,to:'2024-01-01T05:59:59.999Z'),useNormalizedEsInterval:!t),schema:bucket,type:date_histogram),(enabled:!t,id:'4',params:(filters:!(('$$hashKey':'object:1731',input:(query:'NOT(Owner:dunepro)%20AND%20NOT(AccountingGroup:group_dune.mars.*)'),label:Analysis),('$$hashKey':'object:1732',input:(query:'Owner:dunepro'),label:Production),('$$hashKey':'object:1733',input:(query:'AccountingGroup:group_dune.mars.*'),label:MARS),('$$hashKey':'object:1734',input:(query:'*'),label:Total))),schema:bucket,type:filters)),params:(perPage:24,showMetricsAtAllLevels:!f,showPartialRows:!f,showTotal:!f,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'DUNE%20monthly%20slot%20hours%20by%20site%20and%20role%202022-2023',type:table))
+}",
+title="{DUNE CPU Use by Site}",
+author = "{Timm, Steven}",
+date = "2024-01-01"
+}
+
+
+@misc{CCB2022,
+url="{https://indico.fnal.gov/event/52519/}",
+title = "{DUNE Computing Contributions Board Meeting for 2022}",
+date= "2022-01-26",
+author = "Clarke, Peter"
+}
+
+@misc{CCB2023Report,
+url="{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=27192}",
+title = "{DUNE Offline Computing Model Calculations for 2023}",
+date = "2022-12-08",
+author = "Schellman, Heidi"
+}
+
+@misc{CCB2024Report,
+url="{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=29925}",
+title = "{DUNE Offline Computing Model Calculations for 2024}",
+date = "2023-02-05",
+author = "Schellman, Heidi"
+}
+
+
+@misc{CCB2023Minutes,
+url="{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=27462}",
+title = "{DUNE Computing Contributions Board Minutes for 2023}",
+date = "2022-12-08",
+author = "Clarke, Peter"
+}
+
+@misc{CCB2024Minutes,
+url="{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=30302}",
+title = "{Computing Contribution Board (CCB) Minutes for February 2024}",
+date = "2024-02-13",
+author = "Clarke, Peter"
+}
+
+
+
+
+
+@misc{CCB2023,
+url="{https://indico.fnal.gov/event/52519/}",
+title = "{DUNE Computing Contributions Board Meeting for 2023}",
+date = "2022-12-08",
+author = "Clarke, Peter"
+}
+
+
+
+
+@misc{fifemonDUNE,
+url="{https://fifemon.fnal.gov/kibana/goto/5ac70f9ccc22e447632c7276cea83ef5}",
+title="{Kibana sum of slot hours for DUNE with MARS removed, Nov 1, 2021 to Oct 31, 2022}",
+author = "Herner, Kenneth",
+date = "2022-11-20"
+}
+
+@misc{EGI2022old,
+url="{https://accounting.egi.eu/wlcg/countries/elap_processors/COUNTRY/DATE/2021/11/2022/11/custom-biomed,dune/localinfrajobs/}",
+title="{EGI accounting for DUNE slot time, November 2021 to October 2022}.  Slot time refers to the core allocated to pilots.  It is partially equivalent to the memory-weighted wall-time from HTCondor if the pilot fills the requested memory.",
+date = "2022-11-20"
+}
+
+@misc{EGI2022,
+url = "{https://accounting.egi.eu/wlcg/countries/elap_processors-year/SITE/DATE/2021/11/2022/10/custom-dune/localinfrajobs/}",
+title="{EGI accounting for DUNE slot time, November 2021 to October 2022.  Slot time refers to the core allocated to pilots.  It is partially equivalent to the memory-weighted wall-time from HTCondor if the pilot fills the requested memory}",
+date = "2022-12-05"
+}
+
+@misc{FCRSG2023,
+url="{https://indico.fnal.gov/event/57596/}",
+title="{2023 FCRSG Review}",
+date="2023-02-15"
+}
+
+@misc{CCBReport23,
+url="{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=27192}",
+title="{DUNE Offline Computing Model Calculations for 2023}",
+date="{2023-12-09}",
+eprint = "{DUNE docdb-27192}"
+}

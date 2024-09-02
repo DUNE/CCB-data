@@ -7,7 +7,7 @@
 import sys
 import os
 print(sys.executable)
-DEBUG=True
+DEBUG=False
 
 
 # 
@@ -120,12 +120,12 @@ RequestYear=2024
 if "RequestYear" in config:
     RequestYear= config["RequestYear"]
         
-Formats = config["Formats"]
+# Formats = config["Formats"]
 Resources = config["Resources"]
 Locations = config["Locations"]
 PlotDetectors = Detectors+["Total"]
 PlotDataTypes = DataTypes+["Total"]
-PlotLocations = Locations+["Total"]
+PlotLocations = Locations
 Scales = config["Scales"]
 Cap = config["Cap"]
 CapInTB = Cap*1000
@@ -308,7 +308,7 @@ holder.csvDump(dirname,dirname+"after-raw.csv")
 
 
 # scale everything year by year so it meets the cap
-DEBUG=True
+#DEBUG=True
 subtotaltag  = holder.tag("Sub-Total","Sub-Total","Store","Total","TB")
 print (subtotaltag)
 
@@ -444,6 +444,7 @@ for detector in Detectors:
 
 print ("---------------  make analysis ------------------")
 for detector in Detectors:
+    if detector in holder.nosum: continue
     for resource in ["CPU"]:   
         location = "Total"
         factor = config[detector]["Analysis-CPU"]*PerYear["Analysis-CPU"]
@@ -526,7 +527,7 @@ CPUTotals=holder.sumAcrossFilters(filter=filter,sumCat="DataTypes",
                                   sumName="Total",explanation="Sum processing across DataTypes")
 
 filter2 = {"Detectors":Detectors,
-           "DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"]+["Total"],"Resources":CPUTypes,"Locations":["Total"],"Units":Units}
+           "DataTypes":["Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"]+["Total"],"Resources":CPUTypes,"Locations":Locations,"Units":Units}
 
 #print (filter2)
 CPUTotalsAllDetectors=holder.sumAcrossFilters(
@@ -592,6 +593,8 @@ holder.csvDump(dirname,"disk-tape.csv")
 # In[ ]:
 
 
+#DEBUG=True
+
 print("---------------------- split disk and tape across sites ---------------------------------")
 print (Detectors)
 holder.debug=DEBUG
@@ -622,6 +625,7 @@ for detector in Detectors:
                     if DEBUG: print ("skip split tag",oldtag)
                     continue
                 if DEBUG: print ("check", resource,thedatatype,location)
+
                 if "CPU" in resource:
                     factor = split["CPU"]["CPU"][location]
                 elif "GPU" in resource:
@@ -629,6 +633,7 @@ for detector in Detectors:
                 else:
                     factor = split[resource][thedatatype][location]
                 if DEBUG: print ("split",factor)
+                 
                 newtag = holder.scale(detector= detector,datatype=datatype,resource=resource,location=oldlocation,units=BaseUnits[resource],
                                       categories={"Locations":location},factor=factor,explanation="Split  by %.2f"%factor)
 
@@ -668,7 +673,7 @@ for detector in Detectors:
     for datatype in DataTypes:
         if datatype in ["Raw-Events","Sim-Events"]: continue
         for newresource in ["Disk","Tape"]:
-            for location in Locations+["Total"]:
+            for location in Locations:
 
                 if newresource == "Disk": 
                     retain = DiskLifetimes[datatype]
@@ -703,7 +708,7 @@ for detector in Detectors:
     #if detector in holder.nosum: continue
     for datatype in ["Reco-Data","Reco-Sim"]:   
         for newresource in ["Unextended-Cumulative-Disk"]:
-            for location in Locations+["Total"]:
+            for location in Locations:
                 if "Reco" in datatype:
                     #print (detector,datatype,newresource,location)
                     pretag = holder.tag(detector,datatype,newresource,location,"TB")
@@ -759,6 +764,12 @@ storeFilter={"Detectors":Detectors+["Store-Total"],"DataTypes":["Raw-Data","Reco
 # In[ ]:
 
 
+
+
+
+# In[ ]:
+
+
 Storage = {"Detectors":(Detectors+["Total"]),"DataTypes":DataTypes+["Total"],"Resources":StorageTypes,"Locations":["Total"],"Units":["TB"]}
 
 TapeStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Tape"],"Locations":["Total"],"Units":["TB"]}
@@ -771,18 +782,41 @@ DiskStorageFDVD = {"Detectors":["FDVD"],"DataTypes":DataTypes+["Total"],"Resourc
 
 CumulativeDiskStorage = {"Detectors":["Total"],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
 
-DiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
+DiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations,"Units":["TB"]}
 DiskStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Disk"],"Locations":["Total"],"Units":["TB"]}
-TapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
+TapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations,"Units":["TB"]}
 TapeStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Tape"],"Locations":["Total"],"Units":["TB"]}
 
 CumulativeDiskStorageByType = {"Detectors":["Total"],"DataTypes":DataTypes,"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
 CumulativeDiskStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
-CumulativeDiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
+CumulativeDiskStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations,"Units":["TB"]}
 
 CumulativeTapeStorageByDetector = {"Detectors":Detectors,"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":["Total"],"Units":["TB"]}
 CumulativeTapeStorageBySite = {"Detectors":["Total"],"DataTypes":DataTypes,"Resources":["Cumulative-Tape"],"Locations":["Total"],"Units":["TB"]}
-CumulativeTapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
+CumulativeTapeStorageBySite = {"Detectors":["Total"],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations,"Units":["TB"]}
+
+
+
+# In[ ]:
+
+
+CPUResourcesTotal = {"Detectors":Detectors,
+                      "DataTypes":DataTypes,"Resources":["CPU kHS23-Yr"],"Locations":Locations,"Units":["kHS23-Yr"]}
+
+holder.sumAcrossAll(filter=CPUResourcesTotal,sumName="Total",explanation="Resum across sites")
+
+CPUResourcesBySite = {"Detectors":["Total"],
+                      "DataTypes":["Total"],"Resources":["CPU kHS23-Yr"],"Locations":Locations,"Units":["kHS23-Yr"]}
+
+#print(holder.makeTagSet(CPUResourcesBySite))
+
+
+# In[ ]:
+
+
+print (Locations)
+if Locations.count("Total")>1:
+    Locations.remove("Total")
 
 
 # In[ ]:
@@ -837,6 +871,17 @@ fig = holder.Draw(dirname,"Cumulative Disk by Site",YAxis="Storage",Resource="Cu
 texfile.write(holder.TexBoth(fig,"Cumulative Disk by site.",label="DiskByYearByType"))
 
 
+# In[ ]:
+
+
+#holder.debug=True
+print (Locations)
+if Locations.count("Total")>1:
+    Locations.remove("Total")
+fig = holder.Draw(dirname,"CPU processing by Site",YAxis="CPU kHS23-Yr",Resource="CPU kHS23-Yr",Category="Locations",filter=CPUResourcesBySite)
+texfile.write(holder.TexBoth(fig,"Projected CPU use by location. Units are CPU kHS23-Yr",label="CPUResourcesBySite"))
+print (Locations)
+holder.debug=DEBUG
 
 
 # In[ ]:
@@ -876,13 +921,13 @@ texfile.write(holder.TexBoth(fig,"Cumulative Disk by site.",label="DiskByYearByT
 # 
 #     CumulativeDiskStorage = {"Detectors":[detector],"DataTypes":DataTypes+["Total"],"Resources":["Cumulative-Disk"],"Locations":["Total"],"Units":["TB"]}
 # 
-#     DiskStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
+#     DiskStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Disk"],"Locations":Locations,"Units":["TB"]}
 #     
-#     TapeStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
+#     TapeStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Tape"],"Locations":Locations,"Units":["TB"]}
 # 
-#     CumulativeDiskStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations+["Total"],"Units":["TB"]}
+#     CumulativeDiskStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Cumulative-Disk"],"Locations":Locations,"Units":["TB"]}
 #     
-#     CumulativeTapeStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations+["Total"],"Units":["TB"]}
+#     CumulativeTapeStorageBySite = {"Detectors":[detector],"DataTypes":["Total"],"Resources":["Cumulative-Tape"],"Locations":Locations,"Units":["TB"]}
 # 
 #     holder.Draw(dirname,"New Disk by Type "+detector,YAxis="Storage",Resource="Disk",Category="DataTypes",filter=DiskStorage)
 #     

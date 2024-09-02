@@ -80,13 +80,13 @@ The \configRequestYear\ projection is done using codes at: \href{https://github.
 
 This note summarizes pledges, usage and projected need for the CCB.
 
-{\bf One Line Executive Summary:} Because the 2023 request assumed ProtoDUNE-2 running in 2023, the requests for 2024 are similar to the 2023 requests.
+%{\bf One Line Executive Summary:} Because the 2023 request assumed ProtoDUNE-2 running in 2023, the requests for 2024 are similar to the 2023 requests.
 
 
 
 
 
-Changes since the last report \cite{CCB2023Report, CCB2023Minutes} include:
+Changes since the last report \cite{CCB2024Report, CCB2024Minutes} include:
 
 \begin{itemize}
 \item A complete rewrite of the model code to make it more robust and allow more flexibility in plots. 
@@ -98,7 +98,7 @@ Changes since the last report \cite{CCB2023Report, CCB2023Minutes} include:
 \item Switch to HS23-Years as opposed to Core-Years as the main CPU reporting system.
 \item Revisions to near-term requests based on the 2023 experience including a hold on tape requests from the collaboration during protoDUNE activities. 
 %\item Simulation disk copies continue to be reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
-\item Changes to splits (Tables \ref{tab:TapeSplit,tab:DiskSplit,tab:CPUSplit} between regions in disk and CPU provision. 
+\item Changes to splits (Tables \ref{tab:DiskSplit}, \ref{tab:TapeSplit}, \ref{tab:CPUSplit}) between regions in resource provision. 
 %\item A change in future tape requests to reflect the greater accessibility of tape archives at CERN and FNAL relative to other sites. 
 \end{itemize}
 
@@ -150,7 +150,7 @@ The model currently does not include any disk headroom allowance for data moveme
 
 CPU calculations are now made in HS23 units, with results from  2023 reported in both Core and HS23 units for reference.  Calculations for the protoDUNE's and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
 
-We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. 
+We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. A cap of 30 PB/year for raw data (Events, Trigger Primitives and Tests) is imposed by scaling all categories down proportionally when 30 PB is reached. 
 
    
      
@@ -160,12 +160,14 @@ We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
   
  Inputs to the model include projections of events and storage per year by detector and datatype, which are contained in a "timeline file".  A master configuration file in json format is used to store detector specific parameters which do not depend on year. 
  
+ The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-08-27-2040.json}{NearTerm\_2024-08-27-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-08-27-2040_timeline.csv}{NearTerm\_2024-08-27-2040\_timeline.csv}
+ 
 The calculation starts with numbers of events from the timeline and uses those numbers, with CPU/storage times/event from table\ref{tab:DetectorParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
 
-{\input NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
+{\input NearTerm_2024-08-27-2030_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
 }
 
-{\input NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
+{\input NearTerm_2024-08-27-2030_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
 }
 
 Those data are then stored with sizes/event {\tt RawDataStore} and {\tt SimDataStore}.  See Table \ref{tab:DetectorProcessingParameters} for storage estimates per event by detector. 
@@ -208,7 +210,7 @@ The Analysis model is currently crude.  Analysis processing is modeled by scalin
 
 Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
 
-\input NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Processing-by-Type-CPU-kHS23-Yr.tex
+\input NearTerm_2024-08-27-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
 
  \subsection{Splitting resources across sites}
  Resources are assumed to be split as follows:
@@ -242,6 +244,23 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
 \caption{Assumptions about splits of CPU resources between the US, CERN and Global.}
 \label{tab:CPUSplit}
 \end{table}
+
+\section{Resource use projections}
+
+In this section we show projected resource needs by detector, data type, resource type and site.
+
+\input NearTerm_2024-08-27-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex
+\input NearTerm_2024-08-27-2030_noMWC/Cumulative-Disk-by-Type-Storage.tex
+\input NearTerm_2024-08-27-2030_noMWC/Cumulative-Disk-by-Site-Storage.tex
+
+\input NearTerm_2024-08-27-2030_noMWC/Cumulative-Tape-by-Detector-Storage.tex
+\input NearTerm_2024-08-27-2030_noMWC/Cumulative-Tape-by-Type-Storage.tex
+\input NearTerm_2024-08-27-2030_noMWC/Cumulative-Tape-by-Site-Storage.tex
+
+
+\input NearTerm_2024-08-27-2030_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
+\input NearTerm_2024-08-27-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
+\input NearTerm_2024-08-27-2030_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
 
 
 %\end{document}
@@ -289,69 +308,69 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
    \end{centering}
    \end{table}
 
-
-\section{Pledge Requests}
-
-Pledge requests for 2024 are similar to  those for 2023. Similar because  the impacts of ProtoDUNE running were already included in the 2023 request.
-
-These  pledge requests include only general resources available to the DUNE collaboration, not the additional local resources available to collaborators at their own institutions.  
-
-The near-term request does not include much Near Detector simulation.   That is currently being done via special allocations at NERSC and ANL and not yet included in our accounting.   
-
-The model for proposed pledges for \configRequestYear\ is detailed  in sections: Disk(\ref{sec:diskresult}), Tape(\ref{sec:taperesult}) and CPU(\ref{sec:cpuresult}) below.   
-\input{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Cumulative-Disk-by-Detector-Storage.tex}
-
-
-\ignore{A summary of requests and actual use for 2023 is shown in Table \ref{tab:summary2023} and the requests for \configRequestYear\ are shown in Table \ref{tab:summary2024} 
-
-\begin{table}[h]
-\begin{centering}
-
-\begin{tabular}{|ll|rr|rr|rr|}
-\hline
- 	&&	Disk (PB)	&	Actual	&	Tape(PB)	& Actual (PB)&CPU (Core-years)&Actual\\
-	\hline
-{\bf Model}	&&	25.80	&	--	&	45.5	&	-- & 15,169 & --	\\
-\hline
-{\bf Request}	&&		&		&		&	&	&\\
-&FNAL	&	7.80	&	9.80&	36.2	& 27.1&	3,792& 2,844	\\
-&CERN	&	2.60	&	4.02	&	9.2	& 5.7  &3,792	& 140\\
-&Global	&	15.40	&	9.76	&	0.1	&  0.1 &	7,585 &1, 524\\
-\hline
-&{\bf Total}	&	25.80	& 23.58		&	45.5	& 32.9 & 15,169 	 & 4,515\\
-\hline
-\end{tabular}
-
-\caption{Requests and actual usage from the previous year (2023).  CPU and disk utilization were low due to the delay in ProtoDUNE running. Table \ref{tab:RSEUsage}  shows the details of disk use by site.  CPU usage is detailed in  Table \ref{tab:CPUCores}. In this table  CPU is in units of unweighted core-years as that was the metric used prior to 2024.   }\label{tab:summary2023}
-\end{centering}
-
-\end{table}
-
-\begin{table}[h]
-\begin{centering}
-
-\begin{tabular}{|llr|r|r|r|}
-\hline
- 	&&	Disk (PB)	&		Tape(PB)	&	CPU (kHS23-years)	 & CPU (Core-years)\\
-	\hline
-{\bf Model}	&&	\DISKTotal	&		\TAPETotal	&	\CPUTotal	& \CORESTotal\\
-\hline
-{\bf Request}	&&		 		&		&		\\
-&US	&	\DISKFNAL&	 	\TAPEFNAL	&	\CPUFNAL & \CORESFNAL	\\
-&CERN	&	\configUSRawDataSdiskPDSplits	&	 	\TAPECERN&	\CPUCERN & \CORESCERN	\\
-&Global	&	\DISKGlobal	&	 	--	&	\CPUGlobal   &\CORESGlobal\\
-\hline
-&{\bf Total}	&	\DISKTotal	&	 	\TAPETotal	&	\CPUTotal	 & \CORESTotal\\
-\hline
-\end{tabular}
-
-\caption{Requests for 2024.  The disk requests reflect the different data types and the proposed splits from Table \ref{tab:division}.  They do not include the normal headroom of 5-10\%.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges are in units of kHS23-years with Core-years provided for comparison to 2023.    }\label{tab:summary2024}
-\end{centering}
-
-\end{table}
-
-}
-
+%
+%\section{Pledge Requests}
+%
+%Pledge requests for 2024 are similar to  those for 2023. Similar because  the impacts of ProtoDUNE running were already included in the 2023 request.
+%
+%These  pledge requests include only general resources available to the DUNE collaboration, not the additional local resources available to collaborators at their own institutions.  
+%
+%The near-term request does not include much Near Detector simulation.   That is currently being done via special allocations at NERSC and ANL and not yet included in our accounting.   
+%
+%The model for proposed pledges for \configRequestYear\ is detailed  in sections: Disk(\ref{sec:diskresult}), Tape(\ref{sec:taperesult}) and CPU(\ref{sec:cpuresult}) below.   
+%\input{NearTerm_2024-08-27-2030_noMWC//Cumulative-Disk-by-Detector-Storage.tex}
+%
+%
+%\ignore{A summary of requests and actual use for 2023 is shown in Table \ref{tab:summary2023} and the requests for \configRequestYear\ are shown in Table \ref{tab:summary2024} 
+%
+%\begin{table}[h]
+%\begin{centering}
+%
+%\begin{tabular}{|ll|rr|rr|rr|}
+%\hline
+% 	&&	Disk (PB)	&	Actual	&	Tape(PB)	& Actual (PB)&CPU (Core-years)&Actual\\
+%	\hline
+%{\bf Model}	&&	25.80	&	--	&	45.5	&	-- & 15,169 & --	\\
+%\hline
+%{\bf Request}	&&		&		&		&	&	&\\
+%&FNAL	&	7.80	&	9.80&	36.2	& 27.1&	3,792& 2,844	\\
+%&CERN	&	2.60	&	4.02	&	9.2	& 5.7  &3,792	& 140\\
+%&Global	&	15.40	&	9.76	&	0.1	&  0.1 &	7,585 &1, 524\\
+%\hline
+%&{\bf Total}	&	25.80	& 23.58		&	45.5	& 32.9 & 15,169 	 & 4,515\\
+%\hline
+%\end{tabular}
+%
+%\caption{Requests and actual usage from the previous year (2023).  CPU and disk utilization were low due to the delay in ProtoDUNE running. Table \ref{tab:RSEUsage}  shows the details of disk use by site.  CPU usage is detailed in  Table \ref{tab:CPUCores}. In this table  CPU is in units of unweighted core-years as that was the metric used prior to 2024.   }\label{tab:summary2023}
+%\end{centering}
+%
+%\end{table}
+%
+%\begin{table}[h]
+%\begin{centering}
+%
+%\begin{tabular}{|llr|r|r|r|}
+%\hline
+% 	&&	Disk (PB)	&		Tape(PB)	&	CPU (kHS23-years)	 & CPU (Core-years)\\
+%	\hline
+%{\bf Model}	&&	\DISKTotal	&		\TAPETotal	&	\CPUTotal	& \CORESTotal\\
+%\hline
+%{\bf Request}	&&		 		&		&		\\
+%&US	&	\DISKFNAL&	 	\TAPEFNAL	&	\CPUFNAL & \CORESFNAL	\\
+%&CERN	&	\configUSRawDataSdiskPDSplits	&	 	\TAPECERN&	\CPUCERN & \CORESCERN	\\
+%&Global	&	\DISKGlobal	&	 	--	&	\CPUGlobal   &\CORESGlobal\\
+%\hline
+%&{\bf Total}	&	\DISKTotal	&	 	\TAPETotal	&	\CPUTotal	 & \CORESTotal\\
+%\hline
+%\end{tabular}
+%
+%\caption{Requests for 2024.  The disk requests reflect the different data types and the proposed splits from Table \ref{tab:division}.  They do not include the normal headroom of 5-10\%.  Tape pledges reflect the dominant use of CERN and FNAL for archival storage of data.  CPU pledges are in units of kHS23-years with Core-years provided for comparison to 2023.    }\label{tab:summary2024}
+%\end{centering}
+%
+%\end{table}
+%
+%}
+%
 \clearpage
 
 \section{Supporting Materials}
@@ -364,7 +383,7 @@ CERN and FNAL have special responsibilities for archival data storage and for di
 \subsection{Disk}
 Table \ref{tab:RSEUsage} summarizes the disk utilization reported by sites via \cite{scotgrid}, supplemented by  rucio reports.   Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports.  %The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
 
-\input{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Cumulative-Disk-by-Detector-Storage.tex}
+\input{NearTerm_2024-08-27-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex}
 
 \end{document}
 Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for \configRequestYear.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including  BNL and NERSC in the US. 
@@ -425,7 +444,7 @@ DUNE currently has $\sim$27.1 PB of data\cite{fnaltape} on tape at Fermilab and 
 
 \subsubsection{Model Projections}
 
-Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape needs projected by  the model. These numbers are used to generate the requests for 2024.  They are divided into the two host laboratories (CERN and FNAL). The UK and the IN2P3 have offered $\sim 3$ PB of tape archive  but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for  resources  at those sites to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. .
+Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape needs projected by  the model. These numbers are used to generate the requests for 2025.  They are divided into the two host laboratories (CERN and FNAL). The UK and the IN2P3 have offered $\sim 3$ PB of tape archive  but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for  resources  at those sites to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. .
 
 The increase in 2024-2025 is mainly storage of raw and processed  data from the upcoming runs of PDHD and PDVD.
 
