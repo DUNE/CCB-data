@@ -7,16 +7,8 @@
 import sys
 import os
 print(sys.executable)
-DEBUG=False
+DEBUG=True
 
-
-# In[ ]:
-
-
-
-
-
-# 
 
 # 
 # Code to generate yearly summaries of DUNE data volumes from input parameters
@@ -200,6 +192,31 @@ holder.jsonDump(dirname,configfilename.replace(".json","_safe.json"))
 holder.debug=DEBUG
 
 if DEBUG: ("Detector Parameters",DetectorParameters)
+
+
+# # Plot input event #'s
+# 
+# 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+RawEventFilter = {"Detectors":Detectors,"DataTypes":["Raw-Events"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
+SimEventFilter = {"Detectors":Detectors,"DataTypes":["Sim-Events"],"Resources":["input"],"Locations":["Total"],"Units":["Million"]}
+#print (filter)
+test  = holder.makeTagSet(RawEventFilter)
+for x in test:
+    print (x)
+pix = holder.Draw(Dir=dirname,Title="Millions of Physics Events per Year by Detector",YAxis="Events",Resource="input",Category="Detectors",filter=RawEventFilter)
+fig1  = holder.TexBoth(pix,caption="Number of raw data events per year, units are Millions.",label="DataEventsPerYear")
+pix = holder.Draw(Dir=dirname,Title="Millions of Reconstructed Simulated Events per Year by Detector",YAxis="Events",Resource="input",Category="Detectors",filter=SimEventFilter)
+fig1  = holder.TexBoth(pix,caption="Number of simulated/reconstructed events per year, units are Millions.",label="SimEventsPerYear")
 
 
 # # Change input (NativeTypes) into storage numbers
@@ -537,10 +554,10 @@ holder.storeFilter(filter=CPUResourcesByType,name="CPUResourcesByType")
 for resource in CPUResources:
     fig = holder.Draw(Dir=dirname,Title="Processing by Type",
                 YAxis=resource,Resource=resource,Category="DataTypes",filter=CPUResourcesByType)
-    texfile.write(holder.TexBoth(fig,"%s resources by data types by year."%resource,label=resource+"_Types"))
+    texfile.write(holder.TexBoth(fig,"%s resources by data types by year."%resource,label=resource+"-Types").replace(" ","-"))
     fig = holder.Draw(Dir=dirname,Title="Processing by Detector",
                 YAxis=resource,Resource=resource,Category="Detectors",filter=CPUResourcesByDetector)
-    texfile.write(holder.TexBoth(fig,"%s resources by detector by year."%resource,label=resource+"_Detectors"))
+    texfile.write(holder.TexBoth(fig,"%s resources by detector by year."%resource,label=resource+"-Detectors").replace(" ","-"))
     
 holder.debug = DEBUG
 holder.csvDump(dirname,"after-total2.csv")

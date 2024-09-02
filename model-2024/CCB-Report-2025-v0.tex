@@ -98,7 +98,7 @@ Changes since the last report \cite{CCB2023Report, CCB2023Minutes} include:
 \item Switch to HS23-Years as opposed to Core-Years as the main CPU reporting system.
 \item Revisions to near-term requests based on the 2023 experience including a hold on tape requests from the collaboration during protoDUNE activities. 
 %\item Simulation disk copies continue to be reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
-\item Changes to splits (Table \ref{tab:splits}) between regions in disk and CPU provision. 
+\item Changes to splits (Tables \ref{tab:TapeSplit,tab:DiskSplit,tab:CPUSplit} between regions in disk and CPU provision. 
 %\item A change in future tape requests to reflect the greater accessibility of tape archives at CERN and FNAL relative to other sites. 
 \end{itemize}
 
@@ -107,11 +107,11 @@ Changes since the last report \cite{CCB2023Report, CCB2023Minutes} include:
 Resource requests are based on a processing and storage model that separated different phases of the detectors and includes 5 classifications of activity.
 
 \begin{itemize}
-\item Data - described by number of events, CPU time/event, storage/event. 
-\item Simulation - described by number of events,  CPU time/event, storage/event
-\item Test - described by PB of storage, assumed not to consume large amounts of CPU.
-\item Trigger Primitives (TP) - described by PB of storage, assumed not to consume large amounts of CPU.
-\item Analysis - described by a scaling factor relative to Reconstruction and Simulation CPU.
+\item Physics Data - described by number of events, CPU time/event, storage/event.  Physics Data are described by number of events and then transformed into storage and CPU based on measured or estimated performance. 
+\item Simulation - described by number of events,  CPU time/event, storage/event.  Currently both simulation and reconstruction are combined as a single entity as that is how we currently perform simulation.  The model will be extended to support multiple stages in future. 
+\item Test - data taking as part of commissioning.  These have a short lifetime and are initially described by PB of storage. They are assumed not to consume large amounts of CPU and to only reside on disk briefly. 
+\item Trigger Primitives (TP) -  these are currently described by PB of storage and are assumed not to consume large amounts of CPU.  
+\item Analysis - Analysis is assumed to be use little disk but consume considerable CPU and IO resources.  It is currently described by a scaling factor ($\sim 50\%$) relative to Reconstruction and Simulation CPU.
 \end{itemize}
 
  Table \ref{tab:detectors} summarizes the large detectors and their abbreviations. Smaller prototypes that generate less than 1 PB of data  are not explicitly included. 
@@ -138,22 +138,61 @@ Resource requests are based on a processing and storage model that separated dif
    
      \end{table}
      
-  \section{Model design}
+     
+  \section{Summary of the Model}
+  These inputs are then used to calculate storage and CPU needs. 
+
+Disk storage policies are designed to optimize access and minimize CPU inefficiencies due to network transfer speeds.  In particular, all recent data samples are planned to have at least one disk copy to avoid the need to access tape.  As raw data processing is not I/O bound, one disk copy may be sufficient but we currently keep two for ProtoDUNE. Analysis of reconstructed samples is I/O bound so multiple copies located closer to CPU are desirable. 
+
+Each type of data has a storage retention policy which includes lifetimes on disk and tape and number of copies on disk and tape.  For example, raw data has a very long tape retention policy and 2 tape copies, with a 1 year stay of 1 copy on disk.   Recent simulated and reconstructed data samples typically have 1 tape copy, 2 disk copies and disk retention times of 1.5-2 years to allow fast analysis.   We assume one processing campaign per year, with all real data reprocessed each campaign.   Simulation is assumed to be redone as well but older samples are not reprocessed.  An extended retention time after the end of data taking for the last version of sim/reco is added to allow for extended data analysis. 
+
+The model currently does not include any disk headroom allowance for data movement.  This will be added in the 2025 version of the model. 
+
+CPU calculations are now made in HS23 units, with results from  2023 reported in both Core and HS23 units for reference.  Calculations for the protoDUNE's and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
+
+We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. 
+
+   
+     
+  \section{Details of the model}
   
   \subsection{Inputs}
   
  Inputs to the model include projections of events and storage per year by detector and datatype, which are contained in a "timeline file".  A master configuration file in json format is used to store detector specific parameters which do not depend on year. 
  
-The calculation starts with numbers of events from the timeline and uses those numbers, with CPU/storage times/event from table\ref{tab:DetectorParameters} to calculate the annual new storage and CPU use for data taken in that year.
+The calculation starts with numbers of events from the timeline and uses those numbers, with CPU/storage times/event from table\ref{tab:DetectorParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
 
-Reprocessing for detector data is assumed to happen every year and cover \configPDHDReprocess\ years for protodune and the whole sample for the FD and ND.
+{\input NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
+}
+
+{\input NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
+}
+
+Those data are then stored with sizes/event {\tt RawDataStore} and {\tt SimDataStore}.  See Table \ref{tab:DetectorProcessingParameters} for storage estimates per event by detector. 
+
+\subsection{Simulation/Reconstruction Processing}
+
+Processing is modeled by taking the number of events produced in a given year and multiplying by the measured CPU times {\tt RecoDataCPU} and {\tt SimDataCPU} for processing those events.  Those data are then assumed to be stored with size {\tt  RecoDataStore} and {\tt SimDataStore}.
+
+Reprocessing for detector data is assumed to happen every year and cover {\tt Reprocess} = \configPDHDReprocess\ years for protodune and the whole sample for the FD and ND.
 
 New simulation is assumed to happen every year and previous years are not reprocessed. 
 
-Copies of data are kept on disk with the following lifetimes and number of copies:
+\begin{table}[h]
+\centering
+\footnotesize
+\csvautotabularright{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2040_detectors.csv}
+\caption{Per event output size and CPU time  parameters used in the model. These values are estimated from running jobs over small numbers of events from protoDUNE and simulation.}
+\label{tab:DetectorProcessingParameters}
+\end{table}
 
 
 
+\subsection{Copies and Retention}
+
+Once the data volume generated per year is determined, those data are given retention timed and an assumed number of copies. For popular datasets the number of disk copies should be two and disk copies are retained for two years (two reconstruction/simulation cycles). 
+
+Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifetime as it is assumed that most users will use the reconstructed samples.
 
 \begin{table}[h]
 \centering
@@ -163,17 +202,21 @@ Copies of data are kept on disk with the following lifetimes and number of copie
 \label{tab:Lifetimes}
 \end{table}
 
-\begin{table}[h]
-\centering
-\footnotesize
-\csvautotabularright{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2040_detectors.csv}
-\caption{Per event output size and CPU time  parameters used in the model. These values are estimated from running jobs over small numbers of events from protoDUNE and simulation.}
-\label{tab:DetectorParameters}
-\end{table}
+\subsection{Analysis}
 
+The Analysis model is currently crude.  Analysis processing is modeled by scaling the reconstruction by a multiplicative factor {\tt AnalysisCPU} and extending the time by {\tt AnalysisExtend} = \configAnalysisExtend years.  Analysis use of disk is modeled by also extending disk use by the same amount.  
 
- \subsection{Resource split assumptions}
+Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
+
+\input NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2030_noMWC_Processing-by-Type-CPU-kHS23-Yr.tex
+
+ \subsection{Splitting resources across sites}
  Resources are assumed to be split as follows:
+ 
+ \begin{itemize}
+ \item Raw data for ProtoDUNE are stored at both CERN and Fermilab 
+ \item Reconstructed and simulated data are split between the US (US) and the rest of the Collaboration (Global)
+ \end{itemize}
  
  \begin{table}[h]
 \centering
@@ -201,19 +244,7 @@ Copies of data are kept on disk with the following lifetimes and number of copie
 \end{table}
 
 
-\end{document}
-
-These inputs are then used to calculate storage and CPU needs. 
-
-Disk storage policies are designed to optimize access and minimize CPU inefficiencies due to network transfer speeds.  In particular, all recent data samples are planned to have at least one disk copy to avoid the need to access tape.  As raw data processing is not I/O bound, one disk copy has been found to be sufficient.  Analysis of reconstructed samples is I/O bound so multiple copies located closer to CPU are desirable. 
-
-Each type of data has a storage retention policy which includes lifetimes on disk and tape and number of copies on disk and tape.  For example, raw data has a very long tape retention policy and 2 tape copies, with a 1 year stay of 1 copy on disk.   Recent simulated and reconstructed data samples typically have 1 tape copy, 2 disk copies and disk retention times of 1.5-2 years to allow fast analysis.   We assume one processing campaign per year, with all real data reprocessed each campaign.   Simulation is assumed to be redone as well but older samples are not reprocessed.  An extended retention time after the end of data taking for the last version of sim/reco is added to allow for extended data analysis. 
-
-The model currently does not include any disk headroom allowance for data movement.  This will be added in the 2025 version of the model. 
-
-CPU calculations are now made in HS23 units, with results from  2023 reported in both Core and HS23 units for reference.  Calculations for the protoDUNE's and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
-
-We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. 
+%\end{document}
 
 
 
