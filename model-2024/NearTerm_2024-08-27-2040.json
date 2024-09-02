@@ -403,9 +403,9 @@
                 }
             },
             "Disk":{
-                "Raw-Data":{"US":1.0,"CERN":0.0,"Global":0.0},
-                "Reco-Sim":{"US":0.25,"CERN":0.0,"Global":0.75},
-                "Reco-Data":{"US":0.25,"CERN":0.0,"Global":0.75},
+                "Raw-Data":{"US":0.5,"CERN":0.0,"Global":0.5},
+                "Reco-Sim":{"US":0.5,"CERN":0.0,"Global":0.5},
+                "Reco-Data":{"US":0.5,"CERN":0.0,"Global":0.5},
                 "Test":{"US":0.5,"CERN":0.0,"Global":0.5},
                 "TP": {
                     "US": 0.5,
@@ -448,19 +448,19 @@
             },
             "Disk": {
                 "Raw-Data": {
-                    "US": 1.0,
+                    "US": 0.5,
                     "CERN": 0.0,
-                    "Global": 0.0
+                    "Global": 0.5
                 },
                 "Reco-Sim": {
-                    "US": 0.25,
+                    "US": 0.5,
                     "CERN": 0.0,
-                    "Global": 0.75
+                    "Global": 0.5
                 },
                 "Reco-Data": {
-                    "US": 0.25,
+                    "US": 0.5,
                     "CERN": 0.0,
-                    "Global": 0.75
+                    "Global": 0.5
                 },
                 "Test": {
                     "US": 0.5,

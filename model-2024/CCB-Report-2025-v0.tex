@@ -122,8 +122,8 @@ Resource requests are based on a processing and storage model that separated dif
      \hline
     Abbrev. & Detector & Running time\\
     \hline
-    PDSP & ProtoDUNE Single Phase & 2018-2021\\
-    PDDP & ProtoDUNE Dual Phase & 2018-2021\\
+    SP & ProtoDUNE Single Phase & 2018-2021\\
+    DP & ProtoDUNE Dual Phase & 2018-2021\\
     PDHD & ProtoDUNE-2 Horizonal Drift & 2024-2026\\
     PDVD & ProtoDUNE-2 Vertical Drift & 2024-2026\\
     2x2& Prototype NDLAr Detector & 2024-2026\\
@@ -133,22 +133,27 @@ Resource requests are based on a processing and storage model that separated dif
     SAND & On Axis Near Detector & 2030- \\
      \hline
      \end{tabular}
-       \caption{Detector descriptions. }\label{tab:detectors}
+       \caption{Detector abbreviations and estimated running times.  Simulation campaigns occur earlier. }\label{tab:detectors}
   \end{centering}
    
      \end{table}
      
      
-  \section{Summary of the Model}
+
   These inputs are then used to calculate storage and CPU needs. 
 
+\subsection{Storage replication and retention policies}
 Disk storage policies are designed to optimize access and minimize CPU inefficiencies due to network transfer speeds.  In particular, all recent data samples are planned to have at least one disk copy to avoid the need to access tape.  As raw data processing is not I/O bound, one disk copy may be sufficient but we currently keep two for ProtoDUNE. Analysis of reconstructed samples is I/O bound so multiple copies located closer to CPU are desirable. 
 
-Each type of data has a storage retention policy which includes lifetimes on disk and tape and number of copies on disk and tape.  For example, raw data has a very long tape retention policy and 2 tape copies, with a 1 year stay of 1 copy on disk.   Recent simulated and reconstructed data samples typically have 1 tape copy, 2 disk copies and disk retention times of 1.5-2 years to allow fast analysis.   We assume one processing campaign per year, with all real data reprocessed each campaign.   Simulation is assumed to be redone as well but older samples are not reprocessed.  An extended retention time after the end of data taking for the last version of sim/reco is added to allow for extended data analysis. 
+Each type of data has a storage retention policy which includes lifetimes on disk and tape and number of copies on disk and tape.  For example, raw data has a very long tape retention policy and 2 tape copies, with a 1 year stay of 1 copy on disk.   Recent simulated and reconstructed data samples typically have 1 tape copy, 2 disk copies and disk retention times of 1.5-2 years to allow fast analysis.   An extended retention time after the end of data taking for the last version of sim/reco is added to allow for extended data analysis. 
 
 The model currently does not include any disk headroom allowance for data movement.  This will be added in the 2025 version of the model. 
 
-CPU calculations are now made in HS23 units, with results from  2023 reported in both Core and HS23 units for reference.  Calculations for the protoDUNE's and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
+\subsection{Processing calculations}
+
+ We assume one processing campaign per year, with all real data reprocessed each campaign.   Simulation is assumed to be regenerated  once per year.
+   
+CPU calculations are now made in HS23 units.  Calculations for the protoDUNE's and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
 
 We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. A cap of 30 PB/year for raw data (Events, Trigger Primitives and Tests) is imposed by scaling all categories down proportionally when 30 PB is reached. 
 
@@ -162,7 +167,7 @@ We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
  
  The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-08-27-2040.json}{NearTerm\_2024-08-27-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-08-27-2040_timeline.csv}{NearTerm\_2024-08-27-2040\_timeline.csv}
  
-The calculation starts with numbers of events from the timeline and uses those numbers, with CPU/storage times/event from table\ref{tab:DetectorParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
+The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
 
 {\input NearTerm_2024-08-27-2030_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
 }
@@ -192,7 +197,7 @@ New simulation is assumed to happen every year and previous years are not reproc
 
 \subsection{Copies and Retention}
 
-Once the data volume generated per year is determined, those data are given retention timed and an assumed number of copies. For popular datasets the number of disk copies should be two and disk copies are retained for two years (two reconstruction/simulation cycles). 
+Once the data volume generated per year is determined, those data are given retention times and a proposed number of copies. For popular datasets the number of disk copies should be two and disk copies should be retained for 2 years (two reconstruction/simulation cycles) if possible.  Due to the large volume of simulation and need for space for raw data from protoDUNE, the number of copies for simulation has been reduced to 1.5 to keep disk demands reasonable. 
 
 Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifetime as it is assumed that most users will use the reconstructed samples.
 
@@ -224,7 +229,7 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
 \centering
 \footnotesize
 \csvautotabularright{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2040_splits_Disk.csv}
-\caption{Assumptions about splits of Disk resources between the US, CERN and Global.}
+\caption{Assumptions about splits of Disk resources between the US, CERN and Global. Note that }
 \label{tab:DiskSplit}
 \end{table}
 
@@ -263,50 +268,50 @@ In this section we show projected resource needs by detector, data type, resourc
 \input NearTerm_2024-08-27-2030_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
 
 
-%\end{document}
-
-
-
-\begin{table}[h]
-\begin{centering}
-%\caption{Division between FNAL/CERN/Global for storage until 2027}
-%{\bf Tape}
-%\begin{tabular}{|rrrr|}
-%\hline
-% &FNAL&CERN & Global \\
-% \hline
-%Raw:&  0.5&  0.5&  0.0\\
-%Sim:& 1.0&   0.0&   0.0\\ 
-%Reco-Data:& 1.0&   0.0&   0.0\\
-%Test: &  0.5&   0.5&  0.0\\
+%%\end{document}
 %
+%
+%
+%\begin{table}[h]
+%\begin{centering}
+%%\caption{Division between FNAL/CERN/Global for storage until 2027}
+%%{\bf Tape}
+%%\begin{tabular}{|rrrr|}
+%%\hline
+%% &FNAL&CERN & Global \\
+%% \hline
+%%Raw:&  0.5&  0.5&  0.0\\
+%%Sim:& 1.0&   0.0&   0.0\\ 
+%%Reco-Data:& 1.0&   0.0&   0.0\\
+%%Test: &  0.5&   0.5&  0.0\\
+%%
+%% \hline
+%%  \end{tabular}
+%
+% %  {\bf Disk and CPU splits}
+%     \begin{tabular}{|ll|rrr|}
+%     \hline
+% &&FNAL:&CERN & Global \\
 % \hline
-%  \end{tabular}
-
- %  {\bf Disk and CPU splits}
-     \begin{tabular}{|ll|rrr|}
-     \hline
- &&FNAL:&CERN & Global \\
- \hline
- {\bf Disk} &&&&\\
- &Raw&   0.50&   0.50&  0.00\\ 
- &Sim: & 0.40&  0.10&  0.50\\
- &Reco-Data: &  0.40&   0.10&  0.50\\ 
- &Test: &  0.50& 0.50&   0.00\\
-  \hline
-{\bf Tape} &&&&\\
-  &Raw:&   0.50&   0.50&  0.00\\ 
-  &Rest"&  1.00 & 0.00 & 0.00\\
-  \hline
-{\bf CPU} &&&&\\
-  &All: & 0.40& 0.10&0.50\\
-  \hline
-   \end{tabular}
-  \caption{Proposed division between FNAL/CERN/Global for storage and CPU in the near term, until $\sim$2028, when FD replaces ProtoDUNE as the primary source of experimental data.  The tape division is not yet finalized as we work on integration of Global tape archives. In the long run, Global sites are expected to take over some of the tape provision currently provided by CERN. }
-
-   \label{tab:division}
-   \end{centering}
-   \end{table}
+% {\bf Disk} &&&&\\
+% &Raw&   0.50&   0.50&  0.00\\ 
+% &Sim: & 0.40&  0.10&  0.50\\
+% &Reco-Data: &  0.40&   0.10&  0.50\\ 
+% &Test: &  0.50& 0.50&   0.00\\
+%  \hline
+%{\bf Tape} &&&&\\
+%  &Raw:&   0.50&   0.50&  0.00\\ 
+%  &Rest"&  1.00 & 0.00 & 0.00\\
+%  \hline
+%{\bf CPU} &&&&\\
+%  &All: & 0.40& 0.10&0.50\\
+%  \hline
+%   \end{tabular}
+%  \caption{Proposed division between FNAL/CERN/Global for storage and CPU in the near term, until $\sim$2028, when FD replaces ProtoDUNE as the primary source of experimental data.  The tape division is not yet finalized as we work on integration of Global tape archives. In the long run, Global sites are expected to take over some of the tape provision currently provided by CERN. }
+%
+%   \label{tab:division}
+%   \end{centering}
+%   \end{table}
 
 %
 %\section{Pledge Requests}
@@ -373,210 +378,210 @@ In this section we show projected resource needs by detector, data type, resourc
 %
 \clearpage
 
-\section{Supporting Materials}
+%\section{Supporting Materials}
 
-Generally, raw data are stored on tape at both CERN and FNAL.  Simulation and reconstructed data  have one tape copy at Fermilab and recent reconstructed and simulated samples have one (or two) disk copies with one at Fermilab and one in Europe.  %Appendix \ref{storage} gives details on the size and types of data from the SAM data catalog.
+%Generally, raw data from the protoDUNE detectors are stored on tape at both CERN and FNAL.  Simulation and reconstructed data  have one tape copy at Fermilab and recent reconstructed and simulated samples have one (or two) disk copies with one at Fermilab and one in Europe.  %Appendix \ref{storage} gives details on the size and types of data from the SAM data catalog.
 
-CERN and FNAL have special responsibilities for archival data storage and for disk space for raw data while contributions from  other collaborating institutions are aggregated under the heading Global, which includes US sites outside of FNAL.  The proposed near-term  (until FD data taking) split between FNAL, CERN and Global contributions  is shown in Table \ref{tab:division}.  The pledges proposed here deviate slightly from those numbers with larger contributions from FNAL due to resources already in place. 
+%For the ProtoDUNE Runs CERN and FNAL have special responsibilities for archival data storage and for disk space for raw data while contributions from  other collaborating institutions are aggregated under the heading Global, which includes US sites outside of FNAL.  The proposed near-term  (until FD data taking) split between FNAL, CERN and Global contributions  is shown in Table \ref{tab:division}.  The pledges proposed here deviate slightly from those numbers with larger contributions from FNAL due to resources already in place. 
+%
 
-
-\subsection{Disk}
-Table \ref{tab:RSEUsage} summarizes the disk utilization reported by sites via \cite{scotgrid}, supplemented by  rucio reports.   Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports.  %The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
-
-\input{NearTerm_2024-08-27-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex}
-
-\end{document}
-Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for \configRequestYear.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including  BNL and NERSC in the US. 
-
-Table \ref{tab:summary2023} summarized the pledges from previous years compared to the actual amounts allocated shown in Table \ref{tab:GlobalUsage} .   Because of the delay in ProtoDUNE running, disk that had been planned for ProtoDUNE data and simulation was not fully used.  
-%\begin{table}[h]
-%\centering\csvautotabularright{external/DUNERSEUSAGE-2022-11-14.csv}
-%\caption{Summary  of DUNE disk areas known to rucio \cite{scotgrid}.  The CASTOR and FNAL Dcache areas are partially tape-backed and expandable. FNAL and CERN allocations are not provided by the reports but usage is.  }
-%\label{tab:RSEUsage}
-%\end{table}
-
-
-%\begin{table}[h]
+%\subsection{Disk}
+%Table \ref{tab:RSEUsage} summarizes the disk utilization reported by sites via \cite{scotgrid}, supplemented by  rucio reports.   Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports.  %The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
+%
+%\input{NearTerm_2024-08-27-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex}
+%
+%\end{document}
+%Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for \configRequestYear.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including  BNL and NERSC in the US. 
+%
+%Table \ref{tab:summary2023} summarized the pledges from previous years compared to the actual amounts allocated shown in Table \ref{tab:GlobalUsage} .   Because of the delay in ProtoDUNE running, disk that had been planned for ProtoDUNE data and simulation was not fully used.  
+%%\begin{table}[h]
+%%\centering\csvautotabularright{external/DUNERSEUSAGE-2022-11-14.csv}
+%%\caption{Summary  of DUNE disk areas known to rucio \cite{scotgrid}.  The CASTOR and FNAL Dcache areas are partially tape-backed and expandable. FNAL and CERN allocations are not provided by the reports but usage is.  }
+%%\label{tab:RSEUsage}
+%%\end{table}
+%
+%
+%%\begin{table}[h]
+%%%\begin{table}[h]
+%%\centering
+%%\csvautotabularright{external/StorageByCountry.csv}
+%%\caption{Disk allocations and usage across countries at the end of 2023.    These numbers are derived from usage reports,  rucio reports and from cross-checks with individual sites on 2024-02-01.  The percentages are Used/Allocation. }
+%%\label{tab:GlobalUsage}
+%%%\end{table}
+%%\end{table}
+%
+%\begin{sidewaystable}[h]
 %%\begin{table}[h]
 %\centering
-%\csvautotabularright{external/StorageByCountry.csv}
-%\caption{Disk allocations and usage across countries at the end of 2023.    These numbers are derived from usage reports,  rucio reports and from cross-checks with individual sites on 2024-02-01.  The percentages are Used/Allocation. }
-%\label{tab:GlobalUsage}
+%\csvautotabularright{external/RSEdata.csv}
+%\caption{Disk allocations and usage across sites.    These numbers are derived from usage reports,  rucio reports and from cross-checks with individual sites on 2024-02-01.  The percentages are Used/Allocation. }
+%\label{tab:RSEUsage}
 %%\end{table}
-%\end{table}
-
-\begin{sidewaystable}[h]
+%\end{sidewaystable}
+%%\end{document}
+%
+%}
+%\begin{figure}[h]
+%\centering\includegraphics[height=0.5\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Disk.png}
+%\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Disk-Source.csv}
+%\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Disk-Request.csv}
+%\caption{Cumulative Disk needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split using the fractions from Table \ref{tab:division} and a modified version which reflects the disk already in place at FNAL and CERN, thus reducing the Global request. }\label{fig:Cumulative-Disk}
+%\end{figure}
+%
+%
+%
+%
+%%\begin{table}[h]
+%%\centering\csvautotabularright{external/DiskResources-2021-2022-2023-2024-Details.csv}
+%%\caption{Summary of disk pledges, allocations and usage for 2021-2022 with model request for 2023.  This is based on the 2022 CCB tables which are available in indico  \cite{CCB2022,CCB2023}.  These numbers are derived from the rucio reports in Table \ref{tab:RSEUsage} and may not be complete.  }
+%%\label{tab:DiskPledges}
+%%\end{table}
+%
+%\subsubsection{Request Summary}\label{sec:diskresult}
+%The total disk request for 2024 is \DISKTotal PB.  This is consistent with the current allocated space of 24.3 PB. Because 5-10\% headroom is needed, we request that the current allocated  24.3 PB be retained for 2024. 
+%
+%\clearpage
+%\subsection{Tape}
+%
+%\subsubsection{Current Status}
+%
+%DUNE currently has $\sim$27.1 PB of data\cite{fnaltape} on tape at Fermilab and 5.7 PB of raw protoDUNE data  at CERN\cite{scotgrid}. 
+%
+%\subsubsection{Model Projections}
+%
+%Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape needs projected by  the model. These numbers are used to generate the requests for 2025.  They are divided into the two host laboratories (CERN and FNAL). The UK and the IN2P3 have offered $\sim 3$ PB of tape archive  but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for  resources  at those sites to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. .
+%
+%The increase in 2024-2025 is mainly storage of raw and processed  data from the upcoming runs of PDHD and PDVD.
+%
+%The exact division between FNAL, CERN and Global once DUNE starts taking FD data in 2029 is not yet defined.  
+%
+%
+%
+%\subsubsection{Current Status and Request}\label{sec:taperesult}
+% We anticipate needing \TAPETotal\ PB of tape (an increase of 7 PB from 2023) to accommodate the ProtoDUNE run 2 data and increased simulation. 
+%
+%
+%\begin{figure}[h]
+%\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape.png}
+%
+%\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape-Source.csv}
+%\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape-Request.csv}
+%%\csvautotabularright{external/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape-Request.csv}
+%\caption{Cumulative Tape needs from the model in PB, includes data lifetimes.  The top table shows the origin of the data while the bottom table  shows the proposed split.  Global contributions are set low in \configRequestYear\ and grow thereafter as more tape archives are integrated. The exact division between FNAL, CERN and Global once DUNE starts taking FD data in 2029 is not yet defined.  
+% }\label{fig:Cumulative-Tape}
+%\end{figure}
+%
+%
+%
+%\clearpage
+%\subsection{CPU }
+%
+%\subsubsection{Current Status}
+%Tables \ref{tab:CPUCores} and \ref{tab:CPUusage} show the CPU used by country  in calendar 2023.  Due to the delay in ProtoDUNE running CPU use was dominated by code development and analysis of the older ProtoDUNE data.   Total CPU use was substantially lower than projected.
+%%Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.  
+%
+%%DUNE differs from other HEP experiments in frequently requiring more memory/core than is available at particular sites.  For example an 8-slot pilot with 16 GB of available memory may only accommodate four reconstruction processes.   As a result, we make our requests in terms of memory-weighted-core wall time (MWC)  with the base memory being 2000 MB. This maps reasonably well to the memory weighted slot-time returned by HTCondor and the slot-time reported in EGI statistics.  Sites that offer more  (or less) than 2000 MB/core can scale their contributions up by the local memory/core.
+%
 %\begin{table}[h]
-\centering
-\csvautotabularright{external/RSEdata.csv}
-\caption{Disk allocations and usage across sites.    These numbers are derived from usage reports,  rucio reports and from cross-checks with individual sites on 2024-02-01.  The percentages are Used/Allocation. }
-\label{tab:RSEUsage}
+%\centering\csvautotabularright{external/Usage_CoreYears_2023-01-01-2023-12-31_ByCountry.csv}
+%\caption{CPU utilization in Core Years  for calendar 2023 divided by use case.  This is for comparison with the previous pledging system.    Production includes  official reconstruction and simulation. Analysis is user analysis of data.  MARS is beamline simulations performed at Fermilab.  NoMARS sums just Production and Analysis.  }
+%\label{tab:CPUCores}
 %\end{table}
-\end{sidewaystable}
-%\end{document}
-
-}
-\begin{figure}[h]
-\centering\includegraphics[height=0.5\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Disk.png}
-\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Disk-Source.csv}
-\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Disk-Request.csv}
-\caption{Cumulative Disk needs in PB. Includes data lifetimes.  The top table shows the source of the data while the bottom table  shows the proposed split using the fractions from Table \ref{tab:division} and a modified version which reflects the disk already in place at FNAL and CERN, thus reducing the Global request. }\label{fig:Cumulative-Disk}
-\end{figure}
-
-
-
-
+%
 %\begin{table}[h]
-%\centering\csvautotabularright{external/DiskResources-2021-2022-2023-2024-Details.csv}
-%\caption{Summary of disk pledges, allocations and usage for 2021-2022 with model request for 2023.  This is based on the 2022 CCB tables which are available in indico  \cite{CCB2022,CCB2023}.  These numbers are derived from the rucio reports in Table \ref{tab:RSEUsage} and may not be complete.  }
-%\label{tab:DiskPledges}
+%\centering\csvautotabularright{external/Usage_kHS23-Yrs_2023-01-01-2023-12-31_ByCountry.csv}
+%\caption{CPU utilization in kHS23-Years for calendar 2023 divided by use case.   Production includes official reconstruction and simulation. Analysis is user analysis of data.  MARS is beamline simulations performed at Fermilab.  NoMARS sums just Production and Analysis. }
+%\label{tab:CPUusage}
 %\end{table}
-
-\subsubsection{Request Summary}\label{sec:diskresult}
-The total disk request for 2024 is \DISKTotal PB.  This is consistent with the current allocated space of 24.3 PB. Because 5-10\% headroom is needed, we request that the current allocated  24.3 PB be retained for 2024. 
-
-\clearpage
-\subsection{Tape}
-
-\subsubsection{Current Status}
-
-DUNE currently has $\sim$27.1 PB of data\cite{fnaltape} on tape at Fermilab and 5.7 PB of raw protoDUNE data  at CERN\cite{scotgrid}. 
-
-\subsubsection{Model Projections}
-
-Figure  \ref{fig:Cumulative-Tape}  summarizes the cumulative  tape needs projected by  the model. These numbers are used to generate the requests for 2025.  They are divided into the two host laboratories (CERN and FNAL). The UK and the IN2P3 have offered $\sim 3$ PB of tape archive  but it has not yet been smoothly integrated into our data flow.  We  therefore substantially reduce our request for  resources  at those sites to $\sim 100$ TB per site, to allow testing of integration, with an increased request anticipated future years. .
-
-The increase in 2024-2025 is mainly storage of raw and processed  data from the upcoming runs of PDHD and PDVD.
-
-The exact division between FNAL, CERN and Global once DUNE starts taking FD data in 2029 is not yet defined.  
-
-
-
-\subsubsection{Current Status and Request}\label{sec:taperesult}
- We anticipate needing \TAPETotal\ PB of tape (an increase of 7 PB from 2023) to accommodate the ProtoDUNE run 2 data and increased simulation. 
-
-
-\begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape.png}
-
-\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape-Source.csv}
-\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape-Request.csv}
-%\csvautotabularright{external/NearTerm_2024-02-05-2030_noMWC-Cumulative-Tape-Request.csv}
-\caption{Cumulative Tape needs from the model in PB, includes data lifetimes.  The top table shows the origin of the data while the bottom table  shows the proposed split.  Global contributions are set low in \configRequestYear\ and grow thereafter as more tape archives are integrated. The exact division between FNAL, CERN and Global once DUNE starts taking FD data in 2029 is not yet defined.  
- }\label{fig:Cumulative-Tape}
-\end{figure}
-
-
-
-\clearpage
-\subsection{CPU }
-
-\subsubsection{Current Status}
-Tables \ref{tab:CPUCores} and \ref{tab:CPUusage} show the CPU used by country  in calendar 2023.  Due to the delay in ProtoDUNE running CPU use was dominated by code development and analysis of the older ProtoDUNE data.   Total CPU use was substantially lower than projected.
-%Table \ref{tab:CPUUsage} shows pledges and utilization for 2021-2022 and the request for 2023.  
-
-%DUNE differs from other HEP experiments in frequently requiring more memory/core than is available at particular sites.  For example an 8-slot pilot with 16 GB of available memory may only accommodate four reconstruction processes.   As a result, we make our requests in terms of memory-weighted-core wall time (MWC)  with the base memory being 2000 MB. This maps reasonably well to the memory weighted slot-time returned by HTCondor and the slot-time reported in EGI statistics.  Sites that offer more  (or less) than 2000 MB/core can scale their contributions up by the local memory/core.
-
-\begin{table}[h]
-\centering\csvautotabularright{external/Usage_CoreYears_2023-01-01-2023-12-31_ByCountry.csv}
-\caption{CPU utilization in Core Years  for calendar 2023 divided by use case.  This is for comparison with the previous pledging system.    Production includes  official reconstruction and simulation. Analysis is user analysis of data.  MARS is beamline simulations performed at Fermilab.  NoMARS sums just Production and Analysis.  }
-\label{tab:CPUCores}
-\end{table}
-
-\begin{table}[h]
-\centering\csvautotabularright{external/Usage_kHS23-Yrs_2023-01-01-2023-12-31_ByCountry.csv}
-\caption{CPU utilization in kHS23-Years for calendar 2023 divided by use case.   Production includes official reconstruction and simulation. Analysis is user analysis of data.  MARS is beamline simulations performed at Fermilab.  NoMARS sums just Production and Analysis. }
-\label{tab:CPUusage}
-\end{table}
-
-
-\subsubsection{Model calculation}
-The wall-time estimates in the model are created by estimating the number of simulated and raw events taken and then scaling by the measured CPU time per event on a gpvm corrected to wall-time by the estimated efficiency (default 70\%).  Each data type also has an additional "Analysis" factor of 0.5 to 1.0  to account for analysis after the original reconstruction.  
-
-The numbers for PD and FD are based on substantial experience with the earlier ProtoDUNE runs and  large-scale simulation campaigns.  The numbers for ND are much more uncertain and await experience with  simulation and reconstruction of results from the 2x2 demonstrator which will run later in \configRequestYear\ at Fermilab. The model shows ProtoDUNE dominating through the 2024-2025 runs and subsequent analysis period with  testing and simulation for the DUNE near and far detectors taking over circa 2028. 
-
-
- %and for a memory utilization factor that takes into account the differing memory needs for different applications. Here we assume that analysis takes 3000 MB, reconstruction takes 4000MB, and simulation takes 6000MB.  Contributions are then requested in units of MWC-time which is wall-time$\times$2000 MB units. 
-
-
+%
+%
+%\subsubsection{Model calculation}
+%The wall-time estimates in the model are created by estimating the number of simulated and raw events taken and then scaling by the measured CPU time per event on a gpvm corrected to wall-time by the estimated efficiency (default 70\%).  Each data type also has an additional "Analysis" factor of 0.5 to 1.0  to account for analysis after the original reconstruction.  
+%
+%The numbers for PD and FD are based on substantial experience with the earlier ProtoDUNE runs and  large-scale simulation campaigns.  The numbers for ND are much more uncertain and await experience with  simulation and reconstruction of results from the 2x2 demonstrator which will run later in \configRequestYear\ at Fermilab. The model shows ProtoDUNE dominating through the 2024-2025 runs and subsequent analysis period with  testing and simulation for the DUNE near and far detectors taking over circa 2028. 
+%
+%
+% %and for a memory utilization factor that takes into account the differing memory needs for different applications. Here we assume that analysis takes 3000 MB, reconstruction takes 4000MB, and simulation takes 6000MB.  Contributions are then requested in units of MWC-time which is wall-time$\times$2000 MB units. 
+%
+%
+%%\begin{figure}[h]
+%%\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-HS23.png}
+%%\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-HS23.csv}  %had to fix so moved to external
+%%\caption{Proposed wall-time needs in number of 2000 MB HS23 (MWC-years). Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:HS23Main}
+%%\end{figure}
+%
 %\begin{figure}[h]
 %\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-HS23.png}
 %\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-HS23.csv}  %had to fix so moved to external
-%\caption{Proposed wall-time needs in number of 2000 MB HS23 (MWC-years). Memory-weighted  wall-time takes into account memory and efficiency.}\label{fig:HS23Main}
+%\caption{Model of CPU wall-time needs  through 2030 in  kHS23-yr units.  The top 4 lines show division by detector, the bottom 4 show the proposed division between FNAL, CERN and Global based on the fractions in Table \ref{tab:division}.}\label{fig:HS23Main}
 %\end{figure}
-
-\begin{figure}[h]
-\centering\includegraphics[height=0.4\textwidth]{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-HS23.png}
-\csvautotabularright{NearTerm_2024-02-05-2030_noMWC/NearTerm_2024-02-05-2030_noMWC-HS23.csv}  %had to fix so moved to external
-\caption{Model of CPU wall-time needs  through 2030 in  kHS23-yr units.  The top 4 lines show division by detector, the bottom 4 show the proposed division between FNAL, CERN and Global based on the fractions in Table \ref{tab:division}.}\label{fig:HS23Main}
-\end{figure}
-
-
-Figure   \ref{fig:HS23Main} shows the projected wall-time  (HS23-yrs) need projections through 2030.   They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
-
-
 %
-%\subsection{Example of memory weighted pledges}
-%An example of a  national pledge in MWC might be  1000 cores with 2GB available/core, 500 cores with 4 GB available/core and 100 cores with 8 GB available/core.  The MWC pledge would then be 
 %
-%\newcommand{\GB}{\hbox{GB}}
+%Figure   \ref{fig:HS23Main} shows the projected wall-time  (HS23-yrs) need projections through 2030.   They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including OSG, BNL and NERSC in the US. 
 %
-%\begin{eqnarray*} 1000\times2\GB/2\GB &+& \\ 500\times4\GB/2\GB &+&\\100\times8\GB/2\GB\\&&= 2400 \hbox{\ MWC units}\end{eqnarray*}.
 %
-%A pledge with cores with $<$ 2 GB would get partial MWC units per core. 
+%%
+%%\subsection{Example of memory weighted pledges}
+%%An example of a  national pledge in MWC might be  1000 cores with 2GB available/core, 500 cores with 4 GB available/core and 100 cores with 8 GB available/core.  The MWC pledge would then be 
+%%
+%%\newcommand{\GB}{\hbox{GB}}
+%%
+%%\begin{eqnarray*} 1000\times2\GB/2\GB &+& \\ 500\times4\GB/2\GB &+&\\100\times8\GB/2\GB\\&&= 2400 \hbox{\ MWC units}\end{eqnarray*}.
+%%
+%%A pledge with cores with $<$ 2 GB would get partial MWC units per core. 
+%%
+%%The idea here is make the additional load of running large DUNE jobs transparent to sites, which either need to provide more than 2GB of memory/job or assign more cores than are actually used to a given job.  How a site makes and meets a pledge is up to the site management. Table \ref{tab:VOcard} summarizes the memory specifications from existing "VO" cards for the different experiments.  DUNE and LHCb currently are the only ones with a stated maximum $>$ 2048 MB.
 %
-%The idea here is make the additional load of running large DUNE jobs transparent to sites, which either need to provide more than 2GB of memory/job or assign more cores than are actually used to a given job.  How a site makes and meets a pledge is up to the site management. Table \ref{tab:VOcard} summarizes the memory specifications from existing "VO" cards for the different experiments.  DUNE and LHCb currently are the only ones with a stated maximum $>$ 2048 MB.
-
-%\subsection{CPU Requests}
+%%\subsection{CPU Requests}
+%%
+%%We request \CPUTotal\  kHS23-Years of computing for 2024 to support reconstruction, calibration and analysis of ProtoDUNE data and simulation studies for the future far and near detectors. 
+%%
 %
-%We request \CPUTotal\  kHS23-Years of computing for 2024 to support reconstruction, calibration and analysis of ProtoDUNE data and simulation studies for the future far and near detectors. 
 %
-
-
-
-
-
-%Table \ref{tab:CPUUsage} summarizes previous pledges\cite{CCB2023}. %and the measured usage  for 2021 and 2022 using FNAL's  HTCondor memory-weighted wall-time statistics\cite{fifemonDUNE}.  The  usage numbers for 2022 are Nov 2021 to Oct 2022. 
-
-%Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov 2021 to Oct 2022 derived from the EGI accounting\cite{EGI2022} which uses the number of cores allocated to a pilot.   If four 4000 MB reconstruction jobs were sent to an 8-core pilot on a system with 2000MB/core, this would be equivalent to using 8 MWC (memory-weighted wall-time units).   
-
-
-%\begin{table}[h]
-%\centering\csvautotabularright{external/CPUresources-2021-2022-2023-v3.csv}
-%\caption{Summary  of DUNE wall-time pledges and contributions for 2021 and 2022.  The 2022 actual numbers are memory-weighted core-years.  Individual nations are listed and then merged (with US OSG) into a Global section.} 
-%\label{tab:CPUUsage}
-%\end{table}
-
-%\begin{table}[h]
-%\centering\csvautotabularright{external/EIG-2022.csv}
-%\centering\csvautotabularright{external/EIG-2022-Global.csv}
-%\caption{Summary  of DUNE slot-years used for European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}.  The top shows all sites with EGI records, the bottom shows the summed contributions. These numbers reflect multiple-core slot reservations to account for larger memory use and are similar to, but  generally higher than, the FNAL accounting numbers in the previous table.} \label{tab:EIGSummary}
-%\end{table}
 %
-%\begin{table}[h]
-%\centering
-%\begin{tabular}{|l|l|l|}
-%\hline
-%Expt.&Max Memory& EGI VO Card\\
-%\hline
-%DUNE & 4000& \hrefII https://operations-portal.egi.eu/vo/view/voname/DUNE \\
-%ATLAS & 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/atlas \\
-%CMS & 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/cms \\
-%LHCb & 4000& \hrefII https://operations-portal.egi.eu/vo/view/voname/lhcb \\
-%ALICE& 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/alice \\
-%BelleII&2048& \hrefII https://operations-portal.egi.eu/vo/view/voname/belle \\
-%\hline
-%\end{tabular}
-%\caption{Maximum memory statements from the VO cards of major experiments.}
-%\label{tab:VOcard}
-%\end{table}
 %
-
-\subsubsection{CPU Request}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in \configRequestYear\ and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For \configRequestYear, we are requesting \CPUTotal\   kHS23-Yrs.
-%\section{
-%\input{NearTerm_2024-02-05-2030_noMWC.tex}
-
-%\sectionHS23{Model Assumptions}
+%
+%%Table \ref{tab:CPUUsage} summarizes previous pledges\cite{CCB2023}. %and the measured usage  for 2021 and 2022 using FNAL's  HTCondor memory-weighted wall-time statistics\cite{fifemonDUNE}.  The  usage numbers for 2022 are Nov 2021 to Oct 2022. 
+%
+%%Table \ref{tab:EIGSummary} summarizes the statistics for European sites from Nov 2021 to Oct 2022 derived from the EGI accounting\cite{EGI2022} which uses the number of cores allocated to a pilot.   If four 4000 MB reconstruction jobs were sent to an 8-core pilot on a system with 2000MB/core, this would be equivalent to using 8 MWC (memory-weighted wall-time units).   
+%
+%
+%%\begin{table}[h]
+%%\centering\csvautotabularright{external/CPUresources-2021-2022-2023-v3.csv}
+%%\caption{Summary  of DUNE wall-time pledges and contributions for 2021 and 2022.  The 2022 actual numbers are memory-weighted core-years.  Individual nations are listed and then merged (with US OSG) into a Global section.} 
+%%\label{tab:CPUUsage}
+%%\end{table}
+%
+%%\begin{table}[h]
+%%\centering\csvautotabularright{external/EIG-2022.csv}
+%%\centering\csvautotabularright{external/EIG-2022-Global.csv}
+%%\caption{Summary  of DUNE slot-years used for European collaborators, Nov. 21 to Oct. 22, using the EGI accounting\cite{EGI2022}.  The top shows all sites with EGI records, the bottom shows the summed contributions. These numbers reflect multiple-core slot reservations to account for larger memory use and are similar to, but  generally higher than, the FNAL accounting numbers in the previous table.} \label{tab:EIGSummary}
+%%\end{table}
+%%
+%%\begin{table}[h]
+%%\centering
+%%\begin{tabular}{|l|l|l|}
+%%\hline
+%%Expt.&Max Memory& EGI VO Card\\
+%%\hline
+%%DUNE & 4000& \hrefII https://operations-portal.egi.eu/vo/view/voname/DUNE \\
+%%ATLAS & 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/atlas \\
+%%CMS & 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/cms \\
+%%LHCb & 4000& \hrefII https://operations-portal.egi.eu/vo/view/voname/lhcb \\
+%%ALICE& 2000& \hrefII https://operations-portal.egi.eu/vo/view/voname/alice \\
+%%BelleII&2048& \hrefII https://operations-portal.egi.eu/vo/view/voname/belle \\
+%%\hline
+%%\end{tabular}
+%%\caption{Maximum memory statements from the VO cards of major experiments.}
+%%\label{tab:VOcard}
+%%\end{table}
+%%
+%
+%\subsubsection{CPU Request}\label{sec:cpuresult} The advent of ProtoDUNE-2 running in \configRequestYear\ and ramp-up of simulation for the FD and ND will lead to somewhat increased needs for CPU resources.  For \configRequestYear, we are requesting \CPUTotal\   kHS23-Yrs.
+%%\section{
+%%\input{NearTerm_2024-02-05-2030_noMWC.tex}
+%
+%%\sectionHS23{Model Assumptions}
 
 \input{bibmaker.tex}
 \clearpage
@@ -607,19 +612,19 @@ Figure   \ref{fig:HS23Main} shows the projected wall-time  (HS23-yrs) need proje
 % \label{tab:LargestSizes}
 %\end{table}
 %\clearpage
-\section{Model Details}
-
-This appendix shows the parameters used in the model and plots of all the input and derived quantities as a function of time. 
-
-Resource needs for reconstructed data for a given year are based on the number of events produced over the previous "Reprocess" years.   For ProtoDUNEs that is 2-4 years. 
-
-Simulation resource needs are instead calculated based on a number of simulation events each year. The assumption is that new software versions imply resimulation.
-
-Disk and tape lifetimes for different data types are specified as well as the desirable number of copies. 
-
-The splits parameters make CERN responsible for raw data until 2027 with the collaboration taking over after that point. 
-
-\input{NearTerm_2024-02-05-2030_noMWC/tables.tex}
+%\section{Model Details}
+%
+%This appendix shows the parameters used in the model and plots of all the input and derived quantities as a function of time. 
+%
+%Resource needs for reconstructed data for a given year are based on the number of events produced over the previous "Reprocess" years.   For ProtoDUNEs that is 2-4 years. 
+%
+%Simulation resource needs are instead calculated based on a number of simulation events each year. The assumption is that new software versions imply resimulation.
+%
+%Disk and tape lifetimes for different data types are specified as well as the desirable number of copies. 
+%
+%The splits parameters make CERN responsible for raw data until 2027 with the collaboration taking over after that point. 
+%
+%\input{NearTerm_2024-02-05-2030_noMWC/tables.tex}
 
 \end{document}
 %\end{document}

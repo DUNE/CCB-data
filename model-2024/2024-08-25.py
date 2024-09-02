@@ -216,7 +216,7 @@ for x in test:
 pix = holder.Draw(Dir=dirname,Title="Millions of Physics Events per Year by Detector",YAxis="Events",Resource="input",Category="Detectors",filter=RawEventFilter)
 fig1  = holder.TexBoth(pix,caption="Number of raw data events per year, units are Millions.",label="DataEventsPerYear")
 pix = holder.Draw(Dir=dirname,Title="Millions of Reconstructed Simulated Events per Year by Detector",YAxis="Events",Resource="input",Category="Detectors",filter=SimEventFilter)
-fig1  = holder.TexBoth(pix,caption="Number of simulated/reconstructed events per year, units are Millions.",label="SimEventsPerYear")
+fig1  = holder.TexBoth(pix,caption="Number of simulated/reconstructed events per year, units are Millions. There was a large simulation campaign in 2022 for the FDVD technical design report.",label="SimEventsPerYear")
 
 
 # # Change input (NativeTypes) into storage numbers
