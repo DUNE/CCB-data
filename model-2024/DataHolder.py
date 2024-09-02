@@ -515,7 +515,7 @@ class DataHolder:
     def TexFigure(self,name,caption,label=None):
         if label is None: label = name
         label = label.replace(" ","-")
-        s = "\\begin{figure}[h]\n\\centering"
+        s = "\\begin{figure}[ht]\n\\centering"
         s += "\\includegraphics[height=0.4\\textwidth]{%s}"%((name))
         s += "\\caption{%s}\n"%caption
         s += "\\label{fig:%s}\n"%label
@@ -524,10 +524,10 @@ class DataHolder:
     
     def TexTable(self,name,caption,label):
         label = label.replace(" ","-")
-        s = "\\begin{table}[h]\n\\centering"
+        s = "\\begin{table}[ht]\n\\centering"
         s += "{\\footnotesize\\csvautotabularright{%s}}"%((name))
-        s += "\\label{tab:%s}\n"%label
         s += "\\caption{%s}\n"%caption
+        s += "\\label{tab:%s}\n"%label
         s += "\\end{table}\n"
         return s
     

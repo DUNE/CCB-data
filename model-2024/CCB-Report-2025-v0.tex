@@ -36,13 +36,13 @@
 \newcommand{\csvautotabularright}[2][]{\csvloop{autotabularright={#2},#1}}
 \newcommand{\csvautobooktabularright}[2][]{\csvloop{autobooktabularright={#2},#1}}
 
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft}
-\SetWatermarkScale{5}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft}
+%\SetWatermarkScale{5}
 
 \title{DUNE Offline Computing Model Calculations for 2025}
 \author{H. Schellman for the Computing Consortium}
-\date{\today -- version 0}
+\date{\today\ -- version 1}
 
 
 
@@ -86,7 +86,7 @@ This note summarizes pledges, usage and projected need for the CCB.
 
 
 
-Changes since the last report \cite{CCB2024Report, CCB2024Minutes} include:
+Changes since the last report \cite{CCB2024Report}, \cite{CCB2024Minutes} include:
 
 \begin{itemize}
 \item A complete rewrite of the model code to make it more robust and allow more flexibility in plots. 
@@ -153,13 +153,22 @@ The model currently does not include any disk headroom allowance for data moveme
 
  We assume one processing campaign per year, with all real data reprocessed each campaign.   Simulation is assumed to be regenerated  once per year.
    
-CPU calculations are now made in HS23 units.  Calculations for the protoDUNE's and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
+CPU calculations are now made in HS23 units.  Calculations for the ProtoDUNEs and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
 
-We assume protoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. A cap of 30 PB/year for raw data (Events, Trigger Primitives and Tests) is imposed by scaling all categories down proportionally when 30 PB is reached. 
+We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. A cap of 30 PB/year for raw data (Events, Trigger Primitives and Tests) is imposed by scaling all categories down proportionally when 30 PB is reached. 
 
    
      
   \section{Details of the model}
+  
+  The model is implemented in python.  Time series are created for each combination of detector, data type, resource and location.  Those time series are then  scaled, extended and iterated and the results stored as new time series.  The end result is a csv file with a line for each permutation of types and figures summarizing various aggregations of data. Figure \ref{fig:Flowchart} shows the steps applied to data and simulation. 
+  
+  \begin{figure}[ht]
+\centering
+\includegraphics[width=0.99 \textwidth]{Flowchart.pdf}
+\caption{Flow chart of transformations used to transform raw event counts into summaries such as cumulative disk on tape. }
+\label{fig:Flowchart}
+\end{figure} 
   
   \subsection{Inputs}
   
@@ -181,7 +190,7 @@ Those data are then stored with sizes/event {\tt RawDataStore} and {\tt SimDataS
 
 Processing is modeled by taking the number of events produced in a given year and multiplying by the measured CPU times {\tt RecoDataCPU} and {\tt SimDataCPU} for processing those events.  Those data are then assumed to be stored with size {\tt  RecoDataStore} and {\tt SimDataStore}.
 
-Reprocessing for detector data is assumed to happen every year and cover {\tt Reprocess} = \configPDHDReprocess\ years for protodune and the whole sample for the FD and ND.
+Reprocessing for detector data is assumed to happen every year and cover {\tt Reprocess} = \configPDHDReprocess\ years for ProtoDUNE and the whole sample for the FD and ND.
 
 New simulation is assumed to happen every year and previous years are not reprocessed. 
 
@@ -211,11 +220,10 @@ Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifet
 
 \subsection{Analysis}
 
-The Analysis model is currently crude.  Analysis processing is modeled by scaling the reconstruction by a multiplicative factor {\tt AnalysisCPU} and extending the time by {\tt AnalysisExtend} = \configAnalysisExtend years.  Analysis use of disk is modeled by also extending disk use by the same amount.  
-
+The Analysis model is currently crude.  Analysis processing is modeled by scaling the reconstruction and simulation CPU time by a multiplicative factor {\tt AnalysisCPU} $\sim 0.25-0.5 $ and extending the time by {\tt AnalysisExtend} = \configAnalysisExtend\ years.  Analysis use of reconstructed and simulated data is modeled by extending the disk lifetime of those data by the same amount.  Currently analysis data samples are assumed to be much smaller than the reconstructed and simulated samples. 
 Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
 
-\input NearTerm_2024-08-27-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
+%\input NearTerm_2024-08-27-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
 
  \subsection{Splitting resources across sites}
  Resources are assumed to be split as follows:
@@ -229,7 +237,7 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
 \centering
 \footnotesize
 \csvautotabularright{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2040_splits_Disk.csv}
-\caption{Assumptions about splits of Disk resources between the US, CERN and Global. Note that }
+\caption{Assumptions about splits of Disk resources between the US, CERN and Global. }
 \label{tab:DiskSplit}
 \end{table}
 
@@ -266,6 +274,28 @@ In this section we show projected resource needs by detector, data type, resourc
 \input NearTerm_2024-08-27-2030_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
 \input NearTerm_2024-08-27-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
 \input NearTerm_2024-08-27-2030_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
+
+
+\section{Longer term projections}
+
+This section shows the projected resources past the startup of the far detectors in 2028-29. 
+
+The estimates for storage are dominated by the far detector while CPU is likely dominated by the near detectors
+
+In this section we show projected resource needs by detector, data type, resource type and site.
+
+\input NearTerm_2024-08-27-2038_noMWC/Cumulative-Disk-by-Detector-Storage.tex
+\input NearTerm_2024-08-27-2038_noMWC/Cumulative-Disk-by-Type-Storage.tex
+\input NearTerm_2024-08-27-2038_noMWC/Cumulative-Disk-by-Site-Storage.tex
+
+\input NearTerm_2024-08-27-2038_noMWC/Cumulative-Tape-by-Detector-Storage.tex
+\input NearTerm_2024-08-27-2038_noMWC/Cumulative-Tape-by-Type-Storage.tex
+\input NearTerm_2024-08-27-2038_noMWC/Cumulative-Tape-by-Site-Storage.tex
+
+
+\input NearTerm_2024-08-27-2038_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
+\input NearTerm_2024-08-27-2038_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
+\input NearTerm_2024-08-27-2038_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
 
 
 %%\end{document}
