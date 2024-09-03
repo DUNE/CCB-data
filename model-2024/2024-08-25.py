@@ -56,7 +56,7 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # specify the json file here.  Will create a subdirectory for plots with a similar name
 
-configfilename = "NearTerm_2024-08-27-2040.json"
+configfilename = "NearTerm_2024-09-03-2040.json"
 if len(sys.argv) > 1 and sys.argv[1] == "old":
     configfilename = "Feb24.json"
 print (configfilename)
