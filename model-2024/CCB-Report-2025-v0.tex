@@ -72,13 +72,13 @@
 
 \section{Introduction}
 
-This is an annual projection for DUNE CPU and storage needs intended for use at the Computing Contributions Board meeting in February 2024. It projects needs for\configRequestYear to \configMaxYear. 
+This is q projection for DUNE CPU and storage needs intended for use at the Computing Contributions Board meeting in September 2024. It projects needs for \configRequestYear\ to \configMaxYear. 
 
-The overall computing model  and 2023 projections for DUNE were described in chapters 6-13 of the recent (Oct. 2022) DUNE Conceptual Design Report \cite{DUNE:2022fcw}.   This document provides updates on resource needs for 2024-2025. 
+The overall computing model  and 2023 projections for DUNE were described in chapters 6-13 of the  (Oct. 2022) DUNE Conceptual Design Report \cite{DUNE:2022fcw}.   This document provides updates on resource needs for 2024-2025. 
 
 The \configRequestYear\ projection is done using codes at: \href{https://github.com/DUNE/CCB-data/tree/CCB-Jun24/models-2024/}{https://github.com/DUNE/CCB-data/tree/CCB-Jun24/models-2024/} from parameters stored in a json and csv file. We use CPU and storage sizes derived from protoDUNE and simulation experience and apply them to projected numbers of events from the various DUNE detectors. 
 
-This note summarizes pledges, usage and projected need for the CCB.
+%This note summarizes the  projected need for the CCB.
 
 %{\bf One Line Executive Summary:} Because the 2023 request assumed ProtoDUNE-2 running in 2023, the requests for 2024 are similar to the 2023 requests.
 
@@ -86,25 +86,25 @@ This note summarizes pledges, usage and projected need for the CCB.
 
 
 
-Changes since the last report \cite{CCB2024Report}, \cite{CCB2024Minutes} include:
+Changes since the last report \cite{CCB2024Report, CCB2024Minutes} include:
 
 \begin{itemize}
 \item A complete rewrite of the model code to make it more robust and allow more flexibility in plots. 
 \item Delay in the start of ProtoDUNE-2 running at CERN until mid-2024. This moved the need for storage/CPU into mid 2024.  
 \item More data from ProtoDUNE-HD than projected. 
-\item Use of existing storage information up to August 2024 in forming a baseline for future projections. 
+\item This report now uses existing storage information up to August 2024 in forming a baseline for future projections. 
 %\item Use of memory-weighted-core time instead of wall-time as our codes often require more memory than is available on a single core.  This means that our jobs sometimes need to reserve more than one core for a single process. This motivates the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
 \item Removal of the memory weighted core concept as it caused too much confusion and most available cores now have more than 2000 MB available. 
 \item Switch to HS23-Years as opposed to Core-Years as the main CPU reporting system.
-\item Revisions to near-term requests based on the 2023 experience including a hold on tape requests from the collaboration during protoDUNE activities. 
+\item Revisions to near-term requests based on the 2023 experience including a hold on tape requests from the collaboration during ProtoDUNE activities. 
 %\item Simulation disk copies continue to be reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
-\item Changes to splits (Tables \ref{tab:DiskSplit}, \ref{tab:TapeSplit}, \ref{tab:CPUSplit}) between regions in resource provision. 
+\item Enhanced model for splits (Tables \ref{tab:DiskSplit}, \ref{tab:TapeSplit}, \ref{tab:CPUSplit}) between regions in resource provision. 
 %\item A change in future tape requests to reflect the greater accessibility of tape archives at CERN and FNAL relative to other sites. 
 \end{itemize}
 
 \section{Model Summary}
 
-Resource requests are based on a processing and storage model that separated different phases of the detectors and includes 5 classifications of activity.
+Resource requests are based on a processing and storage model that separates different phases of the detectors and includes 5 classifications of activity.
 
 \begin{itemize}
 \item Physics Data - described by number of events, CPU time/event, storage/event.  Physics Data are described by number of events and then transformed into storage and CPU based on measured or estimated performance. 
@@ -114,7 +114,7 @@ Resource requests are based on a processing and storage model that separated dif
 \item Analysis - Analysis is assumed to be use little disk but consume considerable CPU and IO resources.  It is currently described by a scaling factor ($\sim 50\%$) relative to Reconstruction and Simulation CPU.
 \end{itemize}
 
- Table \ref{tab:detectors} summarizes the large detectors and their abbreviations. Smaller prototypes that generate less than 1 PB of data  are not explicitly included. 
+ Table \ref{tab:detectors} summarizes the main detectors and their abbreviations. Smaller prototypes that generate less than 1 PB of data  are not explicitly included. 
 
 \begin{table}[h]
 \begin{centering}
@@ -147,6 +147,8 @@ Disk storage policies are designed to optimize access and minimize CPU inefficie
 
 Each type of data has a storage retention policy which includes lifetimes on disk and tape and number of copies on disk and tape.  For example, raw data has a very long tape retention policy and 2 tape copies, with a 1 year stay of 1 copy on disk.   Recent simulated and reconstructed data samples typically have 1 tape copy, 2 disk copies and disk retention times of 1.5-2 years to allow fast analysis.   An extended retention time after the end of data taking for the last version of sim/reco is added to allow for extended data analysis. 
 
+Simulation and reconstruction from 2018 ProtoDUNE run is still active but is reduced to 1 disk copy. 
+
 The model currently does not include any disk headroom allowance for data movement.  This will be added in the 2025 version of the model. 
 
 \subsection{Processing calculations}
@@ -176,7 +178,7 @@ We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
  
  The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-08-27-2040.json}{NearTerm\_2024-08-27-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-08-27-2040_timeline.csv}{NearTerm\_2024-08-27-2040\_timeline.csv}
  
-The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
+The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from the total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
 
 {\input NearTerm_2024-08-27-2030_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
 }
@@ -214,7 +216,7 @@ Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifet
 \centering
 \footnotesize
 \csvautotabularright{NearTerm_2024-08-27-2030_noMWC/NearTerm_2024-08-27-2040_diskcopies.csv}
-\caption{Lifetimes and number of copies for different kinds of data.}
+\caption{Lifetimes and number of copies for different kinds of data. An exception: to accommodate fast analysis of the the PDHD and PDVD runs, two copies of raw data from those runs are kept while the simulation and reconstruction from the original PD runs are reduced to only one copy. }
 \label{tab:Lifetimes}
 \end{table}
 
@@ -283,6 +285,13 @@ This section shows the projected resources past the startup of the far detectors
 The estimates for storage are dominated by the far detector while CPU is likely dominated by the near detectors
 
 In this section we show projected resource needs by detector, data type, resource type and site.
+
+{\input NearTerm_2024-08-27-2038_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
+}
+
+{\input NearTerm_2024-08-27-2038_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
+}
+
 
 \input NearTerm_2024-08-27-2038_noMWC/Cumulative-Disk-by-Detector-Storage.tex
 \input NearTerm_2024-08-27-2038_noMWC/Cumulative-Disk-by-Type-Storage.tex

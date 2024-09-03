@@ -430,7 +430,7 @@ class DataHolder:
         thefilter = filter to use to define plot'''
         #print (InYears)
         thefilter = filter.copy()
-        print ("precheck", thefilter)
+        
         if "Total" not in thefilter[Category]:
             print ("adding Total to ",thefilter[Category])
             thefilter[Category] +=  ["Total"]
@@ -445,7 +445,7 @@ class DataHolder:
                 unit = Resource.split(" ")[1]
                 
                 format = self.UnitFormats[unit]
-                print ('unit',Resource,unit,format)
+                #print ('unit',Resource,unit,format)
                 
             #print ("set format",Title,filter["Units"], format)
         if self.debug:

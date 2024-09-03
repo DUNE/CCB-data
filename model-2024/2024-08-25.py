@@ -581,8 +581,13 @@ for detector in Detectors:
             for locations in ["Total"]:
                 if newresource == "Disk": 
                     factor = DiskCopies[datatype]
-                    if detector in ["PDHD","PDVD"]:
+                    if detector in ["PDHD","PDVD"] and datatype in ["Raw-Data"]:
                         factor *=2
+                        print ("WARNING -saving 2 PDHD copies by hand")
+                    if detector in ["PD","DP"]:
+                        factor = 1
+                        print ("WARNING - reducing protodune run 1 to 1 copy")
+                    
                 if newresource == "Tape": 
                     factor = TapeCopies[datatype]
                 newtag = holder.scale(detector= detector,datatype=datatype,resource=oldresource,location=locations,units="TB",categories={"Resources":newresource},factor=factor,explanation="Scale by number of copies, %.2f"%factor)
@@ -887,7 +892,7 @@ holder.debug=DEBUG
 # In[ ]:
 
 
-
+holder.csvDump("./",dirname+"_results.csv")
 
 
 # In[ ]:

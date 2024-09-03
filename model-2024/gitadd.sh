@@ -15,3 +15,4 @@ git add gitadd.sh
 git add CCB-Report-2025-v0.tex
 git add bib.bib
 git add bibmaker.tex
+git add README.md
