@@ -1,5 +1,6 @@
-{"Version":23,
+{"Version":24,
     "Changes":[
+        "2024-09-07 extend disk lifetime for raw to 2 years",
         "2024-09-03 add in coldbox",
         "2024-08-27 move to new timeline with better PDHD numbers",
         "2024-08-25 PDHD and PDVD have 2 disk copies of raw data",
@@ -313,7 +314,7 @@
         "Raw-Data":100, "Test":1.0, "TP": 100, "Reco-Data":15, "Reco-Sim":15,"Analysis-Data":15,"Analysis-Sim":15
     },
     "DiskLifetimes":{
-        "Raw-Data":1, "Test":0.5, "TP":0.5, "Reco-Data":2, "Reco-Sim":2,"Analysis-Data": 5,
+        "Raw-Data":2, "Test":0.5, "TP":0.5, "Reco-Data":2, "Reco-Sim":2,"Analysis-Data": 5,
         "Analysis-Sim": 5
         },  //  raw and test only hang around a short while, can be restaged
     "TapeCopies":{
