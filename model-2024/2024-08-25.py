@@ -581,9 +581,9 @@ for detector in Detectors:
             for locations in ["Total"]:
                 if newresource == "Disk": 
                     factor = DiskCopies[datatype]
-                    if detector in ["PDHD","PDVD"] and datatype in ["Raw-Data"]:
-                        factor *=2
-                        print ("WARNING -saving 2 PDHD copies by hand")
+                    # if detector in ["PDHD","PDVD"] and datatype in ["Raw-Data"]:
+                    #     factor *=2
+                    #     print ("WARNING -saving 2 PDHD copies by hand")
                     if detector in ["PD","DP"]:
                         factor = 1
                         print ("WARNING - reducing protodune run 1 to 1 copy")
