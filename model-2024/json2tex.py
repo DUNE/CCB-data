@@ -130,9 +130,9 @@ def makeSplitsTable(dir,genname,config):
  
 if __name__ == '__main__':
     TEST = False
-    dirname = "NearTerm_2024-09-03-2030_noMWC"
+    dirname = "NearTerm_2024-09-09-2030_noMWC"
     if TEST: dirname = "."
-    configname = "NearTerm_2024-09-03-2040.json"
+    configname = "NearTerm_2024-09-09-2040.json"
     configfile = open(configname,'r')
     config = commentjson.load(configfile)
     

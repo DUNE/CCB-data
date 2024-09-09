@@ -56,7 +56,7 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # specify the json file here.  Will create a subdirectory for plots with a similar name
 
-configfilename = "NearTerm_2024-09-03-2040.json"
+configfilename = "NearTerm_2024-09-09-2040.json"
 if len(sys.argv) > 1 and sys.argv[1] == "old":
     configfilename = "Feb24.json"
 print (configfilename)
@@ -292,9 +292,20 @@ newsubset={"Detectors":(["Sub-Total"]),
            "Locations":["Total"],
            "Units":["TB"]}
 
+detsubset={"Detectors":Detectors,
+           "DataTypes":["Sub-Total"],
+           "Resources":["Store"],
+           "Locations":["Total"],
+           "Units":["TB"]}
+
 fig= holder.Draw(dirname,Title="RealData",YAxis="Storage",
             Resource="Store",Category="DataTypes",filter=newsubset)
-texfile.write(holder.TexBoth(fig,"Real data create/year in TB",label="realdata"))
+texfile.write(holder.TexBoth(fig,"Real data created per year in TB",label="realdata"))
+holder.csvDump(dirname,"realData.csv")
+
+fig= holder.Draw(dirname,Title="RealDataByDetector",YAxis="Storage",
+            Resource="Store",Category="Detectors",filter=detsubset)
+texfile.write(holder.TexBoth(fig,"Real data created per year in TB",label="realDatadet"))
 holder.csvDump(dirname,"realData.csv")
 
 holder.debug = DEBUG
@@ -581,13 +592,13 @@ for detector in Detectors:
             for locations in ["Total"]:
                 if newresource == "Disk": 
                     factor = DiskCopies[datatype]
-                    # if detector in ["PDHD","PDVD"] and datatype in ["Raw-Data"]:
+                    #if detector in ["PDHD","PDVD"] and datatype in ["Raw-Data"]:
                     #     factor *=2
                     #     print ("WARNING -saving 2 PDHD copies by hand")
-                    if detector in ["PD","DP"]:
-                        factor = 1
-                        print ("WARNING - reducing protodune run 1 to 1 copy")
-                    
+                        # if detector in ["SP","DP"]:
+                        #     factor = 1.5
+                        #     print ("WARNING - reducing protodune run 1 to 1 copy")
+                        
                 if newresource == "Tape": 
                     factor = TapeCopies[datatype]
                 newtag = holder.scale(detector= detector,datatype=datatype,resource=oldresource,location=locations,units="TB",categories={"Resources":newresource},factor=factor,explanation="Scale by number of copies, %.2f"%factor)
@@ -683,6 +694,8 @@ for detector in Detectors:
                 if newresource == "Disk": 
                     retain = DiskLifetimes[datatype]
                     retresource = "Cumulative-Disk"
+                    if "Raw" in datatype and detector in ["FDVD","FDHD"]:
+                        retain = 2
                     if "Reco" in datatype:
                         if DEBUG: print ("extend later",detector,datatype,newresource,location)
                         retresource = "Unextended-Cumulative-Disk"
@@ -692,7 +705,7 @@ for detector in Detectors:
                     retain = TapeLifetimes[datatype]
                     retresource = "Cumulative-Tape"
 
-                newertag = holder.cumulateMe(detector=detector,datatype=datatype,resource=newresource,location=location,units="TB",categories={"Resources":retresource},period=retain,explanation="Look back %.2f years and keep that Storage "%factor)
+                newertag = holder.cumulateMe(detector=detector,datatype=datatype,resource=newresource,location=location,units="TB",categories={"Resources":retresource},period=retain,explanation="Look back %.2f years and keep that Storage "%retain)
                 # if DEBUG: print (newertag,holder.holder,newertag)
                 # # and extend time for reconstructed disk so one can analyze
                 # if ("Reco" in datatype and retresource == "Cumulative-Disk"):
