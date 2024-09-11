@@ -560,7 +560,7 @@ class DataHolder:
         texfile = open(texname,'w')
         if label is None: label = name
     
-        label = label.replace(" ","-").replace("_","-")
+        label = label.replace(" ","-").replace("_","-")+("%d-%d")%(self.MinYear,self.MaxYear)
         if self.debug: print ("names", figname,csvname,texname,label)
         s = "\\begin{figure}[ht]\n\\centering\n"
         s += "\\includegraphics[height=0.4\\textwidth]{%s}"%((figname))

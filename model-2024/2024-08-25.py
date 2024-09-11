@@ -8,6 +8,7 @@ import sys
 import os
 print(sys.executable)
 DEBUG=False
+import json2tex
 
 
 # 
@@ -112,6 +113,7 @@ texfilename = os.path.join(dirname,dirname+".tex")
 texfile = open(texfilename,'w')
 tablefile = open(os.path.join(dirname,"tables.tex"),'w')
 texfile.write("\\input{../Header.tex}\n")
+json2tex.runit(configfilename,dirname)
 
 size = len(Years)
 Units = config["Units"]

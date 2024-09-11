@@ -91,10 +91,10 @@ Changes since the last report \cite{CCB2024Report, CCB2024Minutes} include:
 \begin{itemize}
 \item A complete rewrite of the model code to make it more robust and allow more flexibility in plots. 
 \item Delay in the start of ProtoDUNE-2 running at CERN until mid-2024. This moved the need for storage/CPU into mid 2024.  
-\item More data from ProtoDUNE-HD than projected. 
+\item More data from ProtoDUNE-HD than projected.  
+\item Anticipate need to maintain both ProtoDUNE-HD and ProtoDUNE-VD raw data on disk for reprocessing.  The previous model assumed 1 year lifetimes for raw data on disk and this needed to be extended.  {\bf This leads to a significant increase in the 2025 need which may need to be mitigated by reducing disk access to legacy ProtoDUNE-SP/DP data. }
 \item This report now uses existing storage information up to August 2024 in forming a baseline for future projections. 
 %\item Use of memory-weighted-core time instead of wall-time as our codes often require more memory than is available on a single core.  This means that our jobs sometimes need to reserve more than one core for a single process. This motivates the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
-\item Removal of the memory weighted core concept as it caused too much confusion and most available cores now have more than 2000 MB available. 
 \item Switch to HS23-Years as opposed to Core-Years as the main CPU reporting system.
 \item Revisions to near-term requests based on the 2023 experience including a hold on tape requests from the collaboration during ProtoDUNE activities. 
 %\item Simulation disk copies continue to be reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
@@ -179,7 +179,7 @@ We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
  
  The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-09-09-2040.json}{NearTerm\_2024-09-09-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-09-09-2040_timeline.csv}{NearTerm\_2024-09-09-2040\_timeline.csv}
  
-The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from the total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear} and \ref{tab:SimEventsPerYear} show the assumptions for numbers of events/year. 
+The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from the total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear2022-2030} and \ref{tab:SimEventsPerYear2022-2030} show the assumptions for numbers of events/year. 
 
 {\input NearTerm_2024-09-09-2030_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
 }
@@ -224,7 +224,7 @@ Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifet
 \subsection{Analysis}
 
 The Analysis model is currently crude.  Analysis processing is modeled by scaling the reconstruction and simulation CPU time by a multiplicative factor {\tt AnalysisCPU} $\sim 0.25-0.5 $ and extending the time by {\tt AnalysisExtend} = \configAnalysisExtend\ years.  Analysis use of reconstructed and simulated data is modeled by extending the disk lifetime of those data by the same amount.  Currently analysis data samples are assumed to be much smaller than the reconstructed and simulated samples. 
-Figure/Table \ref{tab:CPU-kHS23-Yr-Types}. shows CPU usage by data type.
+Figure/Table \ref{tab:CPU-kHS23-Yr-Types2022-2030} and \ref{tab:DataEventsPerYear2028-2038}. shows CPU usage by data type.
 
 %\input NearTerm_2024-09-09-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
 

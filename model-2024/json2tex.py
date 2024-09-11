@@ -128,11 +128,11 @@ def makeSplitsTable(dir,genname,config):
                 print ("line",line,values)
                 writer.writerow(values)
  
-if __name__ == '__main__':
-    TEST = False
-    dirname = "NearTerm_2024-09-09-2030_noMWC"
-    if TEST: dirname = "."
-    configname = "NearTerm_2024-09-09-2040.json"
+def runit(configname,dirname,test=False):
+    # TEST = False
+    # dirname = "NearTerm_2024-09-09-2030_noMWC"
+    # if TEST: dirname = "."
+    # configname = "NearTerm_2024-09-09-2040.json"
     configfile = open(configname,'r')
     config = commentjson.load(configfile)
     
@@ -142,17 +142,21 @@ if __name__ == '__main__':
     print (config["DiskCopies"])
     makeTable(dirname,configname.replace(".json","_diskcopies.csv"),["DiskCopies","DiskLifetimes","TapeCopies","TapeLifetimes"],config)
 
-    result = json2tex(config,test=TEST)
-    if TEST:
+    result = json2tex(config,test=test)
+    if test:
         texname = configname.replace(".json","glossary.tex")
     else:
         texname = configname.replace(".json","macros.tex")
     texfile = open(os.path.join(dirname,texname),'w')
-    if TEST: 
+    if test: 
         texfile.write("\\input Header.tex\n")   
         texfile.write("\\baselineskip 18 pt\n")
     texfile.write(result)
-    if TEST: 
+    if test: 
         texfile.write("\\end{document}")
     texfile.close()
     configfile.close()
+
+if __name__ == '__main__':
+    runit("NearTerm_2024-09-09-2040.json", "NearTerm_2024-09-09-2030_noMWC", test=True)
+
