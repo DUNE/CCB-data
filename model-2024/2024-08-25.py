@@ -873,13 +873,13 @@ texfile.write(holder.TexBoth(fig,"Cumulative Tape by site.",label="CumulativeTap
 
 
 fig = holder.Draw(dirname,"New Disk by Type",YAxis="Storage",Resource="Disk",Category="DataTypes",filter=DiskStorage)
-texfile.write(holder.TexBoth(fig,"New Disk by data type.",label="DiskByYearByType"))
+texfile.write(holder.TexBoth(fig,"New Disk per year by data type. This includes multiple copies where need but not longer lifetimes.",label="DiskByYearByType"))
               
 fig = holder.Draw(dirname,"New Disk by Detector",YAxis="Storage",Resource="Disk",Category="Detectors",filter=DiskStorageByDetector)
-texfile.write(holder.TexBoth(fig,"New Disk by detector.",label="DiskByYearByDetector"))
+texfile.write(holder.TexBoth(fig,"New Disk per year by detector. This includes multiple copies where need but not longer lifetimes.",label="DiskByYearByDetector"))
 
 fig = holder.Draw(dirname,"New Disk by Site",YAxis="Storage",Resource="Disk",Category="Locations",filter=DiskStorageBySite)
-texfile.write(holder.TexBoth(fig,"New Disk by site.",label="DiskByYearBySite"))
+texfile.write(holder.TexBoth(fig,"New Disk per year by site. This includes multiple copies where need but not longer lifetimes.",label="DiskByYearBySite"))
 
 fig = holder.Draw(dirname,"Cumulative Disk by Type",YAxis="Storage",Resource="Cumulative-Disk",Category="DataTypes",filter=CumulativeDiskStorage)
 texfile.write(holder.TexBoth(fig,"Cumulative Disk by data type.",label="CumulativeDiskByType"))

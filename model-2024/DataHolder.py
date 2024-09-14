@@ -567,8 +567,9 @@ class DataHolder:
         #print (s)
         s += "\\\\"
         s += "{\\footnotesize\\csvautotabularright{%s}}"%((csvname))
-        s += "\\label{tab:%s}\n"%label
+        
         s += "\\caption{%s}\n"%caption
+        s += "\\label{tab:%s}\n"%label
         s += "\\end{figure}\n"
         #s += self.TexTable(csvname,caption,label)
 

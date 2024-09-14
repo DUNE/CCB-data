@@ -16,7 +16,7 @@ git add json2tex.py
 git add gitadd.sh
 #git add CCB-Report-2025-v0.tex
 #git add CCB-Report-2025-v1.tex
-git add CCB-Report-2025-v2.tex
+git add CCB-Report-2025-v4.tex
 git add bib.bib
 git add bibmaker.tex
 git add README.md
