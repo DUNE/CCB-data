@@ -56,10 +56,10 @@ from DataHolder import DataHolder
 N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # specify the json file here.  Will create a subdirectory for plots with a similar name
-
-configfilename = "NearTerm_2024-09-09-2040.json"
-if len(sys.argv) > 1 and sys.argv[1] == "old":
-    configfilename = "Feb24.json"
+LongTerm=False
+configfilename = "NearTerm_2024-09-16-2040.json"
+if len(sys.argv) > 1 and sys.argv[1] == "long":
+    LongTerm=True
 print (configfilename)
 
 
