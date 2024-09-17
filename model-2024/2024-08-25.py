@@ -8,7 +8,7 @@ import sys
 import os
 print(sys.executable)
 DEBUG=False
-import json2tex
+import json2tex # local function that translates parameters into LaTeX macros
 
 
 # 
@@ -27,25 +27,12 @@ import json2tex
 
 
 DRAW = ".py" not in sys.argv[0] # only draw if in notebook - otherwise write to file
-import os,commentjson
-from csv import reader
+import os, commentjson
+# from csv import reader
 import json
-import numpy as np
-import dunestyle.matplotlib as dunestyle
-from NumberUtils import dump
-from NumberUtils import DrawTex
-from NumberUtils import cumulateMap
-from NumberUtils import DrawDet
-from NumberUtils import DrawType
-from NumberUtils import makeArray
-from NumberUtils import ToCSV1
-from NumberUtils import ToCSV2
-#from NumberUtils import SumOver1
-#from NumberUtils import SumOver2
-from NumberUtils import TableTex
-from NumberUtils import BothTex
-from NumberUtils import extendMap
-from NumberUtils import makeParameter
+# import numpy as np
+# import dunestyle.matplotlib as dunestyle
+
 from DataHolder import DataHolder
 
 
@@ -58,7 +45,7 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 # specify the json file here.  Will create a subdirectory for plots with a similar name
 LongTerm=False
 configfilename = "NearTerm_2024-09-16-2040.json"
-if len(sys.argv) > 1 and sys.argv[1] == "long":
+if len(sys.argv) > 1 and sys.argv[1] == "long": # future way to set timerange interactively
     LongTerm=True
 print (configfilename)
 
