@@ -44,6 +44,7 @@ N_HISTS = 8   # exhibits all the colors in the Okabe-Ito cycler
 
 # specify the json file here.  Will create a subdirectory for plots with a similar name
 LongTerm=False
+#configfilename = "OneCopy_2024-09-16-2040.json"
 configfilename = "NearTerm_2024-09-16-2040.json"
 if len(sys.argv) > 1 and sys.argv[1] == "long": # future way to set timerange interactively
     LongTerm=True
