@@ -4,21 +4,35 @@ import os,time,sys,datetime, glob, fnmatch,string,subprocess, json
 #samweb = samweb_client.SAMWebClient(experiment='dune')
 from metacat.webapi import MetaCatClient
 mc_client = MetaCatClient(os.getenv("METACAT_SERVER_URL"))
-firstyear = 2018
+firstyear = 2024
 lastyear = 2024
-August = True  # correct for partial year. 
+August = False  # correct for partial year. 
 #out = open("YearlySummary.csv",'w')
 theline = "val, type, expt, trigger, tier,"
 
 # these are the events sizes assumed in the model
-MBPerEvent = {"protodune-sp":70,"protodune-dp":110,"hd-protodune":140,"vd-protodune":110,"fardet-hd":3750,"fardet-vd":8000,"ALL":100}
-MBPerSimEvent = {"protodune-sp":220,"protodune-dp":220,"hd-protodune":220,"vd-protodune":220,"fardet-vd":20,"fardet-hd":20,"ALL":100}
+MBPerEvent = {"protodune-sp":70,"protodune-dp":110,"hd-protodune":140,"vd-protodune":110,"fardet-hd":3750,"fardet-vd":8000,"ALL":100,
+              "vd-coldbox":30,"vd-coldbox-top":30,"vd-coldbox-bottom":30,"hd-coldbox":40,"neardet-2x2-minerva":10,
+                 "neardet-2x2-lar-charge":10,
+    "neardet-2x2-lar-light":10,
+    "neardet-2x2":10,
+    "neardet-2x2-lar":10}
 
-codes = {"protodune-sp":"SP","protodune-dp":"DP","hd-protodune":"PDHD","vd-protodune":"PDVD","fardet-vd":"FDVD","fardet-hd":"FDHD","ALL":"ALL"}
+MBPerSimEvent = {"protodune-sp":220,"protodune-dp":220,"hd-protodune":220,"vd-protodune":220,"fardet-vd":20,"fardet-hd":20,"ALL":100,
+                 "vd-coldbox":30,"vd-coldbox-top":30,"vd-coldbox-bottom":30,"hd-coldbox":40}
+                 
+
+codes = {"protodune-sp":"SP","protodune-dp":"DP","hd-protodune":"PDHD","vd-protodune":"PDVD","fardet-vd":"FDVD","fardet-hd":"FDHD",
+         "vd-coldbox":"VDCB","vd-coldbox-top":"VDCB-Top","vd-coldbox-bottom":"VDCB-Bottom","hd-coldbox":"HDCB","ALL":"ALL"}
   
 for type in ["mc","detector"]:
     
-    for expt in ["protodune-sp","hd-protodune","protodune-dp","vd-protodune","fardet-vd","fardet-hd","ALL"]:#,"neardet","fardet","fardet-sp","iceberg","test", "311","311_dp_light","physics","ALL","hd-protodune","vd-protodune"]:
+    for expt in ["protodune-sp","hd-protodune","protodune-dp","vd-protodune","fardet-vd","fardet-hd","vd-coldbox","vd-coldbox-top","vd-coldbox-bottom","hd-coldbox","neardet-lar"
+    "neardet-2x2-minerva",
+    "neardet-2x2-lar-charge",
+    "neardet-2x2-lar-light",
+    "neardet-2x2",
+    "neardet-2x2-lar","ALL"]:#,"neardet","fardet","fardet-sp","iceberg","test", "311","311_dp_light","physics","ALL","hd-protodune","vd-protodune"]:
         if type == "detector": 
             streams = ["physics","cosmics","test","commissioning","calibration","ALL"]
             EventSize = MBPerEvent[expt]
@@ -101,9 +115,9 @@ for type in ["mc","detector"]:
                         events = 0
                     #print ("events",events)
                     if year == "2024" and August:
-                        ssize *=1.5
-                        events *=1.5
-                        file_count *=1.5
+                        ssize *=1.333
+                        events *=1.333
+                        file_count *=1.333
                     sumcount += file_count
                     lineevents = lineevents + "{:.3f}".format(events)
                     linefiles = linefiles + "%d"%(file_count)
