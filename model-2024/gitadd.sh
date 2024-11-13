@@ -1,15 +1,15 @@
-../clean.sh 2024-08-25.ipynb
-git add 2024-08-25.ipynb
+../clean.sh 2024-11-12.ipynb
+git add 2024-11-12.ipynb
 #../clean.sh 2024-08-25.ipynb
-../convert.sh 2024-08-25.ipynb
-git add 2024-08-25.py
+../convert.sh 2024-11-12.ipynb
+git add 2024-11-12.py
 #git add Feb24.json # this is the old one 
 git add DataHolder.py
 git add NumberUtils.py
 #git add *08-27*json
 #git add *08-27*timeline.csv
-git add *09-16*json
-git add *09-16*timeline.csv
+git add *2024-11*json
+git add *2024-11*timeline.csv
 #git add *08-14*json
 #git add *08-14*timeline.csv
 git add json2tex.py
