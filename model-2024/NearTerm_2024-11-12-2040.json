@@ -1,6 +1,6 @@
 {"Version":24,
     "Changes":[
-        "2024-11-12 updates for FCSRG",
+        "2024-11-12 updates for",
         "2024-09-16 restore Global to 75% ",
         "2024-09-09 raise # of PDHD/PDVD events to 30M after Christos talk",
         "2024-09-07 extend disk lifetime for raw to 2 years",
@@ -123,10 +123,10 @@
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
-    // "MaxYear": 2038,
-    // "MinYear": 2028,
-    "MaxYear": 2030,
-    "MinYear": 2022,
+    "MaxYear": 2038,
+    "MinYear": 2028,
+    // "MaxYear": 2030,
+    // "MinYear": 2022,
     "RequestYear":2025,
     "PlotUnits": {
         "Raw-Events": "Million",

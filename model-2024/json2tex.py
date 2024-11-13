@@ -158,5 +158,5 @@ def runit(configname,dirname,test=False):
     configfile.close()
 
 if __name__ == '__main__':
-    runit("NearTerm_2024-09-09-2040.json", "NearTerm_2024-09-09-2030_noMWC", test=True)
+    runit("NearTerm_2024-11-12-2040.json", "NearTerm_2024-11-12-2030_noMWC", test=True)
 
