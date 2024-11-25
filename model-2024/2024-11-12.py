@@ -720,15 +720,19 @@ for detector in Detectors:
                 if "Reco" in datatype:
                     #print (detector,datatype,newresource,location)
                     pretag = holder.tag(detector,datatype,newresource,location,"TB")
+                    extender = AnalysisExtend
+                    # if detector in ["PDHD","PDVD"]:
+                    #     extender*=2
                     if pretag not in holder.holder:
                         print ("pretag not there",pretag)
                         continue
-                    if DEBUG: print ("extend by ",AnalysisExtend,pretag)
+                    if DEBUG: print ("extend by ",extender,pretag)
                     
                     if DEBUG and pretag in holder.holder:
                         print (holder.holder[pretag])
+                
                     #newtype = datatype.replace("Reco","Analysis")
-                    newertag = holder.extendMe(detector,datatype,newresource,location,"TB",{"Resources":"Cumulative-Disk"},AnalysisExtend,explanation="Extend disk by %.2f years as still analyzing"%(AnalysisExtend))
+                    newertag = holder.extendMe(detector,datatype,newresource,location,"TB",{"Resources":"Cumulative-Disk"},extender,explanation="Extend disk by %.2f years as still analyzing"%(extender))
                     if DEBUG: print ("removing",pretag)
                     holder.removeTag(pretag)
                 if DEBUG: print (newertag)
