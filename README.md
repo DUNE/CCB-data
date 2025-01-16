@@ -19,11 +19,17 @@ usage requires downloading a csv file by hand from the link at the top that dump
 
 # 2024 simulations
 
-The code for 2024 is in subdirectory Numbers-2024
+The code for 2024-2025 is in subdirectory Numbers-2024
+
+Branch CCB-Jun24 is what was presented at the September meeting
+THere is  is a new branch CCB-Jan25 which has minor updates 
+  - code is 2024-11-12.ipynb
+  - usage from hd-protodune updated
+  - more simulation in 2027-2028
 
 * Uses a jupyter notebook (versioned by date for history) 
-  
-  - 2024-01-21-HMS.ipynb is the latest version.  It has fixed extension algorithms and can now read in the timeline from a csv file instead of those long lists of years. 
+  - YYYY-MM-DD.ipynb
+   It has fixed extension algorithms and can now read in the timeline from a csv file instead of those long lists of years. 
   
   -  This implements NDLAr as a separate detector and add retention times and ratios between analysia and reco+sim times for detectors. 
 
@@ -48,26 +54,26 @@ just so  you can figure out which year is which.
 
 * Units are specified in the json file but are generally PB, MHr, Walltime.  
 
-The notebook uses NumberUtils.py which does things like make plots, calculate cumulative use over multiple years, etc. 
+The notebook uses DataHolder.py which has most of the transformation algorithms and NumberUtils.py which does things like make plots, calculate cumulative use over multiple years, etc. 
 
 # To run the code:
 
-1. Install jupyter and matplotlib and the DUNE/dune_plot_style code (requires running the setup script to install the dune_plot_style)
+1. Install jupyter and matplotlib and the github.com/DUNE/dune_plot_style code (requires running the setup script to install the dune_plot_style)
 
 2. clone DUNE/CCB-data  - maybe make your own branch while playing around
 
 3. `cd Numbers-2024 directory`
    
-4. open NearTerm_2024-01-23-2040.json in an editor - save your own version 
+4. open NearTerm_2024-11-12-2040.json in an editor - save your own version 
 
-5. It will point to a Timeline file: NearTerm_2024-01-23-2040_timeline.json - that has year by year event and Test stream volumes in cvs format.  Much better for getting things in the right year.  If you comment out the "Timeline" line in the  top level json file, the code will use the old method with the lists in the top level json file. 
+5. It will point to a Timeline file: NearTerm_2024-11-12-2040_timeline..csv - that has year by year event and Test stream volumes in cvs format.  Much better for getting things in the right year.  If you comment out the "Timeline" line in the  top level json file, the code will use the old method with the lists in the top level json file. 
 
 If you want your own version, make your own top level json file and then have it point to a new csv file. 
 
-6. `jupyter-lab 2024-01-21-HMS.ipynb &` will create a webpage with the notebook 
+6. `jupyter-lab 2024-11-12.ipynb &` will create a webpage with the notebook 
    
-7. edit the notebook to point to your version of the json file.  NearTerm_2024-01-23-2040.json is an example
+7. edit the notebook to point to your version of the json file. 
 
-8. you can then edit the json file and iterate.  Plots will appear in the notebook and in a subdirectory named after your json file. 
+8. you can then edit the json/csv file and iterate.  Plots will appear in the notebook and in a subdirectory named after your json file. 
 
 
