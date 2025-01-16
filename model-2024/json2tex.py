@@ -29,7 +29,7 @@ def makeline(localname,value,header="",test=False):
         return "%%Format %s %s %s\n"%(header,name,value)
     if isinstance(value,str): 
         if "_" in value:
-            value = value.replace("_","\_")
+            value = value.replace("_","\\_")
         template = "\\newcommand{\\config%s}{%s}\n"     
         line =  template%(name,value)
         if(test): line += "config%s = \\config%s \\\\  %% testing\n"%(name,name)
