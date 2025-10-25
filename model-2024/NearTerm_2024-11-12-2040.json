@@ -1,5 +1,6 @@
 {"Version":24,
     "Changes":[
+        "2025-09-24 updates for Sep 2025 CCB meeting",
         "2024-11-12 updates for",
         "2024-09-16 restore Global to 75% ",
         "2024-09-09 raise # of PDHD/PDVD events to 30M after Christos talk",
@@ -123,11 +124,11 @@
     "Cap":30, // cap in PB
     "MWCWeight":0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
-    // "MaxYear": 2038,
+     "MaxYear": 2030,
     // "MinYear": 2028,
-    "MaxYear": 2030,
-    "MinYear": 2022,
-    "RequestYear":2025,
+    //"MaxYear": 2030,
+    "MinYear": 2024,
+    "RequestYear":2026,
     "PlotUnits": {
         "Raw-Events": "Million",
         "Store": "PB",
@@ -214,10 +215,10 @@
         "Reco-Sim-Store":220, // TB/MEvents
         "Reco-Memory":4000, // MB
         "Sim-Memory":6000, // MB
-        "Analysis-CPU":0.5
+        "Analysis-CPU":0.5 // ratio
     },
-    "DP":{
-        "Comment":"extend testing to 2024",
+    "DP": //update
+        {"Comment":"extend testing to 2024",
         "Raw-Data-Store":110, // TB/MEvents
         "Reco-Data-CPU":0.1667, // Hr/Event
         "Reco-Sim-CPU":0.75, // Hr/Event
@@ -273,8 +274,8 @@
         "Raw-Data-Store":8000, //  TB/MEvents no compression
         "Reco-Data-CPU":1.33, //  //  Hr/Event scale up from 30 s/CRP
         "Reco-Sim-CPU":0.125, //  TB/MEvents
-        "Reco-Data-GPU":0.1, // Hr/Event
-        "Reco-Sim-GPU":0.1, // Hr/Event
+        "Reco-Data-GPU":0, // Hr/Event
+        "Reco-Sim-GPU":0, // Hr/Event
         "Reco-Data-Store":20, //  TB/MEvents
         "Reco-Sim-Store":20,   //  TB/MEvents # measured in production
         "Reco-Memory":2000, // MB
