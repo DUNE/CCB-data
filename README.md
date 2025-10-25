@@ -7,7 +7,7 @@ This repository, and all software contained within, is licensed under the Apache
 http://www.apache.org/licenses/LICENSE-2.0
 Copyright is granted to FERMI NATIONAL ACCELERATOR LABORATORY on behalf of the Deep Underground Neutrino Experiment (DUNE). Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-Primary authors: Heidi Schellman, Mike Kirby
+Primary authors: Heidi Schellman, Michael Kirby
 
 # CCB 2023/24 simulations/usage
 
