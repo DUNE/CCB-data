@@ -53,10 +53,9 @@
     ],
   "Interpretation":" Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\\\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\\pagebreak ",
   "Test":0,
-  "Years":[
-        2021,   2022,   2023,   2024,   2025,   2026,   2027,
-        2028,  2029,   2030,   2031,   2032,   2033,   2034,   2035,   2036,   2037,
-        2038,  2039,   2040
+ "Years":[ 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
+	   2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033,
+	   2034, 2035, 2036, 2037, 2038, 2039, 2040
     ],
     "Indices":{"Detectors":0,"DataTypes":1,"Resources":2,"Locations":3,"Units":4,"Years":5},
     "Units":["Million","GB","TB","PB","MHr","Cores","kHS23-Yr"],
@@ -126,9 +125,9 @@
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
     // "MaxYear": 2038,
     // "MinYear": 2028,
-    "MaxYear": 2032,
-    "MinYear": 2024,
-    "RequestYear":2025,
+    "MaxYear": 2035,
+    "MinYear": 2025,
+    "RequestYear":2030,
     "PlotUnits": {
         "Raw-Events": "Million",
         "Store": "PB",
@@ -531,16 +530,28 @@
     },
     "Actual":{
         "wallactual": {"2021":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
-            "2022":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3}
+		       "2022":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
+		       "2023":{"Total":49.7,"Analysis":30.7,"MARS":8.2,"Production":10.8},
+		       "2024":{"Total":115.0,"Analysis":84.7,"MARS":24.8,"Production":5.5},
+		       "2025":{"Total":376.4,"Analysis":198.6,"MARS":76.3,"Production":101.5},
         },
 
         "diskactual":{
             "2021":{"US":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
-            "2022":{"US":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30}
+            "2022":{"US":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
+	    "2023":{"US":7.0,"CERN":2.121,"UK":3.250,"CZ":0.561,
+		    "ES":0.192,"CA":0.0,"FR":0.180,"IT":0.0,"NL":0.551},
+	    "2024":{"US":10.1,"CERN":4.393,"UK":3.535,"CZ":0.623,
+		    "ES":1.271,"CA":0.004,"FR":1.057, "IT": 0.008,"NL":1.659},
+	    "2025":{"US":10.5,"CERN":3.939,"UK":5.011,"CZ":0.756,
+		    "ES":1.089,"CA":0.005,"FR":1.265,"IT":0.067,"NL":1.777}
         },
         "tapeactual":{
             "2021":{"US":19.804,"CERN":5.02,"Global":0.0},
-            "2022":{"US":19.804,"CERN":5.02,"Global":0.0}
+            "2022":{"US":19.804,"CERN":5.02,"Global":0.0},
+	    "2023":{"US":24.272,"CERN":5.7,"Global":0.0},
+	    "2024":{"US":33.269,"CERN":12.09,"Global":0.001},
+	    "2025":{"US":42.108,"CERN":13.665,"Global":0.001}
         }
     }
 }
