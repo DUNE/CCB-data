@@ -180,7 +180,7 @@ We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
   
  Inputs to the model include projections of events and storage per year by detector and datatype, which are contained in a "timeline file".  A master configuration file in json format is used to store detector specific parameters which do not depend on year. 
  
- The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-12-10-2040.json}{NearTerm\_2024-09-16-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-12-10-2040_timeline.csv}{NearTerm\_2024-09-16-2040\_timeline.csv}
+The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-12-10-2040.json}{NearTerm\_2024-09-16-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-12-10-2040_timeline.csv}{NearTerm\_2024-09-16-2040\_timeline.csv}
  
 The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from the total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear2025-2030} and \ref{tab:SimEventsPerYear2025-2030} show the assumptions for numbers of events/year. 
 
