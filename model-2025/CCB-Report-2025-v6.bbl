@@ -1,0 +1,23 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{DUNE:2022fcw}
+{\bfseries DUNE} Collaboration, A.~Abed~Abud {\em et~al.}, ``{DUNE Offline
+  Computing Conceptual Design Report},''
+  \href{https://arxiv.org/abs/2210.15665}{{\ttfamily arXiv:2210.15665
+  [physics.data-an]}}.
+
+\bibitem{CCB2025}
+G.~Merino, ``{DUNE Computing Contributions Board Meeting for 2025},''
+\newblock \url{{https://indico.fnal.gov/event/67816/}}.
+
+\bibitem{CCB2024Report}
+H.~Schellman, ``{DUNE Offline Computing Model Calculations for 2024},''
+\newblock
+  \url{{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=29925}}.
+
+\bibitem{CCB2024Minutes}
+P.~Clarke, ``{Computing Contribution Board (CCB) Minutes for February 2024},''
+\newblock
+  \url{{https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=30302}}.
+
+\end{thebibliography}\endgroup
