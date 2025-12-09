@@ -11,7 +11,7 @@
 \setlength{\oddsidemargin=-.25 in}
 \setlength{\topmargin=0 in}
 \setlength{\textheight=8.5 in}
-\input{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2040macros.tex}
+\input{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2040macros.tex}
 \makeatletter
 \csvset{
   autotabularright/.style={
@@ -45,12 +45,10 @@
 \date{\today\ -- version 5.0 }
 
 
-
 \newcommand{\hrefII}[1]{\href{#1}{#1}}
 
-%\input{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2030_noMWC.tex}
+%\input{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2030_noMWC.tex}
 \begin{document}
-
 
 \makeatletter
 %\csvset{
@@ -181,14 +179,14 @@ We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
   
  Inputs to the model include projections of events and storage per year by detector and datatype, which are contained in a "timeline file".  A master configuration file in json format is used to store detector specific parameters which do not depend on year. 
  
- The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-09-16-2040.json}{NearTerm\_2024-09-16-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2024-09-16-2040_timeline.csv}{NearTerm\_2024-09-16-2040\_timeline.csv}
+ The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-10-26-2040.json}{NearTerm\_2025-10-26-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-10-26-2040_timeline.csv}{NearTerm\_2025-10-26-2040\_timeline.csv}
  
 The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from the total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear2022-2030} and \ref{tab:SimEventsPerYear2022-2030} show the assumptions for numbers of events/year. 
 
-{\input NearTerm_2024-09-16-2030_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
+{\input NearTerm_2025-10-26-2035_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
 }
 
-{\input NearTerm_2024-09-16-2030_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
+{\input NearTerm_2025-10-26-2035_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
 }
 
 Those data are then stored with sizes/event {\tt RawDataStore} and {\tt SimDataStore}.  See Table \ref{tab:DetectorProcessingParameters} for storage estimates per event by detector. 
@@ -204,7 +202,7 @@ New simulation is assumed to happen every year and previous years are not reproc
 \begin{table}[h]
 \centering
 \footnotesize
-\csvautotabularright{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2040_detectors.csv}
+\csvautotabularright{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2040_detectors.csv}
 \caption{Per event output size and CPU time  parameters used in the model. These values are estimated from running jobs over small numbers of events from protoDUNE and simulation.}
 \label{tab:DetectorProcessingParameters}
 \end{table}
@@ -220,7 +218,7 @@ Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifet
 \begin{table}[h]
 \centering
 \footnotesize
-\csvautotabularright{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2040_diskcopies.csv}
+\csvautotabularright{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2040_diskcopies.csv}
 \caption{Lifetimes and number of copies for different kinds of data.  An exception, we assume protoDUNE raw radata will stay on disk for up to three years for reprocessing.  Far detector data are assumed to stay for 2 years. }
 \label{tab:Lifetimes}
 \end{table}
@@ -230,7 +228,7 @@ Raw data has 2 copies on tape with a very long lifetime but a shorter disk lifet
 The Analysis model is currently crude.  Analysis processing is modeled by scaling the reconstruction and simulation CPU time by a multiplicative factor {\tt AnalysisCPU} $\sim 0.25-0.5 $ and extending the time by {\tt AnalysisExtend} = \configAnalysisExtend\ years.  Analysis use of reconstructed and simulated data is modeled by extending the disk lifetime of those data by the same amount.  Currently analysis data samples are assumed to be much smaller than the reconstructed and simulated samples. 
 Figure/Table \ref{tab:CPU-kHS23-Yr-Types2022-2030} and \ref{tab:DataEventsPerYear2028-2038}. shows CPU usage by data type.
 
-%\input NearTerm_2024-09-16-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
+%\input NearTerm_2025-10-26-2035_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
 
  \subsection{Splitting resources across sites}
  Resources are assumed to be split as follows:
@@ -243,7 +241,7 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types2022-2030} and \ref{tab:DataEventsPerYea
  \begin{table}[h]
 \centering
 \footnotesize
-\csvautotabularright{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2040_splits_Disk.csv}
+\csvautotabularright{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2040_splits_Disk.csv}
 \caption{Assumptions about splits of Disk resources between the US, CERN and Global. }
 \label{tab:DiskSplit}
 \end{table}
@@ -252,7 +250,7 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types2022-2030} and \ref{tab:DataEventsPerYea
 \begin{table}[h]
 \centering
 \footnotesize
-\csvautotabularright{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2040_splits_Tape.csv}
+\csvautotabularright{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2040_splits_Tape.csv}
 \caption{Assumptions about splits of Tape resources between the US, CERN and Global.}
 \label{tab:TapeSplit}
 \end{table}
@@ -260,7 +258,7 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types2022-2030} and \ref{tab:DataEventsPerYea
 \begin{table}[h]
 \centering
 \footnotesize
-\csvautotabularright{NearTerm_2024-09-16-2030_noMWC/NearTerm_2024-09-16-2040_splits_CPU.csv}
+\csvautotabularright{NearTerm_2025-10-26-2035_noMWC/NearTerm_2025-10-26-2040_splits_CPU.csv}
 \caption{Assumptions about splits of CPU resources between the US, CERN and Global.}
 \label{tab:CPUSplit}
 \end{table}
@@ -269,58 +267,58 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types2022-2030} and \ref{tab:DataEventsPerYea
 
 In this section we show projected resource needs by detector, data type, resource type and site.
 
-\input NearTerm_2024-09-16-2030_noMWC/New-Disk-by-Detector-Storage.tex
-\input NearTerm_2024-09-16-2030_noMWC/New-Disk-by-Type-Storage.tex
-\input NearTerm_2024-09-16-2030_noMWC/New-Disk-by-Site-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/New-Disk-by-Detector-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/New-Disk-by-Type-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/New-Disk-by-Site-Storage.tex
 
-\input NearTerm_2024-09-16-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex
-\input NearTerm_2024-09-16-2030_noMWC/Cumulative-Disk-by-Type-Storage.tex
-\input NearTerm_2024-09-16-2030_noMWC/Cumulative-Disk-by-Site-Storage.tex
-
-
-\input NearTerm_2024-09-16-2030_noMWC/Cumulative-Tape-by-Detector-Storage.tex
-\input NearTerm_2024-09-16-2030_noMWC/Cumulative-Tape-by-Type-Storage.tex
-\input NearTerm_2024-09-16-2030_noMWC/Cumulative-Tape-by-Site-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/Cumulative-Disk-by-Detector-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/Cumulative-Disk-by-Type-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/Cumulative-Disk-by-Site-Storage.tex
 
 
-\input NearTerm_2024-09-16-2030_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
-\input NearTerm_2024-09-16-2030_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
-\input NearTerm_2024-09-16-2030_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
+\input NearTerm_2025-10-26-2035_noMWC/Cumulative-Tape-by-Detector-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/Cumulative-Tape-by-Type-Storage.tex
+\input NearTerm_2025-10-26-2035_noMWC/Cumulative-Tape-by-Site-Storage.tex
 
 
-\section{Longer term projections}
-
-This section shows the projected resources past the startup of the far detectors in 2028-29. 
-
-The estimates for storage are dominated by the far detector while CPU is likely dominated by the near detectors
-
-In this section we show projected resource needs by detector, data type, resource type and site.
-
-{\input NearTerm_2024-09-16-2038_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
-}
-
-{\input NearTerm_2024-09-16-2038_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
-}
+\input NearTerm_2025-10-26-2035_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
+\input NearTerm_2025-10-26-2035_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
+\input NearTerm_2025-10-26-2035_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
 
 
-\input NearTerm_2024-09-16-2038_noMWC/New-Disk-by-Detector-Storage.tex
-\input NearTerm_2024-09-16-2038_noMWC/New-Disk-by-Type-Storage.tex
-\input NearTerm_2024-09-16-2038_noMWC/New-Disk-by-Site-Storage.tex
-
-
-\input NearTerm_2024-09-16-2038_noMWC/Cumulative-Disk-by-Detector-Storage.tex
-\input NearTerm_2024-09-16-2038_noMWC/Cumulative-Disk-by-Type-Storage.tex
-\input NearTerm_2024-09-16-2038_noMWC/Cumulative-Disk-by-Site-Storage.tex
-
-\input NearTerm_2024-09-16-2038_noMWC/Cumulative-Tape-by-Detector-Storage.tex
-\input NearTerm_2024-09-16-2038_noMWC/Cumulative-Tape-by-Type-Storage.tex
-\input NearTerm_2024-09-16-2038_noMWC/Cumulative-Tape-by-Site-Storage.tex
-
-
-\input NearTerm_2024-09-16-2038_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
-\input NearTerm_2024-09-16-2038_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
-\input NearTerm_2024-09-16-2038_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
-
+%\section{Longer term projections}
+%
+%This section shows the projected resources past the startup of the far detectors in 2028-29. 
+%
+%The estimates for storage are dominated by the far detector while CPU is likely dominated by the near detectors
+%
+%In this section we show projected resource needs by detector, data type, resource type and site.
+%
+%{\input NearTerm_2025-10-26-2038_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
+%}
+%
+%{\input NearTerm_2025-10-26-2038_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
+%}
+%
+%
+%\input NearTerm_2025-10-26-2038_noMWC/New-Disk-by-Detector-Storage.tex
+%\input NearTerm_2025-10-26-2038_noMWC/New-Disk-by-Type-Storage.tex
+%\input NearTerm_2025-10-26-2038_noMWC/New-Disk-by-Site-Storage.tex
+%
+%
+%\input NearTerm_2025-10-26-2038_noMWC/Cumulative-Disk-by-Detector-Storage.tex
+%\input NearTerm_2025-10-26-2038_noMWC/Cumulative-Disk-by-Type-Storage.tex
+%\input NearTerm_2025-10-26-2038_noMWC/Cumulative-Disk-by-Site-Storage.tex
+%
+%\input NearTerm_2025-10-26-2038_noMWC/Cumulative-Tape-by-Detector-Storage.tex
+%\input NearTerm_2025-10-26-2038_noMWC/Cumulative-Tape-by-Type-Storage.tex
+%\input NearTerm_2025-10-26-2038_noMWC/Cumulative-Tape-by-Site-Storage.tex
+%
+%
+%\input NearTerm_2025-10-26-2038_noMWC/Processing-by-Detector-CPU-kHS23-Yr.tex
+%\input NearTerm_2025-10-26-2038_noMWC/Processing-by-Type-CPU-kHS23-Yr.tex
+%\input NearTerm_2025-10-26-2038_noMWC/CPU-processing-by-Site-CPU-kHS23-Yr.tex
+%
 
 %%\end{document}
 %
@@ -377,7 +375,7 @@ In this section we show projected resource needs by detector, data type, resourc
 %The near-term request does not include much Near Detector simulation.   That is currently being done via special allocations at NERSC and ANL and not yet included in our accounting.   
 %
 %The model for proposed pledges for \configRequestYear\ is detailed  in sections: Disk(\ref{sec:diskresult}), Tape(\ref{sec:taperesult}) and CPU(\ref{sec:cpuresult}) below.   
-%\input{NearTerm_2024-09-16-2030_noMWC//Cumulative-Disk-by-Detector-Storage.tex}
+%\input{NearTerm_2025-10-26-2035_noMWC//Cumulative-Disk-by-Detector-Storage.tex}
 %
 %
 %\ignore{A summary of requests and actual use for 2023 is shown in Table \ref{tab:summary2023} and the requests for \configRequestYear\ are shown in Table \ref{tab:summary2024} 
@@ -442,7 +440,7 @@ In this section we show projected resource needs by detector, data type, resourc
 %\subsection{Disk}
 %Table \ref{tab:RSEUsage} summarizes the disk utilization reported by sites via \cite{scotgrid}, supplemented by  rucio reports.   Some sites, notably TIFR, are not yet fully integrated so do not show up in the rucio reports.  %The contributions listed in Table \ref{tab:DiskPledges} sum the rucio and non-rucio disk known to be allocated to DUNE.
 %
-%\input{NearTerm_2024-09-16-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex}
+%\input{NearTerm_2025-10-26-2035_noMWC/Cumulative-Disk-by-Detector-Storage.tex}
 %
 %\end{document}
 %Figure \ref{fig:Cumulative-Disk}  summarize the cumulative disk needs and requests projected by our model. These numbers are used to generate the request for \configRequestYear.  They are divided into the two host laboratories (CERN and FNAL) and Global, which includes contributions from the rest of the collaboration, including  BNL and NERSC in the US. 
