@@ -126,7 +126,7 @@
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
     // "MaxYear": 2038,
     // "MinYear": 2028,
-    "MaxYear": 2030,
+    "MaxYear": 2035,
     "MinYear": 2025,
     "RequestYear":2026,
     "PlotUnits": {
