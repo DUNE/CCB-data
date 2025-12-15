@@ -80,7 +80,7 @@ This is a projection for DUNE CPU and storage needs intended for use at the Comp
 
 The overall computing model  and 2023 projections for DUNE were described in chapters 6-13 of the  (Oct. 2022) DUNE Conceptual Design Report \cite{DUNE:2022fcw}.   This document provides updates on resource needs for \configRequestYear\ - \configMaxYear. 
 
-The \configRequestYear\ projection is done using codes at: \href{https://github.com/DUNE/CCB-data/tree/CCB-Jun24/models-2024/}{https://github.com/DUNE/CCB-data/tree/CCB-Jun24/models-2024/} from parameters stored in a json and csv file. We use CPU and storage sizes derived from ProtoDUNE, 2x2 Demonstrator, and simulation experience and apply them to projected numbers of events from the various DUNE detectors. 
+The \configRequestYear\ projection is done using codes at: \href{https://github.com/DUNE/CCB-data/tree/kherner\_Oct2025/model-2025/}{https://github.com/DUNE/CCB-data/tree/kherner\_Oct2025/model-2025/} from parameters stored in a json and csv file. We use CPU and storage sizes derived from ProtoDUNE, 2x2 Demonstrator, and simulation experience and apply them to projected numbers of events from the various DUNE detectors. 
 
 %This note summarizes the  projected need for the CCB.
 
@@ -93,15 +93,15 @@ The \configRequestYear\ projection is done using codes at: \href{https://github.
 Changes since the last report \cite{CCB2025, CCB2024Report, CCB2024Minutes} include:
 
 \begin{itemize}
-\item A complete rewrite of the model code to make it more robust and allow more flexibility in plots. 
-\item Delay and subsequent extension of the start of ProtoDUNE-VD running at CERN to happen 2025-2026. This increased and extended the need for storage/CPU into mid 2027.  
+\item An update on the rewrite of the model code to make it more robust and allow more flexibility in plots. 
+\item Change to the Far Detector, Near Detector, and Beam operations schedule based upon presentations at the most recent \href{https://indico.fnal.gov/event/70787/}{LBNC} and \href{https://indico.fnal.gov/event/71286/}{RRB}.
+\item Delay and subsequent extension of the start of ProtoDUNE-VD running at CERN to take place between 2024-2026. This increased and extended the need for storage/CPU into mid 2027.  
 \item More data from both ProtoDUNE-HD and ProtoDUNE-VD than originally projected because of additional cosmic-ray operations and enhanced performance of the DAQ.
 \item Anticipate need to maintain both ProtoDUNE-HD and ProtoDUNE-VD raw data on disk simultaneously  for reprocessing.  The previous model assumed 1 year lifetimes for raw data on disk and this has been extended to \configRawDataDiskLifetimes\ years.  {\bf This leads to a significant increase in the 2025 need which may need to be mitigated by reducing disk access to legacy ProtoDUNE-SP/DP data.
 See Figures  \ref{tab:CumulativeDiskByDetector2025-2030}, \ref{tab:CumulativeDiskByType2025-2030}, \ref{tab:CumulativeDiskBySite2025-2030} for projections.  }
-\item This report now uses existing data catalog information up to August 2024 in forming a baseline for future projections. 
-%\item Use of memory-weighted-core time instead of wall-time as our codes often require more memory than is available on a single core.  This means that our jobs sometimes need to reserve more than one core for a single process. This motivates the introduction of a memory-weighted wall-time unit for contributions  as different sites will  need to provide different amounts of wall-time to perform the same processing. 
+\item This report now uses existing data catalog information up to December 2025 in forming a baseline for future projections. 
 \item Switch to HS23-Years as opposed to Core-Years as the main CPU reporting system.
-\item Revisions to near-term requests based on the 2023 experience including a hold on tape requests from the collaboration during ProtoDUNE activities. 
+\item Revisions to near-term requests based on the 2025 experience including the possibility of tape requests from institutions other than FNAL and CERN.
 %\item Simulation disk copies continue to be reduced from 2 to 1.5 to fit within a reasonable profile.  If more disk becomes available we can restore more simulation copies.  
 \item Enhanced model for splits (Tables \ref{tab:DiskSplit}, \ref{tab:TapeSplit}, \ref{tab:CPUSplit}) between regions in resource provision. 
 %\item A change in future tape requests to reflect the greater accessibility of tape archives at CERN and FNAL relative to other sites. 
@@ -130,13 +130,13 @@ Resource requests are based on a processing and storage model that separates dif
     SP & ProtoDUNE Single Phase & 2018-2021\\
     DP & ProtoDUNE Dual Phase & 2018-2021\\
     Coldbox & Both VD and HD & 2018-2024\\
-    PDHD & ProtoDUNE-2 Horizonal Drift & 2024-2026\\
+    PDHD & ProtoDUNE-2 Horizonal Drift & 2024-2025\\
     PDVD & ProtoDUNE-2 Vertical Drift & 2024-2026\\
     2x2& Prototype NDLAr Detector & 2024-2026\\
-    HD & Far Detector Horizontal Drift & 2028-\\
-    VD & Far Detector Vertical Drift & 2028-\\
-    NDLAr + TMS & Near Detector Liquid Argon + Muon System & 2030-\\
-    SAND & On Axis Near Detector & 2030- \\
+    HD & Far Detector Horizontal Drift & 2030-\\
+    VD & Far Detector Vertical Drift & 2029-\\
+    NDLAr + TMS & Near Detector Liquid Argon + Muon System & 2032-\\
+    SAND & On Axis Near Detector & 2032- \\
      \hline
      \end{tabular}
        \caption{Detector abbreviations and estimated running times.  Simulation campaigns occur earlier. }\label{tab:detectors}
@@ -155,7 +155,7 @@ Each type of data has a storage retention policy which includes lifetimes on dis
 
 Simulation and reconstruction from 2018 ProtoDUNE run is still active but is reduced to 1 disk copy. 
 
-The model currently does not include any disk headroom allowance for data movement.  This will be added in the 2025 version of the model. 
+The model currently does not include any disk headroom allowance for data movement.  This will be added in the 2026 version of the model. 
 
 \subsection{Processing calculations}
 
@@ -163,8 +163,7 @@ The model currently does not include any disk headroom allowance for data moveme
    
 CPU calculations are now made in HS23 units.  Calculations for the ProtoDUNEs and DUNE far detector are based on existing reconstruction and simulation experience.  We have much less experience with Near Detector codes so those estimates are less accurate.
 
-We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning in 2027 (Test stream) and data taking in 2029. A cap of 30 PB/year for raw data (Events, Trigger Primitives and Tests) is imposed by scaling all categories down proportionally when 30 PB is reached. 
-
+We assume ProtoDUNE running in 2024-2026 with startup of DUNE FDVD commissioning in 2027 (Test stream) and data taking in late 2029. A cap of 30 PB/year for raw data (Events, Trigger Primitives and Tests) is imposed by scaling all categories down proportionally when 30 PB is reached. DUNE FDHD commissioning begins in 2028 and data taking starts in 2030.
    
      
   \section{Details of the model}
@@ -182,7 +181,7 @@ We assume ProtoDUNE running in 2024-2025 with startup of DUNE FD commissioning i
   
  Inputs to the model include projections of events and storage per year by detector and datatype, which are contained in a "timeline file".  A master configuration file in json format is used to store detector specific parameters which do not depend on year. 
  
- The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-12-10-2040.json}{NearTerm\_2024-09-16-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/CCB-Jun24/model-2024/NearTerm_2025-12-10-2040_timeline.csv}{NearTerm\_2024-09-16-2040\_timeline.csv}
+ The parameters are stored in \href{https://github.com/DUNE/CCB-data/blob/kherner_Oct2025/model-2025/NearTerm_2025-12-10-2040.json}{NearTerm\_2024-12-10-2040.json} and  \href{https://github.com/DUNE/CCB-data/blob/kherner_Oct2025/model-2025/NearTerm_2025-12-10-2040_timeline.csv}{NearTerm\_2025-12-10-2040\_timeline.csv}
  
 The calculation starts with numbers of events from the timeline\footnote{Event numbers for previous years are back-estimated from the total size of the data from the data catalog and an estimated size/event because the catalog does not report event number totals.  Early simulation stored very large events relative to the current estimated size, leading to an overestimate of the number of events but a correct estimate of disk and tape use.}  and uses those numbers, with CPU/storage times/event from Table \ref{tab:DetectorProcessingParameters} to calculate the annual new storage and CPU use for data taken in that year.  Figure/Tables \ref{tab:DataEventsPerYear2025-2030} and \ref{tab:SimEventsPerYear2025-2030} show the assumptions for numbers of events/year. 
 
@@ -270,9 +269,9 @@ Figure/Table \ref{tab:CPU-kHS23-Yr-Types2025-2030} and \ref{tab:DataEventsPerYea
 
 In this section we show projected resource needs by detector, data type, resource type and site.
 
-\input NearTerm_2025-12-10-2030_noMWC/New-Disk-by-Detector-Storage.tex
-\input NearTerm_2025-12-10-2030_noMWC/New-Disk-by-Type-Storage.tex
-\input NearTerm_2025-12-10-2030_noMWC/New-Disk-by-Site-Storage.tex
+\input NearTerm_2025-12-10-2030_noMWC/New-File-Volume-by-Detector-Storage.tex
+\input NearTerm_2025-12-10-2030_noMWC/New-File-Volume-by-Type-Storage.tex
+\input NearTerm_2025-12-10-2030_noMWC/New-File-Volume-by-Site-Storage.tex
 
 \input NearTerm_2025-12-10-2030_noMWC/Cumulative-Disk-by-Detector-Storage.tex
 \input NearTerm_2025-12-10-2030_noMWC/Cumulative-Disk-by-Type-Storage.tex
@@ -300,9 +299,9 @@ In this section we show projected resource needs by detector, data type, resourc
 \input NearTerm_2025-12-10-2035_noMWC/Millions-of-Physics-Events-per-Year-by-Detector-Events.tex
 \input NearTerm_2025-12-10-2035_noMWC/Millions-of-Reconstructed-Simulated-Events-per-Year-by-Detector-Events.tex
 
-\input NearTerm_2025-12-10-2035_noMWC/New-Disk-by-Detector-Storage.tex
-\input NearTerm_2025-12-10-2035_noMWC/New-Disk-by-Type-Storage.tex
-\input NearTerm_2025-12-10-2035_noMWC/New-Disk-by-Site-Storage.tex
+\input NearTerm_2025-12-10-2035_noMWC/New-File-Volume-by-Detector-Storage.tex
+\input NearTerm_2025-12-10-2035_noMWC/New-File-Volume-by-Type-Storage.tex
+\input NearTerm_2025-12-10-2035_noMWC/New-File-Volume-by-Site-Storage.tex
 
 \input NearTerm_2025-12-10-2035_noMWC/Cumulative-Disk-by-Detector-Storage.tex
 \input NearTerm_2025-12-10-2035_noMWC/Cumulative-Disk-by-Type-Storage.tex

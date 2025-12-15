@@ -126,7 +126,7 @@
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
     // "MaxYear": 2038,
     // "MinYear": 2028,
-    "MaxYear": 2035,
+    "MaxYear": 2030,
     "MinYear": 2025,
     "RequestYear":2026,
     "PlotUnits": {
@@ -327,6 +327,13 @@
     "TapeCopies":{
         "Raw-Data":2, "Test":1, "TP":1,  "Reco-Data":1, "Reco-Sim":1,"Analysis-Data":1,"Analysis-Sim":1
         },  //  will take some coding to make these work out with 2 copies.
+//this is modified to get rid of the reco-data 2 copy and reco sim 1.5 copy and analysis 2 copy
+//    "DiskCopies":{
+//        "Raw-Data":1, "Test":1,
+//        "TP": 1,
+//        "Reco-Data":1, "Reco-Sim":1,"Analysis-Data":1,"Analysis-Sim":1
+//    },
+// these lines below are the projections before changing to the deployed policy. Dec 10, 2025
     "DiskCopies":{
         "Raw-Data":1, "Test":1,
         "TP": 1,
