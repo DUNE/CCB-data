@@ -56,8 +56,83 @@ explicit is the single highest-value change to the config.
 
 ## 2. Measured GPU
 
-From `nersc/data/` (IRIS, project m3249, `dunepro`, perlmutter gpu, raw
-node-hours). The Nov 2025 – Jan 2026 campaign:
+Two independent sources, and they agree: IRIS usage reports and Slurm job
+accounting reconcile to **99.94%** month by month on m3249 Perlmutter GPU
+(59,155 vs 59,192 node-hours over Sep 2025 – Oct 2026). The only visible
+discrepancies are January and February 2026, +837 and −950, which cancel —
+sacct attributes a job to the month it *started*, IRIS to the day the time was
+*used*, so month-spanning jobs shift between them.
+
+### What the job names show
+
+Slurm job names resolve the workflow stage, which IRIS cannot. Of 59,155 GPU
+node-hours on m3249:
+
+| stage | node-hours | share |
+|---|---:|---:|
+| `fw_*` fireworks production | 45,446 | 76.8% |
+| `Spn*` / `SpTr*` Spine ML training | 9,183 | 15.5% |
+| larnd-sim / segmentation | 2,166 | 3.7% |
+| interactive, misc, other | 2,360 | 4.0% |
+
+**Spine ML training is 15.5% of GPU usage and does not scale with POT.** It is
+model development, not production. Any per-spill rate must exclude it. The
+February 2026 burst that looks like a huge campaign is about two-thirds
+production and one-third training.
+
+Production GPU and production CPU are also almost disjoint in time:
+
+```
+          fw_gpu    fw_cpu
+2025-12   11,110         5
+2026-01   11,760         0
+2026-02   17,008         2     <- GPU-only reconstruction phase
+2026-05    1,715     4,226
+2026-06      282     2,763     <- CPU-heavy phase, probably a later generation
+2026-07        3     2,064
+```
+
+Two named jobs settle a question that was open: `MiniProdN5p1_NDComplex_FHC`
+and `MiniProdN5p2_NDComplex_RHC` confirm **MiniProd 5.1 = FHC, 5.2 = RHC**, so
+5.1 + 5.2 are the "FHC nominal + RHC nominal" 2e19 in the ND Resource
+Projections doc. What the names do *not* resolve is which MiniProd each
+`fw_gpu.slurm.sh` job belongs to — the fireworks framework submits everything
+under that one generic name, and the explicitly-named MiniProd jobs are a
+handful of hand-submitted conversion steps totalling under 200 node-hours.
+
+### The campaign
+
+Reproduce with `python ../nersc/sacct_jobs.py --project m3249 --window
+2025-11-01 2026-02-28`.
+
+**Fireworks production, Nov 2025 – Feb 2026: 40,569 GPU node-hours** (against
+20 CPU node-hours — this phase is purely reconstruction).
+
+| POT denominator | GPU node-hr / 1e18 POT | GPU-hr / spill |
+|---|---:|---:|
+| 4e19 — nominal + nu-on-e overlay | 1,014 | **0.304** |
+| 2.77e19 — MiniProd 5.1 + 5.2 as configured | 1,465 | **0.439** |
+| 2e19 — MiniProd 5.1 + 5.2 nominal | 2,028 | **0.609** |
+
+So **0.30–0.61 GPU-hr/spill**, production only.
+
+**This supersedes an earlier figure of 0.135–0.27 in this file.** That was
+computed from 17,982 node-hours, which was all m3249 GPU activity within
+allocation year 2025 only. It undercounted on two sides: the campaign
+continued past the 2026-01-21 allocation boundary into February (2.26x more
+production compute), and it included training and interactive time that should
+have been excluded.
+
+The consequence matters: **`Reco-Data-GPU = 0.76` now sits only 1.25x above the
+high end of the measured range**, rather than the 5.6x too high that the
+earlier figure implied. If an ND "event" means a spill, the original 2023
+estimate is approximately right, and the thing that was badly wrong is
+`Reco-Sim-GPU = 0.0222`, which is 14–27x too low.
+
+### Earlier IRIS-only view, kept for reference
+
+From IRIS alone (project m3249, `dunepro`, perlmutter gpu, raw node-hours),
+before the stage breakdown was available:
 
 ```
 Nov 01–30      ramp / testing  GPU  1,134   CPU  603
@@ -79,15 +154,11 @@ partly end-of-year quota burn-down rather than a coherent sample.
 
 **The rate depends on which POT the campaign covered, and that is not settled:**
 
-| POT denominator | GPU node-hr / 1e18 POT | GPU-hr / spill |
-|---|---|---|
-| 4e19 — nominal + nu-on-e overlay, per the ND Resource Projections doc | 450 | **0.135** |
-| 2.77e19 — MiniProd 5.1 + 5.2 as configured | 649 | **0.195** |
-| 2e19 — MiniProd 5.1 + 5.2 nominal | 899 | **0.270** |
-
-So the defensible current statement is **0.135–0.27 GPU-hr/spill**. Compare the
-JSON's `Reco-Data-GPU = 0.76` (2.8–5.6x too high) and `Reco-Sim-GPU = 0.0222`
-(6–12x too low).
+Dividing that 17,982 by the same POT denominators gave 450 / 649 / 899 node-hr
+per 1e18 POT, i.e. 0.135 / 0.195 / 0.270 GPU-hr per spill — the superseded
+range. It is recorded here only so that the figure is recognisable if it turns
+up in a slide or an email from this period. Use the production-only numbers
+above.
 
 ## 3. MiniProd arithmetic
 
@@ -147,17 +218,39 @@ specific.
    spills` landing near the expected interactions-per-spill would confirm the
    interaction reading; landing near 3 means the count means something else.
 3. **Configured vs nominal POT** — which is the right denominator (28%).
-4. **Which step ran when?** IRIS cannot say. Needs `sacct` job names; see
-   [`../nersc/README.md`](../nersc/README.md).
-5. **Where did the upstream run?** 6,367 CPU node-hours for the whole year
-   cannot have generated 2.77e19 POT of GENIE + edep-sim at any plausible rate,
-   so it ran on the grid, and NERSC accounting will never show it.
+4. ~~Which step ran when?~~ **Answered** by the sacct pull — production,
+   training and generation now separate cleanly. What remains unresolved is
+   *which MiniProd* a given production job belongs to: the fireworks framework
+   submits everything as `fw_gpu.slurm.sh` / `fw_cpu.slurm.sh`, so the names
+   identify the stage but not the campaign. Splitting 5.1 from 5.2 from 5.3
+   needs the production bookkeeping (justIN / POMS), not NERSC accounting.
+5. **Where did the upstream run?** Partly answered. `fw_cpu` totals 13,089
+   node-hours across Aug 2025 – Sep 2026, most of it Mar–Jul 2026, i.e. after
+   the GPU reconstruction phase rather than before it. That is still far too
+   little to have generated 2.77e19 POT of GENIE + edep-sim, so the bulk ran on
+   the grid and NERSC accounting will never show it. It is also now the closest
+   measured counterpart to the 18,600 CPU node-hours cited in the JSON, within
+   about 1.4x — close enough to be worth asking Ken Herner whether that is what
+   the number referred to.
 6. **What fraction of analysis GPU should the model budget**, and as a ratio to
    what?
+7. **Should Spine ML training be modelled at all?** It is 15.5% of production
+   GPU and does not scale with POT, so it cannot be folded into a per-spill
+   rate — but it is real, recurring usage that someone has to pay for. It
+   probably belongs as a separate flat line rather than a per-event term.
 
 ## 7. Next data to pull
 
-An IRIS export covering 2026-01-22 onward — the new allocation year. That
-brings in MiniProd 5.3 and whatever followed, giving a second independent
-campaign to calibrate against. Earlier years would also help establish a trend.
+Both the AY2026 IRIS export and the Slurm job accounting are already in
+`../nersc/data/`. What is still missing:
+
+- **Production bookkeeping** (justIN / POMS, or the production team's own
+  campaign records) to map `fw_gpu` jobs onto named MiniProds and to get the
+  POT each one covered. This is the remaining factor of two on the rate, and
+  NERSC data cannot supply it.
+- **A later IRIS and sacct pull.** Slurm retention starts 2025-08-26 in the
+  current dump, so anything earlier has aged out — pull again before that
+  window closes on the 2025 campaign.
+
 Drop new exports into `../nersc/data/` and re-run; no code changes needed.
+Both plain and gzipped files are read.

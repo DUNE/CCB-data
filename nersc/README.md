@@ -53,22 +53,52 @@ per-spill rate suitable for the model's `Reco-*-GPU` fields.
    (4,790 charged vs 5,501 raw). Prefer *raw* for capacity planning — it's the
    machine time actually consumed.
 
-## What IRIS cannot tell you
+## Slurm job accounting — what IRIS cannot tell you
 
 IRIS aggregates by user / project / host / date. It has no notion of which
-production *step* consumed the time, so you cannot map node-hours onto
-generation vs larnd-sim vs reco from these exports alone. A GPU-heavy block
-with negligible CPU is almost certainly reconstruction rather than generation,
-but that is inference, not data.
+production *step* consumed the time. Slurm job accounting does, because the
+job names encode the stage.
 
-Slurm job accounting does carry job names, which usually encode the step:
+Pull it with [`sacct_pull.sh`](sacct_pull.sh), run on a Perlmutter login node,
+then gzip the results into `data/`:
 
 ```bash
-sacct -A m3249 -S 2025-11-01 -E 2026-01-22 \
-      --format=JobID,JobName%40,Partition,NNodes,Elapsed,State -X -P
+./sacct_pull.sh 2025-01-01 2026-10-01 30
+gzip -9 sacct_m3249.txt sacct_dune.txt
 ```
 
-That is the query to run if the step-level mapping is needed.
+Three things will silently return nothing if you get them wrong, and the
+script handles all three — worth knowing if you ever query by hand:
+
+1. **`-a`.** Without it sacct reports only *your own* jobs, so a query for a
+   production account comes back empty with no error.
+2. **`m3249_g`.** Perlmutter GPU allocations are separate Slurm accounts with
+   a `_g` suffix. Querying only `m3249` misses every GPU job.
+3. **Chunking.** Wide date ranges fail on this cluster. 30-day chunks work.
+
+Analyse with [`sacct_jobs.py`](sacct_jobs.py):
+
+```bash
+python sacct_jobs.py --project m3249 --window 2025-11-01 2026-02-28
+python sacct_jobs.py --project m3249 --names
+```
+
+It breaks node-hours down by workflow stage and month, and `--window` prints a
+per-spill calibration for the production component alone. Node-hours are
+`NNodes x Elapsed`, exact for exclusive-node partitions and an overestimate on
+`shared_*` ones (which matters for `dune`, not for `m3249`).
+
+**Retention is finite.** The current dump starts 2025-08-26 regardless of the
+requested start date — earlier records have aged out. Pull again periodically
+or the 2025 campaign becomes unreconstructable.
+
+**What job names do and don't resolve.** They cleanly separate fireworks
+production (`fw_gpu` / `fw_cpu`) from Spine ML training (`Spn*`, `SpTr*`),
+larnd-sim, and rock generation (`GenRock`) — that distinction matters, because
+training is 15.5% of GPU usage and does not scale with POT. They do *not*
+identify which MiniProd a production job belongs to: the framework submits
+everything under one generic name. That mapping needs production bookkeeping
+(justIN / POMS), not NERSC accounting.
 
 ## Findings
 
