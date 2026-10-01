@@ -1,0 +1,79 @@
+======================================================================
+Production Run & Calibration
+======================================================================
+
+  Period: 2025-09-28 to 2026-02-01
+  Full-spill POT: 2e+19 (1e19 FHC + 1e19 RHC)
+  nu-on-e elastic POT: 1e+22 (special sample)
+
+  Calibrated rate: 122.0 GPU node hrs / 1e18 POT
+    = 488 GPU-hrs / 1e18 POT
+    = 0.0092 GPU node hrs/spill (13333 spills per 1e18 POT)
+
+  Measured NERSC usage during production window:
+    CPU (project dune, perlmutter cpu): 2225.0 node hrs
+    GPU (project m3249, perlmutter gpu): 17547.1 node hrs
+
+  Expected GPU for full-spill: 2440 node hrs (from 2e+19 POT)
+  Remainder for nu-on-e + other: 15107 node hrs
+======================================================================
+
+======================================================================
+Annual Summary: Model vs NERSC Actuals
+All values in Node Hours
+======================================================================
+
+GPU (Perlmutter GPU Node Hours)
+Year            Model        NERSC    Ratio
+---------------------------------------------
+2020                0            —        —
+2021                0            —        —
+2022           127567            —        —
+2023           255067            —        —
+2024           255067            —        —
+2025           255067        53031     0.21
+2026           255336         6753     0.03
+2027           255673            —        —
+2028           256346            —        —
+2029           284518            —        —
+2030           340528            —        —
+2031           397546            —        —
+2032           453555            —        —
+2033           509564            —        —
+2034           565574            —        —
+2035           676583            —        —
+2036           787592            —        —
+2037           898601            —        —
+2038          1009610            —        —
+2039          1120620            —        —
+2040          1231629            —        —
+
+CPU (Perlmutter CPU Node Hours, model assumes 128 cores/node)
+Year            Model        NERSC    Ratio
+---------------------------------------------
+2020           162515            —        —
+2021           201772            —        —
+2022           253190            —        —
+2023           246312            —        —
+2024           299516            —        —
+2025           344059        14992     0.04
+2026           527586          341     0.00
+2027           684992            —        —
+2028          1026871            —        —
+2029          1535745            —        —
+2030          2281655            —        —
+2031          3162229            —        —
+2032          3340395            —        —
+2033          3518561            —        —
+2034          3696727            —        —
+2035          3941408            —        —
+2036          4186090            —        —
+2037          4430771            —        —
+2038          4675453            —        —
+2039          4920135            —        —
+2040          5164816            —        —
+
+Note: Model projections are for ALL sites, not just NERSC.
+      NERSC is a fraction of total DUNE computing.
+      GPU model: 1 MHrs = 250000 GPU node hrs (4 GPUs/node)
+      CPU model: 1 MHrs = 7812 CPU node hrs (128 cores/node)

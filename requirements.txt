@@ -1,0 +1,19 @@
+# CCB-data notebook environment
+# Install into the venv at: myenv/
+
+# plotting
+matplotlib
+
+# numerics
+numpy
+scipy
+
+# DUNE plot styling
+# (already installed in this venv, but keep here for reproducibility)
+dune_plot_style
+
+# Jupyter kernel support (so the venv can be selected as a notebook kernel)
+ipykernel
+
+commentjson
+nbconvert

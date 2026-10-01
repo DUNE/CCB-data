@@ -1,0 +1,80 @@
+======================================================================
+Summary for: (dune, monthly)
+======================================================================
+
+Total Node Hours by Host Type
+Host                      Charged          Raw
+--------------------------------------------------
+muller cpu                    0.0        197.6
+muller gpu                    0.0        241.7
+perlmutter cpu             8968.5       9293.4
+perlmutter gpu            39161.6      38965.2
+pod cpu                     222.9        222.9
+pod gpu                     554.8        557.7
+
+Top Users of Perlmutter GPU (by Charged Node Hours)
+User                                          Charged          Raw
+-----------------------------------------------------------------
+Terao, Kazuhiro                                9968.7       9968.7
+Sharma Timalsina, Madan                        8560.0       8560.0
+Wilkinson, Callum                              7532.6       6654.8
+Nielsen, A.J.                                  3167.7       3836.9
+Huang, Roger                                   2412.0       2412.0
+Mannix, Kristna                                1127.4       1047.2
+Booth, Alexander                                922.6        932.5
+Murphy, Tom                                     799.6        799.6
+Pseudo User, dunepr                             716.5        716.5
+Fogarty, Samuel                                 634.6        634.6
+Kramer, Matt                                    615.6        691.0
+Wang, Yuxuan                                    526.9        527.5
+Utaegbulam, Hilary                              362.8        362.8
+Perez-Molina, Laura                             252.2        252.2
+White, Angela                                   215.4        215.4
+Hinkle, Elise                                   165.0        165.0
+Diaz, Alejandro                                 148.9        148.9
+Chakrani, Jaafar                                121.1        121.1
+Mora-Lepin, Luis                                113.2        113.2
+Wallach, Maya                                    95.9         95.9
+Ross, DeMario                                    90.4         90.4
+Alves, Tiago                                     89.2         91.7
+Cudd, Andrew                                     88.0         88.0
+Wesdorp, Kristie                                 61.5         61.5
+Pseudo User, dunepro                             57.1         57.1
+Yang, Jiangmei                                   49.9         49.9
+Azam, Muhammad Bilal                             46.5         46.5
+Radev, Radi                                      44.5         48.4
+Dave, Rishabh                                    36.2         36.2
+Roy, Noe                                         23.1         23.1
+Chen, Yifan                                      22.8         22.8
+Calcutt, Jacob                                   18.4         18.4
+Mao, Enda                                        12.7         12.7
+Wang, Biao                                       12.0         12.0
+Schwartz, Scott                                  11.8         11.8
+Sauer, Layne                                     10.8         10.8
+Xing, Daniel                                     10.6         10.6
+Kumaran, Sindhujha                                3.3          3.3
+Yuan, Wenlong                                     3.0          3.0
+Wood, Kevin                                       2.2          2.2
+Naylor, Andrew                                    2.2          2.2
+Schuld, Brooke                                    2.1          2.1
+Maguire, Joseph                                   2.0          2.0
+Mead, James                                       1.5          1.5
+Zhang, Yousen                                     0.9          0.9
+Aryal, Bipin                                      0.0          0.0
+
+Perlmutter GPU Totals by Period
+Period               Charged          Raw
+---------------------------------------------
+2025-01-01             372.5        384.9
+2025-02-01            6298.9       6278.1
+2025-03-01            7947.9       7951.9
+2025-04-01            4575.6       5244.9
+2025-05-01            1965.8       1965.8
+2025-06-01            1159.1       1091.4
+2025-07-01            2733.8       2643.4
+2025-08-01            2554.3       2554.3
+2025-09-01            2951.8       2918.8
+2025-10-01            2866.7       2515.2
+2025-11-01            1716.3       1716.3
+2025-12-01            2056.2       2056.2
+2026-01-01            1962.7       1644.0

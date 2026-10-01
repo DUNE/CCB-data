@@ -1,0 +1,267 @@
+======================================================================
+GPU & CPU Computing: Comparison of NERSC Actuals, ND Resource
+Projections (AY2026), and Existing Computing Model
+======================================================================
+Generated: 2026-03-18
+
+This document compares three sources of GPU/CPU usage and estimates
+for DUNE ND-LAr production at NERSC Perlmutter.
+
+Hardware reference:
+  Perlmutter GPU node = 1 AMD Milan CPU + 4 NVIDIA A100 GPUs
+  Perlmutter CPU node = 2 AMD Milan CPUs, 128 cores
+  1 GPU node hour = 4 GPU-hours
+  1 spill = 7.5e13 POT
+  ~30 neutrino interactions in NDLAr per FHC spill
+  ~270 nu-on-e elastic interactions per 1e19 POT
+
+
+======================================================================
+A. CALIBRATED RATES PER 1e18 POT (from ND production benchmarks)
+======================================================================
+
+Source: "ND Resource Projections, NERSC AY 2026" document
+Benchmark: FHC productions with charge-only (no light) in NDLAr
+"U" = Upstream (up to and including spill building, generates single
+      events which are then layered together with rock muons)
+"D" = Downstream (larnd-sim and beyond, includes ML reco "Spine")
+Antifiducial (rock) component reuse rate assumed = 4
+
+  Sample Type              CPU Node Hrs/1e18 POT   GPU Node Hrs/1e18 POT   Disk/1e18 POT
+  -----------              ---------------------   ---------------------   -------------
+  Nominal spill (FHC/RHC)      154 U + 140 D            122 D                10 TB
+  nu-on-e singles          0.0004 U + 0.0006 D          0.002 D            0.0001 TB
+  nu-on-e + nominal overlay     140 D                    122 D                 5 TB
+
+  Per-spill (13,333 spills per 1e18 POT):
+    Nominal CPU: 0.02205 node hrs/spill = 79.4 sec/spill per node
+    Nominal GPU: 0.00915 node hrs/spill = 32.9 sec/spill per node
+
+  Per-interaction (~30 per spill, ~400,000 per 1e18 POT):
+    CPU: 0.000735 node hrs/interaction
+    GPU: 0.000305 node hrs/interaction
+
+
+======================================================================
+B. WHAT WAS ACTUALLY PRODUCED (campaign ~Nov 2025 – Jan 2026)
+======================================================================
+
+Samples produced during the ND-LAr production campaign:
+
+  Sample                          POT produced
+  ------                          ------------
+  FHC nominal spill               1e19
+  RHC nominal spill               1e19
+  FHC nu-on-e singles             1e22
+  RHC nu-on-e singles             1e22
+  FHC nu-on-e + nominal overlay   1e19
+  RHC nu-on-e + nominal overlay   1e19
+
+  (No systematics sample was produced)
+
+Applying Table 1 rates to actual POT:
+
+  Sample                          POT      Rate/1e18 POT    Expected GPU NH
+  ------                          ---      -------------    ---------------
+  FHC nominal spill               1e19     122                   1,220
+  RHC nominal spill               1e19     122                   1,220
+  FHC nu-on-e singles             1e22     0.002                    20
+  RHC nu-on-e singles             1e22     0.002                    20
+  FHC nu-on-e + nominal overlay   1e19     122                   1,220
+  RHC nu-on-e + nominal overlay   1e19     122                   1,220
+  ────────────────────────────────────────────────────────────────────
+  Total expected GPU:                                            4,920
+
+  Note: nu-on-e singles are negligible (40 node hrs) despite 1e22 POT.
+  The overlay samples dominate because they require full spill context.
+
+
+======================================================================
+C. NERSC ACTUAL USAGE (from IRIS reports)
+======================================================================
+
+Source: NERSC IRIS portal, project m3249 (production), perlmutter gpu
+Production pseudo-users (dunepro/dunepr) only.
+
+C1. Monthly GPU production during campaign:
+
+  Month        GPU Node Hrs    Running Total
+  -----        ------------    -------------
+  2025-08           480              480      (likely test/commissioning)
+  2025-09           620            1,099      (likely test/commissioning)
+  2025-10           269            1,368      (likely test/commissioning)
+  2025-11         1,135            2,503      <- campaign ramp-up
+  2025-12        11,348           13,851      <- main production
+  2026-01         4,789           18,639      <- campaign tail
+
+  Campaign core (Nov–Jan):  17,271 GPU node hrs
+  Full window (Aug–Jan):    18,639 GPU node hrs
+
+C2. Annual totals (all users, perlmutter gpu, charged node hours):
+
+  Project     2025        2026 (Jan only)
+  -------     ----        ---------------
+  dune        37,199           1,963       (mostly individual R&D users)
+  m3249       15,832           4,790       (mostly production)
+  Combined    53,031           6,753
+
+  Production accounts only:
+    dune:       774 GPU node hrs in 2025
+    m3249:   20,603 GPU node hrs in 2025 + early 2026
+
+C3. Top GPU users (project "dune", perlmutter gpu, 2025):
+
+  User                         Charged Node Hrs
+  ----                         ----------------
+  Terao, Kazuhiro                    9,969
+  Sharma Timalsina, Madan            8,558
+  Wilkinson, Callum                  7,533
+  Nielsen, A.J.                      3,168
+  Huang, Roger                       2,412
+  Top 5 subtotal                    31,640   (85% of dune project GPU)
+
+
+======================================================================
+D. ESTIMATE vs ACTUAL — KEY COMPARISON
+======================================================================
+
+  Expected (Table 1 rates × actual POT):     4,920 GPU node hrs
+  Measured (m3249 prod, Nov–Jan):            17,271 GPU node hrs
+  Measured (m3249 prod, Aug–Jan):            18,639 GPU node hrs
+
+  Ratio (Nov–Jan):  17,271 / 4,920 = 3.51×
+  Ratio (Aug–Jan):  18,639 / 4,920 = 3.79×
+
+  The benchmark-based estimate underpredicts by ~3.5×.
+
+  Possible explanations for the discrepancy:
+  - Benchmark was charge-only (no light) — if light sim was included
+    in production, could substantially increase GPU time
+  - Antifiducial reuse rate of 4 may not have been achieved
+  - Failed/retried jobs that consumed GPU without producing output
+  - Campaign commissioning, debugging, test productions
+  - Aug–Oct usage (~1,368 NH) appears to be test campaigns
+  - Additional processing steps beyond what Table 1 benchmarks cover
+
+  OPEN: Need to confirm which of these factors apply. The benchmark
+  conditions (charge-only, reuse rate 4) are explicitly stated in the
+  ND Resource Projections document.
+
+
+======================================================================
+E. CD2-IPR FULL CAMPAIGN PROJECTION (Table 2)
+======================================================================
+
+Source: ND Resource Projections document
+This is the full campaign needed to demonstrate FD TDR assumptions.
+
+  Sample                         POT          CPU Node Hrs  GPU Node Hrs  Disk (TB)
+  ------                         ---          ------------  ------------  ---------
+  FHC nominal, central value     2e19              5,880        2,440       200
+  RHC nominal, central value     2e19              5,880        2,440       200
+  FHC nu-on-e singles            1e22-equiv           10           20         1
+  RHC nu-on-e singles            1e22-equiv           10           20         1
+  FHC nu-on-e + nominal overlay  1e19              1,400        1,220        50
+  RHC nu-on-e + nominal overlay  1e19              1,400        1,220        50
+  FHC nominal, 10 systematics    1e19              2,940        1,220       100
+  RHC nominal, 10 systematics    1e19              2,940        1,220       100
+  ──────────────────────────────────────────── ────────── ──────────── ─────────
+  TOTAL                                           20,460        9,800       702
+
+  Applying the 3.5× measured/estimated ratio:
+    GPU: 9,800 × 3.5 = ~34,300 GPU node hrs (adjusted estimate)
+    CPU: 20,460 × ??? (CPU ratio not yet established)
+
+
+======================================================================
+F. EXISTING COMPUTING MODEL (JSON config)
+======================================================================
+
+Source: DOE23-NDLAr_2023-12-11-2040.json (version 15)
+Method: Per-event rates × projected annual event counts
+Note: Rates estimated 2023, before real GPU workflows existed
+
+F1. Per-event rates (ND-LAr+TMS):
+
+  Process              Rate            Unit
+  -------              ----            ----
+  Reco-Data-GPU        0.76            GPU-hrs / event
+  Sim-GPU              4.60            GPU-hrs / event
+  Total GPU            5.36            GPU-hrs / event
+
+  Sim-GPU note: "(0.768 fid sim × 3 for data stats + 0 for sim rock)
+    then double for systematic samples"
+
+F2. Model annual GPU projections (ND-LAr+TMS, GPU node hours):
+
+  Year    GPU MHrs    GPU Node Hrs
+  ----    --------    ------------
+  2025       5.6       1,400,000
+  2026      24.0       6,000,000
+  2030     208.3      52,088,000
+  2035     335.7      83,918,000
+  2040     394.9      98,718,000
+
+
+======================================================================
+G. FULL COMPARISON — ALL IN GPU NODE HOURS
+======================================================================
+
+                                             GPU Node Hrs
+                                             ------------
+ACTUAL (NERSC 2025, all users both proj)         53,031
+ACTUAL (m3249 production, campaign)              17,271
+
+ND ESTIMATE (Table 1 rates × produced POT)        4,920
+ND ESTIMATE adjusted (× 3.5 measured ratio)      17,220  (matches actual)
+
+ND PROJECTION (CD2-IPR full campaign, Table 2)    9,800
+ND PROJECTION adjusted (× 3.5)                   34,300
+
+EXISTING MODEL (2025)                          1,405,000
+EXISTING MODEL (2030)                         52,088,000
+EXISTING MODEL (2040)                         98,718,000
+
+Ratio of existing model to ND projection:
+  2025: 1,405,000 / 9,800  = 143×  (unadjusted)
+  2025: 1,405,000 / 34,300 =  41×  (with 3.5× overhead factor)
+
+Ratio of existing model to actual:
+  2025: 1,405,000 / 53,031 =  26×  (all users)
+  2025: 1,405,000 / 17,271 =  81×  (production only)
+
+
+======================================================================
+H. OPEN QUESTIONS
+======================================================================
+
+  1. What caused the 3.5× discrepancy between Table 1 estimate and
+     measured production?
+     - Was light simulated? (benchmark was charge-only)
+     - Was the reuse rate of 4 achieved?
+     - How many failed/retried jobs?
+
+  2. How many CD2-IPR-equivalent campaigns per year going forward?
+
+  3. How will needs scale?
+     - More POT per campaign?
+     - Light simulation added?
+     - More systematics variations?
+     - What annual POT is expected from the beam?
+
+  4. Should the model switch from per-event to per-POT rates?
+     The calibrated 122 (or 122 × 3.5 = ~430) GPU node hrs / 1e18 POT
+     maps directly to beam delivery projections.
+
+  5. What fraction of "other users" GPU should be budgeted?
+     (31,640 node hrs from top 5 R&D users in 2025)
+
+  6. CPU calibration: measured only 2,225 CPU node hrs during the
+     campaign vs Table 1 expectation of ~26,000. Where did upstream
+     CPU steps run?
+
+  7. Need 2024 and current 2026 NERSC data to fill in the picture.
+
+  8. The existing model per-event rates (5.36 GPU-hrs/event) need to
+     be replaced with benchmark-derived rates regardless of the 3.5×
+     factor — they overestimate by 40-140× depending on comparison.
