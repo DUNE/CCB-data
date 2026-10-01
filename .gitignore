@@ -1,0 +1,15 @@
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+myenv/
+.venv/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Local Windows workaround: NTFS forbids "*" in filenames, so the upstream
+# file Countries----...-(cores-*-months)-...csv cannot be checked out here.
+# A hand-renamed "_" copy is kept locally but must not be committed, or it
+# would duplicate the upstream file on every other platform.
+*(cores-_-months)*
