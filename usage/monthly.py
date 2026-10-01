@@ -36,6 +36,7 @@ import math
 input = "DUNE monthly slot hours by site and role-2.csv"
 input = "DUNE daily slot hours by site and role.csv"
 
+input = "DUNE monthly slot hours by site and role.csv"
 
 # In[ ]:
 
@@ -184,8 +185,8 @@ Formats = {"MHr":"10.3f", "CoreYears":"10.1f", "kHS23-Hrs":"10d","kHS23-Yrs":"10
 outunits = "kHS23-Hrs"
 
 # make choices here
-lowdate = "2022-01-01"
-highdate = "2023-11-01" 
+lowdate = "2025-01-01"
+highdate = "2025-12-31" 
 units=Units[outunits]
 format=Formats[outunits]
 
