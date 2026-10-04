@@ -295,15 +295,35 @@
         "Sim-Memory":2000, //  MB
         "Analysis-CPU":0.25
     },
+// ---------------------------------------------------------------------------
+// WARNING, 2026-10-04.  The GPU numbers in this block are known to be wrong and
+// have NOT been corrected.  See model-2025/ND-GPU-CALIBRATION.md for the
+// evidence and for why they were left alone.
+//
+//   Measured from NERSC production logs: 0.30-0.61 GPU-hr per SPILL.
+//   Reco-Data-GPU = 0.76   is ~1.25x the high end -- roughly right.
+//   Reco-Sim-GPU  = 0.0222 is 14-27x TOO LOW.  Do not trust it.
+//
+// Why it was not simply fixed: "event" is undefined for the ND and could mean
+// a spill, an ND-LAr interaction, a TMS reco event or a SAND event, which
+// differ by orders of magnitude.  The arithmetic says spills (ND-SAND and
+// ND-LAr carry identical counts, and 15e6/yr x 7.5e13 POT = DUNE nominal beam)
+// but nobody has confirmed it.  Settle that first; a new number without it
+// only relabels the ambiguity.
+//
+// The "NSERC node hours" cited below are NOT from NERSC accounting -- the whole
+// allocation year is 6,367 CPU node-hours, not 18,600.  They are benchmark
+// projections.  The "1.6M events" denominator matches nothing measurable.
+// ---------------------------------------------------------------------------
     "ND-LAr+TMS":
     {"Comment":"new as very different needs a lot of input from 2x2 ",
         "Raw-Data-Store":10, //  TB/MEvents
         "Reco-Data-CPU":0.76, //  Hr/Event 
 //        "Reco-Sim-CPU":4.6, //  Hr/Event this comes from (0.384 (fid sim) x3 for data stats) + 1.15 (rock sim)) then double for systematic samples
-        "Reco-Sim-CPU":2.97, //  Hr/Event comes from 18600 NSERC CPU node hours x 256 threads /1.6M events
-        "Reco-Data-GPU":0.76, // Hr/Event
+        "Reco-Sim-CPU":2.97, //  Hr/Event -- SEE WARNING ABOVE: 18600 is not a NERSC-measured number
+        "Reco-Data-GPU":0.76, // Hr/Event -- ~1.25x the measured high end IF an event is a spill; see WARNING
 //        "Reco-Sim-GPU":4.6, // Hr/Event this comes from (0.768 (fid sim) x3 for data stats) + 0 for sim rock) then double for systematic samples
-        "Reco-Sim-GPU":0.0222, // Hr/Event comes from 8900 NSERV GPU node hours x 4 A100 / 1.6M events
+        "Reco-Sim-GPU":0.0222, // Hr/Event -- 14-27x TOO LOW, see WARNING (was 8900 node-hr x 4 A100 / 1.6M events, a benchmark figure)
         "Reco-Data-Store":20, //  TB/MEvents
         "Reco-Sim-Store":419, //  TB/MEvents
         "Reco-Memory":2000, //  MB
