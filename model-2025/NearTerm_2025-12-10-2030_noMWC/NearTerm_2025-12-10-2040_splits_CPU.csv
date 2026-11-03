@@ -1,0 +1,4 @@
+Detector Class,Data Type,HostLab,US,CERN,Int
+PD,CPU,0.2,0.4,0.1,0.3
+FD,CPU,0.2,0.4,0.0,0.4
+ND,CPU,0.2,0.4,0.0,0.4

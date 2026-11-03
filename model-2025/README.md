@@ -4,28 +4,50 @@
 
 The model itself is in files with names like
 
-`2024-08-25.ipynb`  which is a jupyter notebook.
+`2025-12-10.ipynb`  which is a jupyter notebook.
 
 It can be converted into a python script via
 
 ~~~
-../convert.sh 2024-08-25.ipynb
+../convert.sh 2025-12-10.ipynb
 ~~~
 
 and then run as 
 
 ~~~
-python 2024-08-25.py
+python 2025-12-10.py
 ~~~
+
+The notebook needs no editing to start a run - it takes the configuration file, the
+output directory and every other parameter from the json file (see below).
 
 ## configuration files
 
-The driver is configured via two files:
+A run is configured by two files:
 
-`NearTerm_2024-08-27-2040.json` and `NearTerm_2024-08-27-2040_timeline.csv` which
-provide time independent and time dependent configurations. 
+`NearTerm_2025-12-10-2040.json` and `NearTerm_2025-12-10-2040_timeline.csv` which
+provide time independent and time dependent configurations.
 
-Those drivers can be translated into LaTeX compatible tables and commands via the script `json2tex`.  
+The json file also contains everything needed to *start* the run, in its `Run` block,
+so nothing has to be edited in the code itself:
+
+~~~
+  "Run":{
+        "ConfigFile":"NearTerm_2025-12-10-2040.json", // this file
+        "Notebook":"2025-12-10.ipynb",                // driver notebook
+        "OutputDir":"",                               // derived from the name if empty
+        "Glossary":true                               // also write a glossary to check macros
+    },
+~~~
+
+The output subdirectory is derived from the config file name by replacing the nominal
+end year with `MaxYear` and adding the memory weighting tag, so
+`NearTerm_2025-12-10-2040.json` with `"MaxYear": 2030` writes into
+`NearTerm_2025-12-10-2030_noMWC`.  Set `OutputDir` to override that.
+
+To start a new run, copy the json (and timeline) files, update the `Run` block, and
+run the notebook - it selects the config file that declares a `Run` block with the
+highest `Version`.
 
 ## utility files
 
@@ -84,25 +106,57 @@ One can then do:
 
 `texname = holder.TexBoth(figname,caption,label)` which will produce LaTeX which both draws the plot and adds a table with the values.
 
+## gpu processing
+
+The model calculates GPU use per detector and data type but keeps it at the `Total`
+site until the `Splits` table is applied.  `holder.GPUBreakdown(Dir,texfile)` does
+that in one call and produces a figure and table for each GPU unit (MHr, wall time,
+kHS23-Yr, cores) broken down:
+
+* by site - `GPU-Processing-by-Site-<unit>.png`
+* by detector - `GPU-Processing-by-Detector-<unit>.png`
+* by data type - `GPU-Processing-by-Type-<unit>.png`
+
+The three breakdowns each sum to the same total, which is unchanged from before the
+split.  It is built out of smaller pieces, in case only some of it is wanted:
+
+`holder.splitResourceBySite(resources)` spreads resources held at `Total` over the
+sites using the per-detector-class fractions, and leaves series that already exist
+alone, so it is safe to call twice.
+
+`holder.gpuTotals(resources)` then makes the `Total` detector and data type series
+that `Draw` needs for its total curve.
+
+`holder.gpuResources()`, `holder.resourceUnits(resource)`, `holder.detectorSplit(det)`
+and `holder.splitFactors(det,resource)` are the lookups those use.  Note that
+`resourceUnits` reads the units back out of the holder rather than trusting
+`BaseUnits` in the json file, which has to be kept in step by hand with the units
+`Scales` actually produces.
+
 ## TeX output
 
 ~~~
-python 2024-08-25.py
+python 2025-12-10.py
 ~~~ 
 
-will run the main program and produce a subdirectory `<jsonname>_noMWC` with all of the csv, png and tex files for individual plots.
+will run the main program and produce a subdirectory named after the configuration
+file (see above) with all of the csv, png and tex files for individual plots.
 
 it will also produce a file, `<jsonname>_results.csv` with a full dump of the holder contents. 
 
-To produce a report, first make a LaTeX summary of the configuration.
+The notebook writes the LaTeX macros and summary tables for the run itself, via
+`json2tex.runit(config=config)`.  They can also be made on their own:
 
 ~~~
-python json2tex.py
+python json2tex.py                                  # newest config in this directory
+python json2tex.py NearTerm_2025-12-10-2040.json    # a particular one
+python json2tex.py --no-glossary                    # macros only, no glossary
 ~~~
 
-which puts tables and macros based on the json file into the subdirectory.
+which puts tables and macros based on the json file into the subdirectory.  There is
+no need to edit `json2tex.py` before running it.
 
-`CCB-Report-2025-v0.tex` is an example which uses the macros and tables generated above to produce a report. 
+`CCB-Report-2025-v6.tex` is an example which uses the macros and tables generated above to produce a report. 
 
 In principle, you can auto-generate reports with different assumptions by changing the output subdirectory name.
 

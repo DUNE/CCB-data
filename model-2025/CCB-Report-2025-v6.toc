@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Model Summary}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Storage replication and retention policies}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Processing calculations}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Details of the model}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Inputs}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Simulation/Reconstruction Processing}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Copies and Retention}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Analysis}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Splitting resources across sites}{11}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Resource use projections}{12}{section.4}%
+\contentsline {section}{\numberline {5}Longer term projections}{24}{section.5}%

@@ -1,4 +1,13 @@
 {"Version":26,
+  // Everything that identifies this run lives here, so that neither the notebook
+  // nor json2tex.py has to be edited to start a new run.  json2tex.py reads this
+  // block; OutputDir is derived from the file name and MaxYear when left empty.
+  "Run":{
+        "ConfigFile":"NearTerm_2025-12-10-2040.json", // this file
+        "Notebook":"2025-12-10.ipynb",                // driver notebook
+        "OutputDir":"",                               // e.g. NearTerm_2025-12-10-2030_noMWC
+        "Glossary":true                               // also write a standalone glossary tex
+    },
  "Changes":[
     "2025-12-10 updated the estimates for the events simulated and processed in 2026 based on presentations from the FD, ND, and ProtoDUNE groups at Nov 2025 CS&C Week",
      "2025-10-26 removed years prior to 2021, update actuals to be 2024-25, move FD start to 2030 and ND start to 2032",
@@ -53,8 +62,8 @@
         "2021-03-22 add Collab vs FNAL shares, restore sim disk lifetime to 2."
     ],
   "Interpretation":" Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\\\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\\pagebreak ",
-  "Test":0,
- "Years":[ 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
+  "Test":0.0,
+  "Years":[ 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
 	   2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033,
 	   2034, 2035, 2036, 2037, 2038, 2039, 2040
     ],
@@ -72,8 +81,7 @@
     },
     "Resources":["Tape","Disk","GPU","CPU","Total","CPU Wall","CPU kHS23-Yr", "CPU Cores"],
     "DataTypes":["Raw-Events","Sim-Events","Raw-Data","TP","Reco-Sim","Reco-Data","Test","Analysis-Data","Analysis-Sim"],
-    // "DataTypes":["Raw-Events","Sim-Events","Raw-Data","Reco-Sim","Reco-Data","Analysis-Data","Analysis-Sim"],
-    "Locations":["US","CERN","Global","Total"],
+    "Locations":["HostLab","US","Int","CERN","Total"],
     "NativeTypes":["Raw-Events","TP","Test"],
     "BaseUnits":{
         "Disk":"TB","Tape":"TB","CPU":"MHr",
@@ -99,7 +107,6 @@
         "Analysis-GPU": "unitless"
         }, // fraction of Reco+Sim
     "Detectors":["SP","DP","Coldbox","PDHD","PDVD","FDVD","FDHD","ND-SAND","ND-LAr+TMS"],
-    //"Detectors":["PDHD"],
     "PDlist":["SP","DP","PDHD","PDVD","Coldbox"],
     "FDlist":["FDVD","FDHD"],
     "NDlist":["ND-SAND","ND-LAr+TMS"],    
@@ -122,11 +129,11 @@
     "Timeline":"NearTerm_2025-12-10-2040_timeline.csv",
     //"Timeline": "NearTerm_2024-01-31-2040-new_timeline.csv",
     "Cap":30, // cap in PB
-    "MWCWeight":0, // logical to do MWC weight
+    "MWCWeight":0.0, // logical to do MWC weight
     "Base-Memory":2000, // mb assumed memory use used for rescaling CPU.
     // "MaxYear": 2038,
     // "MinYear": 2028,
-    "MaxYear": 2030,
+    "MaxYear": 2031,
     "MinYear": 2025,
     "RequestYear":2026,
     "PlotUnits": {
@@ -196,8 +203,8 @@
         "Raw-Data-Store":70, // from first beam test in TB/MEvents
         "Reco-Data-CPU":0.1667, // Hr/Event
         "Reco-Sim-CPU":0.75, // Hr/Event
-        "Reco-Data-GPU":0, // Hr/Event
-        "Reco-Sim-GPU":0, // Hr/Event
+        "Reco-Data-GPU":0.0, // Hr/Event
+        "Reco-Sim-GPU":0.0, // Hr/Event
         "Reco-Data-Store":35, // TB/MEvents
         "Reco-Sim-Store":220, // TB/MEvents
         "Reco-Memory":4000, // MB
@@ -209,8 +216,8 @@
         "Raw-Data-Store":140, // no compression TB/MEvents, 4 APA 14 bit
         "Reco-Data-CPU":0.1667, // Hr/Event
         "Reco-Sim-CPU":0.75, // Hr/Event
-        "Reco-Data-GPU":0, // Hr/Event
-        "Reco-Sim-GPU":0, // Hr/Event
+        "Reco-Data-GPU":0.0, // Hr/Event
+        "Reco-Sim-GPU":0.0, // Hr/Event
         "Reco-Data-Store":35, // TB/MEvents
         "Reco-Sim-Store":220, // TB/MEvents
         "Reco-Memory":4000, // MB
@@ -222,8 +229,8 @@
         "Raw-Data-Store":110, // TB/MEvents
         "Reco-Data-CPU":0.1667, // Hr/Event
         "Reco-Sim-CPU":0.75, // Hr/Event
-        "Reco-Data-GPU":0, // Hr/Event
-        "Reco-Sim-GPU":0, // Hr/Event
+        "Reco-Data-GPU":0.0, // Hr/Event
+        "Reco-Sim-GPU":0.0, // Hr/Event
         "Reco-Data-Store":35, // TB/MEvents
         "Reco-Sim-Store":220, // TB/MEvents
         "Reco-Memory":4000, // MB
@@ -244,12 +251,12 @@
         "Analysis-CPU": 0.1
     },
     "PDVD":
-        {"Comment":"extend testing to 2024",  // 2025?
+        {"Comment":"extend testing to 2024",
         "Raw-Data-Store":155, // TB/MEvents
         "Reco-Data-CPU":0.1667, // Hr/Event
         "Reco-Sim-CPU":0.75, //  Hr/Event
-        "Reco-Data-GPU":0, // Hr/Event
-        "Reco-Sim-GPU":0, // Hr/Event
+        "Reco-Data-GPU":0.0, // Hr/Event
+        "Reco-Sim-GPU":0.0, // Hr/Event
         "Reco-Data-Store":20, //  TB/MEvents
         "Reco-Sim-Store":220, //  TB/MEvents
         "Reco-Memory":4000, // MB
@@ -261,8 +268,8 @@
         "Raw-Data-Store":3750, //  no compression TB/MEvents
         "Reco-Data-CPU":1.25, //  Hr/Event comes from scaling up ~30 sec/apa to 150 + PR
         "Reco-Sim-CPU":0.125, //  Hr/Event
-        "Reco-Data-GPU":0, // Hr/Event
-        "Reco-Sim-GPU":0, // Hr/Event
+        "Reco-Data-GPU":0.0, // Hr/Event
+        "Reco-Sim-GPU":0.0, // Hr/Event
         "Reco-Data-Store":20, //  TB/MEvents
         "Reco-Sim-Store":20, //  TB/MEvents based on large VD sample # measured in production
         "Reco-Memory":2000, // MB
@@ -287,8 +294,8 @@
         "Raw-Data-Store":5, //  TB/MEvents 
         "Reco-Data-CPU":0.0022, //  Hr/Event
         "Reco-Sim-CPU":0.24, //  Hr/Event note that this includes the 3x data scaling for simulation
-        "Reco-Data-GPU":0, // Hr/Event
-        "Reco-Sim-GPU":0, // Hr/Event
+        "Reco-Data-GPU":0.0, // Hr/Event
+        "Reco-Sim-GPU":0.0, // Hr/Event
         "Reco-Data-Store":10, //  TB/MEvents
         "Reco-Sim-Store":25, //  TB/MEvents
         "Reco-Memory":2000, //  MB
@@ -361,7 +368,7 @@
     "Tape Accounting":"end of fiscal year",
     "Disk Accounting":"October 1",
     "TypeColors": {
-        "Raw-Data-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Reco-Sim-Store":"grey", "Total":"black","US":"blue","UK":"red","CZ":"green","CERN":"cyan"
+        "Raw-Data-Store":"blue","Raw+Test":"green", "Test":"orange", "Reco-Data-Store":"red", "Reco-Sim-Store":"grey", "Total":"black","HostLab":"orange","US":"red","UK":"red","CZ":"green","CERN":"blue","Int":"green"
     },
     "TypeLines": {
         "Raw-Data-Store":"solid","Raw+Test":"solid", "Test":"dashed", "Reco-Data-Store":"solid", "Reco-Sim-Store":"dashed", "Total":"solid"
@@ -370,7 +377,7 @@
         "SP":"green","PDHD":"green", "DP":"magenta","PDVD":"magenta", "PDs":"blue", "FDHD":"red",
         "Coldbox":"orange",
         "FDVD":"red","FDs":"red","ND-SAND":"grey","ND-LAr+TMS":"black","Analysis":"orange", "Total":"black","MARS":"purple",
-        "Production":"blue", "US":"orange", "CERN":"blue", "Global":"green",
+        "Production":"blue", "HostLab":"orange", "CERN":"blue", "Int":"green","US":"red",
         "Reco-Data":"red","Reco-Sim":"grey",
         "Analysis-Data":"red",
         "Analysis-Sim":"grey",
@@ -380,7 +387,7 @@
     },
     "DetLines": {
         "SP":"solid","PDHD":"dashed", "DP":"dashed","PDVD":"solid", "Coldbox":"dotted","PDs":"solid", "FDHD":"solid",
-        "FDVD":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","US":"solid", "CERN":"dashed", "Global":"dashed",
+        "FDVD":"dashed","FDs":"solid","ND-SAND":"solid","ND-LAr+TMS":"dashed", "MARS":"dashed","Analysis":"dashed", "Total":"solid","HostLab":"solid", "CERN":"dashed", "Int":"dashed","US":"dotted",
         "Reco-Data": "solid",
         "Reco-Sim": "solid",
         "Analysis-Data": "dashed",
@@ -388,138 +395,6 @@
         "Test": "dotted",
         "TP": "dashed",
         "Raw-Data": "solid"
-    },
-    "SplitsYear":2029,
-    "Splits":{
-        "PD":{ //  these define the splits of storage - only for CCB use
-            "Tape":{
-                "Raw-Data":{"US":0.5,"CERN":0.5,"Global":0.0},
-                "Reco-Sim":{"US":1.0,"CERN":0.0,"Global":0.0},
-                "Reco-Data":{"US":1.0,"CERN":0.0,"Global":0.0},
-                "Test":{"US":0.5,"CERN":0.5,"Global":0.0},
-                "TP": {
-                    "US": 0.5,
-                    "CERN": 0.5,
-                    "Global": 0.0}
-            },
-            "Disk":{
-                "Raw-Data":{"US":0.5,"CERN":0.5,"Global":0.0},
-                "Reco-Sim":{"US":0.25,"CERN":0.0,"Global":0.75},
-                "Reco-Data":{"US":0.25,"CERN":0.0,"Global":0.75},
-                "Test":{"US":0.5,"CERN":0.5,"Global":0.00},
-                "TP": {
-                    "US": 0.5,
-                    "CERN": 0.5,
-                    "Global": 0.00
-                }
-            },
-            "CPU":{"CPU":{"US":0.4,"CERN":0.1,"Global":0.5}},
-            "GPU": {
-                "GPU": {
-                    "US": 0.4,
-                    "CERN": 0.1,
-                    "Global": 0.5
-                }
-            }
-        },
-        "FD":{//  these define the splits of storage - only for CCB use
-            "Tape":{
-                "Raw-Data":{"US":0.5,"CERN":0.0,"Global":0.50},
-                "Reco-Sim":{"US":0.5,"CERN":0.0,"Global":0.50},
-                "Reco-Data":{"US":0.50,"CERN":0.0,"Global":0.50},
-                "Test":{"US":0.5,"CERN":0.0,"Global":0.5},
-                "TP": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            },
-            "Disk":{
-                "Raw-Data":{"US":0.5,"CERN":0.0,"Global":0.5},
-                "Reco-Sim":{"US":0.25,"CERN":0.0,"Global":0.75},
-                "Reco-Data":{"US":0.25,"CERN":0.0,"Global":0.75},
-                "Test":{"US":0.5,"CERN":0.0,"Global":0.5},
-                "TP": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            },
-            "CPU":{"CPU":{"US":0.5,"CERN":0.0,"Global":0.5}},
-            "GPU":{
-                "GPU": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            }
-        },
-
-        "ND": {//  these define the splits of storage - only for CCB use
-            "Tape": {
-                "Raw-Data": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                },
-                "Reco-Sim": {
-                    "US": 0.50,
-                    "CERN": 0.0,
-                    "Global": 0.50
-                },
-                "Reco-Data": {
-                    "US": 0.50,
-                    "CERN": 0.0,
-                    "Global": 0.50
-                },
-                "Test": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            },
-            "Disk": {
-                "Raw-Data": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                },
-                "Reco-Sim": {
-                    "US": 0.25,
-                    "CERN": 0.0,
-                    "Global": 0.75
-                },
-                "Reco-Data": {
-                    "US": 0.25,
-                    "CERN": 0.0,
-                    "Global": 0.75
-                },
-                "Test": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                },
-                "TP": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            },
-            "CPU": {
-                "CPU": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            },
-            "GPU": {
-                "GPU": {
-                    "US": 0.5,
-                    "CERN": 0.0,
-                    "Global": 0.5
-                }
-            }
-        } 
     },
     "Explain":{
         "Detectors":"Detectors included in the calculation",
@@ -538,30 +413,91 @@
         "Slots":"Description of slots, efficiency and speed relative to 2020 vintage",
         "kHEPSPEC06PerCPU":"kHEPSPEC06 per core assumed"
     },
+    "SplitsYear":2029,
+    "Splits":{
+        "PD":{
+            "Tape":{
+                "Raw-Data":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5},
+                "Reco-Sim":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Reco-Data":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Test":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "TP":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0}
+            },
+            "Disk":{
+                "Raw-Data":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5},
+                "Reco-Sim":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Reco-Data":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Test":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5},
+                "TP":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5}
+            },
+            "CPU":{
+                "CPU":{"HostLab":0.2,"US":0.4,"CERN":0.1,"Int":0.3}
+            },
+            "GPU":{
+                "GPU":{"HostLab":0.2,"US":0.4,"CERN":0.1,"Int":0.3}
+            }
+        },
+        "FD":{
+            "Tape":{
+                "Raw-Data":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "Reco-Sim":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Reco-Data":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Test":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "TP":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0}
+            },
+            "Disk":{
+                "Raw-Data":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "Reco-Sim":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Reco-Data":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Test":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "TP":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0}
+            },
+            "CPU":{"CPU":{"HostLab":0.2,"US":0.4,"CERN":0.0,"Int":0.4}},
+            "GPU":{"GPU":{"HostLab":0.2,"US":0.4,"CERN":0.0,"Int":0.4}}
+        },
+        "ND": {
+            "Tape":{
+                "Raw-Data":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "Reco-Sim":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Reco-Data":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Test":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0},
+                "TP":{"HostLab":0.5,"US":0.0,"Int":0.5,"CERN":0.0}
+            },
+            "Disk":{
+                "Raw-Data":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5},
+                "Reco-Sim":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Reco-Data":{"HostLab":0.0,"US":0.5,"Int":0.5,"CERN":0.0},
+                "Test":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5},
+                "TP":{"HostLab":0.5,"US":0.0,"Int":0.0,"CERN":0.5}
+            },
+            "CPU":{"CPU":{"HostLab":0.2,"US":0.4,"CERN":0.0,"Int":0.4}},
+            "GPU":{"GPU":{"HostLab":0.2,"US":0.4,"CERN":0.0,"Int":0.4}}
+        }
+    },
     "Actual":{
         "wallactual": {"2021":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
 		       "2022":{"Total":41.2,"Analysis":9.3,"MARS":17.2,"Production":9.3},
 		       "2023":{"Total":49.7,"Analysis":30.7,"MARS":8.2,"Production":10.8},
 		       "2024":{"Total":115.0,"Analysis":84.7,"MARS":24.8,"Production":5.5},
-		       "2025":{"Total":376.4,"Analysis":198.6,"MARS":76.3,"Production":101.5},
+		       "2025":{"Total":376.4,"Analysis":198.6,"MARS":76.3,"Production":101.5}
         },
 
         "diskactual":{
-            "2021":{"US":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
-            "2022":{"US":4.6,"CERN":0.975,"UK":2.177,"CZ":0.30},
-	    "2023":{"US":7.0,"CERN":2.121,"UK":3.250,"CZ":0.561,
+            "2021":{"HostLab":4.6,"US":0.0,"CERN":0.975,"UK":2.177,"CZ":0.30},
+            "2022":{"HostLab":4.6,"US":0.0,"CERN":0.975,"UK":2.177,"CZ":0.30},
+	    "2023":{"HostLab":7.0,"US":0.0,"CERN":2.121,"UK":3.250,"CZ":0.561,
 		    "ES":0.192,"CA":0.0,"FR":0.180,"IT":0.0,"NL":0.551},
-	    "2024":{"US":10.1,"CERN":4.393,"UK":3.535,"CZ":0.623,
+	    "2024":{"HostLab":10.1,"US":1.0,"CERN":4.393,"UK":3.535,"CZ":0.623,
 		    "ES":1.271,"CA":0.004,"FR":1.057, "IT": 0.008,"NL":1.659},
-	    "2025":{"US":10.5,"CERN":3.939,"UK":5.011,"CZ":0.756,
+	    "2025":{"HostLab":10.5,"US":1.0,"CERN":3.939,"UK":5.011,"CZ":0.756,
 		    "ES":1.089,"CA":0.005,"FR":1.265,"IT":0.067,"NL":1.777}
         },
         "tapeactual":{
-            "2021":{"US":19.804,"CERN":5.02,"Global":0.0},
-            "2022":{"US":19.804,"CERN":5.02,"Global":0.0},
-	    "2023":{"US":24.272,"CERN":5.7,"Global":0.0},
-	    "2024":{"US":33.269,"CERN":12.09,"Global":0.001},
-	    "2025":{"US":42.108,"CERN":13.665,"Global":0.001}
+            "2021":{"HostLab":19.804,"US":0.0,"CERN":5.02,"Global":0.0},
+            "2022":{"HostLab":19.804,"US":0.0,"CERN":5.02,"Global":0.0},
+	    "2023":{"HostLab":24.272,"US":0.0,"CERN":5.7,"Global":0.0},
+	    "2024":{"HostLab":33.269,"US":0.0,"CERN":12.09,"Global":0.001},
+	    "2025":{"HostLab":42.108,"US":0.0,"CERN":13.665,"Global":0.001}
         }
     }
 }

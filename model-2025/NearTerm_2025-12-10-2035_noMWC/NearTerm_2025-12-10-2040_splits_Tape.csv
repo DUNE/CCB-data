@@ -1,0 +1,15 @@
+Detector Class,Data Type,US,CERN,Global
+PD,Raw-Data,0.5,0.5,0.0
+PD,Reco-Sim,1.0,0.0,0.0
+PD,Reco-Data,1.0,0.0,0.0
+PD,Test,0.5,0.5,0.0
+PD,TP,0.5,0.5,0.0
+FD,Raw-Data,0.5,0.0,0.5
+FD,Reco-Sim,0.5,0.0,0.5
+FD,Reco-Data,0.5,0.0,0.5
+FD,Test,0.5,0.0,0.5
+FD,TP,0.5,0.0,0.5
+ND,Raw-Data,0.5,0.0,0.5
+ND,Reco-Sim,0.5,0.0,0.5
+ND,Reco-Data,0.5,0.0,0.5
+ND,Test,0.5,0.0,0.5

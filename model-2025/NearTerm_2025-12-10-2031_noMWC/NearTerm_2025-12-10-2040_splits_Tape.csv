@@ -1,0 +1,16 @@
+Detector Class,Data Type,HostLab,US,Int,CERN
+PD,Raw-Data,0.5,0.0,0.0,0.5
+PD,Reco-Sim,0.0,0.5,0.5,0.0
+PD,Reco-Data,0.0,0.5,0.5,0.0
+PD,Test,0.5,0.0,0.5,0.0
+PD,TP,0.5,0.0,0.5,0.0
+FD,Raw-Data,0.5,0.0,0.5,0.0
+FD,Reco-Sim,0.0,0.5,0.5,0.0
+FD,Reco-Data,0.0,0.5,0.5,0.0
+FD,Test,0.5,0.0,0.5,0.0
+FD,TP,0.5,0.0,0.5,0.0
+ND,Raw-Data,0.5,0.0,0.5,0.0
+ND,Reco-Sim,0.0,0.5,0.5,0.0
+ND,Reco-Data,0.0,0.5,0.5,0.0
+ND,Test,0.5,0.0,0.5,0.0
+ND,TP,0.5,0.0,0.5,0.0
