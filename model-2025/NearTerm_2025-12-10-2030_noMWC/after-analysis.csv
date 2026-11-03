@@ -1,0 +1,134 @@
+Detectors,DataTypes,Resources,Locations,Units,2025,2026,2027,2028,2029,2030,Explanation
+SP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+SP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+SP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+Coldbox,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+Coldbox,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+Coldbox,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDHD,TP,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDHD,Sim-Events,input,Total,Million,5.000,5.000,5.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+DP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+DP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+DP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDVD,Raw-Events,input,Total,Million,30.000,30.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDVD,TP,input,Total,TB,1000.000,1000.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDVD,Test,input,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDVD,Sim-Events,input,Total,Million,5.100,5.100,5.100,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,1.100,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDHD,TP,input,Total,TB,0.000,0.000,0.000,0.000,3000.000,2342.225,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDHD,Sim-Events,input,Total,Million,15.000,37.000,37.000,100.000,40.000,40.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDVD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.500,2.200,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDVD,TP,input,Total,TB,0.000,0.000,0.000,0.000,3100.000,2420.299,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDVD,Test,input,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDVD,Sim-Events,input,Total,Million,15.000,44.000,44.000,105.000,42.000,42.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-SAND,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-SAND,Test,input,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-SAND,Sim-Events,input,Total,Million,1.000,1.600,1.600,5.000,20.000,30.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-LAr+TMS,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-LAr+TMS,Test,input,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-LAr+TMS,Sim-Events,input,Total,Million,1.000,1.600,1.600,3.500,5.000,5.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+SP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 70.00
+SP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+DP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+DP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+Coldbox,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 30.00
+Coldbox,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 140.00 rescaled  downward by 1.67 to meet cap of 30
+PDHD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+PDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+PDVD,Raw-Data,Store,Total,TB,4650.000,4650.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 155.00 rescaled  downward by 1.67 to meet cap of 30
+PDVD,TP,Store,Total,TB,1000.000,1000.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+PDVD,Test,Store,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDVD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,4000.000,13741.054,Change native types into storage using factor 8000.00 rescaled  downward by 1.67 to meet cap of 30
+FDVD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,3100.000,2420.299,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDVD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,3220.560,Change native types into storage using factor 3750.00 rescaled  downward by 1.67 to meet cap of 30
+FDHD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,3000.000,2342.225,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+ND-SAND,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 5.00
+ND-SAND,Test,Store,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,Change native types into storage using factor 1.00
+ND-LAr+TMS,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 10.00
+ND-LAr+TMS,Test,Store,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+Sub-Total,Raw-Data,Store,Total,TB,4650.000,4650.000,0.000,0.000,4000.000,16961.614,Sum over raw data types from ProtoDUNEs and Far detector rescaled  downward by 1.67 to meet cap of 30
+Sub-Total,TP,Store,Total,TB,1000.000,1000.000,0.000,0.000,6100.000,4762.524,Sum over raw data types from ProtoDUNEs and Far detector rescaled  downward by 1.67 to meet cap of 30
+Sub-Total,Test,Store,Total,TB,500.000,500.000,0.000,0.000,5100.000,8275.862,Sum over raw data types from ProtoDUNEs and Far detector rescaled  downward by 1.67 to meet cap of 30
+PDVD,Sub-Total,Store,Total,TB,6150.000,6150.000,0.000,0.000,0.000,0.000,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+PDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+FDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,5500.000,11808.718,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+FDVD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,9700.000,18191.282,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+Sub-Total,Sub-Total,Store,Total,TB,6150.000,6150.000,0.000,0.000,15200.000,30000.000,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+SP,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+SP,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+SP,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+DP,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+DP,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+DP,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+Coldbox,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 0.00 years for Reco-Data
+Coldbox,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 0.00 years for Reco-Data
+Coldbox,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Go back 0.00 years for Reco-Data
+Coldbox,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+Coldbox,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+Coldbox,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDHD,Reco-Data,CPU,Total,MHr,5.668,5.668,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Data,Store,Total,TB,1190.000,1190.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Sim,CPU,Total,MHr,3.750,3.750,3.750,0.000,0.000,0.000,Scale inputs by 0.75
+PDHD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDHD,Reco-Sim,Store,Total,TB,1100.000,1100.000,1100.000,0.000,0.000,0.000,Scale inputs by 220.00
+PDVD,Reco-Data,CPU,Total,MHr,5.134,10.135,10.002,5.001,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Data,Store,Total,TB,616.000,1216.000,1200.000,600.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Sim,CPU,Total,MHr,3.825,3.825,3.825,0.000,0.000,0.000,Scale inputs by 0.75
+PDVD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDVD,Reco-Sim,Store,Total,TB,1122.000,1122.000,1122.000,0.000,0.000,0.000,Scale inputs by 220.00
+FDVD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.665,3.591,Go back 100.00 years for Reco-Data
+FDVD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.050,0.270,Go back 100.00 years for Reco-Data
+FDVD,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,10.000,54.000,Go back 100.00 years for Reco-Data
+FDVD,Reco-Sim,CPU,Total,MHr,1.875,5.500,5.500,13.125,5.250,5.250,Scale inputs by 0.12
+FDVD,Reco-Sim,GPU,Total,MHr,1.500,4.400,4.400,10.500,4.200,4.200,Scale inputs by 0.10
+FDVD,Reco-Sim,Store,Total,TB,300.000,880.000,880.000,2100.000,840.000,840.000,Scale inputs by 20.00
+FDHD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,1.375,Go back 100.00 years for Reco-Data
+FDHD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+FDHD,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,22.000,Go back 100.00 years for Reco-Data
+FDHD,Reco-Sim,CPU,Total,MHr,1.875,4.625,4.625,12.500,5.000,5.000,Scale inputs by 0.12
+FDHD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+FDHD,Reco-Sim,Store,Total,TB,300.000,740.000,740.000,2000.000,800.000,800.000,Scale inputs by 20.00
+ND-SAND,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Sim,CPU,Total,MHr,0.240,0.384,0.384,1.200,4.800,7.200,Scale inputs by 0.24
+ND-SAND,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+ND-SAND,Reco-Sim,Store,Total,TB,25.000,40.000,40.000,125.000,500.000,750.000,Scale inputs by 25.00
+ND-LAr+TMS,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Sim,CPU,Total,MHr,2.970,4.752,4.752,10.395,14.850,14.850,Scale inputs by 2.97
+ND-LAr+TMS,Reco-Sim,GPU,Total,MHr,0.022,0.036,0.036,0.078,0.111,0.111,Scale inputs by 0.02
+ND-LAr+TMS,Reco-Sim,Store,Total,TB,419.000,670.400,670.400,1466.500,2095.000,2095.000,Scale inputs by 419.00
+SP,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+SP,Analysis-Sim,CPU,Total,MHr,4.587,4.587,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+DP,Analysis-Data,CPU,Total,MHr,0.211,0.211,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+DP,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+Coldbox,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+Coldbox,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+PDHD,Analysis-Data,CPU,Total,MHr,2.834,2.834,2.834,2.834,0.000,0.000,Extend Analysis processing by 2.00 years
+PDHD,Analysis-Sim,CPU,Total,MHr,1.875,1.875,1.875,1.875,1.875,0.000,Extend Analysis processing by 2.00 years
+PDVD,Analysis-Data,CPU,Total,MHr,2.567,5.068,5.068,5.068,5.068,5.068,Extend Analysis processing by 2.00 years
+PDVD,Analysis-Sim,CPU,Total,MHr,1.912,1.912,1.912,1.912,1.912,0.000,Extend Analysis processing by 2.00 years
+FDVD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.333,1.796,Extend Analysis processing by 2.00 years
+FDVD,Analysis-Sim,CPU,Total,MHr,0.938,2.750,2.750,6.562,6.562,6.562,Extend Analysis processing by 2.00 years
+FDHD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.688,Extend Analysis processing by 2.00 years
+FDHD,Analysis-Sim,CPU,Total,MHr,0.938,2.312,2.312,6.250,6.250,6.250,Extend Analysis processing by 2.00 years
+ND-SAND,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+ND-SAND,Analysis-Sim,CPU,Total,MHr,0.060,0.096,0.096,0.300,1.200,1.800,Extend Analysis processing by 2.00 years
+ND-LAr+TMS,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+ND-LAr+TMS,Analysis-Sim,CPU,Total,MHr,0.743,1.188,1.188,2.599,3.713,3.713,Extend Analysis processing by 2.00 years

@@ -1,0 +1,9 @@
+parameter,units,SP,DP,Coldbox,PDHD,PDVD,FDVD,FDHD,ND-SAND,ND-LAr+TMS
+Raw-Data-Store,MB,70,110,30.0,140,155,8000,3750,5,10
+Reco-Data-Store,MB,35,35,0,35,20,20,20,10,20
+Reco-Sim-Store,MB,220,220,0,220,220,20,20,25,419
+Reco-Data-CPU,hr,0.1667,0.1667,0.0,0.1667,0.1667,1.33,1.25,0.0022,0.76
+Reco-Sim-CPU,hr,0.75,0.75,0.0,0.75,0.75,0.125,0.125,0.24,2.97
+Reco-Data-GPU,hr,0.0,0.0,0,0.0,0.0,0.1,0.0,0.0,0.76
+Reco-Sim-GPU,hr,0.0,0.0,0,0.0,0.0,0.1,0.0,0.0,0.0222
+Analysis-CPU,fraction,0.5,0.5,0.1,0.5,0.5,0.5,0.5,0.25,0.25

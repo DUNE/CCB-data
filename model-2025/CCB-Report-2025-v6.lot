@@ -1,0 +1,6 @@
+\contentsline {table}{\numberline {1}{\ignorespaces Detector abbreviations and estimated running times. Simulation campaigns occur earlier. }}{5}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Per event output size and CPU time parameters used in the model. These values are estimated from running jobs over small numbers of events from protoDUNE and simulation.}}{9}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Lifetimes and number of copies for different kinds of data. An exception, we assume protoDUNE raw radata will stay on disk for up to three years for reprocessing. Far detector data are assumed to stay for 2 years. }}{10}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Assumptions about splits of Disk resources between the US, CERN and Global. }}{11}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Assumptions about splits of Tape resources between the US, CERN and Global.}}{11}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Assumptions about splits of CPU resources between the US, CERN and Global.}}{12}{table.6}%

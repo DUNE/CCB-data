@@ -126,10 +126,10 @@ class DataHolder:
         ' make a dict of categories from a tag'
         catlist = tag.split("!")
         newdict = {}
-        #if DEBUG: print (catlist,self.Indices)
+        if DEBUG: print (catlist,self.Indices)
         for cat,index in self.Indices.items(): 
             if index >= len(catlist): continue
-            #if DEBUG: print (cat,index)
+            if DEBUG: print (cat,index)
             value = catlist[index]
             newdict[cat]=value
         return newdict
@@ -362,7 +362,150 @@ class DataHolder:
         newtags += self.sumAcrossFilters(filter=newfilter,sumCat="DataTypes",sumName=sumName,explanation=explanation)
         return newtags
         #print ("sumacross",newtags)
-    
+
+# -------------------------------------------------------------------------
+# GPU processing: split across sites and summarize by site/detector/type
+# -------------------------------------------------------------------------
+
+    def gpuResources(self):
+        ''' all GPU resources in the holder: GPU plus the derived unit variants '''
+        found = []
+        for tag in self.holder:
+            resource = self.tagToList(tag)[self.Indices["Resources"]]
+            if resource.startswith("GPU") and resource not in found:
+                found.append(resource)
+        return sorted(found)
+
+    def resourceUnits(self,resource,location="Total"):
+        ''' the units a resource is actually stored in, taken from the holder.
+
+        Better than trusting BaseUnits in the config, which has to be kept in step
+        by hand with the units the scaling factors in Scales actually produce.
+        '''
+        found = []
+        for tag in self.holder:
+            items = self.tagToList(tag)
+            if items[self.Indices["Resources"]] != resource: continue
+            if items[self.Indices["Locations"]] != location: continue
+            units = items[self.Indices["Units"]]
+            if units not in found: found.append(units)
+        if len(found) > 1:
+            print ("WARNING %s is stored in more than one unit: %s"%(resource,found))
+        return found
+
+    def detectorSplit(self,detector):
+        ''' the Splits entry (PD/FD/ND) that applies to a detector '''
+        for period in ("PD","FD","ND"):
+            if detector in self.config.get(period+"list",[]):
+                return self.config["Splits"].get(period)
+        return None
+
+    def splitFactors(self,detector,resource):
+        ''' the per-site fractions to use for one resource of one detector.
+
+        Splits holds a single set of fractions for CPU and for GPU; the derived
+        unit variants ("GPU Wall", "GPU kHS23-Yr", "GPU Cores") share the fractions
+        of their base resource.  Storage is not handled here as it splits per data
+        type rather than per resource.
+        '''
+        split = self.detectorSplit(detector)
+        if split is None: return None
+        key = resource.split(" ")[0]
+        return split.get(key,{}).get(key)
+
+    def splitResourceBySite(self,resources,explanation="Split across sites by"):
+        ''' spread a resource held at "Total" over the individual sites.
+
+        The Splits table gives one fraction per site for the whole resource, so
+        every detector/datatype series in `resources` is scaled by that detector
+        class' fractions.  Series that already exist are left alone, so this is
+        safe to call after the notebook's own split loop or more than once.
+        Returns the tags created.
+        '''
+        if isinstance(resources,str): resources = [resources]
+        newtags = []
+        for tag in list(self.holder.keys()):
+            detector,datatype,resource,location,units = self.tagToList(tag)
+            if resource not in resources: continue
+            if location != "Total": continue
+            if detector in self.nosum or datatype in self.nosum: continue
+            factors = self.splitFactors(detector,resource)
+            if factors is None:
+                if self.debug: print ("no site split for",resource,"of",detector)
+                continue
+            for site,factor in factors.items():
+                if self.tag(detector,datatype,resource,site,units) in self.holder: continue
+                newtag = self.scaleByTag(tag,{"Locations":site},factor,
+                                         explanation="%s %.2f"%(explanation,factor))
+                if newtag is not None: newtags.append(newtag)
+        return newtags
+
+    def gpuTotals(self,resources=None):
+        ''' make the "Total" detector and data type series that the plots need.
+
+        Splitting GPU over the sites leaves every series tagged with a specific
+        detector and data type, so sum across both for each site and for "Total",
+        which is what Draw needs for its Total line.
+        '''
+        if resources is None: resources = self.gpuResources()
+        locations = list(self.Locations)
+        if "Total" not in locations: locations.append("Total")
+        newtags = []
+        for resource in resources:
+            for units in self.resourceUnits(resource):
+                filter = {"Detectors":self.Detectors,
+                          "DataTypes":self.DataTypes,
+                          "Resources":[resource],
+                          "Locations":locations,
+                          "Units":[units]}
+                newtags += self.sumAcrossAll(filter=filter,sumName="Total",
+                        explanation="Sum %s across detectors and data types"%resource)
+        return newtags
+
+    def GPUBreakdown(self,Dir,texfile=None,resources=None):
+        '''GPU processing by site, by detector and by data type.
+
+        The model only holds GPU at "Total" until the Splits table is applied, so
+        this first spreads it over the sites, then sums it up, then draws one figure
+        per GPU unit (GPU MHr, wall time, kHS23-Yr, cores).  Returns a dict of the
+        figures, keyed by "<resource> by <category>", and writes the LaTeX for them
+        into texfile if one is given.
+        '''
+        if resources is None: resources = self.gpuResources()
+        if not resources:
+            print ("WARNING no GPU processing in the holder, nothing to break down")
+            return {}
+
+        self.splitResourceBySite(resources,explanation="Split GPU across sites by")
+        self.gpuTotals(resources)
+
+        sites = [l for l in self.Locations if l not in self.nosum]
+        figures = {}
+        for resource in resources:
+            units = self.resourceUnits(resource)
+            if not units:
+                print ("WARNING no units found for",resource)
+                continue
+            units = units[0]
+            # Draw adds "Total" to the category list it is given, so hand it copies
+            plots = [("Site","Locations",list(sites)),
+                     ("Detector","Detectors",list(self.Detectors)),
+                     ("Type","DataTypes",list(self.DataTypes))]
+            for name,category,values in plots:
+                filter = {"Detectors":["Total"],"DataTypes":["Total"],
+                          "Resources":[resource],"Locations":["Total"],"Units":[units]}
+                filter[category] = values
+                title = "GPU Processing by %s"%name
+                fig = self.Draw(Dir=Dir,Title=title,YAxis=resource,
+                                Resource=resource,Category=category,filter=filter)
+                figures[resource+" by "+name] = fig
+                if texfile is not None and fig is not None:
+                    # the label must be unique per unit, as with the CPU plots
+                    texfile.write(self.TexBoth(fig,
+                        "Projected %s use by %s."%(resource,name.lower()),
+                        label=resource+"By"+name).replace(" ","-"))
+        return figures
+
     # def copyToNewHolder(self,otherholder=None,filter=None):
     #      ' copy specific items listed in tags to another holder'
     #      tags = maketagset(filter)

@@ -1,4 +1,13 @@
 {"Version":25,
+  // Everything that identifies this run lives here, so that neither the notebook
+  // nor json2tex.py has to be edited to start a new run.  json2tex.py reads this
+  // block; OutputDir is derived from the file name and MaxYear when left empty.
+  "Run":{
+        "ConfigFile":"NearTerm_2025-10-26-2040.json", // this file
+        "Notebook":"2025-10-26.ipynb",                // driver notebook
+        "OutputDir":"",                               // e.g. NearTerm_2025-10-26-2035_noMWC
+        "Glossary":true                               // also write a standalone glossary tex
+    },
  "Changes":[
      "2025-10-26 removed years prior to 2021, update actuals to be 2024-25, move FD start to 2030 and ND start to 2032",
         "2024-11-12 updates for",
