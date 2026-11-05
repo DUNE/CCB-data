@@ -1,0 +1,509 @@
+\input Header.tex
+\baselineskip 18 pt
+\newcommand{\configVersion}{26}
+configVersion = \configVersion \\  % testing
+\newcommand{\configConfigFileRun}{NearTerm\_2025-12-10-2040.json}
+\newcommand{\configNotebookRun}{2025-12-10.ipynb}
+\newcommand{\configOutputDirRun}{}
+\newcommand{\configGlossaryRun}{1}
+%Comment  Changes ['2025-12-10 updated the estimates for the events simulated and processed in 2026 based on presentations from the FD, ND, and ProtoDUNE groups at Nov 2025 CS&C Week', '2025-10-26 removed years prior to 2021, update actuals to be 2024-25, move FD start to 2030 and ND start to 2032', '2024-11-12 updates for', '2024-09-16 restore Global to 75% ', '2024-09-09 raise # of PDHD/PDVD events to 30M after Christos talk', '2024-09-07 extend disk lifetime for raw to 2 years', '2024-09-03 add in coldbox', '2024-08-27 move to new timeline with better PDHD numbers', '2024-08-25 PDHD and PDVD have 2 disk copies of raw data', '2024-08-11 put in real protodune numbers', '2024-08-12 reduce reco-data lifetime to 2 years as now have extend working', '2024-08-01 create filter concept', '2024-07-12 move units into tags', '2024-07-10 change name for PerYear', '2024-02-10 raise cap to 50 PB', '2024-02-05 cut off in 2028', '2024-02-04 add tex macros for important numbers', '2024-02-01 put in # from FD production, raise CPU to reflect 2 passes', '2024-01-31 clean up timeline', '2024-01-23 Add timeline feature', '2024-01-22 Heidi fixes extension algorithm', '2023-12-11 Heidi increase sim for ND to x4', '2023-11-03 Heidi commits all old changes and adds option to not do MWC', '2023-07-03 Kirby added some comments for documentation and worked on adding GPU for ND-LAr', '2023-06-30 lower memory for FD reco to 2GB', '2023-06-29 new ND from Mat', "2023-06-20 new VD/HD #'s from Dom", '2023-06-28 make NDLAr optional controled by CombinedDetectors', '2023-06-24 add support for analysis by detector', '2023-06-23 match to milestones, add NDLAr', '2023-06-22 update for DOE review, extend PD analysis, raise analysis levels for FD/ND', '2023-05-05 update for DOE review, delay PD2 yet again', '2023-01-31 version for FCSRG - change CERN/FNAL weights, raise ND test for 2x2', '2022-11-21 make units Memory weighted', '2022-11-18 introduce memory scaling for CPU', '2022-11-07 double FD Sim', '2022-11-07 add in memory use so cores, rescale analysis as smaller', 'Number reprocessing is only X percent of original as you keep the hits?', 'Number why does CPU ->0 even though Sim still running in 2027', '2022-10-23 update the code', '2022-05-19 revert pre 2023 to CdunCB sim numbers but keep updated daq estimates', '2022-05-18 add in MARS', '2022-02-21 add in new numbers for PD2, FD sim, reflect daq document', "2022-01-22 add actual numbers's", '2022-01-14 updates for VD channels and new drift times.', '2021-07-25 see effects of PD 2 delay', '2021-04-27 change HSPEC06 to 11 from 15 per CMS numbers from Kirby', '2021-04-21 clarify CERN vs Collab for first 10 years', '2021-03-26 clearer plots, go to v3 of the code to preserve the RRB code in v2', '2021-03-24 try with CERN/FNAL combined for raw and test.', '2021-03-22 add Collab vs FNAL shares, restore sim disk lifetime to 2.']
+\newcommand{\configInterpretation}{ Disk usage was lower than the model predicts as rucio duplication was not fully implemented until late in the year so most  reconstructed data and simulation  had 1 instead of the desired 2 copies. CPU usage was lower as the detector data were not fully reprocessed in 2021. \\The long term model for ProtoDUNE II and the Far detector has evolved to reflect 14-bit digitization and the channel count for the vertical drift detector.\pagebreak }
+configInterpretation = \configInterpretation \\  % testing
+\newcommand{\configTest}{0.000000}
+configTest = \configTest \\  % testing
+\newcommand{\configYears}{[2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040]}
+configYears = \configYears \\ % testing
+\newcommand{\configDetectorsIndices}{0}
+\newcommand{\configDataTypesIndices}{1}
+\newcommand{\configResourcesIndices}{2}
+\newcommand{\configLocationsIndices}{3}
+\newcommand{\configUnitsIndices}{4}
+\newcommand{\configYearsIndices}{5}
+\newcommand{\configUnits}{['Million', 'GB', 'TB', 'PB', 'MHr', 'Cores', 'kHS23-Yr']}
+configUnits = \configUnits \\ % testing
+%Format  UnitFormats {'Million': '%.1f', 'GB': '%d', 'TB': '%d', 'PB': '%.3f', 'MHr': '%.1f', 'Cores': '%d', 'kHS23-Yr': '%.1f', 'Wall': '%.1f'}
+\newcommand{\configResources}{['Tape', 'Disk', 'GPU', 'CPU', 'Total', 'CPU Wall', 'CPU kHS23-Yr', 'CPU Cores']}
+configResources = \configResources \\ % testing
+\newcommand{\configDataTypes}{['Raw-Events', 'Sim-Events', 'Raw-Data', 'TP', 'Reco-Sim', 'Reco-Data', 'Test', 'Analysis-Data', 'Analysis-Sim']}
+configDataTypes = \configDataTypes \\ % testing
+\newcommand{\configLocations}{['HostLab', 'US', 'Int', 'CERN', 'Total']}
+configLocations = \configLocations \\ % testing
+\newcommand{\configNativeTypes}{['Raw-Events', 'TP', 'Test']}
+configNativeTypes = \configNativeTypes \\ % testing
+\newcommand{\configDiskBaseUnits}{TB}
+\newcommand{\configTapeBaseUnits}{TB}
+\newcommand{\configCPUBaseUnits}{MHr}
+\newcommand{\configGPUBaseUnits}{Mhr}
+\newcommand{\configCPUWallBaseUnits}{Mhr}
+\newcommand{\configCPUkHSTwentyThreeYrBaseUnits}{kHS23-Yr}
+\newcommand{\configCPUCoresBaseUnits}{Cores}
+\newcommand{\configRawEventsScales}{Million}
+\newcommand{\configSimEventsScales}{Million}
+\newcommand{\configTestScales}{TB}
+\newcommand{\configTPScales}{TB}
+\newcommand{\configRawDataStoreScales}{TB}
+\newcommand{\configRecoDataStoreScales}{TB}
+\newcommand{\configRecoSimStoreScales}{TB}
+\newcommand{\configRecoDataCPUScales}{MHr}
+\newcommand{\configRecoSimCPUScales}{MHr}
+\newcommand{\configRecoDataGPUScales}{MHr}
+\newcommand{\configRecoSimGPUScales}{MHr}
+\newcommand{\configRecoMemoryScales}{MB}
+\newcommand{\configSimMemoryScales}{MB}
+\newcommand{\configAnalysisCPUScales}{unitless}
+\newcommand{\configAnalysisGPUScales}{unitless}
+\newcommand{\configDetectors}{['SP', 'DP', 'Coldbox', 'PDHD', 'PDVD', 'FDVD', 'FDHD', 'ND-SAND', 'ND-LAr+TMS']}
+configDetectors = \configDetectors \\ % testing
+\newcommand{\configPDlist}{['SP', 'DP', 'PDHD', 'PDVD', 'Coldbox']}
+configPDlist = \configPDlist \\ % testing
+\newcommand{\configFDlist}{['FDVD', 'FDHD']}
+configFDlist = \configFDlist \\ % testing
+\newcommand{\configNDlist}{['ND-SAND', 'ND-LAr+TMS']}
+configNDlist = \configNDlist \\ % testing
+\newcommand{\configTestDetectors}{['SP', 'PDHD', 'DP', 'PDVD']}
+configTestDetectors = \configTestDetectors \\ % testing
+\newcommand{\configTestTypes}{['Raw-Events', 'Sim-Events', 'Raw-Data', 'Reco-Sim', 'Reco-Data', 'Test', 'Analysis-Data', 'Analysis-Sim']}
+configTestTypes = \configTestTypes \\ % testing
+\newcommand{\configTimeline}{NearTerm\_2025-12-10-2040\_timeline.csv}
+configTimeline = \configTimeline \\  % testing
+\newcommand{\configCap}{30}
+configCap = \configCap \\  % testing
+\newcommand{\configMWCWeight}{0.000000}
+configMWCWeight = \configMWCWeight \\  % testing
+\newcommand{\configBaseMemory}{2000}
+configBaseMemory = \configBaseMemory \\  % testing
+\newcommand{\configMaxYear}{2031}
+configMaxYear = \configMaxYear \\  % testing
+\newcommand{\configMinYear}{2025}
+configMinYear = \configMinYear \\  % testing
+\newcommand{\configRequestYear}{2026}
+configRequestYear = \configRequestYear \\  % testing
+\newcommand{\configRawEventsPlotUnits}{Million}
+\newcommand{\configStorePlotUnits}{PB}
+\newcommand{\configRawDataStorePlotUnits}{PB}
+\newcommand{\configTestPlotUnits}{PB}
+\newcommand{\configRawTestPlotUnits}{PB}
+\newcommand{\configRecoDataStorePlotUnits}{PB}
+\newcommand{\configRecoDataCPUPlotUnits}{CPU MHrs}
+\newcommand{\configRecoSimEventsPlotUnits}{M}
+\newcommand{\configRecoSimStorePlotUnits}{PB}
+\newcommand{\configRecoSimCPUPlotUnits}{CPU MHrs}
+\newcommand{\configAnalysisCPUPlotUnits}{CPU MHrs}
+\newcommand{\configAllPlotUnits}{PB}
+\newcommand{\configYearsPlotUnits}{}
+\newcommand{\configTotalCPUPlotUnits}{CPU MHrs}
+\newcommand{\configCumulativeTapePlotUnits}{PB}
+\newcommand{\configCumulativeDiskPlotUnits}{PB}
+\newcommand{\configTapePlotUnits}{PB}
+\newcommand{\configDiskPlotUnits}{PB}
+\newcommand{\configSlotsPlotUnits}{2020-vintage Slots}
+\newcommand{\configHSTwentyThreePlotUnits}{kHS23-yrs}
+\newcommand{\configWallPlotUnits}{Memory Weighted Wall MHrs}
+\newcommand{\configHPCStoragePlotUnits}{PB}
+\newcommand{\configHPCCPUPlotUnits}{CPU MHrs}
+\newcommand{\configRecoDataGPUPlotUnits}{GPU MHrs}
+\newcommand{\configRecoSimGPUPlotUnits}{GPU MHrs}
+\newcommand{\configCPUPlotUnits}{CPU MHrs}
+\newcommand{\configGPUPlotUnits}{GPU MHrs}
+\newcommand{\configCombinedDetectors}{['PDs', 'FDs', 'ND-SAND', 'ND-LAr+TMS']}
+configCombinedDetectors = \configCombinedDetectors \\ % testing
+%Comment  //comment_about_detectors0 This is the start of the definitions of the different inputs for things listed in Detectors
+%Comment  //comment_about_detectors1 each detector listed in the Detectors item above has an entry defining its event projections, storage, and processing profile
+%Comment  //comment_about_detectors2 this includes CPU an GPU, and a memory profile for the CPU processing
+\newcommand{\configRawDataStoreSP}{70}
+\newcommand{\configRecoDataCPUSP}{0.166700}
+\newcommand{\configRecoSimCPUSP}{0.750000}
+\newcommand{\configRecoDataGPUSP}{0.000000}
+\newcommand{\configRecoSimGPUSP}{0.000000}
+\newcommand{\configRecoDataStoreSP}{35}
+\newcommand{\configRecoSimStoreSP}{220}
+\newcommand{\configRecoMemorySP}{4000}
+\newcommand{\configSimMemorySP}{6000}
+\newcommand{\configAnalysisCPUSP}{0.500000}
+\newcommand{\configRawDataStorePDHD}{140}
+\newcommand{\configRecoDataCPUPDHD}{0.166700}
+\newcommand{\configRecoSimCPUPDHD}{0.750000}
+\newcommand{\configRecoDataGPUPDHD}{0.000000}
+\newcommand{\configRecoSimGPUPDHD}{0.000000}
+\newcommand{\configRecoDataStorePDHD}{35}
+\newcommand{\configRecoSimStorePDHD}{220}
+\newcommand{\configRecoMemoryPDHD}{4000}
+\newcommand{\configSimMemoryPDHD}{6000}
+\newcommand{\configAnalysisCPUPDHD}{0.500000}
+\newcommand{\configRawDataStoreDP}{110}
+\newcommand{\configRecoDataCPUDP}{0.166700}
+\newcommand{\configRecoSimCPUDP}{0.750000}
+\newcommand{\configRecoDataGPUDP}{0.000000}
+\newcommand{\configRecoSimGPUDP}{0.000000}
+\newcommand{\configRecoDataStoreDP}{35}
+\newcommand{\configRecoSimStoreDP}{220}
+\newcommand{\configRecoMemoryDP}{4000}
+\newcommand{\configSimMemoryDP}{6000}
+\newcommand{\configAnalysisCPUDP}{0.500000}
+\newcommand{\configRawDataStoreColdbox}{30.000000}
+\newcommand{\configRecoDataCPUColdbox}{0.000000}
+\newcommand{\configRecoSimCPUColdbox}{0.000000}
+\newcommand{\configRecoDataGPUColdbox}{0}
+\newcommand{\configRecoSimGPUColdbox}{0}
+\newcommand{\configRecoDataStoreColdbox}{0}
+\newcommand{\configRecoSimStoreColdbox}{0}
+\newcommand{\configRecoMemoryColdbox}{4000}
+\newcommand{\configSimMemoryColdbox}{6000}
+\newcommand{\configAnalysisCPUColdbox}{0.100000}
+\newcommand{\configRawDataStorePDVD}{155}
+\newcommand{\configRecoDataCPUPDVD}{0.166700}
+\newcommand{\configRecoSimCPUPDVD}{0.750000}
+\newcommand{\configRecoDataGPUPDVD}{0.000000}
+\newcommand{\configRecoSimGPUPDVD}{0.000000}
+\newcommand{\configRecoDataStorePDVD}{20}
+\newcommand{\configRecoSimStorePDVD}{220}
+\newcommand{\configRecoMemoryPDVD}{4000}
+\newcommand{\configSimMemoryPDVD}{6000}
+\newcommand{\configAnalysisCPUPDVD}{0.500000}
+\newcommand{\configRawDataStoreFDHD}{3750}
+\newcommand{\configRecoDataCPUFDHD}{1.250000}
+\newcommand{\configRecoSimCPUFDHD}{0.125000}
+\newcommand{\configRecoDataGPUFDHD}{0.000000}
+\newcommand{\configRecoSimGPUFDHD}{0.000000}
+\newcommand{\configRecoDataStoreFDHD}{20}
+\newcommand{\configRecoSimStoreFDHD}{20}
+\newcommand{\configRecoMemoryFDHD}{2000}
+\newcommand{\configSimMemoryFDHD}{3000}
+\newcommand{\configAnalysisCPUFDHD}{0.500000}
+\newcommand{\configRawDataStoreFDVD}{8000}
+\newcommand{\configRecoDataCPUFDVD}{1.330000}
+\newcommand{\configRecoSimCPUFDVD}{0.125000}
+\newcommand{\configRecoDataGPUFDVD}{0.100000}
+\newcommand{\configRecoSimGPUFDVD}{0.100000}
+\newcommand{\configRecoDataStoreFDVD}{20}
+\newcommand{\configRecoSimStoreFDVD}{20}
+\newcommand{\configRecoMemoryFDVD}{2000}
+\newcommand{\configSimMemoryFDVD}{4000}
+\newcommand{\configAnalysisCPUFDVD}{0.500000}
+\newcommand{\configRawDataStoreNDSAND}{5}
+\newcommand{\configRecoDataCPUNDSAND}{0.002200}
+\newcommand{\configRecoSimCPUNDSAND}{0.240000}
+\newcommand{\configRecoDataGPUNDSAND}{0.000000}
+\newcommand{\configRecoSimGPUNDSAND}{0.000000}
+\newcommand{\configRecoDataStoreNDSAND}{10}
+\newcommand{\configRecoSimStoreNDSAND}{25}
+\newcommand{\configRecoMemoryNDSAND}{2000}
+\newcommand{\configSimMemoryNDSAND}{2000}
+\newcommand{\configAnalysisCPUNDSAND}{0.250000}
+\newcommand{\configRawDataStoreNDLArTMS}{10}
+\newcommand{\configRecoDataCPUNDLArTMS}{0.760000}
+\newcommand{\configRecoSimCPUNDLArTMS}{2.970000}
+\newcommand{\configRecoDataGPUNDLArTMS}{0.760000}
+\newcommand{\configRecoSimGPUNDLArTMS}{0.022200}
+\newcommand{\configRecoDataStoreNDLArTMS}{20}
+\newcommand{\configRecoSimStoreNDLArTMS}{419}
+\newcommand{\configRecoMemoryNDLArTMS}{2000}
+\newcommand{\configSimMemoryNDLArTMS}{2000}
+\newcommand{\configAnalysisCPUNDLArTMS}{0.250000}
+\newcommand{\configSPReprocess}{3}
+\newcommand{\configDPReprocess}{3}
+\newcommand{\configPDHDReprocess}{3}
+\newcommand{\configPDVDReprocess}{3}
+\newcommand{\configPDsReprocess}{3}
+\newcommand{\configFDVDReprocess}{100}
+\newcommand{\configFDHDReprocess}{100}
+\newcommand{\configFDsReprocess}{100}
+\newcommand{\configNDSANDReprocess}{100}
+\newcommand{\configNDLArTMSReprocess}{100}
+\newcommand{\configColdboxReprocess}{0}
+\newcommand{\configAnalysisExtend}{2}
+configAnalysisExtend = \configAnalysisExtend \\  % testing
+\newcommand{\configSPPatternFraction}{0.700000}
+\newcommand{\configPDHDPatternFraction}{0.700000}
+\newcommand{\configDPPatternFraction}{0.700000}
+\newcommand{\configPDVDPatternFraction}{0.700000}
+\newcommand{\configPDsPatternFraction}{0.700000}
+\newcommand{\configFDHDPatternFraction}{0.100000}
+\newcommand{\configFDVDPatternFraction}{0.100000}
+\newcommand{\configFDsPatternFraction}{0.100000}
+\newcommand{\configNDSANDPatternFraction}{0.900000}
+\newcommand{\configNDLArTMSPatternFraction}{0.900000}
+\newcommand{\configMARSPatternFraction}{0}
+\newcommand{\configRawDataTapeLifetimes}{100}
+\newcommand{\configTestTapeLifetimes}{1.000000}
+\newcommand{\configTPTapeLifetimes}{100}
+\newcommand{\configRecoDataTapeLifetimes}{15}
+\newcommand{\configRecoSimTapeLifetimes}{15}
+\newcommand{\configAnalysisDataTapeLifetimes}{15}
+\newcommand{\configAnalysisSimTapeLifetimes}{15}
+\newcommand{\configRawDataDiskLifetimes}{3}
+\newcommand{\configTestDiskLifetimes}{0.500000}
+\newcommand{\configTPDiskLifetimes}{0.500000}
+\newcommand{\configRecoDataDiskLifetimes}{2}
+\newcommand{\configRecoSimDiskLifetimes}{2}
+\newcommand{\configAnalysisDataDiskLifetimes}{5}
+\newcommand{\configAnalysisSimDiskLifetimes}{5}
+\newcommand{\configRawDataTapeCopies}{2}
+\newcommand{\configTestTapeCopies}{1}
+\newcommand{\configTPTapeCopies}{1}
+\newcommand{\configRecoDataTapeCopies}{1}
+\newcommand{\configRecoSimTapeCopies}{1}
+\newcommand{\configAnalysisDataTapeCopies}{1}
+\newcommand{\configAnalysisSimTapeCopies}{1}
+\newcommand{\configRawDataDiskCopies}{1}
+\newcommand{\configTestDiskCopies}{1}
+\newcommand{\configTPDiskCopies}{1}
+\newcommand{\configRecoDataDiskCopies}{2}
+\newcommand{\configRecoSimDiskCopies}{1.500000}
+\newcommand{\configAnalysisDataDiskCopies}{2}
+\newcommand{\configAnalysisSimDiskCopies}{2}
+\newcommand{\configRecoDataStorePerYear}{1}
+\newcommand{\configRecoSimStorePerYear}{1}
+\newcommand{\configRecoDataCPUPerYear}{1}
+\newcommand{\configRecoSimCPUPerYear}{1}
+\newcommand{\configAnalysisCPUPerYear}{1}
+\newcommand{\configAnalysisGPUPerYear}{1}
+\newcommand{\configAnalysisDataPerYear}{2}
+\newcommand{\configAnalysisSimPerYear}{2}
+\newcommand{\configRecoDataGPUPerYear}{1}
+\newcommand{\configRecoSimGPUPerYear}{1}
+\newcommand{\configEfficiencySlots}{0.700000}
+\newcommand{\configTwentyTwentyUnitsSlots}{1}
+\newcommand{\configkHEPSPECZeroSixPerCPU}{0.011000}
+configkHEPSPECZeroSixPerCPU = \configkHEPSPECZeroSixPerCPU \\  % testing
+\newcommand{\configFiscalYearStart}{April 1}
+configFiscalYearStart = \configFiscalYearStart \\  % testing
+\newcommand{\configCPUAccounting}{end of fiscal year}
+configCPUAccounting = \configCPUAccounting \\  % testing
+\newcommand{\configTapeAccounting}{end of fiscal year}
+configTapeAccounting = \configTapeAccounting \\  % testing
+\newcommand{\configDiskAccounting}{October 1}
+configDiskAccounting = \configDiskAccounting \\  % testing
+\newcommand{\configRawDataStoreTypeColors}{blue}
+\newcommand{\configRawTestTypeColors}{green}
+\newcommand{\configTestTypeColors}{orange}
+\newcommand{\configRecoDataStoreTypeColors}{red}
+\newcommand{\configRecoSimStoreTypeColors}{grey}
+\newcommand{\configTotalTypeColors}{black}
+\newcommand{\configHostLabTypeColors}{orange}
+\newcommand{\configUSTypeColors}{red}
+\newcommand{\configUKTypeColors}{red}
+\newcommand{\configCZTypeColors}{green}
+\newcommand{\configCERNTypeColors}{blue}
+\newcommand{\configIntTypeColors}{green}
+\newcommand{\configRawDataStoreTypeLines}{solid}
+\newcommand{\configRawTestTypeLines}{solid}
+\newcommand{\configTestTypeLines}{dashed}
+\newcommand{\configRecoDataStoreTypeLines}{solid}
+\newcommand{\configRecoSimStoreTypeLines}{dashed}
+\newcommand{\configTotalTypeLines}{solid}
+\newcommand{\configSPDetColors}{green}
+\newcommand{\configPDHDDetColors}{green}
+\newcommand{\configDPDetColors}{magenta}
+\newcommand{\configPDVDDetColors}{magenta}
+\newcommand{\configPDsDetColors}{blue}
+\newcommand{\configFDHDDetColors}{red}
+\newcommand{\configColdboxDetColors}{orange}
+\newcommand{\configFDVDDetColors}{red}
+\newcommand{\configFDsDetColors}{red}
+\newcommand{\configNDSANDDetColors}{grey}
+\newcommand{\configNDLArTMSDetColors}{black}
+\newcommand{\configAnalysisDetColors}{orange}
+\newcommand{\configTotalDetColors}{black}
+\newcommand{\configMARSDetColors}{purple}
+\newcommand{\configProductionDetColors}{blue}
+\newcommand{\configHostLabDetColors}{orange}
+\newcommand{\configCERNDetColors}{blue}
+\newcommand{\configIntDetColors}{green}
+\newcommand{\configUSDetColors}{red}
+\newcommand{\configRecoDataDetColors}{red}
+\newcommand{\configRecoSimDetColors}{grey}
+\newcommand{\configAnalysisDataDetColors}{red}
+\newcommand{\configAnalysisSimDetColors}{grey}
+\newcommand{\configTestDetColors}{green}
+\newcommand{\configTPDetColors}{purple}
+\newcommand{\configRawDataDetColors}{blue}
+\newcommand{\configSPDetLines}{solid}
+\newcommand{\configPDHDDetLines}{dashed}
+\newcommand{\configDPDetLines}{dashed}
+\newcommand{\configPDVDDetLines}{solid}
+\newcommand{\configColdboxDetLines}{dotted}
+\newcommand{\configPDsDetLines}{solid}
+\newcommand{\configFDHDDetLines}{solid}
+\newcommand{\configFDVDDetLines}{dashed}
+\newcommand{\configFDsDetLines}{solid}
+\newcommand{\configNDSANDDetLines}{solid}
+\newcommand{\configNDLArTMSDetLines}{dashed}
+\newcommand{\configMARSDetLines}{dashed}
+\newcommand{\configAnalysisDetLines}{dashed}
+\newcommand{\configTotalDetLines}{solid}
+\newcommand{\configHostLabDetLines}{solid}
+\newcommand{\configCERNDetLines}{dashed}
+\newcommand{\configIntDetLines}{dashed}
+\newcommand{\configUSDetLines}{dotted}
+\newcommand{\configRecoDataDetLines}{solid}
+\newcommand{\configRecoSimDetLines}{solid}
+\newcommand{\configAnalysisDataDetLines}{dashed}
+\newcommand{\configAnalysisSimDetLines}{dashed}
+\newcommand{\configTestDetLines}{dotted}
+\newcommand{\configTPDetLines}{dashed}
+\newcommand{\configRawDataDetLines}{solid}
+\newcommand{\configDetectorsExplain}{Detectors included in the calculation}
+\newcommand{\configCapExplain}{Cap on Raw data per year in PB}
+\newcommand{\configBaseMemoryExplain}{MB of memory per slot assumed as the average}
+\newcommand{\configMaxYearExplain}{Plot until year}
+\newcommand{\configMinYearExplain}{Plot starting with year}
+\newcommand{\configReprocessExplain}{Number of years of data reprocessed when doing a new pass}
+\newcommand{\configAnalysisExtendExplain}{Years analysis continues after last reco/sim}
+\newcommand{\configPatternFractionExplain}{Fraction of time taken in pattern recognition}
+\newcommand{\configTapeLifetimesExplain}{Number of years kept on tape}
+\newcommand{\configDiskLifetimesExplain}{Number of years kept on disk}
+\newcommand{\configTapeCopiesExplain}{Number of copies kept on tape}
+\newcommand{\configDiskCopiesExplain}{Number of copies kept on disk}
+\newcommand{\configPerYearExplain}{Number of reprocessing done per year}
+\newcommand{\configSlotsExplain}{Description of slots, efficiency and speed relative to 2020 vintage}
+\newcommand{\configkHEPSPECZeroSixPerCPUExplain}{kHEPSPEC06 per core assumed}
+\newcommand{\configSplitsYear}{2029}
+configSplitsYear = \configSplitsYear \\  % testing
+\newcommand{\configHostLabRawDataTapePDSplits}{0.500000}
+\newcommand{\configUSRawDataTapePDSplits}{0.000000}
+\newcommand{\configIntRawDataTapePDSplits}{0.000000}
+\newcommand{\configCERNRawDataTapePDSplits}{0.500000}
+\newcommand{\configHostLabRecoSimTapePDSplits}{0.000000}
+\newcommand{\configUSRecoSimTapePDSplits}{0.500000}
+\newcommand{\configIntRecoSimTapePDSplits}{0.500000}
+\newcommand{\configCERNRecoSimTapePDSplits}{0.000000}
+\newcommand{\configHostLabRecoDataTapePDSplits}{0.000000}
+\newcommand{\configUSRecoDataTapePDSplits}{0.500000}
+\newcommand{\configIntRecoDataTapePDSplits}{0.500000}
+\newcommand{\configCERNRecoDataTapePDSplits}{0.000000}
+\newcommand{\configHostLabTestTapePDSplits}{0.500000}
+\newcommand{\configUSTestTapePDSplits}{0.000000}
+\newcommand{\configIntTestTapePDSplits}{0.500000}
+\newcommand{\configCERNTestTapePDSplits}{0.000000}
+\newcommand{\configHostLabTPTapePDSplits}{0.500000}
+\newcommand{\configUSTPTapePDSplits}{0.000000}
+\newcommand{\configIntTPTapePDSplits}{0.500000}
+\newcommand{\configCERNTPTapePDSplits}{0.000000}
+\newcommand{\configHostLabRawDataDiskPDSplits}{0.500000}
+\newcommand{\configUSRawDataDiskPDSplits}{0.000000}
+\newcommand{\configIntRawDataDiskPDSplits}{0.000000}
+\newcommand{\configCERNRawDataDiskPDSplits}{0.500000}
+\newcommand{\configHostLabRecoSimDiskPDSplits}{0.000000}
+\newcommand{\configUSRecoSimDiskPDSplits}{0.500000}
+\newcommand{\configIntRecoSimDiskPDSplits}{0.500000}
+\newcommand{\configCERNRecoSimDiskPDSplits}{0.000000}
+\newcommand{\configHostLabRecoDataDiskPDSplits}{0.000000}
+\newcommand{\configUSRecoDataDiskPDSplits}{0.500000}
+\newcommand{\configIntRecoDataDiskPDSplits}{0.500000}
+\newcommand{\configCERNRecoDataDiskPDSplits}{0.000000}
+\newcommand{\configHostLabTestDiskPDSplits}{0.500000}
+\newcommand{\configUSTestDiskPDSplits}{0.000000}
+\newcommand{\configIntTestDiskPDSplits}{0.000000}
+\newcommand{\configCERNTestDiskPDSplits}{0.500000}
+\newcommand{\configHostLabTPDiskPDSplits}{0.500000}
+\newcommand{\configUSTPDiskPDSplits}{0.000000}
+\newcommand{\configIntTPDiskPDSplits}{0.000000}
+\newcommand{\configCERNTPDiskPDSplits}{0.500000}
+\newcommand{\configHostLabCPUCPUPDSplits}{0.200000}
+\newcommand{\configUSCPUCPUPDSplits}{0.400000}
+\newcommand{\configCERNCPUCPUPDSplits}{0.100000}
+\newcommand{\configIntCPUCPUPDSplits}{0.300000}
+\newcommand{\configHostLabGPUGPUPDSplits}{0.200000}
+\newcommand{\configUSGPUGPUPDSplits}{0.400000}
+\newcommand{\configCERNGPUGPUPDSplits}{0.100000}
+\newcommand{\configIntGPUGPUPDSplits}{0.300000}
+\newcommand{\configHostLabRawDataTapeFDSplits}{0.500000}
+\newcommand{\configUSRawDataTapeFDSplits}{0.000000}
+\newcommand{\configIntRawDataTapeFDSplits}{0.500000}
+\newcommand{\configCERNRawDataTapeFDSplits}{0.000000}
+\newcommand{\configHostLabRecoSimTapeFDSplits}{0.000000}
+\newcommand{\configUSRecoSimTapeFDSplits}{0.500000}
+\newcommand{\configIntRecoSimTapeFDSplits}{0.500000}
+\newcommand{\configCERNRecoSimTapeFDSplits}{0.000000}
+\newcommand{\configHostLabRecoDataTapeFDSplits}{0.000000}
+\newcommand{\configUSRecoDataTapeFDSplits}{0.500000}
+\newcommand{\configIntRecoDataTapeFDSplits}{0.500000}
+\newcommand{\configCERNRecoDataTapeFDSplits}{0.000000}
+\newcommand{\configHostLabTestTapeFDSplits}{0.500000}
+\newcommand{\configUSTestTapeFDSplits}{0.000000}
+\newcommand{\configIntTestTapeFDSplits}{0.500000}
+\newcommand{\configCERNTestTapeFDSplits}{0.000000}
+\newcommand{\configHostLabTPTapeFDSplits}{0.500000}
+\newcommand{\configUSTPTapeFDSplits}{0.000000}
+\newcommand{\configIntTPTapeFDSplits}{0.500000}
+\newcommand{\configCERNTPTapeFDSplits}{0.000000}
+\newcommand{\configHostLabRawDataDiskFDSplits}{0.500000}
+\newcommand{\configUSRawDataDiskFDSplits}{0.000000}
+\newcommand{\configIntRawDataDiskFDSplits}{0.500000}
+\newcommand{\configCERNRawDataDiskFDSplits}{0.000000}
+\newcommand{\configHostLabRecoSimDiskFDSplits}{0.000000}
+\newcommand{\configUSRecoSimDiskFDSplits}{0.500000}
+\newcommand{\configIntRecoSimDiskFDSplits}{0.500000}
+\newcommand{\configCERNRecoSimDiskFDSplits}{0.000000}
+\newcommand{\configHostLabRecoDataDiskFDSplits}{0.000000}
+\newcommand{\configUSRecoDataDiskFDSplits}{0.500000}
+\newcommand{\configIntRecoDataDiskFDSplits}{0.500000}
+\newcommand{\configCERNRecoDataDiskFDSplits}{0.000000}
+\newcommand{\configHostLabTestDiskFDSplits}{0.500000}
+\newcommand{\configUSTestDiskFDSplits}{0.000000}
+\newcommand{\configIntTestDiskFDSplits}{0.500000}
+\newcommand{\configCERNTestDiskFDSplits}{0.000000}
+\newcommand{\configHostLabTPDiskFDSplits}{0.500000}
+\newcommand{\configUSTPDiskFDSplits}{0.000000}
+\newcommand{\configIntTPDiskFDSplits}{0.500000}
+\newcommand{\configCERNTPDiskFDSplits}{0.000000}
+\newcommand{\configHostLabCPUCPUFDSplits}{0.200000}
+\newcommand{\configUSCPUCPUFDSplits}{0.400000}
+\newcommand{\configCERNCPUCPUFDSplits}{0.000000}
+\newcommand{\configIntCPUCPUFDSplits}{0.400000}
+\newcommand{\configHostLabGPUGPUFDSplits}{0.200000}
+\newcommand{\configUSGPUGPUFDSplits}{0.400000}
+\newcommand{\configCERNGPUGPUFDSplits}{0.000000}
+\newcommand{\configIntGPUGPUFDSplits}{0.400000}
+\newcommand{\configHostLabRawDataTapeNDSplits}{0.500000}
+\newcommand{\configUSRawDataTapeNDSplits}{0.000000}
+\newcommand{\configIntRawDataTapeNDSplits}{0.500000}
+\newcommand{\configCERNRawDataTapeNDSplits}{0.000000}
+\newcommand{\configHostLabRecoSimTapeNDSplits}{0.000000}
+\newcommand{\configUSRecoSimTapeNDSplits}{0.500000}
+\newcommand{\configIntRecoSimTapeNDSplits}{0.500000}
+\newcommand{\configCERNRecoSimTapeNDSplits}{0.000000}
+\newcommand{\configHostLabRecoDataTapeNDSplits}{0.000000}
+\newcommand{\configUSRecoDataTapeNDSplits}{0.500000}
+\newcommand{\configIntRecoDataTapeNDSplits}{0.500000}
+\newcommand{\configCERNRecoDataTapeNDSplits}{0.000000}
+\newcommand{\configHostLabTestTapeNDSplits}{0.500000}
+\newcommand{\configUSTestTapeNDSplits}{0.000000}
+\newcommand{\configIntTestTapeNDSplits}{0.500000}
+\newcommand{\configCERNTestTapeNDSplits}{0.000000}
+\newcommand{\configHostLabTPTapeNDSplits}{0.500000}
+\newcommand{\configUSTPTapeNDSplits}{0.000000}
+\newcommand{\configIntTPTapeNDSplits}{0.500000}
+\newcommand{\configCERNTPTapeNDSplits}{0.000000}
+\newcommand{\configHostLabRawDataDiskNDSplits}{0.500000}
+\newcommand{\configUSRawDataDiskNDSplits}{0.000000}
+\newcommand{\configIntRawDataDiskNDSplits}{0.000000}
+\newcommand{\configCERNRawDataDiskNDSplits}{0.500000}
+\newcommand{\configHostLabRecoSimDiskNDSplits}{0.000000}
+\newcommand{\configUSRecoSimDiskNDSplits}{0.500000}
+\newcommand{\configIntRecoSimDiskNDSplits}{0.500000}
+\newcommand{\configCERNRecoSimDiskNDSplits}{0.000000}
+\newcommand{\configHostLabRecoDataDiskNDSplits}{0.000000}
+\newcommand{\configUSRecoDataDiskNDSplits}{0.500000}
+\newcommand{\configIntRecoDataDiskNDSplits}{0.500000}
+\newcommand{\configCERNRecoDataDiskNDSplits}{0.000000}
+\newcommand{\configHostLabTestDiskNDSplits}{0.500000}
+\newcommand{\configUSTestDiskNDSplits}{0.000000}
+\newcommand{\configIntTestDiskNDSplits}{0.000000}
+\newcommand{\configCERNTestDiskNDSplits}{0.500000}
+\newcommand{\configHostLabTPDiskNDSplits}{0.500000}
+\newcommand{\configUSTPDiskNDSplits}{0.000000}
+\newcommand{\configIntTPDiskNDSplits}{0.000000}
+\newcommand{\configCERNTPDiskNDSplits}{0.500000}
+\newcommand{\configHostLabCPUCPUNDSplits}{0.200000}
+\newcommand{\configUSCPUCPUNDSplits}{0.400000}
+\newcommand{\configCERNCPUCPUNDSplits}{0.000000}
+\newcommand{\configIntCPUCPUNDSplits}{0.400000}
+\newcommand{\configHostLabGPUGPUNDSplits}{0.200000}
+\newcommand{\configUSGPUGPUNDSplits}{0.400000}
+\newcommand{\configCERNGPUGPUNDSplits}{0.000000}
+\newcommand{\configIntGPUGPUNDSplits}{0.400000}
+\newcommand{\configfilename}{NearTerm\_2025-12-10-2040.json}
+configfilename = \configfilename \\  % testing
+\end{document}

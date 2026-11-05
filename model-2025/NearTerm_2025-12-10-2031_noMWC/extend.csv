@@ -1,0 +1,1596 @@
+Detectors,DataTypes,Resources,Locations,Units,2025,2026,2027,2028,2029,2030,2031,Explanation
+SP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+SP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+SP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+Coldbox,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+Coldbox,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+Coldbox,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDHD,TP,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDHD,Sim-Events,input,Total,Million,5.000,5.000,5.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+DP,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+DP,Test,input,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+DP,Sim-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDVD,Raw-Events,input,Total,Million,30.000,30.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+PDVD,TP,input,Total,TB,1000.000,1000.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDVD,Test,input,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+PDVD,Sim-Events,input,Total,Million,5.100,5.100,5.100,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDHD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,1.100,2.200,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDHD,TP,input,Total,TB,0.000,0.000,0.000,0.000,3000.000,2342.225,2429.150,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDHD,Test,input,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,2024.291,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDHD,Sim-Events,input,Total,Million,15.000,37.000,37.000,100.000,40.000,40.000,40.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDVD,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.500,2.200,2.200,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+FDVD,TP,input,Total,TB,0.000,0.000,0.000,0.000,3100.000,2420.299,2510.121,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDVD,Test,input,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,2105.263,Inputs from NearTerm_2025-12-10-2040_timeline.csv rescaled  downward by 1.67 to meet cap of 30
+FDVD,Sim-Events,input,Total,Million,15.000,44.000,44.000,105.000,42.000,42.000,42.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-SAND,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-SAND,Test,input,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,1000.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-SAND,Sim-Events,input,Total,Million,1.000,1.600,1.600,5.000,20.000,30.000,60.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-LAr+TMS,Raw-Events,input,Total,Million,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-LAr+TMS,Test,input,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+ND-LAr+TMS,Sim-Events,input,Total,Million,1.000,1.600,1.600,3.500,5.000,5.000,60.000,Inputs from NearTerm_2025-12-10-2040_timeline.csv
+SP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 70.00
+SP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+DP,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 110.00
+DP,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+Coldbox,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 30.00
+Coldbox,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00
+PDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 140.00 rescaled  downward by 1.67 to meet cap of 30
+PDHD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+PDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+PDVD,Raw-Data,Store,Total,TB,4650.000,4650.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 155.00 rescaled  downward by 1.67 to meet cap of 30
+PDVD,TP,Store,Total,TB,1000.000,1000.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+PDVD,Test,Store,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDVD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,4000.000,13741.054,14251.012,Change native types into storage using factor 8000.00 rescaled  downward by 1.67 to meet cap of 30
+FDVD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,3100.000,2420.299,2510.121,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDVD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,2105.263,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDHD,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,3220.560,6680.162,Change native types into storage using factor 3750.00 rescaled  downward by 1.67 to meet cap of 30
+FDHD,TP,Store,Total,TB,0.000,0.000,0.000,0.000,3000.000,2342.225,2429.150,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+FDHD,Test,Store,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,2024.291,Change native types into storage using factor 1.00 rescaled  downward by 1.67 to meet cap of 30
+ND-SAND,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 5.00
+ND-SAND,Test,Store,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,1000.000,Change native types into storage using factor 1.00
+ND-LAr+TMS,Raw-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Change native types into storage using factor 10.00
+ND-LAr+TMS,Test,Store,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Change native types into storage using factor 1.00
+Sub-Total,Raw-Data,Store,Total,TB,4650.000,4650.000,0.000,0.000,4000.000,16961.614,20931.174,Sum over raw data types from ProtoDUNEs and Far detector rescaled  downward by 1.67 to meet cap of 30
+Sub-Total,TP,Store,Total,TB,1000.000,1000.000,0.000,0.000,6100.000,4762.524,4939.271,Sum over raw data types from ProtoDUNEs and Far detector rescaled  downward by 1.67 to meet cap of 30
+Sub-Total,Test,Store,Total,TB,500.000,500.000,0.000,0.000,5100.000,8275.862,4129.555,Sum over raw data types from ProtoDUNEs and Far detector rescaled  downward by 1.67 to meet cap of 30
+PDVD,Sub-Total,Store,Total,TB,6150.000,6150.000,0.000,0.000,0.000,0.000,0.000,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+PDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+FDHD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,5500.000,11808.718,11133.603,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+FDVD,Sub-Total,Store,Total,TB,0.000,0.000,0.000,0.000,9700.000,18191.282,18866.397,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+Sub-Total,Sub-Total,Store,Total,TB,6150.000,6150.000,0.000,0.000,15200.000,30000.000,30000.000,second sum over raw types rescaled  downward by 1.67 to meet cap of 30
+SP,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+SP,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+SP,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+SP,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+DP,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+DP,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+DP,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+DP,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+Coldbox,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 0.00 years for Reco-Data
+Coldbox,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 0.00 years for Reco-Data
+Coldbox,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 0.00 years for Reco-Data
+Coldbox,Reco-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+Coldbox,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+Coldbox,Reco-Sim,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDHD,Reco-Data,CPU,Total,MHr,5.668,5.668,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Data,Store,Total,TB,1190.000,1190.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDHD,Reco-Sim,CPU,Total,MHr,3.750,3.750,3.750,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+PDHD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDHD,Reco-Sim,Store,Total,TB,1100.000,1100.000,1100.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+PDVD,Reco-Data,CPU,Total,MHr,5.134,10.135,10.002,5.001,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Data,Store,Total,TB,616.000,1216.000,1200.000,600.000,0.000,0.000,0.000,Go back 3.00 years for Reco-Data
+PDVD,Reco-Sim,CPU,Total,MHr,3.825,3.825,3.825,0.000,0.000,0.000,0.000,Scale inputs by 0.75
+PDVD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+PDVD,Reco-Sim,Store,Total,TB,1122.000,1122.000,1122.000,0.000,0.000,0.000,0.000,Scale inputs by 220.00
+FDVD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.665,3.591,6.517,Go back 100.00 years for Reco-Data
+FDVD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.050,0.270,0.490,Go back 100.00 years for Reco-Data
+FDVD,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,10.000,54.000,98.000,Go back 100.00 years for Reco-Data
+FDVD,Reco-Sim,CPU,Total,MHr,1.875,5.500,5.500,13.125,5.250,5.250,5.250,Scale inputs by 0.12
+FDVD,Reco-Sim,GPU,Total,MHr,1.500,4.400,4.400,10.500,4.200,4.200,4.200,Scale inputs by 0.10
+FDVD,Reco-Sim,Store,Total,TB,300.000,880.000,880.000,2100.000,840.000,840.000,840.000,Scale inputs by 20.00
+FDHD,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,1.375,4.125,Go back 100.00 years for Reco-Data
+FDHD,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+FDHD,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,22.000,66.000,Go back 100.00 years for Reco-Data
+FDHD,Reco-Sim,CPU,Total,MHr,1.875,4.625,4.625,12.500,5.000,5.000,5.000,Scale inputs by 0.12
+FDHD,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+FDHD,Reco-Sim,Store,Total,TB,300.000,740.000,740.000,2000.000,800.000,800.000,800.000,Scale inputs by 20.00
+ND-SAND,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-SAND,Reco-Sim,CPU,Total,MHr,0.240,0.384,0.384,1.200,4.800,7.200,14.400,Scale inputs by 0.24
+ND-SAND,Reco-Sim,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Scale inputs by 0.00
+ND-SAND,Reco-Sim,Store,Total,TB,25.000,40.000,40.000,125.000,500.000,750.000,1500.000,Scale inputs by 25.00
+ND-LAr+TMS,Reco-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Data,Store,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Go back 100.00 years for Reco-Data
+ND-LAr+TMS,Reco-Sim,CPU,Total,MHr,2.970,4.752,4.752,10.395,14.850,14.850,178.200,Scale inputs by 2.97
+ND-LAr+TMS,Reco-Sim,GPU,Total,MHr,0.022,0.036,0.036,0.078,0.111,0.111,1.332,Scale inputs by 0.02
+ND-LAr+TMS,Reco-Sim,Store,Total,TB,419.000,670.400,670.400,1466.500,2095.000,2095.000,25140.000,Scale inputs by 419.00
+SP,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+SP,Analysis-Sim,CPU,Total,MHr,4.587,4.587,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+DP,Analysis-Data,CPU,Total,MHr,0.211,0.211,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+DP,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+Coldbox,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+Coldbox,Analysis-Sim,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+PDHD,Analysis-Data,CPU,Total,MHr,2.834,2.834,2.834,2.834,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+PDHD,Analysis-Sim,CPU,Total,MHr,1.875,1.875,1.875,1.875,1.875,0.000,0.000,Extend Analysis processing by 2.00 years
+PDVD,Analysis-Data,CPU,Total,MHr,2.567,5.068,5.068,5.068,5.068,5.068,0.000,Extend Analysis processing by 2.00 years
+PDVD,Analysis-Sim,CPU,Total,MHr,1.912,1.912,1.912,1.912,1.912,0.000,0.000,Extend Analysis processing by 2.00 years
+FDVD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.333,1.796,3.259,Extend Analysis processing by 2.00 years
+FDVD,Analysis-Sim,CPU,Total,MHr,0.938,2.750,2.750,6.562,6.562,6.562,6.562,Extend Analysis processing by 2.00 years
+FDHD,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.688,2.062,Extend Analysis processing by 2.00 years
+FDHD,Analysis-Sim,CPU,Total,MHr,0.938,2.312,2.312,6.250,6.250,6.250,6.250,Extend Analysis processing by 2.00 years
+ND-SAND,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+ND-SAND,Analysis-Sim,CPU,Total,MHr,0.060,0.096,0.096,0.300,1.200,1.800,3.600,Extend Analysis processing by 2.00 years
+ND-LAr+TMS,Analysis-Data,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend Analysis processing by 2.00 years
+ND-LAr+TMS,Analysis-Sim,CPU,Total,MHr,0.743,1.188,1.188,2.599,3.713,3.713,44.550,Extend Analysis processing by 2.00 years
+SP,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Analysis-Sim,CPU Wall,Total,MHr,6.553,6.553,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+SP,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,8.229,8.229,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+SP,Analysis-Sim,CPU Cores,Total,Cores,748.104,748.104,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Analysis-Data,CPU Wall,Total,MHr,0.302,0.302,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.379,0.379,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Analysis-Data,CPU Cores,Total,Cores,34.471,34.471,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+DP,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+DP,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+DP,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+Coldbox,Reco-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+Coldbox,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+Coldbox,Reco-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+Coldbox,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+Coldbox,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+Coldbox,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+Coldbox,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+Coldbox,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+Coldbox,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+Coldbox,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+Coldbox,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+Coldbox,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+Coldbox,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+Coldbox,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+Coldbox,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+Coldbox,Analysis-Sim,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+Coldbox,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+Coldbox,Analysis-Sim,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Sim,CPU Wall,Total,MHr,5.357,5.357,5.357,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,6.727,6.727,6.727,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Sim,CPU Cores,Total,Cores,611.546,611.546,611.546,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Data,CPU Wall,Total,MHr,8.097,8.097,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,10.167,10.167,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Data,CPU Cores,Total,Cores,924.299,924.299,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Analysis-Data,CPU Wall,Total,MHr,4.048,4.048,4.048,4.048,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,5.084,5.084,5.084,5.084,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Analysis-Data,CPU Cores,Total,Cores,462.149,462.149,462.149,462.149,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDHD,Analysis-Sim,CPU Wall,Total,MHr,2.679,2.679,2.679,2.679,2.679,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDHD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,3.364,3.364,3.364,3.364,3.364,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDHD,Analysis-Sim,CPU Cores,Total,Cores,305.773,305.773,305.773,305.773,305.773,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Sim,CPU Wall,Total,MHr,5.464,5.464,5.464,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,6.862,6.862,6.862,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Sim,CPU Cores,Total,Cores,623.777,623.777,623.777,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Data,CPU Wall,Total,MHr,7.335,14.479,14.289,7.144,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,9.210,18.182,17.942,8.971,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Data,CPU Cores,Total,Cores,837.306,1652.864,1631.115,815.558,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Analysis-Data,CPU Wall,Total,MHr,3.667,7.240,7.240,7.240,7.240,7.240,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,4.605,9.091,9.091,9.091,9.091,9.091,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Analysis-Data,CPU Cores,Total,Cores,418.653,826.432,826.432,826.432,826.432,826.432,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+PDVD,Analysis-Sim,CPU Wall,Total,MHr,2.732,2.732,2.732,2.732,2.732,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+PDVD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,3.431,3.431,3.431,3.431,3.431,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+PDVD,Analysis-Sim,CPU Cores,Total,Cores,311.888,311.888,311.888,311.888,311.888,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Sim,CPU Wall,Total,MHr,2.679,7.857,7.857,18.750,7.500,7.500,7.500,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,3.364,9.866,9.866,23.545,9.418,9.418,9.418,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Sim,CPU Cores,Total,Cores,305.773,896.934,896.934,2140.411,856.164,856.164,856.164,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Sim,GPU Wall,Total,MHr,2.143,6.286,6.286,15.000,6.000,6.000,6.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,2.691,7.893,7.893,18.836,7.534,7.534,7.534,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Sim,GPU Cores,Total,Cores,244.618,717.547,717.547,1712.329,684.932,684.932,684.932,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.950,5.130,9.310,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,1.193,6.442,11.691,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,108.447,585.616,1062.785,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.071,0.386,0.700,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.090,0.484,0.879,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,8.154,44.031,79.909,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.475,2.565,4.655,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.596,3.221,5.845,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,54.224,292.808,531.393,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDVD,Analysis-Sim,CPU Wall,Total,MHr,1.339,3.929,3.929,9.375,9.375,9.375,9.375,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDVD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,1.682,4.933,4.933,11.772,11.772,11.772,11.772,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDVD,Analysis-Sim,CPU Cores,Total,Cores,152.886,448.467,448.467,1070.205,1070.205,1070.205,1070.205,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Sim,CPU Wall,Total,MHr,2.679,6.607,6.607,17.857,7.143,7.143,7.143,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,3.364,8.297,8.297,22.423,8.969,8.969,8.969,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Sim,CPU Cores,Total,Cores,305.773,754.240,754.240,2038.487,815.395,815.395,815.395,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,1.964,5.893,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,2.467,7.400,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,224.234,672.701,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.982,2.946,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,1.233,3.700,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,112.117,336.350,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+FDHD,Analysis-Sim,CPU Wall,Total,MHr,1.339,3.304,3.304,8.929,8.929,8.929,8.929,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+FDHD,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,1.682,4.148,4.148,11.212,11.212,11.212,11.212,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+FDHD,Analysis-Sim,CPU Cores,Total,Cores,152.886,377.120,377.120,1019.243,1019.243,1019.243,1019.243,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Sim,CPU Wall,Total,MHr,0.343,0.549,0.549,1.714,6.857,10.286,20.571,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.431,0.689,0.689,2.153,8.611,12.916,25.832,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Sim,CPU Cores,Total,Cores,39.139,62.622,62.622,195.695,782.779,1174.168,2348.337,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Sim,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Sim,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-SAND,Analysis-Sim,CPU Wall,Total,MHr,0.086,0.137,0.137,0.429,1.714,2.571,5.143,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-SAND,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,0.108,0.172,0.172,0.538,2.153,3.229,6.458,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-SAND,Analysis-Sim,CPU Cores,Total,Cores,9.785,15.656,15.656,48.924,195.695,293.542,587.084,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Sim,CPU Wall,Total,MHr,4.243,6.789,6.789,14.850,21.214,21.214,254.571,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,5.328,8.524,8.524,18.647,26.639,26.639,319.667,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Sim,CPU Cores,Total,Cores,484.344,774.951,774.951,1695.205,2421.722,2421.722,29060.665,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Sim,GPU Wall,Total,MHr,0.032,0.051,0.051,0.111,0.159,0.159,1.903,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Sim,GPU kHS23-Yr,Total,kHS23-Yr,0.040,0.064,0.064,0.139,0.199,0.199,2.389,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Sim,GPU Cores,Total,Cores,3.620,5.793,5.793,12.671,18.102,18.102,217.221,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Reco-Data,GPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Reco-Data,GPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Reco-Data,GPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Analysis-Data,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Analysis-Data,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+ND-LAr+TMS,Analysis-Sim,CPU Wall,Total,MHr,1.061,1.697,1.697,3.713,5.304,5.304,63.643,Add 0.70 efficiency Change units from MHr to MHr using factor of 1.43
+ND-LAr+TMS,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,1.332,2.131,2.131,4.662,6.660,6.660,79.917,Add 0.70 efficiency Change units from MHr to kHS23-Yr using factor of 1.79
+ND-LAr+TMS,Analysis-Sim,CPU Cores,Total,Cores,121.086,193.738,193.738,423.801,605.431,605.431,7265.166,Add 0.70 efficiency Change units from MHr to Cores using factor of 163.08
+SP,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU,Total,MHr,4.587,4.587,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU Wall,Total,MHr,6.553,6.553,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU kHS23-Yr,Total,kHS23-Yr,8.229,8.229,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+SP,Total,CPU Cores,Total,Cores,748.104,748.104,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU,Total,MHr,0.211,0.211,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU Wall,Total,MHr,0.302,0.302,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.379,0.379,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+DP,Total,CPU Cores,Total,Cores,34.471,34.471,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+Coldbox,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+Coldbox,Total,CPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+Coldbox,Total,CPU Wall,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+Coldbox,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+Coldbox,Total,CPU Cores,Total,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,CPU,Total,MHr,14.127,14.127,8.459,4.709,1.875,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,CPU Wall,Total,MHr,20.181,20.181,12.084,6.727,2.679,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,CPU kHS23-Yr,Total,kHS23-Yr,25.341,25.341,15.174,8.447,3.364,0.000,0.000,Sum processing across DataTypes
+PDHD,Total,CPU Cores,Total,Cores,2303.767,2303.767,1379.468,767.922,305.773,0.000,0.000,Sum processing across DataTypes
+PDVD,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+PDVD,Total,CPU,Total,MHr,13.439,20.941,20.807,11.981,6.980,5.068,0.000,Sum processing across DataTypes
+PDVD,Total,CPU Wall,Total,MHr,19.199,29.915,29.725,17.116,9.972,7.240,0.000,Sum processing across DataTypes
+PDVD,Total,CPU kHS23-Yr,Total,kHS23-Yr,24.108,37.565,37.325,21.493,12.522,9.091,0.000,Sum processing across DataTypes
+PDVD,Total,CPU Cores,Total,Cores,2191.624,3414.961,3393.213,1953.878,1138.320,826.432,0.000,Sum processing across DataTypes
+FDVD,Total,GPU,Total,MHr,1.500,4.400,4.400,10.500,4.250,4.470,4.690,Sum processing across DataTypes
+FDVD,Total,CPU,Total,MHr,2.812,8.250,8.250,19.688,12.810,17.199,21.588,Sum processing across DataTypes
+FDVD,Total,CPU Wall,Total,MHr,4.018,11.786,11.786,28.125,18.300,24.570,30.840,Sum processing across DataTypes
+FDVD,Total,CPU kHS23-Yr,Total,kHS23-Yr,5.045,14.799,14.799,35.317,22.979,30.853,38.726,Sum processing across DataTypes
+FDVD,Total,CPU Cores,Total,Cores,458.659,1345.401,1345.401,3210.616,2089.041,2804.795,3520.548,Sum processing across DataTypes
+FDHD,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+FDHD,Total,CPU,Total,MHr,2.812,6.938,6.938,18.750,11.250,13.312,17.438,Sum processing across DataTypes
+FDHD,Total,CPU Wall,Total,MHr,4.018,9.911,9.911,26.786,16.071,19.018,24.911,Sum processing across DataTypes
+FDHD,Total,CPU kHS23-Yr,Total,kHS23-Yr,5.045,12.445,12.445,33.635,20.181,23.881,31.281,Sum processing across DataTypes
+FDHD,Total,CPU Cores,Total,Cores,458.659,1131.360,1131.360,3057.730,1834.638,2170.988,2843.689,Sum processing across DataTypes
+ND-SAND,Total,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Sum processing across DataTypes
+ND-SAND,Total,CPU,Total,MHr,0.300,0.480,0.480,1.500,6.000,9.000,18.000,Sum processing across DataTypes
+ND-SAND,Total,CPU Wall,Total,MHr,0.429,0.686,0.686,2.143,8.571,12.857,25.714,Sum processing across DataTypes
+ND-SAND,Total,CPU kHS23-Yr,Total,kHS23-Yr,0.538,0.861,0.861,2.691,10.763,16.145,32.290,Sum processing across DataTypes
+ND-SAND,Total,CPU Cores,Total,Cores,48.924,78.278,78.278,244.618,978.474,1467.710,2935.421,Sum processing across DataTypes
+ND-LAr+TMS,Total,GPU,Total,MHr,0.022,0.036,0.036,0.078,0.111,0.111,1.332,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU,Total,MHr,3.713,5.940,5.940,12.994,18.562,18.562,222.750,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU Wall,Total,MHr,5.304,8.486,8.486,18.562,26.518,26.518,318.214,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU kHS23-Yr,Total,kHS23-Yr,6.660,10.656,10.656,23.309,33.299,33.299,399.584,Sum processing across DataTypes
+ND-LAr+TMS,Total,CPU Cores,Total,Cores,605.431,968.689,968.689,2119.007,3027.153,3027.153,36325.832,Sum processing across DataTypes
+Total,Reco-Sim,GPU,Total,MHr,1.522,4.436,4.436,10.578,4.311,4.311,5.532,Sum processing across Detectors
+Total,Reco-Sim,CPU,Total,MHr,14.535,22.836,22.836,37.220,29.900,32.300,202.850,Sum processing across Detectors
+Total,Reco-Sim,CPU Wall,Total,MHr,20.764,32.623,32.623,53.171,42.714,46.143,289.786,Sum processing across Detectors
+Total,Reco-Sim,CPU kHS23-Yr,Total,kHS23-Yr,26.074,40.965,40.965,66.768,53.637,57.942,363.886,Sum processing across Detectors
+Total,Reco-Sim,CPU Cores,Total,Cores,2370.352,3724.070,3724.070,6069.798,4876.060,5267.449,33080.561,Sum processing across Detectors
+Total,Reco-Data,GPU,Total,MHr,0.000,0.000,0.000,0.000,0.050,0.270,0.490,Sum processing across Detectors
+Total,Reco-Data,CPU,Total,MHr,10.802,15.803,10.002,5.001,0.665,4.966,10.642,Sum processing across Detectors
+Total,Reco-Data,CPU Wall,Total,MHr,15.432,22.576,14.289,7.144,0.950,7.094,15.203,Sum processing across Detectors
+Total,Reco-Data,CPU kHS23-Yr,Total,kHS23-Yr,19.378,28.349,17.942,8.971,1.193,8.908,19.090,Sum processing across Detectors
+Total,Reco-Data,CPU Cores,Total,Cores,1761.605,2577.162,1631.115,815.558,108.447,809.850,1735.486,Sum processing across Detectors
+Total,Analysis-Data,CPU,Total,MHr,5.612,8.113,7.902,7.902,5.400,7.551,5.321,Sum processing across Detectors
+Total,Analysis-Data,CPU Wall,Total,MHr,8.018,11.590,11.288,11.288,7.715,10.787,7.601,Sum processing across Detectors
+Total,Analysis-Data,CPU kHS23-Yr,Total,kHS23-Yr,10.068,14.554,14.174,14.174,9.687,13.545,9.545,Sum processing across Detectors
+Total,Analysis-Data,CPU Cores,Total,Cores,915.273,1323.052,1288.581,1288.581,880.656,1231.357,867.743,Sum processing across Detectors
+Total,Analysis-Sim,CPU,Total,MHr,11.052,14.721,10.134,19.499,21.513,18.325,60.963,Sum processing across Detectors
+Total,Analysis-Sim,CPU Wall,Total,MHr,15.789,21.031,14.477,27.855,30.732,26.179,87.089,Sum processing across Detectors
+Total,Analysis-Sim,CPU kHS23-Yr,Total,kHS23-Yr,19.827,26.408,18.179,34.978,38.591,32.873,109.359,Sum processing across Detectors
+Total,Analysis-Sim,CPU Cores,Total,Cores,1802.409,2400.746,1652.642,3179.835,3508.235,2988.421,9941.699,Sum processing across Detectors
+Total,Total,GPU,Total,MHr,1.522,4.436,4.436,10.578,4.361,4.581,6.022,Sum processing across Detectors
+Total,Total,CPU,Total,MHr,42.002,61.473,50.874,69.621,57.478,63.142,279.776,Sum processing across Detectors
+Total,Total,CPU Wall,Total,MHr,60.003,87.819,72.677,99.459,82.111,90.202,399.679,Sum processing across Detectors
+Total,Total,CPU kHS23-Yr,Total,kHS23-Yr,75.346,110.275,91.260,124.891,103.107,113.268,501.880,Sum processing across Detectors
+Total,Total,CPU Cores,Total,Cores,6849.640,10025.031,8296.409,11353.772,9373.399,10297.078,45625.489,Sum processing across Detectors
+SP,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+SP,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+SP,Reco-Sim,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.50"
+SP,Reco-Sim,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+SP,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+SP,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+SP,Test,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+SP,Test,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+DP,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+DP,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+DP,Reco-Sim,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.50"
+DP,Reco-Sim,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+DP,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+DP,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+DP,Test,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+DP,Test,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+Coldbox,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+Coldbox,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+Coldbox,Reco-Sim,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.50"
+Coldbox,Reco-Sim,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+Coldbox,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+Coldbox,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+Coldbox,Test,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+Coldbox,Test,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+PDHD,TP,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,TP,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,Reco-Sim,Disk,Total,TB,1650.000,1650.000,1650.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.50"
+PDHD,Reco-Sim,Tape,Total,TB,1100.000,1100.000,1100.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,Reco-Data,Disk,Total,TB,2380.000,2380.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+PDHD,Reco-Data,Tape,Total,TB,1190.000,1190.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,Test,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDHD,Test,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,Raw-Data,Disk,Total,TB,4650.000,4650.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,Raw-Data,Tape,Total,TB,9300.000,9300.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+PDVD,TP,Disk,Total,TB,1000.000,1000.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,TP,Tape,Total,TB,1000.000,1000.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,Reco-Sim,Disk,Total,TB,1683.000,1683.000,1683.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.50"
+PDVD,Reco-Sim,Tape,Total,TB,1122.000,1122.000,1122.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,Reco-Data,Disk,Total,TB,1232.000,2432.000,2400.000,1200.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+PDVD,Reco-Data,Tape,Total,TB,616.000,1216.000,1200.000,600.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,Test,Disk,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+PDVD,Test,Tape,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+FDVD,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,4000.000,13741.054,14251.012,"Scale by number of copies, 1.00"
+FDVD,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,8000.000,27482.108,28502.024,"Scale by number of copies, 2.00"
+FDVD,TP,Disk,Total,TB,0.000,0.000,0.000,0.000,3100.000,2420.299,2510.121,"Scale by number of copies, 1.00"
+FDVD,TP,Tape,Total,TB,0.000,0.000,0.000,0.000,3100.000,2420.299,2510.121,"Scale by number of copies, 1.00"
+FDVD,Reco-Sim,Disk,Total,TB,450.000,1320.000,1320.000,3150.000,1260.000,1260.000,1260.000,"Scale by number of copies, 1.50"
+FDVD,Reco-Sim,Tape,Total,TB,300.000,880.000,880.000,2100.000,840.000,840.000,840.000,"Scale by number of copies, 1.00"
+FDVD,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,20.000,108.000,196.000,"Scale by number of copies, 2.00"
+FDVD,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,10.000,54.000,98.000,"Scale by number of copies, 1.00"
+FDVD,Test,Disk,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,2105.263,"Scale by number of copies, 1.00"
+FDVD,Test,Tape,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,2105.263,"Scale by number of copies, 1.00"
+FDHD,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,3220.560,6680.162,"Scale by number of copies, 1.00"
+FDHD,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,6441.119,13360.324,"Scale by number of copies, 2.00"
+FDHD,TP,Disk,Total,TB,0.000,0.000,0.000,0.000,3000.000,2342.225,2429.150,"Scale by number of copies, 1.00"
+FDHD,TP,Tape,Total,TB,0.000,0.000,0.000,0.000,3000.000,2342.225,2429.150,"Scale by number of copies, 1.00"
+FDHD,Reco-Sim,Disk,Total,TB,450.000,1110.000,1110.000,3000.000,1200.000,1200.000,1200.000,"Scale by number of copies, 1.50"
+FDHD,Reco-Sim,Tape,Total,TB,300.000,740.000,740.000,2000.000,800.000,800.000,800.000,"Scale by number of copies, 1.00"
+FDHD,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,44.000,132.000,"Scale by number of copies, 2.00"
+FDHD,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,22.000,66.000,"Scale by number of copies, 1.00"
+FDHD,Test,Disk,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,2024.291,"Scale by number of copies, 1.00"
+FDHD,Test,Tape,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,2024.291,"Scale by number of copies, 1.00"
+ND-SAND,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+ND-SAND,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+ND-SAND,Reco-Sim,Disk,Total,TB,37.500,60.000,60.000,187.500,750.000,1125.000,2250.000,"Scale by number of copies, 1.50"
+ND-SAND,Reco-Sim,Tape,Total,TB,25.000,40.000,40.000,125.000,500.000,750.000,1500.000,"Scale by number of copies, 1.00"
+ND-SAND,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+ND-SAND,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+ND-SAND,Test,Disk,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,1000.000,"Scale by number of copies, 1.00"
+ND-SAND,Test,Tape,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,1000.000,"Scale by number of copies, 1.00"
+ND-LAr+TMS,Raw-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+ND-LAr+TMS,Raw-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+ND-LAr+TMS,Reco-Sim,Disk,Total,TB,628.500,1005.600,1005.600,2199.750,3142.500,3142.500,37710.000,"Scale by number of copies, 1.50"
+ND-LAr+TMS,Reco-Sim,Tape,Total,TB,419.000,670.400,670.400,1466.500,2095.000,2095.000,25140.000,"Scale by number of copies, 1.00"
+ND-LAr+TMS,Reco-Data,Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 2.00"
+ND-LAr+TMS,Reco-Data,Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,"Scale by number of copies, 1.00"
+ND-LAr+TMS,Test,Disk,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,"Scale by number of copies, 1.00"
+ND-LAr+TMS,Test,Tape,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,"Scale by number of copies, 1.00"
+SP,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Sim,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Sim,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Sim,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Sim,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Sim,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Reco-Sim,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Reco-Sim,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Reco-Sim,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Reco-Sim,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Reco-Sim,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Test,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Test,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Test,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Test,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+SP,Analysis-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Analysis-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Analysis-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Analysis-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Analysis-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Analysis-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Analysis-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Analysis-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Analysis-Sim,CPU,HostLab,MHr,0.917,0.917,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Analysis-Sim,CPU,US,MHr,1.835,1.835,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Analysis-Sim,CPU,Int,MHr,1.376,1.376,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Analysis-Sim,CPU,CERN,MHr,0.459,0.459,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,1.646,1.646,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,3.292,3.292,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,2.469,2.469,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.823,0.823,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+SP,Analysis-Sim,CPU Cores,HostLab,Cores,149.621,149.621,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+SP,Analysis-Sim,CPU Cores,US,Cores,299.242,299.242,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+SP,Analysis-Sim,CPU Cores,Int,Cores,224.431,224.431,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+SP,Analysis-Sim,CPU Cores,CERN,Cores,74.810,74.810,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Sim,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Sim,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Sim,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Sim,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Sim,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Reco-Sim,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Reco-Sim,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Reco-Sim,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Reco-Sim,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Reco-Sim,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Test,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Test,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Test,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+DP,Test,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+DP,Analysis-Data,CPU,HostLab,MHr,0.042,0.042,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Analysis-Data,CPU,US,MHr,0.085,0.085,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Analysis-Data,CPU,Int,MHr,0.063,0.063,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Analysis-Data,CPU,CERN,MHr,0.021,0.021,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.076,0.076,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.152,0.152,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.114,0.114,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.038,0.038,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Analysis-Data,CPU Cores,HostLab,Cores,6.894,6.894,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Analysis-Data,CPU Cores,US,Cores,13.788,13.788,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Analysis-Data,CPU Cores,Int,Cores,10.341,10.341,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Analysis-Data,CPU Cores,CERN,Cores,3.447,3.447,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Analysis-Sim,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Analysis-Sim,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Analysis-Sim,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Analysis-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+DP,Analysis-Sim,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+DP,Analysis-Sim,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+DP,Analysis-Sim,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+DP,Analysis-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Sim,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Sim,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Sim,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Sim,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Sim,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Reco-Sim,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Reco-Sim,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Reco-Sim,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Reco-Sim,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Reco-Sim,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Test,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Test,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Test,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+Coldbox,Test,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+Coldbox,Analysis-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Analysis-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Analysis-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Analysis-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Analysis-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Analysis-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Analysis-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Analysis-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Analysis-Sim,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Analysis-Sim,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Analysis-Sim,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Analysis-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+Coldbox,Analysis-Sim,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+Coldbox,Analysis-Sim,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+Coldbox,Analysis-Sim,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+Coldbox,Analysis-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,TP,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,TP,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,TP,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,TP,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,TP,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,TP,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,TP,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,TP,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Sim,Tape,US,TB,550.000,550.000,550.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Sim,Tape,Int,TB,550.000,550.000,550.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Sim,Disk,US,TB,825.000,825.000,825.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Sim,Disk,Int,TB,825.000,825.000,825.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Sim,CPU,HostLab,MHr,0.750,0.750,0.750,0.000,0.000,0.000,0.000,Split  by 0.20
+PDHD,Reco-Sim,CPU,US,MHr,1.500,1.500,1.500,0.000,0.000,0.000,0.000,Split  by 0.40
+PDHD,Reco-Sim,CPU,Int,MHr,1.125,1.125,1.125,0.000,0.000,0.000,0.000,Split  by 0.30
+PDHD,Reco-Sim,CPU,CERN,MHr,0.375,0.375,0.375,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,1.345,1.345,1.345,0.000,0.000,0.000,0.000,Split  by 0.20
+PDHD,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,2.691,2.691,2.691,0.000,0.000,0.000,0.000,Split  by 0.40
+PDHD,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,2.018,2.018,2.018,0.000,0.000,0.000,0.000,Split  by 0.30
+PDHD,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.673,0.673,0.673,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Reco-Sim,CPU Cores,HostLab,Cores,122.309,122.309,122.309,0.000,0.000,0.000,0.000,Split  by 0.20
+PDHD,Reco-Sim,CPU Cores,US,Cores,244.618,244.618,244.618,0.000,0.000,0.000,0.000,Split  by 0.40
+PDHD,Reco-Sim,CPU Cores,Int,Cores,183.464,183.464,183.464,0.000,0.000,0.000,0.000,Split  by 0.30
+PDHD,Reco-Sim,CPU Cores,CERN,Cores,61.155,61.155,61.155,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Data,Tape,US,TB,595.000,595.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Data,Tape,Int,TB,595.000,595.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Data,Disk,US,TB,1190.000,1190.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Data,Disk,Int,TB,1190.000,1190.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Reco-Data,CPU,HostLab,MHr,1.134,1.134,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+PDHD,Reco-Data,CPU,US,MHr,2.267,2.267,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+PDHD,Reco-Data,CPU,Int,MHr,1.700,1.700,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+PDHD,Reco-Data,CPU,CERN,MHr,0.567,0.567,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,2.033,2.033,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+PDHD,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,4.067,4.067,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+PDHD,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,3.050,3.050,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+PDHD,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,1.017,1.017,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Reco-Data,CPU Cores,HostLab,Cores,184.860,184.860,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+PDHD,Reco-Data,CPU Cores,US,Cores,369.720,369.720,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+PDHD,Reco-Data,CPU Cores,Int,Cores,277.290,277.290,0.000,0.000,0.000,0.000,0.000,Split  by 0.30
+PDHD,Reco-Data,CPU Cores,CERN,Cores,92.430,92.430,0.000,0.000,0.000,0.000,0.000,Split  by 0.10
+PDHD,Test,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Test,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Test,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDHD,Test,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDHD,Analysis-Data,CPU,HostLab,MHr,0.567,0.567,0.567,0.567,0.000,0.000,0.000,Split  by 0.20
+PDHD,Analysis-Data,CPU,US,MHr,1.134,1.134,1.134,1.134,0.000,0.000,0.000,Split  by 0.40
+PDHD,Analysis-Data,CPU,Int,MHr,0.850,0.850,0.850,0.850,0.000,0.000,0.000,Split  by 0.30
+PDHD,Analysis-Data,CPU,CERN,MHr,0.283,0.283,0.283,0.283,0.000,0.000,0.000,Split  by 0.10
+PDHD,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,1.017,1.017,1.017,1.017,0.000,0.000,0.000,Split  by 0.20
+PDHD,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,2.033,2.033,2.033,2.033,0.000,0.000,0.000,Split  by 0.40
+PDHD,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,1.525,1.525,1.525,1.525,0.000,0.000,0.000,Split  by 0.30
+PDHD,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.508,0.508,0.508,0.508,0.000,0.000,0.000,Split  by 0.10
+PDHD,Analysis-Data,CPU Cores,HostLab,Cores,92.430,92.430,92.430,92.430,0.000,0.000,0.000,Split  by 0.20
+PDHD,Analysis-Data,CPU Cores,US,Cores,184.860,184.860,184.860,184.860,0.000,0.000,0.000,Split  by 0.40
+PDHD,Analysis-Data,CPU Cores,Int,Cores,138.645,138.645,138.645,138.645,0.000,0.000,0.000,Split  by 0.30
+PDHD,Analysis-Data,CPU Cores,CERN,Cores,46.215,46.215,46.215,46.215,0.000,0.000,0.000,Split  by 0.10
+PDHD,Analysis-Sim,CPU,HostLab,MHr,0.375,0.375,0.375,0.375,0.375,0.000,0.000,Split  by 0.20
+PDHD,Analysis-Sim,CPU,US,MHr,0.750,0.750,0.750,0.750,0.750,0.000,0.000,Split  by 0.40
+PDHD,Analysis-Sim,CPU,Int,MHr,0.562,0.562,0.562,0.562,0.562,0.000,0.000,Split  by 0.30
+PDHD,Analysis-Sim,CPU,CERN,MHr,0.188,0.188,0.188,0.188,0.188,0.000,0.000,Split  by 0.10
+PDHD,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.673,0.673,0.673,0.673,0.673,0.000,0.000,Split  by 0.20
+PDHD,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,1.345,1.345,1.345,1.345,1.345,0.000,0.000,Split  by 0.40
+PDHD,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,1.009,1.009,1.009,1.009,1.009,0.000,0.000,Split  by 0.30
+PDHD,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.336,0.336,0.336,0.336,0.336,0.000,0.000,Split  by 0.10
+PDHD,Analysis-Sim,CPU Cores,HostLab,Cores,61.155,61.155,61.155,61.155,61.155,0.000,0.000,Split  by 0.20
+PDHD,Analysis-Sim,CPU Cores,US,Cores,122.309,122.309,122.309,122.309,122.309,0.000,0.000,Split  by 0.40
+PDHD,Analysis-Sim,CPU Cores,Int,Cores,91.732,91.732,91.732,91.732,91.732,0.000,0.000,Split  by 0.30
+PDHD,Analysis-Sim,CPU Cores,CERN,Cores,30.577,30.577,30.577,30.577,30.577,0.000,0.000,Split  by 0.10
+PDVD,Raw-Data,Tape,HostLab,TB,4650.000,4650.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Raw-Data,Tape,CERN,TB,4650.000,4650.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Raw-Data,Disk,HostLab,TB,2325.000,2325.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Raw-Data,Disk,CERN,TB,2325.000,2325.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,TP,Tape,HostLab,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,TP,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,TP,Tape,Int,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,TP,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,TP,Disk,HostLab,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,TP,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,TP,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,TP,Disk,CERN,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Sim,Tape,US,TB,561.000,561.000,561.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Sim,Tape,Int,TB,561.000,561.000,561.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Sim,Disk,US,TB,841.500,841.500,841.500,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Sim,Disk,Int,TB,841.500,841.500,841.500,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Sim,CPU,HostLab,MHr,0.765,0.765,0.765,0.000,0.000,0.000,0.000,Split  by 0.20
+PDVD,Reco-Sim,CPU,US,MHr,1.530,1.530,1.530,0.000,0.000,0.000,0.000,Split  by 0.40
+PDVD,Reco-Sim,CPU,Int,MHr,1.147,1.147,1.147,0.000,0.000,0.000,0.000,Split  by 0.30
+PDVD,Reco-Sim,CPU,CERN,MHr,0.383,0.383,0.383,0.000,0.000,0.000,0.000,Split  by 0.10
+PDVD,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,1.372,1.372,1.372,0.000,0.000,0.000,0.000,Split  by 0.20
+PDVD,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,2.745,2.745,2.745,0.000,0.000,0.000,0.000,Split  by 0.40
+PDVD,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,2.058,2.058,2.058,0.000,0.000,0.000,0.000,Split  by 0.30
+PDVD,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.686,0.686,0.686,0.000,0.000,0.000,0.000,Split  by 0.10
+PDVD,Reco-Sim,CPU Cores,HostLab,Cores,124.755,124.755,124.755,0.000,0.000,0.000,0.000,Split  by 0.20
+PDVD,Reco-Sim,CPU Cores,US,Cores,249.511,249.511,249.511,0.000,0.000,0.000,0.000,Split  by 0.40
+PDVD,Reco-Sim,CPU Cores,Int,Cores,187.133,187.133,187.133,0.000,0.000,0.000,0.000,Split  by 0.30
+PDVD,Reco-Sim,CPU Cores,CERN,Cores,62.378,62.378,62.378,0.000,0.000,0.000,0.000,Split  by 0.10
+PDVD,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Data,Tape,US,TB,308.000,608.000,600.000,300.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Data,Tape,Int,TB,308.000,608.000,600.000,300.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Data,Disk,US,TB,616.000,1216.000,1200.000,600.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Data,Disk,Int,TB,616.000,1216.000,1200.000,600.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Reco-Data,CPU,HostLab,MHr,1.027,2.027,2.000,1.000,0.000,0.000,0.000,Split  by 0.20
+PDVD,Reco-Data,CPU,US,MHr,2.054,4.054,4.001,2.000,0.000,0.000,0.000,Split  by 0.40
+PDVD,Reco-Data,CPU,Int,MHr,1.540,3.041,3.001,1.500,0.000,0.000,0.000,Split  by 0.30
+PDVD,Reco-Data,CPU,CERN,MHr,0.513,1.014,1.000,0.500,0.000,0.000,0.000,Split  by 0.10
+PDVD,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,1.842,3.636,3.588,1.794,0.000,0.000,0.000,Split  by 0.20
+PDVD,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,3.684,7.273,7.177,3.588,0.000,0.000,0.000,Split  by 0.40
+PDVD,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,2.763,5.454,5.383,2.691,0.000,0.000,0.000,Split  by 0.30
+PDVD,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.921,1.818,1.794,0.897,0.000,0.000,0.000,Split  by 0.10
+PDVD,Reco-Data,CPU Cores,HostLab,Cores,167.461,330.573,326.223,163.112,0.000,0.000,0.000,Split  by 0.20
+PDVD,Reco-Data,CPU Cores,US,Cores,334.922,661.145,652.446,326.223,0.000,0.000,0.000,Split  by 0.40
+PDVD,Reco-Data,CPU Cores,Int,Cores,251.192,495.859,489.335,244.667,0.000,0.000,0.000,Split  by 0.30
+PDVD,Reco-Data,CPU Cores,CERN,Cores,83.731,165.286,163.112,81.556,0.000,0.000,0.000,Split  by 0.10
+PDVD,Test,Tape,HostLab,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Test,Tape,Int,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Test,Disk,HostLab,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+PDVD,Test,Disk,CERN,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+PDVD,Analysis-Data,CPU,HostLab,MHr,0.513,1.014,1.014,1.014,1.014,1.014,0.000,Split  by 0.20
+PDVD,Analysis-Data,CPU,US,MHr,1.027,2.027,2.027,2.027,2.027,2.027,0.000,Split  by 0.40
+PDVD,Analysis-Data,CPU,Int,MHr,0.770,1.520,1.520,1.520,1.520,1.520,0.000,Split  by 0.30
+PDVD,Analysis-Data,CPU,CERN,MHr,0.257,0.507,0.507,0.507,0.507,0.507,0.000,Split  by 0.10
+PDVD,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.921,1.818,1.818,1.818,1.818,1.818,0.000,Split  by 0.20
+PDVD,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,1.842,3.636,3.636,3.636,3.636,3.636,0.000,Split  by 0.40
+PDVD,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,1.382,2.727,2.727,2.727,2.727,2.727,0.000,Split  by 0.30
+PDVD,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.461,0.909,0.909,0.909,0.909,0.909,0.000,Split  by 0.10
+PDVD,Analysis-Data,CPU Cores,HostLab,Cores,83.731,165.286,165.286,165.286,165.286,165.286,0.000,Split  by 0.20
+PDVD,Analysis-Data,CPU Cores,US,Cores,167.461,330.573,330.573,330.573,330.573,330.573,0.000,Split  by 0.40
+PDVD,Analysis-Data,CPU Cores,Int,Cores,125.596,247.930,247.930,247.930,247.930,247.930,0.000,Split  by 0.30
+PDVD,Analysis-Data,CPU Cores,CERN,Cores,41.865,82.643,82.643,82.643,82.643,82.643,0.000,Split  by 0.10
+PDVD,Analysis-Sim,CPU,HostLab,MHr,0.383,0.383,0.383,0.383,0.383,0.000,0.000,Split  by 0.20
+PDVD,Analysis-Sim,CPU,US,MHr,0.765,0.765,0.765,0.765,0.765,0.000,0.000,Split  by 0.40
+PDVD,Analysis-Sim,CPU,Int,MHr,0.574,0.574,0.574,0.574,0.574,0.000,0.000,Split  by 0.30
+PDVD,Analysis-Sim,CPU,CERN,MHr,0.191,0.191,0.191,0.191,0.191,0.000,0.000,Split  by 0.10
+PDVD,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.686,0.686,0.686,0.686,0.686,0.000,0.000,Split  by 0.20
+PDVD,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,1.372,1.372,1.372,1.372,1.372,0.000,0.000,Split  by 0.40
+PDVD,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,1.029,1.029,1.029,1.029,1.029,0.000,0.000,Split  by 0.30
+PDVD,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.343,0.343,0.343,0.343,0.343,0.000,0.000,Split  by 0.10
+PDVD,Analysis-Sim,CPU Cores,HostLab,Cores,62.378,62.378,62.378,62.378,62.378,0.000,0.000,Split  by 0.20
+PDVD,Analysis-Sim,CPU Cores,US,Cores,124.755,124.755,124.755,124.755,124.755,0.000,0.000,Split  by 0.40
+PDVD,Analysis-Sim,CPU Cores,Int,Cores,93.567,93.567,93.567,93.567,93.567,0.000,0.000,Split  by 0.30
+PDVD,Analysis-Sim,CPU Cores,CERN,Cores,31.189,31.189,31.189,31.189,31.189,0.000,0.000,Split  by 0.10
+FDVD,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,4000.000,13741.054,14251.012,Split  by 0.50
+FDVD,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,4000.000,13741.054,14251.012,Split  by 0.50
+FDVD,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,2000.000,6870.527,7125.506,Split  by 0.50
+FDVD,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,2000.000,6870.527,7125.506,Split  by 0.50
+FDVD,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,TP,Tape,HostLab,TB,0.000,0.000,0.000,0.000,1550.000,1210.150,1255.061,Split  by 0.50
+FDVD,TP,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,TP,Tape,Int,TB,0.000,0.000,0.000,0.000,1550.000,1210.150,1255.061,Split  by 0.50
+FDVD,TP,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,TP,Disk,HostLab,TB,0.000,0.000,0.000,0.000,1550.000,1210.150,1255.061,Split  by 0.50
+FDVD,TP,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,TP,Disk,Int,TB,0.000,0.000,0.000,0.000,1550.000,1210.150,1255.061,Split  by 0.50
+FDVD,TP,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,Tape,US,TB,150.000,440.000,440.000,1050.000,420.000,420.000,420.000,Split  by 0.50
+FDVD,Reco-Sim,Tape,Int,TB,150.000,440.000,440.000,1050.000,420.000,420.000,420.000,Split  by 0.50
+FDVD,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,Disk,US,TB,225.000,660.000,660.000,1575.000,630.000,630.000,630.000,Split  by 0.50
+FDVD,Reco-Sim,Disk,Int,TB,225.000,660.000,660.000,1575.000,630.000,630.000,630.000,Split  by 0.50
+FDVD,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,CPU,HostLab,MHr,0.375,1.100,1.100,2.625,1.050,1.050,1.050,Split  by 0.20
+FDVD,Reco-Sim,CPU,US,MHr,0.750,2.200,2.200,5.250,2.100,2.100,2.100,Split  by 0.40
+FDVD,Reco-Sim,CPU,Int,MHr,0.750,2.200,2.200,5.250,2.100,2.100,2.100,Split  by 0.40
+FDVD,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.673,1.973,1.973,4.709,1.884,1.884,1.884,Split  by 0.20
+FDVD,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,1.345,3.947,3.947,9.418,3.767,3.767,3.767,Split  by 0.40
+FDVD,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,1.345,3.947,3.947,9.418,3.767,3.767,3.767,Split  by 0.40
+FDVD,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Sim,CPU Cores,HostLab,Cores,61.155,179.387,179.387,428.082,171.233,171.233,171.233,Split  by 0.20
+FDVD,Reco-Sim,CPU Cores,US,Cores,122.309,358.774,358.774,856.164,342.466,342.466,342.466,Split  by 0.40
+FDVD,Reco-Sim,CPU Cores,Int,Cores,122.309,358.774,358.774,856.164,342.466,342.466,342.466,Split  by 0.40
+FDVD,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,5.000,27.000,49.000,Split  by 0.50
+FDVD,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,5.000,27.000,49.000,Split  by 0.50
+FDVD,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,10.000,54.000,98.000,Split  by 0.50
+FDVD,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,10.000,54.000,98.000,Split  by 0.50
+FDVD,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.133,0.718,1.303,Split  by 0.20
+FDVD,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.266,1.436,2.607,Split  by 0.40
+FDVD,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.266,1.436,2.607,Split  by 0.40
+FDVD,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.239,1.288,2.338,Split  by 0.20
+FDVD,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.477,2.577,4.676,Split  by 0.40
+FDVD,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.477,2.577,4.676,Split  by 0.40
+FDVD,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,21.689,117.123,212.557,Split  by 0.20
+FDVD,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,43.379,234.247,425.114,Split  by 0.40
+FDVD,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,43.379,234.247,425.114,Split  by 0.40
+FDVD,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Test,Tape,HostLab,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Split  by 0.50
+FDVD,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Test,Tape,Int,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Split  by 0.50
+FDVD,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Test,Disk,HostLab,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Split  by 0.50
+FDVD,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Split  by 0.50
+FDVD,Test,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Analysis-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.067,0.359,0.652,Split  by 0.20
+FDVD,Analysis-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.133,0.718,1.303,Split  by 0.40
+FDVD,Analysis-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.133,0.718,1.303,Split  by 0.40
+FDVD,Analysis-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.119,0.644,1.169,Split  by 0.20
+FDVD,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.239,1.288,2.338,Split  by 0.40
+FDVD,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.239,1.288,2.338,Split  by 0.40
+FDVD,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Analysis-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,10.845,58.562,106.279,Split  by 0.20
+FDVD,Analysis-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,21.689,117.123,212.557,Split  by 0.40
+FDVD,Analysis-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,21.689,117.123,212.557,Split  by 0.40
+FDVD,Analysis-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Analysis-Sim,CPU,HostLab,MHr,0.188,0.550,0.550,1.312,1.312,1.312,1.312,Split  by 0.20
+FDVD,Analysis-Sim,CPU,US,MHr,0.375,1.100,1.100,2.625,2.625,2.625,2.625,Split  by 0.40
+FDVD,Analysis-Sim,CPU,Int,MHr,0.375,1.100,1.100,2.625,2.625,2.625,2.625,Split  by 0.40
+FDVD,Analysis-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.336,0.987,0.987,2.354,2.354,2.354,2.354,Split  by 0.20
+FDVD,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.673,1.973,1.973,4.709,4.709,4.709,4.709,Split  by 0.40
+FDVD,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.673,1.973,1.973,4.709,4.709,4.709,4.709,Split  by 0.40
+FDVD,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDVD,Analysis-Sim,CPU Cores,HostLab,Cores,30.577,89.693,89.693,214.041,214.041,214.041,214.041,Split  by 0.20
+FDVD,Analysis-Sim,CPU Cores,US,Cores,61.155,179.387,179.387,428.082,428.082,428.082,428.082,Split  by 0.40
+FDVD,Analysis-Sim,CPU Cores,Int,Cores,61.155,179.387,179.387,428.082,428.082,428.082,428.082,Split  by 0.40
+FDVD,Analysis-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,3220.560,6680.162,Split  by 0.50
+FDHD,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,3220.560,6680.162,Split  by 0.50
+FDHD,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,1610.280,3340.081,Split  by 0.50
+FDHD,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,1610.280,3340.081,Split  by 0.50
+FDHD,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,TP,Tape,HostLab,TB,0.000,0.000,0.000,0.000,1500.000,1171.113,1214.575,Split  by 0.50
+FDHD,TP,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,TP,Tape,Int,TB,0.000,0.000,0.000,0.000,1500.000,1171.113,1214.575,Split  by 0.50
+FDHD,TP,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,TP,Disk,HostLab,TB,0.000,0.000,0.000,0.000,1500.000,1171.113,1214.575,Split  by 0.50
+FDHD,TP,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,TP,Disk,Int,TB,0.000,0.000,0.000,0.000,1500.000,1171.113,1214.575,Split  by 0.50
+FDHD,TP,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,Tape,US,TB,150.000,370.000,370.000,1000.000,400.000,400.000,400.000,Split  by 0.50
+FDHD,Reco-Sim,Tape,Int,TB,150.000,370.000,370.000,1000.000,400.000,400.000,400.000,Split  by 0.50
+FDHD,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,Disk,US,TB,225.000,555.000,555.000,1500.000,600.000,600.000,600.000,Split  by 0.50
+FDHD,Reco-Sim,Disk,Int,TB,225.000,555.000,555.000,1500.000,600.000,600.000,600.000,Split  by 0.50
+FDHD,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,CPU,HostLab,MHr,0.375,0.925,0.925,2.500,1.000,1.000,1.000,Split  by 0.20
+FDHD,Reco-Sim,CPU,US,MHr,0.750,1.850,1.850,5.000,2.000,2.000,2.000,Split  by 0.40
+FDHD,Reco-Sim,CPU,Int,MHr,0.750,1.850,1.850,5.000,2.000,2.000,2.000,Split  by 0.40
+FDHD,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.673,1.659,1.659,4.485,1.794,1.794,1.794,Split  by 0.20
+FDHD,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,1.345,3.319,3.319,8.969,3.588,3.588,3.588,Split  by 0.40
+FDHD,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,1.345,3.319,3.319,8.969,3.588,3.588,3.588,Split  by 0.40
+FDHD,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Sim,CPU Cores,HostLab,Cores,61.155,150.848,150.848,407.697,163.079,163.079,163.079,Split  by 0.20
+FDHD,Reco-Sim,CPU Cores,US,Cores,122.309,301.696,301.696,815.395,326.158,326.158,326.158,Split  by 0.40
+FDHD,Reco-Sim,CPU Cores,Int,Cores,122.309,301.696,301.696,815.395,326.158,326.158,326.158,Split  by 0.40
+FDHD,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,11.000,33.000,Split  by 0.50
+FDHD,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,11.000,33.000,Split  by 0.50
+FDHD,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,22.000,66.000,Split  by 0.50
+FDHD,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,22.000,66.000,Split  by 0.50
+FDHD,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.275,0.825,Split  by 0.20
+FDHD,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.550,1.650,Split  by 0.40
+FDHD,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.550,1.650,Split  by 0.40
+FDHD,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.493,1.480,Split  by 0.20
+FDHD,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.987,2.960,Split  by 0.40
+FDHD,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.987,2.960,Split  by 0.40
+FDHD,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,44.847,134.540,Split  by 0.20
+FDHD,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,89.693,269.080,Split  by 0.40
+FDHD,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,89.693,269.080,Split  by 0.40
+FDHD,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Test,Tape,HostLab,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Split  by 0.50
+FDHD,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Test,Tape,Int,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Split  by 0.50
+FDHD,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Test,Disk,HostLab,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Split  by 0.50
+FDHD,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Split  by 0.50
+FDHD,Test,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Analysis-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.138,0.413,Split  by 0.20
+FDHD,Analysis-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.275,0.825,Split  by 0.40
+FDHD,Analysis-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.275,0.825,Split  by 0.40
+FDHD,Analysis-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.247,0.740,Split  by 0.20
+FDHD,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.493,1.480,Split  by 0.40
+FDHD,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.493,1.480,Split  by 0.40
+FDHD,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Analysis-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,22.423,67.270,Split  by 0.20
+FDHD,Analysis-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,44.847,134.540,Split  by 0.40
+FDHD,Analysis-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,44.847,134.540,Split  by 0.40
+FDHD,Analysis-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Analysis-Sim,CPU,HostLab,MHr,0.188,0.463,0.463,1.250,1.250,1.250,1.250,Split  by 0.20
+FDHD,Analysis-Sim,CPU,US,MHr,0.375,0.925,0.925,2.500,2.500,2.500,2.500,Split  by 0.40
+FDHD,Analysis-Sim,CPU,Int,MHr,0.375,0.925,0.925,2.500,2.500,2.500,2.500,Split  by 0.40
+FDHD,Analysis-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.336,0.830,0.830,2.242,2.242,2.242,2.242,Split  by 0.20
+FDHD,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.673,1.659,1.659,4.485,4.485,4.485,4.485,Split  by 0.40
+FDHD,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.673,1.659,1.659,4.485,4.485,4.485,4.485,Split  by 0.40
+FDHD,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+FDHD,Analysis-Sim,CPU Cores,HostLab,Cores,30.577,75.424,75.424,203.849,203.849,203.849,203.849,Split  by 0.20
+FDHD,Analysis-Sim,CPU Cores,US,Cores,61.155,150.848,150.848,407.697,407.697,407.697,407.697,Split  by 0.40
+FDHD,Analysis-Sim,CPU Cores,Int,Cores,61.155,150.848,150.848,407.697,407.697,407.697,407.697,Split  by 0.40
+FDHD,Analysis-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Sim,Tape,US,TB,12.500,20.000,20.000,62.500,250.000,375.000,750.000,Split  by 0.50
+ND-SAND,Reco-Sim,Tape,Int,TB,12.500,20.000,20.000,62.500,250.000,375.000,750.000,Split  by 0.50
+ND-SAND,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Sim,Disk,US,TB,18.750,30.000,30.000,93.750,375.000,562.500,1125.000,Split  by 0.50
+ND-SAND,Reco-Sim,Disk,Int,TB,18.750,30.000,30.000,93.750,375.000,562.500,1125.000,Split  by 0.50
+ND-SAND,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Sim,CPU,HostLab,MHr,0.048,0.077,0.077,0.240,0.960,1.440,2.880,Split  by 0.20
+ND-SAND,Reco-Sim,CPU,US,MHr,0.096,0.154,0.154,0.480,1.920,2.880,5.760,Split  by 0.40
+ND-SAND,Reco-Sim,CPU,Int,MHr,0.096,0.154,0.154,0.480,1.920,2.880,5.760,Split  by 0.40
+ND-SAND,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.086,0.138,0.138,0.431,1.722,2.583,5.166,Split  by 0.20
+ND-SAND,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.172,0.276,0.276,0.861,3.444,5.166,10.333,Split  by 0.40
+ND-SAND,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.172,0.276,0.276,0.861,3.444,5.166,10.333,Split  by 0.40
+ND-SAND,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Sim,CPU Cores,HostLab,Cores,7.828,12.524,12.524,39.139,156.556,234.834,469.667,Split  by 0.20
+ND-SAND,Reco-Sim,CPU Cores,US,Cores,15.656,25.049,25.049,78.278,313.112,469.667,939.335,Split  by 0.40
+ND-SAND,Reco-Sim,CPU Cores,Int,Cores,15.656,25.049,25.049,78.278,313.112,469.667,939.335,Split  by 0.40
+ND-SAND,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-SAND,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-SAND,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-SAND,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-SAND,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Test,Tape,HostLab,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Split  by 0.50
+ND-SAND,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Test,Tape,Int,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Split  by 0.50
+ND-SAND,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Test,Disk,HostLab,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Split  by 0.50
+ND-SAND,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Test,Disk,CERN,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Split  by 0.50
+ND-SAND,Analysis-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-SAND,Analysis-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Analysis-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Analysis-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-SAND,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Analysis-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-SAND,Analysis-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Analysis-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-SAND,Analysis-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Analysis-Sim,CPU,HostLab,MHr,0.012,0.019,0.019,0.060,0.240,0.360,0.720,Split  by 0.20
+ND-SAND,Analysis-Sim,CPU,US,MHr,0.024,0.038,0.038,0.120,0.480,0.720,1.440,Split  by 0.40
+ND-SAND,Analysis-Sim,CPU,Int,MHr,0.024,0.038,0.038,0.120,0.480,0.720,1.440,Split  by 0.40
+ND-SAND,Analysis-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.022,0.034,0.034,0.108,0.431,0.646,1.292,Split  by 0.20
+ND-SAND,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.043,0.069,0.069,0.215,0.861,1.292,2.583,Split  by 0.40
+ND-SAND,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.043,0.069,0.069,0.215,0.861,1.292,2.583,Split  by 0.40
+ND-SAND,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-SAND,Analysis-Sim,CPU Cores,HostLab,Cores,1.957,3.131,3.131,9.785,39.139,58.708,117.417,Split  by 0.20
+ND-SAND,Analysis-Sim,CPU Cores,US,Cores,3.914,6.262,6.262,19.569,78.278,117.417,234.834,Split  by 0.40
+ND-SAND,Analysis-Sim,CPU Cores,Int,Cores,3.914,6.262,6.262,19.569,78.278,117.417,234.834,Split  by 0.40
+ND-SAND,Analysis-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Raw-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Raw-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Raw-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Raw-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Raw-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Raw-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Raw-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Raw-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Reco-Sim,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Sim,Tape,US,TB,209.500,335.200,335.200,733.250,1047.500,1047.500,12570.000,Split  by 0.50
+ND-LAr+TMS,Reco-Sim,Tape,Int,TB,209.500,335.200,335.200,733.250,1047.500,1047.500,12570.000,Split  by 0.50
+ND-LAr+TMS,Reco-Sim,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Sim,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Sim,Disk,US,TB,314.250,502.800,502.800,1099.875,1571.250,1571.250,18855.000,Split  by 0.50
+ND-LAr+TMS,Reco-Sim,Disk,Int,TB,314.250,502.800,502.800,1099.875,1571.250,1571.250,18855.000,Split  by 0.50
+ND-LAr+TMS,Reco-Sim,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Sim,CPU,HostLab,MHr,0.594,0.950,0.950,2.079,2.970,2.970,35.640,Split  by 0.20
+ND-LAr+TMS,Reco-Sim,CPU,US,MHr,1.188,1.901,1.901,4.158,5.940,5.940,71.280,Split  by 0.40
+ND-LAr+TMS,Reco-Sim,CPU,Int,MHr,1.188,1.901,1.901,4.158,5.940,5.940,71.280,Split  by 0.40
+ND-LAr+TMS,Reco-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,1.066,1.705,1.705,3.729,5.328,5.328,63.933,Split  by 0.20
+ND-LAr+TMS,Reco-Sim,CPU kHS23-Yr,US,kHS23-Yr,2.131,3.410,3.410,7.459,10.656,10.656,127.867,Split  by 0.40
+ND-LAr+TMS,Reco-Sim,CPU kHS23-Yr,Int,kHS23-Yr,2.131,3.410,3.410,7.459,10.656,10.656,127.867,Split  by 0.40
+ND-LAr+TMS,Reco-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Sim,CPU Cores,HostLab,Cores,96.869,154.990,154.990,339.041,484.344,484.344,5812.133,Split  by 0.20
+ND-LAr+TMS,Reco-Sim,CPU Cores,US,Cores,193.738,309.980,309.980,678.082,968.689,968.689,11624.266,Split  by 0.40
+ND-LAr+TMS,Reco-Sim,CPU Cores,Int,Cores,193.738,309.980,309.980,678.082,968.689,968.689,11624.266,Split  by 0.40
+ND-LAr+TMS,Reco-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Reco-Data,Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Reco-Data,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Reco-Data,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.50
+ND-LAr+TMS,Reco-Data,Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-LAr+TMS,Reco-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Reco-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Reco-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-LAr+TMS,Reco-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Reco-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Reco-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Reco-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-LAr+TMS,Reco-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Reco-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Reco-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Test,Tape,HostLab,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Split  by 0.50
+ND-LAr+TMS,Test,Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Test,Tape,Int,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Split  by 0.50
+ND-LAr+TMS,Test,Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Test,Disk,HostLab,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Split  by 0.50
+ND-LAr+TMS,Test,Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Test,Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Test,Disk,CERN,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Split  by 0.50
+ND-LAr+TMS,Analysis-Data,CPU,HostLab,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-LAr+TMS,Analysis-Data,CPU,US,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Analysis-Data,CPU,Int,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Analysis-Data,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Analysis-Data,CPU kHS23-Yr,HostLab,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-LAr+TMS,Analysis-Data,CPU kHS23-Yr,US,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Analysis-Data,CPU kHS23-Yr,Int,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Analysis-Data,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Analysis-Data,CPU Cores,HostLab,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.20
+ND-LAr+TMS,Analysis-Data,CPU Cores,US,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Analysis-Data,CPU Cores,Int,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.40
+ND-LAr+TMS,Analysis-Data,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Analysis-Sim,CPU,HostLab,MHr,0.149,0.238,0.238,0.520,0.743,0.743,8.910,Split  by 0.20
+ND-LAr+TMS,Analysis-Sim,CPU,US,MHr,0.297,0.475,0.475,1.040,1.485,1.485,17.820,Split  by 0.40
+ND-LAr+TMS,Analysis-Sim,CPU,Int,MHr,0.297,0.475,0.475,1.040,1.485,1.485,17.820,Split  by 0.40
+ND-LAr+TMS,Analysis-Sim,CPU,CERN,MHr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Analysis-Sim,CPU kHS23-Yr,HostLab,kHS23-Yr,0.266,0.426,0.426,0.932,1.332,1.332,15.983,Split  by 0.20
+ND-LAr+TMS,Analysis-Sim,CPU kHS23-Yr,US,kHS23-Yr,0.533,0.852,0.852,1.865,2.664,2.664,31.967,Split  by 0.40
+ND-LAr+TMS,Analysis-Sim,CPU kHS23-Yr,Int,kHS23-Yr,0.533,0.852,0.852,1.865,2.664,2.664,31.967,Split  by 0.40
+ND-LAr+TMS,Analysis-Sim,CPU kHS23-Yr,CERN,kHS23-Yr,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+ND-LAr+TMS,Analysis-Sim,CPU Cores,HostLab,Cores,24.217,38.748,38.748,84.760,121.086,121.086,1453.033,Split  by 0.20
+ND-LAr+TMS,Analysis-Sim,CPU Cores,US,Cores,48.434,77.495,77.495,169.521,242.172,242.172,2906.067,Split  by 0.40
+ND-LAr+TMS,Analysis-Sim,CPU Cores,Int,Cores,48.434,77.495,77.495,169.521,242.172,242.172,2906.067,Split  by 0.40
+ND-LAr+TMS,Analysis-Sim,CPU Cores,CERN,Cores,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Split  by 0.00
+SP,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Tape,HostLab,TB,2576.000,2576.000,2576.000,2576.000,2576.000,2576.000,2576.000,Look back 100.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Tape,CERN,TB,2576.000,2576.000,2576.000,2576.000,2576.000,2576.000,2576.000,Look back 100.00 years and keep that Storage 
+SP,Raw-Data,Cumulative-Tape,Total,TB,5152.000,5152.000,5152.000,5152.000,5152.000,5152.000,5152.000,Look back 100.00 years and keep that Storage 
+SP,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+SP,Reco-Sim,Cumulative-Tape,US,TB,3002.890,3002.890,3002.890,3002.890,3002.890,3002.890,3002.890,Look back 15.00 years and keep that Storage 
+SP,Reco-Sim,Cumulative-Tape,Int,TB,3002.890,3002.890,3002.890,3002.890,3002.890,3002.890,3002.890,Look back 15.00 years and keep that Storage 
+SP,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+SP,Reco-Sim,Cumulative-Tape,Total,TB,6005.780,6005.780,6005.780,6005.780,6005.780,6005.780,6005.780,Look back 15.00 years and keep that Storage 
+SP,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+SP,Reco-Data,Cumulative-Tape,US,TB,1932.000,1932.000,1932.000,1932.000,1932.000,1932.000,1932.000,Look back 15.00 years and keep that Storage 
+SP,Reco-Data,Cumulative-Tape,Int,TB,1932.000,1932.000,1932.000,1932.000,1932.000,1932.000,1932.000,Look back 15.00 years and keep that Storage 
+SP,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+SP,Reco-Data,Cumulative-Tape,Total,TB,3864.000,3864.000,3864.000,3864.000,3864.000,3864.000,3864.000,Look back 15.00 years and keep that Storage 
+SP,Test,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+SP,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+SP,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+SP,Test,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+SP,Test,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+SP,Test,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+SP,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+SP,Test,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+SP,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+SP,Test,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Tape,HostLab,TB,409.090,409.090,409.090,409.090,409.090,409.090,409.090,Look back 100.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Tape,CERN,TB,409.090,409.090,409.090,409.090,409.090,409.090,409.090,Look back 100.00 years and keep that Storage 
+DP,Raw-Data,Cumulative-Tape,Total,TB,818.180,818.180,818.180,818.180,818.180,818.180,818.180,Look back 100.00 years and keep that Storage 
+DP,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Sim,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Sim,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Sim,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Data,Cumulative-Tape,US,TB,195.248,195.248,195.248,195.248,195.248,195.248,195.248,Look back 15.00 years and keep that Storage 
+DP,Reco-Data,Cumulative-Tape,Int,TB,195.248,195.248,195.248,195.248,195.248,195.248,195.248,Look back 15.00 years and keep that Storage 
+DP,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+DP,Reco-Data,Cumulative-Tape,Total,TB,390.495,390.495,390.495,390.495,390.495,390.495,390.495,Look back 15.00 years and keep that Storage 
+DP,Test,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+DP,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+DP,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+DP,Test,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+DP,Test,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+DP,Test,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+DP,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+DP,Test,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+DP,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+DP,Test,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+Coldbox,Raw-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+Coldbox,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Sim,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Sim,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Sim,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Reco-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+Coldbox,Test,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+Coldbox,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+Coldbox,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+Coldbox,Test,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+Coldbox,Test,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+Coldbox,Test,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+Coldbox,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+Coldbox,Test,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+Coldbox,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+Coldbox,Test,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Disk,HostLab,TB,2380.000,2380.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Disk,CERN,TB,2380.000,2380.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Disk,Total,TB,4760.000,4760.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Tape,HostLab,TB,4760.000,4760.000,4760.000,4760.000,4760.000,4760.000,4760.000,Look back 100.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Tape,CERN,TB,4760.000,4760.000,4760.000,4760.000,4760.000,4760.000,4760.000,Look back 100.00 years and keep that Storage 
+PDHD,Raw-Data,Cumulative-Tape,Total,TB,9520.000,9520.000,9520.000,9520.000,9520.000,9520.000,9520.000,Look back 100.00 years and keep that Storage 
+PDHD,TP,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,TP,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,TP,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,TP,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,TP,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,TP,Cumulative-Tape,HostLab,TB,839.500,839.500,839.500,839.500,839.500,839.500,839.500,Look back 100.00 years and keep that Storage 
+PDHD,TP,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDHD,TP,Cumulative-Tape,Int,TB,839.500,839.500,839.500,839.500,839.500,839.500,839.500,Look back 100.00 years and keep that Storage 
+PDHD,TP,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDHD,TP,Cumulative-Tape,Total,TB,1679.000,1679.000,1679.000,1679.000,1679.000,1679.000,1679.000,Look back 100.00 years and keep that Storage 
+PDHD,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Sim,Cumulative-Tape,US,TB,836.000,1386.000,1936.000,1936.000,1936.000,1936.000,1936.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Sim,Cumulative-Tape,Int,TB,836.000,1386.000,1936.000,1936.000,1936.000,1936.000,1936.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Sim,Cumulative-Tape,Total,TB,1672.000,2772.000,3872.000,3872.000,3872.000,3872.000,3872.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Data,Cumulative-Tape,US,TB,1190.000,1785.000,1785.000,1785.000,1785.000,1785.000,1785.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Data,Cumulative-Tape,Int,TB,1190.000,1785.000,1785.000,1785.000,1785.000,1785.000,1785.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDHD,Reco-Data,Cumulative-Tape,Total,TB,2380.000,3570.000,3570.000,3570.000,3570.000,3570.000,3570.000,Look back 15.00 years and keep that Storage 
+PDHD,Test,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,Test,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,Test,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDHD,Test,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDHD,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDHD,Test,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDHD,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDHD,Test,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Disk,HostLab,TB,2387.000,4712.000,4650.000,2325.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Disk,CERN,TB,2387.000,4712.000,4650.000,2325.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Disk,Total,TB,4774.000,9424.000,9300.000,4650.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Tape,HostLab,TB,4774.000,9424.000,9424.000,9424.000,9424.000,9424.000,9424.000,Look back 100.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Tape,CERN,TB,4774.000,9424.000,9424.000,9424.000,9424.000,9424.000,9424.000,Look back 100.00 years and keep that Storage 
+PDVD,Raw-Data,Cumulative-Tape,Total,TB,9548.000,18848.000,18848.000,18848.000,18848.000,18848.000,18848.000,Look back 100.00 years and keep that Storage 
+PDVD,TP,Cumulative-Disk,HostLab,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,TP,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,TP,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,TP,Cumulative-Disk,CERN,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,TP,Cumulative-Disk,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,TP,Cumulative-Tape,HostLab,TB,500.150,1000.150,1000.150,1000.150,1000.150,1000.150,1000.150,Look back 100.00 years and keep that Storage 
+PDVD,TP,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDVD,TP,Cumulative-Tape,Int,TB,500.150,1000.150,1000.150,1000.150,1000.150,1000.150,1000.150,Look back 100.00 years and keep that Storage 
+PDVD,TP,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+PDVD,TP,Cumulative-Tape,Total,TB,1000.300,2000.300,2000.300,2000.300,2000.300,2000.300,2000.300,Look back 100.00 years and keep that Storage 
+PDVD,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Sim,Cumulative-Tape,US,TB,581.460,1142.460,1703.460,1703.460,1703.460,1703.460,1703.460,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Sim,Cumulative-Tape,Int,TB,581.460,1142.460,1703.460,1703.460,1703.460,1703.460,1703.460,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Sim,Cumulative-Tape,Total,TB,1162.920,2284.920,3406.920,3406.920,3406.920,3406.920,3406.920,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Data,Cumulative-Tape,US,TB,316.000,924.000,1524.000,1824.000,1824.000,1824.000,1824.000,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Data,Cumulative-Tape,Int,TB,316.000,924.000,1524.000,1824.000,1824.000,1824.000,1824.000,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+PDVD,Reco-Data,Cumulative-Tape,Total,TB,632.000,1848.000,3048.000,3648.000,3648.000,3648.000,3648.000,Look back 15.00 years and keep that Storage 
+PDVD,Test,Cumulative-Disk,HostLab,TB,125.000,125.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,Test,Cumulative-Disk,CERN,TB,125.000,125.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,Test,Cumulative-Disk,Total,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+PDVD,Test,Cumulative-Tape,HostLab,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDVD,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDVD,Test,Cumulative-Tape,Int,TB,250.000,250.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDVD,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+PDVD,Test,Cumulative-Tape,Total,TB,500.000,500.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,2000.000,8870.527,13996.033,Look back 2.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 2.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,2000.000,8870.527,13996.033,Look back 2.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 2.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,4000.000,17741.054,27992.066,Look back 2.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,4000.000,17741.054,31992.066,Look back 100.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,4000.000,17741.054,31992.066,Look back 100.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDVD,Raw-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,8000.000,35482.108,63984.132,Look back 100.00 years and keep that Storage 
+FDVD,TP,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,775.000,605.075,627.530,Look back 0.50 years and keep that Storage 
+FDVD,TP,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDVD,TP,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,775.000,605.075,627.530,Look back 0.50 years and keep that Storage 
+FDVD,TP,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDVD,TP,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,1550.000,1210.150,1255.061,Look back 0.50 years and keep that Storage 
+FDVD,TP,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,1550.000,2760.150,4015.210,Look back 100.00 years and keep that Storage 
+FDVD,TP,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDVD,TP,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,1550.000,2760.150,4015.210,Look back 100.00 years and keep that Storage 
+FDVD,TP,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDVD,TP,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,3100.000,5520.299,8030.421,Look back 100.00 years and keep that Storage 
+FDVD,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Sim,Cumulative-Tape,US,TB,1250.070,1690.070,2130.070,3180.070,3600.070,4020.070,4440.070,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Sim,Cumulative-Tape,Int,TB,1250.070,1690.070,2130.070,3180.070,3600.070,4020.070,4440.070,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Sim,Cumulative-Tape,Total,TB,2500.140,3380.140,4260.140,6360.140,7200.140,8040.140,8880.140,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,5.000,32.000,81.000,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,5.000,32.000,81.000,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDVD,Reco-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,10.000,64.000,162.000,Look back 15.00 years and keep that Storage 
+FDVD,Test,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,650.000,507.482,526.316,Look back 0.50 years and keep that Storage 
+FDVD,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDVD,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,650.000,507.482,526.316,Look back 0.50 years and keep that Storage 
+FDVD,Test,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDVD,Test,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Look back 0.50 years and keep that Storage 
+FDVD,Test,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Look back 1.00 years and keep that Storage 
+FDVD,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+FDVD,Test,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,1300.000,1014.964,1052.632,Look back 1.00 years and keep that Storage 
+FDVD,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+FDVD,Test,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,2600.000,2029.928,2105.263,Look back 1.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,1610.280,4950.361,Look back 2.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 2.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,1610.280,4950.361,Look back 2.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 2.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,3220.560,9900.721,Look back 2.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,3220.560,9900.721,Look back 100.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,3220.560,9900.721,Look back 100.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDHD,Raw-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,6441.119,19801.443,Look back 100.00 years and keep that Storage 
+FDHD,TP,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,750.000,585.556,607.287,Look back 0.50 years and keep that Storage 
+FDHD,TP,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDHD,TP,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,750.000,585.556,607.287,Look back 0.50 years and keep that Storage 
+FDHD,TP,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDHD,TP,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,1500.000,1171.113,1214.575,Look back 0.50 years and keep that Storage 
+FDHD,TP,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,1500.000,2671.113,3885.687,Look back 100.00 years and keep that Storage 
+FDHD,TP,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDHD,TP,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,1500.000,2671.113,3885.687,Look back 100.00 years and keep that Storage 
+FDHD,TP,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+FDHD,TP,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,3000.000,5342.225,7771.375,Look back 100.00 years and keep that Storage 
+FDHD,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Sim,Cumulative-Tape,US,TB,612.130,982.130,1352.130,2352.130,2752.130,3152.130,3552.130,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Sim,Cumulative-Tape,Int,TB,612.130,982.130,1352.130,2352.130,2752.130,3152.130,3552.130,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Sim,Cumulative-Tape,Total,TB,1224.260,1964.260,2704.260,4704.260,5504.260,6304.260,7104.260,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,11.000,44.000,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,11.000,44.000,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+FDHD,Reco-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,22.000,88.000,Look back 15.00 years and keep that Storage 
+FDHD,Test,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,625.000,1561.483,506.073,Look back 0.50 years and keep that Storage 
+FDHD,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDHD,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,625.000,1561.483,506.073,Look back 0.50 years and keep that Storage 
+FDHD,Test,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+FDHD,Test,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Look back 0.50 years and keep that Storage 
+FDHD,Test,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Look back 1.00 years and keep that Storage 
+FDHD,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+FDHD,Test,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,1250.000,3122.967,1012.146,Look back 1.00 years and keep that Storage 
+FDHD,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+FDHD,Test,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,2500.000,6245.934,2024.291,Look back 1.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-SAND,Raw-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-SAND,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Sim,Cumulative-Tape,US,TB,12.500,32.500,52.500,115.000,365.000,740.000,1490.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Sim,Cumulative-Tape,Int,TB,12.500,32.500,52.500,115.000,365.000,740.000,1490.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Sim,Cumulative-Tape,Total,TB,25.000,65.000,105.000,230.000,730.000,1480.000,2980.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Reco-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-SAND,Test,Cumulative-Disk,HostLab,TB,50.000,50.000,50.000,50.000,50.000,250.000,250.000,Look back 0.50 years and keep that Storage 
+ND-SAND,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+ND-SAND,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+ND-SAND,Test,Cumulative-Disk,CERN,TB,50.000,50.000,50.000,50.000,50.000,250.000,250.000,Look back 0.50 years and keep that Storage 
+ND-SAND,Test,Cumulative-Disk,Total,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Look back 0.50 years and keep that Storage 
+ND-SAND,Test,Cumulative-Tape,HostLab,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Look back 1.00 years and keep that Storage 
+ND-SAND,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+ND-SAND,Test,Cumulative-Tape,Int,TB,100.000,100.000,100.000,100.000,100.000,500.000,500.000,Look back 1.00 years and keep that Storage 
+ND-SAND,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+ND-SAND,Test,Cumulative-Tape,Total,TB,200.000,200.000,200.000,200.000,200.000,1000.000,1000.000,Look back 1.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 3.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-LAr+TMS,Raw-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 100.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Sim,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Sim,Cumulative-Tape,US,TB,209.500,544.700,879.900,1613.150,2660.650,3708.150,16278.150,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Sim,Cumulative-Tape,Int,TB,209.500,544.700,879.900,1613.150,2660.650,3708.150,16278.150,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Sim,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Sim,Cumulative-Tape,Total,TB,419.000,1089.400,1759.800,3226.300,5321.300,7416.300,32556.300,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Data,Cumulative-Tape,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Data,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Data,Cumulative-Tape,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Data,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Reco-Data,Cumulative-Tape,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 15.00 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Disk,HostLab,TB,250.000,250.000,250.000,250.000,250.000,250.000,250.000,Look back 0.50 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 0.50 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Disk,CERN,TB,250.000,250.000,250.000,250.000,250.000,250.000,250.000,Look back 0.50 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Disk,Total,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Look back 0.50 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Tape,HostLab,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Look back 1.00 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Tape,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Tape,Int,TB,500.000,500.000,500.000,500.000,500.000,500.000,500.000,Look back 1.00 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Tape,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Look back 1.00 years and keep that Storage 
+ND-LAr+TMS,Test,Cumulative-Tape,Total,TB,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,1000.000,Look back 1.00 years and keep that Storage 
+SP,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Data,Cumulative-Disk,US,TB,2348.500,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Data,Cumulative-Disk,Int,TB,2348.500,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Data,Cumulative-Disk,Total,TB,4697.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Sim,Cumulative-Disk,US,TB,3717.945,3717.945,3717.945,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Sim,Cumulative-Disk,Int,TB,3717.945,3717.945,3717.945,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+SP,Reco-Sim,Cumulative-Disk,Total,TB,7435.890,7435.890,7435.890,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Data,Cumulative-Disk,US,TB,177.520,177.520,177.520,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Data,Cumulative-Disk,Int,TB,177.520,177.520,177.520,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Data,Cumulative-Disk,Total,TB,355.040,355.040,355.040,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Sim,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Sim,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+DP,Reco-Sim,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Sim,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Sim,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+Coldbox,Reco-Sim,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Data,Cumulative-Disk,US,TB,2380.000,2380.000,2380.000,2380.000,2380.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Data,Cumulative-Disk,Int,TB,2380.000,2380.000,2380.000,2380.000,2380.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Data,Cumulative-Disk,Total,TB,4760.000,4760.000,4760.000,4760.000,4760.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Sim,Cumulative-Disk,US,TB,1254.000,1650.000,1650.000,1650.000,1650.000,1650.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Sim,Cumulative-Disk,Int,TB,1254.000,1650.000,1650.000,1650.000,1650.000,1650.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDHD,Reco-Sim,Cumulative-Disk,Total,TB,2508.000,3300.000,3300.000,3300.000,3300.000,3300.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Data,Cumulative-Disk,US,TB,632.000,1832.000,2416.000,2416.000,2416.000,2416.000,2416.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Data,Cumulative-Disk,Int,TB,632.000,1832.000,2416.000,2416.000,2416.000,2416.000,2416.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Data,Cumulative-Disk,Total,TB,1264.000,3664.000,4832.000,4832.000,4832.000,4832.000,4832.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Sim,Cumulative-Disk,US,TB,872.190,1683.000,1683.000,1683.000,1683.000,1683.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Sim,Cumulative-Disk,Int,TB,872.190,1683.000,1683.000,1683.000,1683.000,1683.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+PDVD,Reco-Sim,Cumulative-Disk,Total,TB,1744.380,3366.000,3366.000,3366.000,3366.000,3366.000,0.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,10.000,64.000,152.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,10.000,64.000,152.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,20.000,128.000,304.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Sim,Cumulative-Disk,US,TB,387.540,885.000,1320.000,2235.000,2235.000,2235.000,2235.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Sim,Cumulative-Disk,Int,TB,387.540,885.000,1320.000,2235.000,2235.000,2235.000,2235.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDVD,Reco-Sim,Cumulative-Disk,Total,TB,775.080,1770.000,2640.000,4470.000,4470.000,4470.000,4470.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,22.000,88.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,22.000,88.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,44.000,176.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Sim,Cumulative-Disk,US,TB,564.435,780.000,1110.000,2055.000,2100.000,2100.000,2100.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Sim,Cumulative-Disk,Int,TB,564.435,780.000,1110.000,2055.000,2100.000,2100.000,2100.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+FDHD,Reco-Sim,Cumulative-Disk,Total,TB,1128.870,1560.000,2220.000,4110.000,4200.000,4200.000,4200.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Sim,Cumulative-Disk,US,TB,18.750,48.750,60.000,123.750,468.750,937.500,1687.500,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Sim,Cumulative-Disk,Int,TB,18.750,48.750,60.000,123.750,468.750,937.500,1687.500,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-SAND,Reco-Sim,Cumulative-Disk,Total,TB,37.500,97.500,120.000,247.500,937.500,1875.000,3375.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Data,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Data,Cumulative-Disk,US,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Data,Cumulative-Disk,Int,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Data,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Data,Cumulative-Disk,Total,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Sim,Cumulative-Disk,HostLab,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Sim,Cumulative-Disk,US,TB,314.250,817.050,1005.600,1602.675,2671.125,3142.500,20426.250,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Sim,Cumulative-Disk,Int,TB,314.250,817.050,1005.600,1602.675,2671.125,3142.500,20426.250,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Sim,Cumulative-Disk,CERN,TB,0.000,0.000,0.000,0.000,0.000,0.000,0.000,Extend disk by 2.00 years as still analyzing
+ND-LAr+TMS,Reco-Sim,Cumulative-Disk,Total,TB,628.500,1634.100,2011.200,3205.350,5342.250,6285.000,40852.500,Extend disk by 2.00 years as still analyzing
